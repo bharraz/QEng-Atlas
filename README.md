@@ -1,4 +1,6 @@
-# Reference Atlas
+# QEng Atlas
+
+<img width="1280" height="720" alt="Animation" src="https://github.com/user-attachments/assets/218cb0f0-1184-4f34-bfa2-e1d7d916d5bc" />
 
 This is a reference obsidian vault for topics that a PhD in quantum engineering, especially experimental trapped ion quantum computing, should know.
 
@@ -11,6 +13,7 @@ The main usecase is for when you are reading papers, and you forget a concept, y
 The secondary benefit is that it provides a beautiful visualization of the concepts.
 
 To use it, install [Obsidian](https://obsidian.md/) and just open the root directory (this directory) using it, for free.
+
 
 
 # اللَّهُمَّ إِنَّا نَسْأَلُكَ عِلْمًا نَافِعًا،
