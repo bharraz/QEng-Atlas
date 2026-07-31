@@ -10,13 +10,15 @@ $$
 \mathrm{SNR} = 6.02\,N + 1.76 \ \text{dB}
 $$
 
+$N$ = number of bits; $q = V_{\text{FS}}/2^N$ = LSB size (V). The two constants are not arbitrary: $6.02 = 20\log_{10}2$, one bit halves the step and so buys a factor 2 in amplitude; $1.76 = 10\log_{10}(3/2)$, the ratio of a full-scale sine's rms ($V_{\text{FS}}/2\sqrt2$) to the quantization noise rms ($q/\sqrt{12}$). Both assume the input actually spans full scale — a signal at 10% of range loses 20 dB of this immediately, which is why input scaling matters as much as bit count.
+
 **ENOB** is that equation run backwards on the *measured* SINAD: a "16-bit" ADC delivering 78 dB is really 12.7 effective bits. Datasheets quote ENOB at specific frequencies — it degrades as input frequency rises.
 
 **Oversampling & processing gain:** the quantization noise power is fixed, so spreading it over more bandwidth and filtering to your signal band buys $10\log_{10}(f_s/2B)$ dB — 3 dB (half a bit) per octave of oversampling. Sigma-delta converters push this to extremes.
 
 **Dither:** quantization error is only noise-like if the signal exercises many codes. Small, slow signals produce distortion (dead zones, harmonics), not noise. Adding ~1 LSB of noise before the ADC *linearizes* the average — you can then average below the LSB. Often your signal chain is already noisy enough; if it isn't, add dither on purpose.
 
-**Jitter:** timing noise $\sigma_t$ on the sample clock converts slew rate into voltage noise, limiting SNR to $-20\log_{10}(2\pi f_\text{in}\sigma_t)$. At $f_\text{in}=10$ MHz, 1 ps rms jitter caps you at ~84 dB regardless of bits. This is why fast digitizers care so much about clock cleanliness — and why aliased clock spurs point at your clock distribution, not the ADC.
+**Jitter:** timing noise $\sigma_t$ (s rms) on the sample clock converts slew rate into voltage noise — sampling at the wrong instant on a signal moving at $dV/dt$ gives an error $\sigma_V = \sigma_t\,|dV/dt|$, and for a sine the peak slew is $2\pi f_{\text{in}}A$. Hence SNR limited to $-20\log_{10}(2\pi f_\text{in}\sigma_t)$, depending on *input* frequency, not sample rate. At $f_\text{in}=10$ MHz, 1 ps rms jitter caps you at ~84 dB regardless of bits. This is why fast digitizers care so much about clock cleanliness — and why aliased clock spurs point at your clock distribution, not the ADC.
 
 **DAC side:** a DAC's zero-order hold outputs stairsteps, which (1) roll off the wanted signal as $\mathrm{sinc}(f/f_s)$ — −3.9 dB at Nyquist, sometimes pre-compensated digitally — and (2) produce **images** of the signal around every multiple of $f_s$, attenuated only by that same sinc. The analog **reconstruction filter** after the DAC is not optional; unfiltered images will happily drive your AOM or mix down in a later stage. Glitch energy at major code transitions is the other classic DAC wart.
 

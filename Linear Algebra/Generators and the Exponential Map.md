@@ -25,7 +25,7 @@ $$
 # Connections
 
 - [[Unitary Matrices]] — every unitary connected to $\mathbb{1}$ is $e^{iH}$ for some Hermitian $H$
-- [[Pauli Matrices]] — the su(2) generators, with the rotation formula in closed form
+- [[Reference Atlas/Linear Algebra/Pauli Matrices]] — the su(2) generators, with the rotation formula in closed form
 - [[Matrix Exponential]] — the map itself, and its non-commuting subtleties
 - [[Baker-Campbell-Hausdorff]] — how generator noncommutativity shows up in composed exponentials
 - [[Euler-Lagrange Equation]] — Noether's side of the story: symmetries ↔ conserved generators

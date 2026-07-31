@@ -10,7 +10,9 @@ $$
 \delta = \sqrt{\frac{2}{\mu\sigma\omega}}
 $$
 
-Fields decay as $e^{-z/\delta}$ inside, with a phase lag of one radian per skin depth.
+$\delta$ = skin depth (m), the $1/e$ decay length of field amplitude into the metal; $\mu = \mu_r\mu_0$ = permeability (H/m) — magnetic metals have $\mu_r \sim 10^3$–$10^5$, which shrinks $\delta$ dramatically and is why steel shields at low frequency where copper cannot; $\sigma$ = conductivity (S/m); $\omega = 2\pi f$ = angular frequency (rad/s). Fields decay as $e^{-z/\delta}$ with a phase lag of one radian per skin depth (amplitude and phase are locked because the wave is diffusive, not propagating).
+
+All three parameters enter as inverse square roots, so $\delta \propto 1/\sqrt{f}$: every factor of 100 in frequency costs a factor of 10 in penetration.
 
 **Copper lookup table** ($\delta \approx 66\,\text{mm}/\sqrt{f/\text{Hz}}$):
 

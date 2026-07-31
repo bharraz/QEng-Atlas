@@ -9,7 +9,9 @@ $$
 S_{ij} = \frac{b_i}{a_j}\bigg|_{\text{other ports matched}}
 $$
 
-$S_{11}$ = input reflection (equals Γ when port 2 is matched); $S_{21}$ = forward transmission (gain or insertion loss); $S_{12}$ = reverse isolation; $S_{22}$ = output match. In dB: $20\log|S|$; power fractions are $|S|^2$.
+$a_j$ = complex amplitude of the wave going *into* port $j$, $b_i$ = wave coming *out* of port $i$, both normalized so that $|a|^2$ is power in watts — which is why $S$ is dimensionless and $|S|^2$ reads directly as a power fraction. The subscript order is destination-then-source ($S_{21}$ = out of port 2, in at port 1). $Z_0 = 50\ \Omega$ is the reference impedance defining the wave decomposition; quote it, since $S$ changes if the reference does.
+
+$S_{11}$ = input reflection (equals Γ when port 2 is matched); $S_{21}$ = forward transmission (gain or insertion loss); $S_{12}$ = reverse isolation; $S_{22}$ = output match. In dB: $20\log_{10}|S|$ because $S$ is an amplitude ratio, so $-20$ dB means 10% of the amplitude and 1% of the power.
 
 | $S_{11}$ | reflected power | verdict |
 |---|---|---|

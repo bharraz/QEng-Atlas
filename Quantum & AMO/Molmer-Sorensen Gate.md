@@ -10,9 +10,13 @@ Bichromatic field at $\omega_0 \pm (\omega + \delta)$ — a small symmetric detu
 
 $$\tau = \frac{2\pi K}{\delta}, \quad K \in \mathbb{Z}$$
 
-the displacement returns to zero — spin and motion disentangle *exactly*, whatever the motional state. The residue is the geometric phase = enclosed phase-space area, $\propto (\eta\Omega/\delta)^2$ per loop and proportional to $S_\phi^2$, i.e. an effective $\sigma_\phi^{(1)}\sigma_\phi^{(2)}$ interaction:
+$\tau$ = gate duration (s); $\delta$ = symmetric detuning of the two tones from their sidebands (rad/s) — it is also the *angular rate at which the phase-space loop is traversed*, so $2\pi/\delta$ is one lap and $K$ = number of laps. At these times the displacement returns to zero and spin and motion disentangle exactly, whatever the motional state. The residue is the geometric phase = enclosed phase-space area, $\propto (\eta\Omega/\delta)^2$ per loop and proportional to $S_\phi^2$, giving an effective $\sigma_\phi^{(1)}\sigma_\phi^{(2)}$ interaction:
 
 $$U = \exp\!\left(-i\chi\,\sigma_\phi^{(1)}\sigma_\phi^{(2)}\right), \qquad \chi = \frac{\pi}{4} \;\text{(maximally entangling) when}\; \delta = 2\eta\Omega\sqrt{K}$$
+
+$\chi$ = accumulated two-spin phase (rad; the enclosed area in units of $\hbar$); $\eta$ = Lamb–Dicke parameter of the driven mode; $\Omega$ = single-tone carrier Rabi frequency (rad/s), so $\eta\Omega$ = sideband coupling rate and $\eta\Omega/\delta$ = loop radius in phase space (dimensionless, in units of the ground-state spread $x_0$). The condition fixes the loop radius at $1/2\sqrt{K}$: more laps, smaller circles, same total area.
+
+Scalings to carry: gate time $\tau = 2\pi K/\delta = \pi\sqrt{K}/\eta\Omega$ — speed comes from $\eta\Omega$, so faster gates want tighter Lamb–Dicke coupling or more power, and going to $K > 1$ costs time as $\sqrt{K}$ while buying robustness to detuning error.
 
 From $|gg\rangle$: the Bell state $(|gg\rangle - i|ee\rangle)/\sqrt{2}$. Gate time $\tau = 2\pi K/\delta$ — more loops ($K > 1$) buys robustness at the cost of speed.
 

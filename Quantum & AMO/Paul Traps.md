@@ -8,13 +8,17 @@ Static quadrupoles saddle ($\nabla^2 V = 0$); oscillating $V_0\cos(\Omega_{\math
 
 $$\Psi(\mathbf{r}) = \frac{Q^2 E_0^2(\mathbf{r})}{4 m \Omega_{\mathrm{rf}}^2}$$
 
-— proportional to *field intensity*, so the ion seeks the RF null. Exact dynamics: the Mathieu equation with stability parameter
+$\Psi$ = pseudopotential energy (J); $Q$ = ion charge (C); $E_0(\mathbf{r})$ = amplitude of the RF electric field at position $\mathbf{r}$ (V/m); $m$ = ion mass (kg); $\Omega_{\mathrm{rf}}$ = RF drive angular frequency (rad/s). Depth $\propto E_0^2$ (field *intensity*, not potential) so the ion seeks the RF null; $\propto 1/m\Omega_{\mathrm{rf}}^2$ because a heavier ion or a faster drive wiggles less per cycle, storing less kinetic energy to average.
+
+Exact dynamics: the Mathieu equation, whose dimensionless stability parameters are $q$ (RF strength) and $a$ (static strength):
 
 $$q = \frac{2 Q V_0}{m r_0^2 \Omega_{\mathrm{rf}}^2}$$
 
-stable for $q \lesssim 0.9$ (with $a \approx 0$); operate at $q \sim 0.1$–$0.3$, where the secular frequency is
+$V_0$ = RF amplitude on the electrodes (V); $r_0$ = ion–electrode distance (m), so $V_0/r_0^2$ is the quadrupole field gradient — note $q \propto V_0/(m r_0^2 \Omega_{\mathrm{rf}}^2)$: smaller traps reach the same confinement at far lower voltage, which is why surface traps run tens of volts where 3D traps ran hundreds. Read $q$ as the ratio of RF force to the restoring effect of inertia over one drive cycle: motion is stable for $q \lesssim 0.9$ (at $a \approx 0$), and one operates at $q \sim 0.1$–$0.3$ where the secular motion cleanly separates from the drive, giving
 
 $$\omega_{\mathrm{sec}} \approx \frac{q\,\Omega_{\mathrm{rf}}}{2\sqrt{2}}$$
+
+— the slow harmonic frequency (rad/s) in the pseudopotential bowl, always well below $\Omega_{\mathrm{rf}}$ (the separation of timescales that makes the averaging valid).
 
 Typical: $\Omega_{\mathrm{rf}}/2\pi \sim 20$–50 MHz, $\omega_{\mathrm{sec}}/2\pi \sim 1$–5 MHz, trap depths $\sim$ eV ($\sim 10^4$ K — ions stay for days). Linear traps: RF confines radially, static endcaps axially; a chain lines up along the RF-null axis.
 

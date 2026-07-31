@@ -8,6 +8,8 @@ $$
 W(x,p) = \frac{1}{\pi\hbar}\int_{-\infty}^{\infty} dy\; \langle x+y|\rho|x-y\rangle\, e^{-2ipy/\hbar}
 $$
 
+$W$ = Wigner quasi-probability density (units 1/(action) = 1/(J·s), so that $\int W\,dx\,dp = 1$ with phase-space area measured in units of $\hbar$); $x, p$ = phase-space coordinates; $y$ = the *separation* between bra and ket positions — the off-diagonal coordinate of $\rho$, which is where coherence lives. The structure is a Fourier transform in that separation: $W$ converts the density matrix's off-diagonal extent into momentum information, so a state's coherences (large $y$ support) become its momentum-space structure, and a decohered state's $\rho$ collapsing toward the diagonal shows up as $W$ smearing in $p$.
+
 **Marginals are true probability distributions:** $\int W\,dp = \langle x|\rho|x\rangle$ and $\int W\,dx = \langle p|\rho|p\rangle$ — project the quasi-distribution onto any quadrature axis and you get the genuinely measurable distribution (rotated quadratures included: that's how homodyne tomography inverts back to $W$).
 
 **The zoo, at a glance:**

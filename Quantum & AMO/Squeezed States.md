@@ -9,6 +9,8 @@ $$
 S(\xi) = \exp\!\left[\tfrac{1}{2}\left(\xi^* a^2 - \xi\, a^{\dagger 2}\right)\right], \qquad \xi = r e^{i\theta}
 $$
 
+$\xi$ = complex squeezing parameter; $r \geq 0$ = squeeze magnitude (dimensionless — the exponent by which one quadrature's noise shrinks, $e^{-r}$), $\theta$ = squeeze angle (rad), with the squeezed quadrature oriented at $\theta/2$ — halved because $S$ is quadratic in $a$, the same factor-2 that makes a $2\omega$ parametric drive act at $\omega$; $a, a^\dagger$ = mode annihilation/creation operators (dimensionless). $r$ accumulates as (parametric gain rate) × (interaction time), and noise falls exponentially in it: 8.7 dB per unit $r$.
+
 Acting on vacuum, with quadratures $X_1 = (a + a^\dagger)/2$, $X_2 = (a - a^\dagger)/2i$ (vacuum: $\Delta X_i = 1/2$):
 $$
 \Delta X_1 = \tfrac{1}{2}e^{-r}, \qquad \Delta X_2 = \tfrac{1}{2}e^{+r} \quad (\theta = 0)

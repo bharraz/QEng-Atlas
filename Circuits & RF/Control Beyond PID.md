@@ -40,7 +40,8 @@ Suppression at some frequencies ($|S| < 1$) is *necessarily paid for* by amplifi
 - [[Phase-Locked Loops]] — a specialized feedback loop where the "plant" is a phase accumulator
 - [[Sampling and Aliasing]] — digital-loop delay and aliasing costs
 - [[Pound-Drever-Hall Locking]] — a real system: cascaded actuators, servo bump, delay-limited bandwidth
-- [[Kalman Filter]] — optimal state estimation (page pending; the Bayesian update behind LQG)
+- [[Kalman Filter]] — optimal state estimation; the Bayesian update behind LQG
+- [[Particle Filter]] — estimation when the posterior is multimodal or non-Gaussian
 
 ---
 Source: Åström & Murray, *Feedback Systems*, Ch. 10–13; Skogestad & Postlethwaite, *Multivariable Feedback Control*, Ch. 2–5; Bechhoefer, "Feedback for physicists," *Rev. Mod. Phys.* 77, 783 (2005)

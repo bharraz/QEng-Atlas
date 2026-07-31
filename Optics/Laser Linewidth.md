@@ -8,7 +8,9 @@
 $$
 \Delta\nu_{ST} \approx \frac{\pi h \nu\, (\Delta\nu_c)^2}{P_{out}}
 $$
-where $\Delta\nu_c$ is the cold-cavity linewidth — sub-Hz for most lasers. Reality: free-running diodes sit at ~MHz (enhanced by the Henry $\alpha$ factor), ECDLs at ~100 kHz, and the gap to the floor is all *technical* noise. Narrowing = servo to a better reference (cavity via PDH), not a better gain medium.
+$\Delta\nu_{ST}$ = fundamental FWHM linewidth (Hz); $h\nu$ = photon energy (J); $\Delta\nu_c$ = cold-cavity linewidth (Hz), the resonator's own bandwidth; $P_{out}$ = output power (W). Two proportionalities carry the design logic: linewidth falls as $1/P$ (each stimulated photon dilutes the random spontaneous one) and as $\Delta\nu_c^{\,2}$ — a *quadratic* payoff for a better cavity, since a narrower resonator both filters the noise and stores photons longer. Numerically this is sub-Hz for most lasers.
+
+**Two convention traps on this formula.** The original Schawlow–Townes result is 4× larger than the form above; the modern version includes Lax's factor $\tfrac12$ (lasing, not below threshold) and is quoted as FWHM. And for semiconductor lasers the **Henry linewidth-enhancement factor** multiplies it by $(1 + \alpha^2)$ with $\alpha \approx 3$–6 — a factor of 10–37 — which is most of why diode linewidths are orders above the naive floor. Reality: free-running diodes sit at ~MHz (enhanced by the Henry $\alpha$ factor), ECDLs at ~100 kHz, and the gap to the floor is all *technical* noise. Narrowing = servo to a better reference (cavity via PDH), not a better gain medium.
 
 **Linewidth ↔ coherence:**
 $$

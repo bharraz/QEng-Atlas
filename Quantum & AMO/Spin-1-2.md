@@ -23,7 +23,7 @@ Any pure state: $|\psi\rangle = \cos\tfrac{\theta}{2}|{\uparrow}\rangle + e^{i\p
 
 # Connections
 
-- [[Pauli Matrices]] — the operator algebra this note runs on
+- [[Reference Atlas/Linear Algebra/Pauli Matrices]] — the operator algebra this note runs on
 - [[Bloch Sphere]] — the state space, with rotations as the gates
 - [[Zeeman Effect (Atlas)]] — $\mu \cdot B$ level shifts, the atomic-structure face of the same moment
 - [[Two-Level Systems]] — any two levels inherit this formalism, spin or not

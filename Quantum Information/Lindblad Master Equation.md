@@ -8,6 +8,8 @@ $$
 \frac{d\rho}{dt} = -\frac{i}{\hbar}[H, \rho] + \sum_k \left( L_k \rho L_k^\dagger - \tfrac12 \{ L_k^\dagger L_k, \rho \} \right)
 $$
 
+$\rho$ = density matrix (dimensionless, $\mathrm{Tr}\,\rho = 1$); $H$ = Hamiltonian (J) generating the reversible part; $L_k$ = jump (Lindblad) operators, one per independent decay channel, each carrying $\sqrt{\text{rate}}$ so that $L^\dagger L$ has units of s⁻¹ — this is why $L = \sqrt{\Gamma}\,\sigma_-$ and not $\Gamma\sigma_-$. The rate appears *squared in the operator, linear in the equation*, which is the usual source of factor-of-2 errors.
+
 Anatomy of the dissipator $\mathcal{D}[L]$: **$L\rho L^\dagger$ is the jump** (population arriving after the environment "clicked"); **the anticommutator is the no-jump drain** that keeps $\mathrm{Tr}\,\rho = 1$ — drop either piece and you lose positivity or trace.
 
 **Assumptions (Born–Markov + secular)**: weak system–bath coupling so the bath stays unentangled and unperturbed ($\rho_{SB} \approx \rho \otimes \rho_B$); bath correlation time $\ll$ system relaxation time, so the bath has no memory; RWA on system frequencies for the diagonal GKSL form. **Breaks for**: strong coupling, structured/narrow-band baths, $1/f$ noise (memory! — that's why echo works but Lindblad-with-constant-$\gamma$ can't describe it).

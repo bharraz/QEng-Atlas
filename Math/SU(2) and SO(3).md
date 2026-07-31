@@ -51,7 +51,7 @@ each irrep appearing exactly once ($SU(2)$ is multiplicity-free — one reason a
 
 - [[Group Representations]] — spin-$j$ multiplets are the irreps; $2j+1$ is their dimension
 - [[Lie Algebras]] — the shared $\mathfrak{su}(2)$ algebra both groups exponentiate from
-- [[Pauli Matrices]] — $\sigma_i/2$ are the generators; $e^{-i\theta\hat n\cdot\vec\sigma/2}$ is the group element
+- [[Reference Atlas/Linear Algebra/Pauli Matrices]] — $\sigma_i/2$ are the generators; $e^{-i\theta\hat n\cdot\vec\sigma/2}$ is the group element
 - [[Bloch Sphere]] — $SU(2)$ acting on a qubit, drawn as rotations of a sphere
 - [[Angular Momentum in QM]] — the ladder structure and the integer/half-integer split
 - [[Clebsch-Gordan Coefficients]] — the tensor-product change of basis

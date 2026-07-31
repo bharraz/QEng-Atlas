@@ -12,6 +12,8 @@ $$
 \hat{S}(f) = \frac{1}{K} \sum_{i=1}^{K} \frac{2\,|X_i(f)|^2}{f_s \sum_n w_n^2}
 $$
 
+$K$ = number of segments averaged; $L$ = samples per segment, so resolution is $\Delta f = f_s/L$ and total record is $\approx KL/2$ samples at 50% overlap; $X_i$ = windowed DFT of segment $i$. Two knobs pulling against each other on a fixed record: $L$ buys frequency resolution, $K$ buys estimator precision (fractional uncertainty $\approx 1/\sqrt{K_{\text{eff}}}$), and $KL$ is fixed — so halving the bin width doubles the noise on every point.
+
 **The tradeoff knob is segment length $L$:** resolution is $f_s/L$, while the fractional uncertainty of each PSD point is roughly $1/\sqrt{K_\text{eff}}$. Fixed total record ⇒ longer segments = finer bins but noisier estimate. With 50% overlap and Hann, overlapping segments are weakly correlated, so you recover most of the doubled count: $K_\text{eff} \approx 1.9\times$ the non-overlapped number. Overlap beyond ~50–75% buys almost nothing.
 
 **Practical recipe:** decide the lowest frequency you care about, set $L \gtrsim 10 f_s/f_\text{min}$ so that frequency isn't sitting in the first couple of (window-corrupted) bins, then average as many segments as the record allows. Quote the result in V/√Hz or units²/Hz and *say* it's one-sided.

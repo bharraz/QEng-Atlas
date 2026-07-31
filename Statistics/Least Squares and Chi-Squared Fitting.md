@@ -8,6 +8,8 @@ $$
 \chi^2(\theta) = \sum_i \frac{\left(y_i - f(x_i;\theta)\right)^2}{\sigma_i^2}
 $$
 
+$y_i$ = measured values; $f(x_i;\theta)$ = model with parameters $\theta$; $\sigma_i$ = the *known* uncertainty of point $i$ (same units as $y$) — each residual is divided by its own error, so $\chi^2$ is dimensionless and every point contributes in units of "how many of its own error bars off." That weighting is the whole content: a point with $\sigma$ ten times smaller pulls a hundred times harder, and $\sigma_i$ being wrong corrupts the fit itself, not just the error bars. Degrees of freedom $\nu = N - p$ ($N$ points, $p$ free parameters) — each fitted parameter absorbs one residual's worth of freedom.
+
 **The goodness check:** at the minimum, $\chi^2_\nu = \chi^2/(N - p) \approx 1 \pm \sqrt{2/(N-p)}$ if model and errors are right.
 - $\chi^2_\nu \gg 1$: wrong model, or $\sigma_i$ underestimated (unmodeled systematics).
 - $\chi^2_\nu \ll 1$: $\sigma_i$ overestimated — or you're overfitting.

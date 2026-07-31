@@ -8,6 +8,8 @@ $$
 \omega_0 = \frac{1}{\sqrt{LC}}, \qquad Q = \frac{\omega_0 L}{R} = \frac{1}{\omega_0 RC}\ (\text{series }R), \qquad \Delta f_{-3\text{dB}} = \frac{f_0}{Q}
 $$
 
+$L$ (H), $C$ (F), $R$ (Ω) = series loss resistance; $\omega_0$ (rad/s) = where the two reactances cancel. Read $Q = \omega_0 L/R$ as reactance-at-resonance over resistance — the ratio of energy-storing to energy-losing impedance, which is why the *same* $R$ gives high $Q$ in a high-$Z_0$ resonator and low $Q$ in a low-$Z_0$ one. Note $\omega_0$ depends on the product $LC$ while $Q$ and $Z_0 = \sqrt{L/C}$ depend on the ratio: you can hold the frequency fixed and trade $L$ against $C$ to move $Q$ and the impedance level independently.
+
 **Series LC:** impedance dips to $R$ at resonance (looks like a short) — notch/trap, or a low-Z way to drive a resonant load.
 **Parallel (tank):** impedance peaks to $\approx Q\omega_0 L = L/RC$ (looks open) — frequency-selective load, oscillator tank.
 

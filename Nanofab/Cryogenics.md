@@ -1,39 +1,46 @@
 #labwork #cryo
 
-**Getting cold is a budget problem, like vacuum: heat leaks in (conduction, radiation, wiring, RF dissipation), each stage removes it at a temperature-dependent cooling power, and the base temperature is where load meets lift.** Thinking cryogenically = accounting heat flows per stage and knowing which physics dominates at each decade of temperature.
+**Getting cold is a budget problem: heat leaks in by conduction, radiation, wiring, and dissipation; each stage removes it at a temperature-dependent cooling power; base temperature is where load meets lift.** The same accounting discipline as [[Vacuum Engineering]], with $T$-dependent coefficients.
 
 # Reference
 
-**The temperature ladder** and what turns off along it: 77 K (LN₂ — cheap precooling, IR shields), 4 K (liquid He / pulse-tube — superconductors come alive, thermal microwave photons at GHz still abundant), 1 K (pumped ⁴He), 300 mK (pumped ³He), ~10 mK (dilution refrigerator — $k_BT$ = 208 MHz < qubit frequencies: the quantum regime for GHz circuits).
+**The ladder**: 77 K (LN₂ — shields, precooling), 4 K (LHe / pulse tube — superconductors alive, GHz still thermal), 1 K (pumped ⁴He), 300 mK (³He), ~10 mK (dilution — $k_BT/h$ = 208 MHz < qubit frequencies).
 
-**How a dilution refrigerator works** (the only continuous route below ~300 mK): below 0.87 K a ³He/⁴He mixture phase-separates; ³He crossing from the concentrated into the dilute phase absorbs "latent heat" like an evaporation — but the dilute phase holds 6.6% ³He even at $T \to 0$, so the "evaporation" never runs out. Circulate ³He (pump it from the still at ~0.7 K, purify, recondense) and the mixing chamber cools continuously with power
+## Dilution refrigerator
 
-$$\dot{Q}_{\text{MC}} \approx 84\, \dot{n}_3\, T^2 \quad [\text{W, mol/s, K}]$$
+Below 0.87 K a ³He/⁴He mixture phase-separates; ³He crossing into the dilute phase absorbs heat like an evaporation whose "vapor pressure" never vanishes (dilute phase holds 6.6% ³He at $T \to 0$). Circulating ³He at $\dot n_3$ mol/s:
 
-— the $T^2$ is the design fact: ~µW-scale at 100 mK collapses to ~10 nW at 10 mK. Every microwatt of load costs base temperature; the entire craft is load management.
+$$\dot{Q}_{\text{MC}} \approx 84\, \dot{n}_3\, T^2\ \mathrm{[W]},$$
 
-**The heat-load bookkeeping** (per stage, always):
+with $\dot n_3$ the ³He circulation rate in mol/s (~100 µmol/s in a standard fridge) and $T$ the mixing-chamber temperature in K — the cooling power *you can spend* at that stage. The $T^2$ comes from the heat capacity of the degenerate ³He: colder liquid carries less entropy per atom across the phase boundary. Numerically: µW at 100 mK collapses to ~10 nW at 10 mK — every stray nW costs base temperature, and the craft is load management.
 
-- **Conduction:** $\dot Q = (A/L)\int_{T_1}^{T_2} \kappa(T)\, dT$ — use integrated conductivity tables, since κ varies wildly with T. Material choice is the knob: stainless and CuNi conduct ~100× less than copper; G-10 and Kevlar less still (supports); annealed OFHC copper is for *thermalization* links, not isolation. Wiring is the big offender: N coax lines × (conduction + attenuator dissipation) is the budget item that limits qubit count in fridges.
-- **Radiation:** $\dot Q = \sigma A\, \epsilon_{\text{eff}}\,(T_h^4 - T_c^4)$ — the $T^4$ means the 300 K view is everything: 0.5 W/m² even from 77 K, ~500 W/m² from 300 K. Hence nested shields anchored to each stage and multilayer insulation (each floating layer roughly halves the flow) in the vacuum space. A 1 cm² line-of-sight hole from 300 K to the mixing chamber is a disaster; a hole from 4 K is survivable — always ask *what temperature does this surface see*.
-- **Wiring and RF:** every line is a conduction path *and* a Johnson-noise/thermal-photon conduit. Microwave lines carry attenuators distributed over the stages (20 dB at 4 K, 20 at 100 mK, ...) so the *noise temperature* reaching the qubit is that of the last cold attenuator, not 300 K ([[Johnson-Nyquist Noise]] made spatial). The attenuators dissipate — their heat lands on the stage budget. DC lines get RC/copper-powder filters; superconducting NbTi carries signals with negligible thermal conduction.
-- **Dissipation on-stage:** amplifiers (HEMTs at 4 K burn mW), resistive joints, eddy currents from pulsed fields — measured against that nW-scale mixing-chamber budget.
+## Heat-load accounting (per stage)
 
-**Thermalization is not proximity.** Bolted joints conduct poorly at mK (contact area is microscopic asperities): gold-plate the mating faces, torque properly, add indium or Apiezon-N only where appropriate. And below ~1 K the **electron and phonon baths decouple** ($\dot Q_{e\text{-}ph} \propto T^5$): a chip's electrons can sit at 100 mK in a 10 mK fridge if heat can't leave through the electrons' own wiring — thermalize the *wiring*, not just the substrate. "The thermometer on the plate reads 10 mK" is not the same claim as "the device is at 10 mK"; the device's own noise or population (e.g. residual qubit excited-state population) is the honest thermometer.
+- **Conduction**: $\dot Q = \frac{A}{L}\int_{T_1}^{T_2}\kappa(T)\,dT$ — use integrated-conductivity tables ($\kappa$ varies orders of magnitude). Isolation: stainless, CuNi, G-10; thermalization links: annealed OFHC Cu. Wiring dominates real budgets: $N$ coax × (conduction + attenuator dissipation) limits channel count.
+- **Radiation**: $\dot Q = \sigma A\,\epsilon_{\text{eff}}(T_h^4 - T_c^4)$ — 300 K radiates ~460 W/m²; 77 K, ~0.5 W/m². The $T^4$ means the question is always *what temperature does this surface see*: nested shields per stage, MLI in the vacuum space (each floating layer roughly halves the flow), no line of sight from warm to cold.
+- **Microwave lines**: attenuators distributed across stages (e.g. 20 dB at 4 K + 20 dB at 100 mK + ...) so the noise temperature reaching the sample is that of the last cold attenuator, not 300 K ([[Johnson-Nyquist Noise]]); each attenuator dissipates onto its stage. DC lines: RC/copper-powder filters; superconducting NbTi carries signal with negligible $\kappa$.
+- **On-stage dissipation**: HEMTs at 4 K burn mW; resistive joints and eddy currents count against the nW-scale mixing-chamber budget.
 
-**Cryocooler practicalia:** pulse tubes deliver ~1 W at 4 K with ~1–2 Hz vibration (the reason for soft thermal links and vibration-isolated sample mounts in cryo-optics); wet systems trade vibration for He logistics. Thermometry: calibrated RuO₂/Cernox resistors (mind self-heating: excitation power must stay below the local budget), noise thermometry at the bottom end.
+## Thermalization is not proximity
 
-> [!question]- Your qubit's measured thermal population implies 60 mK while the mixing-chamber thermometer says 12 mK. Where does the discrepancy usually live?
-> The qubit thermalizes to its *electromagnetic environment*, not the copper plate: residual thermal photons coming down insufficiently attenuated (or poorly thermalized) coax set an effective temperature at the qubit frequency — 40 dB of total attenuation anchored at too-warm stages leaves a photon occupation far above the plate temperature. Second suspects: electron-phonon decoupling on chip heated by its own dissipation, and IR leakage (non-hermetic sample box; hence the light-tight cans and Eccosorb filters). The fix is electromagnetic-environment engineering — attenuator placement and thermalization, filtering, shielding — not a colder fridge.
+Bolted joints conduct through microscopic asperities: gold-plate, torque properly. Below ~1 K electrons and phonons decouple,
+
+$$\dot Q_{e\text{-}ph} = \Sigma V (T_e^5 - T_{ph}^5),$$
+
+with $T_e, T_{ph}$ the electron and lattice temperatures, $V$ the metal volume, and $\Sigma \sim 10^9\ \mathrm{W\,m^{-3}K^{-5}}$ a material constant — the only thermal link between a chip's electrons and its lattice. The $T^5$ makes the link collapse at mK: dissipate a fixed power in a small metal volume and $T_e$ floats far above $T_{ph}$. Electrons then cool mainly *along the wiring* (electronic conduction), so a device's electrons can sit far above the plate if the wiring is not itself thermalized — anchor the wiring, not just the substrate. The plate thermometer is not the device temperature; the device's own noise or residual excited-state population is the honest thermometer. Thermometry: calibrated RuO₂/Cernox (watch self-heating against the local budget); noise thermometry at the bottom.
+
+**Cryocoolers**: pulse tubes give ~1 W at 4 K with 1–2 Hz vibration — soft thermal links and isolated sample mounts for cryo-optics; wet systems trade vibration for He logistics.
+
+> [!question]- The qubit's thermal population implies 60 mK; the mixing-chamber thermometer reads 12 mK. Where is the discrepancy?
+> The qubit thermalizes to its electromagnetic environment: under-attenuated or poorly thermalized coax delivers a photon occupation at the qubit frequency far above the plate temperature; IR leaks through non-hermetic sample boxes break the budget the same way (hence light-tight cans and Eccosorb filters); on-chip dissipation rides the $T^5$ electron-phonon bottleneck. The fix is attenuator placement, filtering, and shielding — not a colder fridge.
 
 # Connections
 
-- [[Vacuum Engineering]] — the same budget methodology (load vs lift); cryostats are also vacuum systems, and cold surfaces cryopump
-- [[Johnson-Nyquist Noise]] — noise temperature and why attenuators are distributed cold
-- [[Superconducting Qubits]] — the tenant whose requirements set fridge design
-- [[Thermal States]] — photon occupation $\bar n(\omega, T)$: the quantity attenuation chains manage
-- [[Quantum Dots]] — the other mK platform, same wiring physics
-- [[Grounding and Shielding Practice]] — ground loops and RF hygiene are worse with 3 m of coax per line
+- [[Vacuum Engineering]] — the same load-vs-lift methodology; cryopumping
+- [[Johnson-Nyquist Noise]] — noise temperature and distributed cold attenuation
+- [[Thermal States]] — $\bar n(\omega, T)$, the quantity attenuation chains manage
+- [[Superconducting Qubits]] / [[Quantum Dots]] — the tenants whose requirements set the design
+- [[Packaging and Interconnects]] — CTE mismatch and light-tightness at the sample
 
 ---
-Source: Pobell, *Matter and Methods at Low Temperatures*; Krinner et al., *EPJ Quantum Technology* 6, 2 (2019) (wiring a dilution fridge for qubits)
+Source: Pobell, *Matter and Methods at Low Temperatures*; Krinner et al., *EPJ Quantum Technology* 6, 2 (2019)

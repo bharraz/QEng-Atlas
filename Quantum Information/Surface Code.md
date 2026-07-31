@@ -12,6 +12,8 @@ $$
 p_L \sim \left( \frac{p}{p_{\text{th}}} \right)^{\lceil d/2 \rceil}, \qquad p_{\text{th}} \approx 1\% \ \text{(circuit-level)}
 $$
 
+$p$ = physical error probability per gate/cycle (dimensionless); $p_{\text{th}}$ = threshold, the value of $p$ at which the code stops helping; $d$ = code distance = lattice linear size (dimensionless, in qubits) = the length of the shortest undetectable error chain; $p_L$ = logical error probability per cycle. The exponent $\lceil d/2\rceil$ is the number of physical errors needed to reach halfway across the lattice — hence the suppression is *exponential in $d$* but only when the base $p/p_{\text{th}} < 1$. Two consequences: below threshold, buying qubits buys error rate exponentially cheaply; above it, the same equation runs backwards and more qubits are worse.
+
 Rough budget: $p = 10^{-3}$, target $p_L = 10^{-12}$ → $d \approx 25$ → $\sim\!10^3$ physical qubits per logical ($\sim 2d^2$ including ancillas). Logical operators are chains of $X$ or $Z$ spanning the lattice — that's *why* small errors can't cause them.
 
 **Why it won**: only nearest-neighbor 4-body checks in 2D (fabricable), highest practical threshold, tolerant of measurement errors (repeat syndromes in time — decoding is matching in 3D spacetime). **What it costs**: terrible encoding rate (1 logical per $\sim 2d^2$ physical), Cliffords via lattice surgery, and no transversal $T$ — non-Clifford gates need magic state distillation, which dominates the floor plan.

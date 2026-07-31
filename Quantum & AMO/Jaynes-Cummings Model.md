@@ -8,11 +8,15 @@ $$
 H = \frac{\hbar\omega_0}{2}\sigma_z + \hbar\omega\, a^\dagger a + \hbar g\left(a\,\sigma_+ + a^\dagger\sigma_-\right)
 $$
 
+Term by term: $\omega_0$ = atomic transition frequency (rad/s) with $\sigma_z$ the inversion — the atom's energy; $\omega$ = mode frequency (rad/s) with $a^\dagger a$ the photon number — the field's energy; $g$ = single-photon coupling rate (rad/s), the exchange term. $a\sigma_+$ = absorb a photon and excite the atom, $a^\dagger\sigma_-$ = its reverse; keeping only these two (and dropping $a\sigma_-$, $a^\dagger\sigma_+$, which would create or destroy two excitations at once) is the RWA and is what makes excitation number conserved.
+
 The RWA coupling conserves excitation number $N = a^\dagger a + \sigma_+\sigma_-$, so $H$ block-diagonalizes on pairs $\{|e,n\rangle, |g,n{+}1\rangle\}$ — each block a [[Two-Level Systems]] problem with detuning $\Delta = \omega_0 - \omega$ and coupling $2g\sqrt{n+1}$:
 
 $$
 E_{\pm,n} = \hbar\omega\left(n+\tfrac12\right) \pm \frac{\hbar}{2}\sqrt{\Delta^2 + 4g^2(n+1)}
 $$
+
+$n$ = photon number of the lower member of the pair; $\Delta = \omega_0 - \omega$ = atom–cavity detuning (rad/s); the square root is the familiar two-level generalized splitting with effective coupling $2g\sqrt{n+1}$. The $\sqrt{n+1}$ comes directly from $a^\dagger|n\rangle = \sqrt{n+1}\,|n{+}1\rangle$ — coupling grows as the square root of photon number, which is exactly the classical-field limit (amplitude $\propto \sqrt{\text{intensity}}$) except that the $+1$ survives at $n = 0$.
 
 **On resonance:** doublets split by $2\hbar g\sqrt{n+1}$ — the **quantized-Rabi** anharmonic ladder. Splitting exists even for $n = 0$: **vacuum Rabi splitting $2g$** — an excited atom and an *empty* cavity exchange one quantum coherently at $2g$ (reversible spontaneous emission; observable when $g \gg \kappa, \Gamma$). The $\sqrt{n+1}$ anharmonicity is intrinsically quantum — a classical field gives $n$-independent Rabi — and its observation (collapse-and-revival of Rabi oscillations for a coherent field, since each $n$ flops at its own rate and rephases) was direct evidence for field quantization.
 

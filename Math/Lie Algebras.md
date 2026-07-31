@@ -57,7 +57,7 @@ Every irrep of every semisimple Lie algebra is built this same way — pick a hi
 - [[Baker-Campbell-Hausdorff]] — how generators combine when you multiply exponentials
 - [[Reference Atlas/Math/Magnus Expansion]] — time-dependent evolution generated within the algebra
 - [[Angular Momentum in QM]] — $\mathfrak{su}(2)$ realized as the physical angular-momentum operators
-- [[Pauli Matrices]] — the $\mathfrak{su}(2)$ basis; Pauli strings as the $\mathfrak{u}(2^n)$ basis
+- [[Reference Atlas/Linear Algebra/Pauli Matrices]] — the $\mathfrak{su}(2)$ basis; Pauli strings as the $\mathfrak{u}(2^n)$ basis
 
 ---
 Source: Hall, *Lie Groups, Lie Algebras, and Representations*, Ch. 2–3; Wiersema et al., "Lie algebras for quantum computing" (arXiv:2308.01306) for the QC framing

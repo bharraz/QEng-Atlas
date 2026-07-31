@@ -8,7 +8,9 @@
 
 $$U_{\text{dip}}(\mathbf r) = -\frac{3\pi c^2}{2\omega_0^3}\frac{\Gamma}{\Delta}\,I(\mathbf r), \qquad \Gamma_{\text{sc}}(\mathbf r) = \frac{3\pi c^2}{2\hbar\omega_0^3}\left(\frac{\Gamma}{\Delta}\right)^2 I(\mathbf r),$$
 
-with $\Delta = \omega_L - \omega_0$. Red detuning ($\Delta < 0$) makes the intensity maximum a potential minimum. The ratio is the design rule:
+$U_{\text{dip}}$ = trap potential energy (J; usually quoted as depth $U_0/k_B$ in µK or mK); $\Gamma_{\text{sc}}$ = photon scattering rate (s⁻¹); $I(\mathbf r)$ = local intensity (W/m²); $\omega_0$ = atomic resonance frequency and $\Gamma$ = its natural linewidth (both rad/s), fixed by the atom; $\Delta = \omega_L - \omega_0$ = detuning (rad/s), the one free design parameter. Red detuning ($\Delta < 0$) makes $U_{\text{dip}} < 0$ at high intensity: the intensity maximum becomes a potential minimum.
+
+The prefactor $3\pi c^2/2\omega_0^3$ is just the atom's resonant cross-section bookkeeping; everything actionable is in $I/\Delta$ versus $I/\Delta^2$. The ratio is the design rule:
 
 $$\frac{\hbar\Gamma_{\text{sc}}}{|U_{\text{dip}}|} = \frac{\Gamma}{|\Delta|}$$
 
@@ -17,6 +19,8 @@ $$\frac{\hbar\Gamma_{\text{sc}}}{|U_{\text{dip}}|} = \frac{\Gamma}{|\Delta|}$$
 **Geometry** ([[Gaussian Beams]], [[Numerical Aperture and Spot Size]]): $w_0 \approx \lambda/\pi\mathrm{NA}$, $I_0 = 2P/\pi w_0^2$, $z_R = \pi w_0^2/\lambda$. NA 0.5–0.9 pushes $w_0$ to 0.5–1 µm; a few mW then gives $U_0/k_B \sim$ 0.1–1 mK. **Trap frequencies** from the harmonic expansion:
 
 $$\omega_r = \sqrt{\frac{4U_0}{m w_0^2}}, \qquad \omega_z = \sqrt{\frac{2U_0}{m z_R^2}}, \qquad \frac{\omega_z}{\omega_r} = \frac{\lambda}{\sqrt{2}\,\pi w_0}$$
+
+$\omega_r, \omega_z$ = radial and axial trap frequencies (rad/s); $U_0$ = trap depth (J); $m$ = atomic mass (kg); $w_0$ = beam waist (m); $z_R = \pi w_0^2/\lambda$ = Rayleigh range (m). These are just $\omega = \sqrt{\text{curvature}/m}$ with the curvature of the intensity profile: the trap is stiff over $w_0$ radially but only over $z_R \gg w_0$ axially. Note $\omega \propto \sqrt{U_0}/w_0 \propto \sqrt{P}/w_0^2$ — tightening the focus buys trap frequency far faster than raising power does.
 
 — typically $\omega_r/2\pi \sim$ 20–150 kHz, $\omega_z$ ~5× softer: the trap is a cigar along the beam, because intensity falls off over $w_0$ radially but over the much longer $z_R$ axially. The softness of these traps relative to ion traps (MHz) is the platform's defining constraint: Lamb-Dicke parameters are marginal, thermal motion matters, and everything wants ground-state cooling.
 

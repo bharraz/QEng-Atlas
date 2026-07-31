@@ -6,7 +6,7 @@
 
 Signal $A\cos(\omega_m t + \phi)$ × reference $\cos\omega_m t$ → LPF ⇒ $\tfrac{A}{2}\cos\phi$. Dual-phase instruments multiply by 0° and 90° references: $X, Y \to R = \sqrt{X^2+Y^2},\ \theta$ — magnitude immune to phase drift.
 
-**Why it wins:** the detection bandwidth is the low-pass bandwidth, *centered at* $f_\text{mod}$. Time constant $\tau$ → equivalent noise bandwidth $1/4\tau$ (one-pole): $\tau = 1$ s admits 0.25 Hz of noise around, say, 10 kHz — where the detector noise is white instead of 1/f.
+**Why it wins:** the detection bandwidth is the output low-pass bandwidth, but *centered at* $f_\text{mod}$ rather than at DC — demodulation slides the passband up to a quiet part of the spectrum. Time constant $\tau$ (s) → equivalent noise bandwidth $\mathrm{ENBW} = 1/4\tau$ (Hz) for a one-pole filter (the 4 is the π/2 ENBW correction combined with the two-sided passband folding onto one). $\tau = 1$ s admits 0.25 Hz of noise around, say, 10 kHz, where the detector floor is white instead of 1/f. Higher-order output filters shrink ENBW toward $1/8\tau$, $1/12\tau$ — check which the instrument uses before converting a reading to a noise density.
 
 **Choosing $f_\text{mod}$:** above the 1/f corner of detector + amplifier (kHz and up), inside the detector bandwidth, and never near n×50/60 Hz — odd frequencies like 517 Hz exist for exactly this reason.
 

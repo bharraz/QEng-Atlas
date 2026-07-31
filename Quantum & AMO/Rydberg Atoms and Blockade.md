@@ -11,7 +11,7 @@
 | Orbit radius | $n^2$ | ~0.5 µm — mesoscopic |
 | Radiative lifetime | $n^3$ | ~100–400 µs (vs 26 ns for 5p) |
 | Polarizability | $n^7$ | enormous — Rydbergs feel every stray E-field |
-| van der Waals $C_6$ | $n^{11}$ | ~GHz·µm⁶ |
+| van der Waals $C_6$ | $n^{11}$ | ~700 GHz·µm⁶ (Rb $nS$) |
 | Level spacing | $n^{-3}$ | tens of GHz — microwave-accessible |
 
 The $n^{11}$ is the punchline: interactions tunable over ~12 orders of magnitude by choosing $n$, reaching **GHz-scale at µm distances** — while ground-state atoms at the same distance interact at the mHz level. Neutral atoms are "non-interacting until you say otherwise," which is exactly what a qubit register wants.
@@ -19,6 +19,8 @@ The $n^{11}$ is the punchline: interactions tunable over ~12 orders of magnitude
 **The blockade mechanism.** Drive the ground→Rydberg transition with Rabi frequency $\Omega$. With one atom already Rydberg, a second excitation within range is shifted by $V(r) = C_6/r^6 \gg \hbar\Omega$: doubly-excited states are simply off-resonant. Inside the **blockade radius**
 
 $$R_b = \left(\frac{C_6}{\hbar\Omega}\right)^{1/6} \sim 5\text{–}10\ \mu\text{m},$$
+
+$R_b$ = blockade radius (m) — the separation at which the interaction shift equals the drive's linewidth; $C_6$ = van der Waals coefficient (J·m⁶, often quoted in GHz·µm⁶), scaling as $n^{11}$; $\hbar\Omega$ = energy width of the excitation drive (J), with $\Omega$ the ground→Rydberg Rabi frequency (rad/s). $R_b$ is set by where $V(r) = C_6/r^6$ crosses $\hbar\Omega$: inside it the doubly-excited state is pushed out of resonance and cannot be populated.
 
 the ensemble supports at most one excitation. Two signatures worth remembering: the allowed state is the *symmetric* one, $(|rg\rangle + |gr\rangle)/\sqrt 2$ — blockade **creates entanglement by forbidding a state** — and it couples with enhanced Rabi frequency $\sqrt{N}\,\Omega$ ($\sqrt 2$ for a pair), the experimental fingerprint of being blockaded. The $1/6$ power means $R_b$ is insensitive to everything — blockade is robust to distance and intensity fluctuations, which is *why* the gate works without interferometric positioning.
 

@@ -8,6 +8,8 @@ $$
 u(t) = K_p\,e + K_i\!\int e\,dt + K_d\,\dot e
 $$
 
+$e(t)$ = error, setpoint minus measured output (in whatever the sensor reads — volts, Hz, °C); $u(t)$ = actuator command (in whatever the actuator takes — volts to a piezo, current to a coil); $K_p, K_i, K_d$ = gains, each carrying whatever units convert error to command, and each differing in *frequency dependence*, which is the real content: in Laplace form $u/e = K_p + K_i/s + K_d s$, so I has gain $\propto 1/f$ (infinite at DC — kills steady-state error) and D has gain $\propto f$ (grows without bound — hence noise amplification, and why real D is band-limited).
+
 | Term | Fixes | Costs |
 |---|---|---|
 | P | response speed | finite gain leaves residual offset; too much → oscillation |

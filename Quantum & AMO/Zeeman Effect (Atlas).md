@@ -12,7 +12,9 @@ Landé factors:
 
 $$g_J = 1 + \frac{J(J{+}1) + S(S{+}1) - L(L{+}1)}{2J(J{+}1)}, \qquad g_F \simeq g_J\,\frac{F(F{+}1) + J(J{+}1) - I(I{+}1)}{2F(F{+}1)}$$
 
-(nuclear moment neglected — $\mu_N/\mu_B \sim 1/1836$). Reference points: $S_{1/2}$ has $g_J = 2$; a $^2S_{1/2}$, $F = I \pm \tfrac{1}{2}$ manifold has $g_F = \pm g_J/(2I+1)$, e.g. $\pm 1$ for $^{171}$Yb⁺ $F=1$ ⇒ 1.4 MHz/G per $m_F$.
+$\mu_B$ = Bohr magneton, the magnetic moment of one unit of electron angular momentum (J/T; $\mu_B/h$ = 1.4 MHz/G is the working form); $m_F$ = projection quantum number, integer-spaced from $-F$ to $+F$ — it is the only piece that varies within a manifold, so the splitting is *uniform*; $g_F, g_J$ = dimensionless Landé factors converting angular momentum into magnetic moment. $L, S, J$ = orbital, spin, and total electronic angular momenta; $I$ = nuclear spin; $F$ = grand total ([[Hyperfine Structure]]).
+
+Both $g$-formulas are projection theorems: the moment points along $\mathbf{L} + 2\mathbf{S}$, but only its component along the good angular momentum survives averaging, and the ratios above are that projection ([[Wigner-Eckart Theorem]]). Nuclear moment neglected throughout, since $\mu_N/\mu_B \sim 1/1836$ — which is also why $g_F$ is set by the *electron*, and why hyperfine qubit splittings shift at electron-scale rates. Reference points: $S_{1/2}$ has $g_J = 2$; a $^2S_{1/2}$, $F = I \pm \tfrac{1}{2}$ manifold has $g_F = \pm g_J/(2I+1)$, e.g. $\pm 1$ for $^{171}$Yb⁺ $F=1$ ⇒ 1.4 MHz/G per $m_F$.
 
 **Regimes:** linear ($m_F$ good) while $g\mu_B B \ll A$; as the field grows, $I$ and $J$ decouple (**Paschen–Back**): eigenstates become $|m_J, m_I\rangle$, shifts $\sim g_J \mu_B m_J B$. In between, diagonalize $A\,\mathbf{I}\cdot\mathbf{J} + H_Z$ — for $J = \tfrac{1}{2}$ that's the closed-form Breit–Rabi formula. Crossover scale: $B \sim A/\mu_B$ (hundreds to thousands of G for GHz-scale $A$).
 

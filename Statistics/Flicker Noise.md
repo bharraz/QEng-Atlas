@@ -25,6 +25,7 @@ $\int S\, d f \propto \ln(f_2/f_1)$: **each decade of frequency contributes the 
 - [[Amplifier Noise]] — the $1/f$ corner is a headline spec of every front end
 - [[Lock-In Detection]] — the standard escape route to the white-noise region
 - [[Autocorrelation]] — $1/f$ = long memory; correlations that never decay
+- [[Noise Spectra and Coupling to Systems]] — where $1/f$ sits in the full taxonomy, and its origin from distributed fluctuator rates
 
 ---
 Source: Horowitz & Hill, *The Art of Electronics* 3rd ed., §8.1 (noise fundamentals)

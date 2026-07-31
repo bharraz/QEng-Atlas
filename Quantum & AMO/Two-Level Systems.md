@@ -8,7 +8,7 @@ Most general (traceless part) two-level Hamiltonian:
 $$
 H = \frac{\hbar}{2}\begin{pmatrix} \Delta & \Omega \\ \Omega^* & -\Delta \end{pmatrix} = \frac{\hbar}{2}\left(\Delta\,\sigma_z + \Omega_x\sigma_x + \Omega_y\sigma_y\right)
 $$
-where $\hbar\Delta$ is the energy splitting (or detuning, in a rotating frame) and $\Omega$ the coupling between bare states.
+$\hbar\Delta$ = diagonal energy splitting (J) — the bare level separation, or the detuning once in a rotating frame; $\Omega$ = off-diagonal coupling (rad/s), complex, with its phase setting the rotation axis in the $xy$ plane. Both appear as $\hbar/2$ × a Pauli, so the natural comparison is $\Omega$ against $\Delta$: their *ratio* fixes the eigenstates (mixing), their *quadrature sum* fixes the eigenvalues (rate).
 
 **Eigenvalues:** $E_\pm = \pm\frac{\hbar}{2}\sqrt{\Delta^2 + |\Omega|^2}$ — the gap is never smaller than $\hbar|\Omega|$. Sweep $\Delta$ through zero and the levels **avoid crossing** with minimum gap $\hbar|\Omega|$ at resonance: coupling repels levels. Eigenstates rotate from bare states (at $|\Delta| \gg \Omega$) to equal superpositions (at $\Delta = 0$), with mixing angle $\tan 2\theta = |\Omega|/\Delta$.
 
@@ -23,7 +23,7 @@ Everything is a rotation on the [[Bloch Sphere]]: $H = \frac{\hbar}{2}\vec\Omega
 
 - [[Rabi Oscillations]] — the dynamics of this Hamiltonian under resonant drive
 - [[Landau-Zener Transitions]] — sweeping $\Delta$ through the avoided crossing
-- [[Pauli Matrices]] — the natural basis for any 2×2 Hermitian $H$
+- [[Reference Atlas/Linear Algebra/Pauli Matrices]] — the natural basis for any 2×2 Hermitian $H$
 - [[Dressed States]] — the $E_\pm$ eigenstates named and used
 - [[Qubits]] — the same object, quantum-information flavored
 

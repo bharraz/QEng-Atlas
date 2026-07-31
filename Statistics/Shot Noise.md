@@ -28,6 +28,7 @@ Number to carry: $I = 1\ \mu\mathrm{A}$ → $\sqrt{2eI} \approx 0.57\ \mathrm{pA
 - [[Photodiode Circuits]] — where the shot-noise-limited condition is engineered
 - [[Photodetection and Shot Noise]] — the quantum-optics view (vacuum fluctuations enter here)
 - [[Binomial Errors in State Detection]] — projection noise, the qubit-readout analog
+- [[Noise Spectra and Coupling to Systems]] — the general taxonomy this white floor belongs to
 
 ---
 Source: Horowitz & Hill, *The Art of Electronics* 3rd ed., §8.1 (noise fundamentals)

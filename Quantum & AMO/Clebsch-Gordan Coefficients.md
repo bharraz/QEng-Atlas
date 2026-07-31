@@ -6,6 +6,8 @@
 
 $$|J M\rangle = \sum_{m_1, m_2} \langle j_1 m_1; j_2 m_2 | J M\rangle \; |j_1 m_1\rangle |j_2 m_2\rangle$$
 
+$j_1, j_2$ = the two angular momenta being added (dimensionless, in units of $\hbar$ — e.g. electron spin and orbital, or $I$ and $J$ for hyperfine); $m_1, m_2$ = their $z$-projections; $J, M$ = total and its projection; the coefficient $\langle j_1 m_1; j_2 m_2 | J M\rangle$ is a real dimensionless overlap between the two bases. Both bases span the same $(2j_1{+}1)(2j_2{+}1)$-dimensional space, so this is a rotation of basis, not new physics — the coefficients are fixed by geometry alone and are the *same numbers* for spins, orbitals, or photon polarizations.
+
 **Vanishing rules** (the useful part):
 - $M = m_1 + m_2$ — z-components just add
 - triangle: $|j_1 - j_2| \le J \le j_1 + j_2$

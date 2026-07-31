@@ -14,6 +14,8 @@ where $U$ ($m\times m$) and $V$ ($n\times n$) are unitary and $\Sigma$ holds the
 
 **Relation to eigenvalues:** $\sigma_i = \sqrt{\lambda_i(A^\dagger A)}$; the $v_i$ are eigenvectors of $A^\dagger A$, the $u_i$ of $AA^\dagger$. For Hermitian $A$, $\sigma_i = |\lambda_i|$. In general singular values ≠ |eigenvalues| — a non-normal matrix can have tiny eigenvalues but huge singular values (transient growth).
 
+**Why the two differ, structurally:** SVD applies *different* unitaries on the two sides ($U \cdots V^\dagger$, an equivalence transform), so it destroys the spectrum and preserves magnitudes. A similarity transform with a *single* unitary preserves the spectrum instead — that is the [[Matrix Decompositions in Practice|Schur decomposition]] $A = QTQ^\dagger$, which exists for every square matrix and whose strictly-upper-triangular part measures exactly the non-normality separating $\sigma_i$ from $|\lambda_i|$. Use eigen/Schur for dynamics (what $e^{At}$ does asymptotically), SVD for magnitude (gain, rank, conditioning, best approximation).
+
 **Eckart–Young (low-rank approximation):** truncating to the top $k$ terms of $\sum_i \sigma_i |u_i\rangle\langle v_i|$ gives the best rank-$k$ approximation in both operator and Frobenius norm. This is PCA, image compression, and noise filtering in one theorem — the tail singular values are the part you can safely drop.
 
 **Schmidt decomposition is the SVD in disguise:** reshape a bipartite state $|\psi\rangle = \sum_{ij} c_{ij}|i\rangle|j\rangle$ into the matrix $c$; its SVD gives $|\psi\rangle = \sum_k \sigma_k |u_k\rangle|v_k\rangle$. Number of nonzero $\sigma_k$ = Schmidt rank; more than one ⇒ entangled.
@@ -28,6 +30,7 @@ where $U$ ($m\times m$) and $V$ ($n\times n$) are unitary and $\Sigma$ holds the
 - [[Condition Number]] — $\kappa = \sigma_{\max}/\sigma_{\min}$, read directly off the SVD
 - [[Rank and Nullity]] — rank = number of nonzero singular values (the numerically robust definition)
 - [[Polar Decomposition]] — regroup $U\Sigma V^\dagger = (UV^\dagger)(V\Sigma V^\dagger)$: rotation × stretch
+- [[Matrix Decompositions in Practice]] — Schur vs SVD, and how each is used in engineering and quantum contexts
 
 ---
 Source: Horn & Johnson, *Matrix Analysis*, Ch. 7; Nielsen & Chuang §2.1.10 (Schmidt).

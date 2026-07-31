@@ -8,7 +8,8 @@ $$
 F(z,v) \approx -\beta v - \kappa z, \qquad
 \kappa = \frac{\mu'\,(dB/dz)}{\hbar k}\,\beta
 $$
-$\beta$ = the velocity-damping coefficient from [[Doppler Cooling]]; $\kappa$ isn't independent — it's $\beta$ with the substitution $kv \to \mu' B(z)/\hbar$, because Doppler shift and Zeeman shift enter the detuning identically. One detuning, one set of beams, buys both.
+
+$F$ = force (N); $\beta$ = velocity-damping coefficient (kg/s) from [[Doppler Cooling]]; $\kappa$ = spring constant (N/m); $\mu' = (g_e m_e - g_g m_g)\mu_B$ = differential magnetic moment of the driven transition (J/T — the rate at which the field shifts the *transition*, not a level); $dB/dz$ = field gradient (T/m); $k$ = laser wavevector (m⁻¹). $\kappa$ is not independent: it is $\beta$ with $kv \to \mu' B(z)/\hbar$, since Doppler and Zeeman shifts enter the detuning identically — so the ratio $\kappa/\beta = \mu'(dB/dz)/\hbar k$ is just "Zeeman shift per unit length" divided by "Doppler shift per unit velocity."
 
 **Quadrupole field** (anti-Helmholtz coil pair):
 $$
@@ -20,7 +21,8 @@ axial gradient is $2\times$ the radial gradient — the same asymmetry that make
 $$
 v_c \sim \sqrt{\frac{\hbar k \Gamma\, r}{m}}
 $$
-sets which atoms in a thermal vapor or slowed beam actually get caught.
+
+$v_c$ = capture velocity (m/s); $r$ = beam radius (m), the distance available for braking; $m$ = atomic mass (kg); $\hbar k\Gamma/2m$ = maximum scattering deceleration (m/s²). This is just $v^2 = 2ar$ with the maximum photon-scattering deceleration — so capture velocity grows only as $\sqrt{r}$, which is why bigger beams help but never dramatically, and why slowers (Zeeman, 2D-MOT) are needed to feed atoms in below $v_c$ rather than trying to raise it.
 
 **Doppler temperature floor** (from [[Doppler Cooling]]):
 $$

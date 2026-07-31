@@ -9,7 +9,7 @@ The NV center is a substitutional nitrogen next to a missing carbon, with $C_{3v
 
 $$H/h = D S_z^2 + E\,(S_x^2 - S_y^2) + \frac{\gamma_e}{2\pi}\, \mathbf{B}\cdot\mathbf{S} + A_\parallel S_z I_z + A_\perp (S_x I_x + S_y I_y)$$
 
-with $z$ along the NV axis and:
+Dividing by $h$ puts every term in Hz, the units all NV work is quoted in. $\mathbf{S}$ = electron spin-1 operator and $\mathbf{I}$ = host-nuclear spin operator (both dimensionless, in units of $\hbar$); $z$ = the NV symmetry axis. Term by term: $D S_z^2$ splits $m_s = \pm1$ from $m_s = 0$ *without* any field (it is the spin's own dipolar field, hence $S_z^2$ — even in $m_s$, so it cannot distinguish $+1$ from $-1$); $E(S_x^2 - S_y^2)$ is the only transverse term, and being a difference of $x$ and $y$ it vanishes under threefold symmetry; the Zeeman term is linear in $m_s$ and so *does* split $\pm1$; the hyperfine terms couple electron to nucleus. Parameters:
 
 - $D \approx 2.870$ GHz — zero-field splitting between $m_s = 0$ and $m_s = \pm1$; temperature-dependent, $dD/dT \approx -74$ kHz/K (the thermometry channel), and shifted by axial strain/electric field.
 - $E$ — transverse strain/electric-field parameter; splits $m_s = \pm 1$ at zero field (kHz–MHz depending on sample). Zero in ideal $C_{3v}$; any $E \neq 0$ *is* broken symmetry.
@@ -24,9 +24,9 @@ Level ordering to keep straight: $m_s = 0$ is the *ground* sublevel; magnetometr
 
 **Sensitivity — the estimate to remember.** A Ramsey (DC) or echo (AC) measurement converts field to phase, $\phi = \gamma_e B \tau$; shot-noise-limited sensitivity is
 
-$$\eta \approx \frac{1}{\gamma_e\, C \sqrt{N\, \tau}} \quad \left[\mathrm{T}/\sqrt{\mathrm{Hz}}\right],$$
+$$\eta \approx \frac{1}{\gamma_e\, C \sqrt{N\, \tau}} \quad (\text{units } \mathrm{T}/\sqrt{\mathrm{Hz}}),$$
 
-with $\tau$ the coherence-limited interrogation time ($T_2^*$ for DC, $T_2$ for AC), $N$ the number of NVs, and $C \sim 0.01\text{–}0.3$ a contrast/collection penalty. Orders of magnitude: single NV, $T_2 \sim 100\,\mu$s, ideal readout → nT/√Hz; ensembles reach pT/√Hz. The same logic with $dD/dT$ gives thermometry (~mK/√Hz) and with the $E$-term, electrometry.
+$\eta$ = sensitivity, the field resolvable in one second of averaging (smaller is better; a $\sqrt{\text{Hz}}$ quantity because errors average down as $1/\sqrt{t}$); $\gamma_e$ = gyromagnetic ratio (rad s⁻¹T⁻¹) converting field into precession rate; $\tau$ = interrogation time per shot (s), capped by coherence ($T_2^*$ for DC, $T_2$ for AC); $N$ = number of NVs contributing; $C$ = readout contrast/collection factor (dimensionless, 0.01–0.3). The $\sqrt{\tau}$ rather than $\tau$ is the trade: phase accumulates linearly in $\tau$ but fewer shots fit in a fixed averaging window, so sensitivity improves only as the square root — and $C$ enters linearly, which is why readout fidelity is worth as much as coherence. Orders of magnitude: single NV, $T_2 \sim 100\,\mu$s, ideal readout → nT/√Hz; ensembles reach pT/√Hz. The same logic with $dD/dT$ gives thermometry (~mK/√Hz) and with the $E$-term, electrometry.
 
 **Coherence budget:** $T_1 \sim$ ms (room temp, phonon-limited, $\propto T^{-5}$ at low temp); $T_2^* \sim \mu$s (quasi-static $^{13}$C bath and strain); $T_2 \sim 0.1\text{–}1$ ms with echo/DD, up to ~s at low temperature in isotopically purified $^{12}$C diamond. The gap between $T_2^*$ and $T_2$ is why NV sensing is largely pulse-sequence engineering (see [[Spin Echo and Dynamical Decoupling]] and [[Reference Atlas/Math/Magnus Expansion]]); DD filter frequencies double as AC-field lock-in detection. Nearby $^{13}$C and the $^{14}$N nuclear spins act as a small quantum register with second-scale coherence.
 

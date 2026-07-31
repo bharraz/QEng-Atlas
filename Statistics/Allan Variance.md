@@ -10,6 +10,8 @@ $$
 \sigma_y^2(\tau) = \tfrac{1}{2}\left\langle (\bar{y}_{k+1} - \bar{y}_k)^2 \right\rangle
 $$
 
+$y$ = the observable, usually *fractional* frequency $y = \Delta\nu/\nu_0$ (dimensionless, so $\sigma_y$ is directly comparable across clocks); $\bar y_k$ = its average over the $k$-th bin of duration $\tau$ (s); $\tau$ = averaging time, the independent variable — an Allan deviation is always a *curve* against $\tau$, never one number. The factor $\tfrac12$ is chosen so that for white noise $\sigma_y^2(\tau)$ equals the ordinary variance of the mean, making the two agree where both are valid.
+
 The standard variance of a drifting signal grows without bound as you take more data — it's measuring the drift, not the noise. The first difference is insensitive to a constant offset and converges for every noise type down to random-walk FM.
 
 **The log-log slope table** (slope of $\sigma_y(\tau)$, i.e. the Allan *deviation*):
@@ -36,6 +38,7 @@ White PM and flicker PM are nearly degenerate here — use the *modified* Allan 
 - [[Power Spectral Density]] — the frequency-domain dual; each PSD power law maps to a slope above
 - [[SNR and Averaging]] — Allan analysis answers "how long should I average" quantitatively
 - [[Laser Linewidth]] — oscillator stability characterization is this tool's home turf
+- [[Noise Spectra and Coupling to Systems]] — the spectral taxonomy the slope table maps onto
 
 ---
 Source: Riley, *Handbook of Frequency Stability Analysis*, NIST SP 1065

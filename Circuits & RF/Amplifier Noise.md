@@ -5,10 +5,12 @@
 # Reference
 
 $$
-e_\text{total}^2 = e_n^2 + (i_n R_s)^2 + 4kTR_s \quad [\text{V}^2/\text{Hz}]
+e_\text{total}^2 = e_n^2 + (i_n R_s)^2 + 4kTR_s \qquad (\text{units } \mathrm{V^2/Hz})
 $$
 
-Benchmark: **1 kΩ at 300 K = 4.1 nV/√Hz** (scales as √R). An amp with $e_n = 1$ nV/√Hz is quieter than 60 Ω of resistance.
+$e_n$ = amplifier input voltage-noise density (V/√Hz), independent of source; $i_n$ = input current-noise density (A/√Hz), which becomes a *voltage* only after flowing through the source, hence the $i_nR_s$ product; $R_s$ = source resistance (Ω); $4kTR_s$ = the source's own [[Johnson-Nyquist Noise|Johnson noise]], the irreducible floor. Powers add in quadrature because the three are uncorrelated.
+
+The $R_s$ dependence is the whole story: the amp's voltage term is flat, the current term grows as $R_s$, and the Johnson floor grows as $\sqrt{R_s}$ — so current noise wins at high impedance and always eventually dominates. Benchmark: 1 kΩ at 300 K = 4.1 nV/√Hz, so a 1 nV/√Hz amp is quieter than 60 Ω of resistance.
 
 **Optimal source impedance** (amp contributions equal): $R_\text{opt} = e_n/i_n$.
 - Bipolar input: low $e_n$ (~1 nV/√Hz), high $i_n$ (~pA/√Hz) → happiest near ~kΩ
@@ -18,8 +20,10 @@ Don't add series resistance to "reach" $R_\text{opt}$ — it brings its own John
 
 **Friis / first-stage rule:** referred to input, each stage's noise is divided by the gain ahead of it:
 $$
-F = F_1 + \frac{F_2-1}{G_1} + \cdots
+F = F_1 + \frac{F_2-1}{G_1} + \frac{F_3 - 1}{G_1 G_2} + \cdots
 $$
+
+$F_k$ = noise factor of stage $k$ (linear, not dB: the factor by which that stage degrades SNR; $\mathrm{NF} = 10\log_{10}F$); $G_k$ = available power gain of stage $k$ (linear). Each stage's penalty is divided by all the gain *ahead* of it, so 20 dB of low-noise gain up front suppresses everything downstream by 100×.
 **Put low-noise gain first and nothing downstream matters** — also why you amplify *before* the long cable, not after.
 
 Noise figure = dB of SNR degradation relative to the source's own Johnson noise; beware, NF quoted at 50 Ω says nothing about your 10 MΩ source. And check the **1/f corner** — $e_n$ specs are white-region numbers; below the corner (1–100 Hz typical) noise climbs.

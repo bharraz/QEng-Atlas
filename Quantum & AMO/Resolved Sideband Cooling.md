@@ -12,6 +12,8 @@ Cycle: drive the red sideband $|g, n\rangle \to |e, n-1\rangle$ (Rabi rate $\eta
 
 $$\bar{n}_{\min} \sim \left(\frac{\Gamma_{\mathrm{eff}}}{2\omega}\right)^2 \ll 1$$
 
+$\bar n$ = mean phonon number (dimensionless occupation of the motional mode); $\Gamma_{\mathrm{eff}}$ = effective linewidth of the cooling transition (s⁻¹; natural, or engineered by a quench/repump beam); $\omega$ = trap frequency (rad/s). The ratio $\Gamma_{\mathrm{eff}}/2\omega$ is the amplitude of off-resonant excitation of the *wrong* (heating) sideband, so the limit is that leakage squared — resolve the sidebands better and the floor drops quadratically.
+
 Ground-state occupation of 99%+ is routine; competing against it is the trap's anomalous heating rate $\dot{\bar{n}}$ — cool faster than the trap reheats, and mind that $\eta\sqrt{n}\,\Omega \to 0$ as $n \to 0$ (the last phonon is the slowest; pulsed sequences chirp pulse durations to match).
 
 **Thermometry from sideband asymmetry:** after cooling, compare sideband strengths. For a thermal state,

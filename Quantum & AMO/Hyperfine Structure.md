@@ -6,11 +6,13 @@
 
 $$H_{\mathrm{hfs}} = A\,\mathbf{I}\cdot\mathbf{J}, \qquad \mathbf{F} = \mathbf{I} + \mathbf{J}, \quad F = |I-J|, \dots, I+J$$
 
-Using $\mathbf{I}\cdot\mathbf{J} = \tfrac{1}{2}(F^2 - I^2 - J^2)$:
+$\mathbf{I}$ = nuclear spin (dimensionless, in units of $\hbar$; a fixed property of the isotope: $\tfrac12$ for $^{171}$Yb⁺, $\tfrac32$ for $^{9}$Be⁺); $\mathbf{J} = \mathbf{L} + \mathbf{S}$ = total *electronic* angular momentum, the label of the fine-structure level ([[Angular Momentum in QM]], [[Atomic Structure]]); $\mathbf{F}$ = grand total, the good quantum number once hyperfine is on. $A$ = magnetic dipole hyperfine constant, an energy — quoted as $A/h$ in Hz, which is why splittings are stated in GHz.
 
-$$E_F = \frac{A}{2}\,K, \qquad K = F(F{+}1) - I(I{+}1) - J(J{+}1)$$
+Using $\mathbf{I}\cdot\mathbf{J} = \tfrac{1}{2}(F^2 - I^2 - J^2)$ (the same algebraic trick as spin–orbit):
 
-(add the quadrupole $B$-term for $J \ge 1$, $I \ge 1$). Interval rule: $E_F - E_{F-1} = A F$.
+$$E_F = \frac{A}{2}\,K, \qquad K \equiv F(F{+}1) - I(I{+}1) - J(J{+}1)$$
+
+$K$ = dimensionless coupling factor, the eigenvalue of $2\,\mathbf{I}\cdot\mathbf{J}/\hbar^2$ — it counts how much the two spins are aligned ($K > 0$ for parallel, $K < 0$ for antiparallel), so $E_F$ is in energy units and the *sign* of $A$ decides which $F$ lies lowest. Add the electric quadrupole $B$-term when $J \ge 1$ and $I \ge 1$. Interval rule: $E_F - E_{F-1} = A F$ — successive splittings grow linearly in $F$, the standard check that an observed multiplet is hyperfine.
 
 **Scale:** GHz for ground states — $^{171}$Yb⁺ $S_{1/2}$: 12.6428 GHz; $^{133}$Cs: 9.192 631 770 GHz (defines the second); $^{9}$Be⁺: 1.25 GHz; H: 1.42 GHz (21 cm line). Microwave-addressable, hence the appeal.
 

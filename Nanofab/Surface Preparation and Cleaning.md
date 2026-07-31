@@ -1,40 +1,46 @@
 #nanofab
 
-**Every interface in a device was once an exposed surface, and it froze in whatever was on it at that moment — so cleaning isn't janitorial, it's interface engineering. The contaminants have a hierarchy (organics, metals, native oxide, adsorbed water), each with its own removal chemistry, and the order of operations matters because some cleans deposit what others remove.** This is also where device physics meets fab: surface states, two-level systems, and electric-field noise are all chemistry that didn't get cleaned.
+**Every interface in a device was once an exposed surface and froze in whatever was on it. Each contaminant class has its own removal chemistry, cleans are sequenced so each removes the previous one's residue — and most "materials-limited" coherence numbers are interface numbers set by the last thing that touched the surface.**
 
 # Reference
 
-**The contaminant taxonomy and its removal map:**
+## Contaminants and their removal
 
-- **Organics** (resist residue, pump oil, skin, ambient hydrocarbons — a surface left in room air grows a monolayer of adventitious carbon in minutes): solvents (acetone → IPA → water; acetone *last* leaves residue — always chase it), **piranha** (H₂SO₄:H₂O₂, oxidizes everything organic; violent, self-heating), or **O₂ plasma ashing** (dry, gentle, the standard post-develop "descum" — also the fix when [[Packaging and Interconnects|wirebonds]] won't stick).
-- **Metallic ions** (Na⁺, K⁺, transition metals — mobile charge that drifts in oxides and shifts thresholds): acidic peroxide chemistry; this is why the CMOS world runs **RCA**: SC-1 (NH₄OH:H₂O₂ — particles and organics, but *deposits* trace metals) then SC-2 (HCl:H₂O₂ — strips the metals SC-1 left). The ordering is the lesson: each clean has a residue profile, and sequences are designed so the next step removes the previous step's byproduct.
-- **Native oxide** (Si grows ~1–2 nm of SiO₂ in air within hours — an unavoidable, low-quality dielectric): dilute **HF dip**, which also leaves Si **H-terminated** — hydrophobic (water beads: the classic pass/fail test) and passivated for minutes-to-hours, the window in which epitaxy, junction deposition, or bonding must happen. "HF-last" timing is a real process parameter. (Al's native oxide, by contrast, is self-limiting at ~2–3 nm and *is the tunnel barrier* in every AlOₓ Josephson junction — the same chemistry, harnessed instead of fought.)
-- **Particles**: megasonic baths, CO₂ snow, spin-rinse; in practice, mostly *prevention* — laminar flow, never letting a wet surface dry uncontrolled (drying watermarks are dissolved residue).
+| contaminant | source | removal | note |
+|---|---|---|---|
+| organics | resist residue, pump oil, ambient (monolayer of adventitious C in minutes) | acetone → IPA → H₂O; piranha (H₂SO₄:H₂O₂); O₂ plasma ash | ash = standard post-develop descum; also fixes non-bonding pads |
+| metallic ions | Na⁺, K⁺, transition metals (mobile oxide charge) | RCA: SC-1 (NH₄OH:H₂O₂) then SC-2 (HCl:H₂O₂) | SC-1 removes particles/organics but *deposits* trace metals; SC-2 removes them — ordering is the design |
+| native oxide | Si grows 1–2 nm SiO₂ in hours | dilute HF dip | leaves H-terminated, hydrophobic Si (water beads = pass); passivation window minutes–hours — "HF-last" timing is a process parameter |
+| particles | handling, drying | megasonic, CO₂ snow, spin-rinse | mostly prevention; uncontrolled drying = watermarks |
 
-**Resist stripping deserves its own line** because it's the most common failure: hard-baked or ion-hardened resist (post-RIE, post-implant) laughs at acetone — the crosslinked crust needs O₂ plasma, NMP-type strippers hot, or piranha (if no metals present). "It measured fine before I stripped resist" usually means the strip attacked the device, not that stripping was optional.
+Hardened resist (post-RIE, post-implant) resists solvents: O₂ plasma, hot NMP strippers, or piranha (no metals present). Al's native oxide is the counterexample of harnessed surface chemistry: self-limiting 2–3 nm AlOₓ *is* the Josephson tunnel barrier.
 
-**Anneals — cleaning's high-temperature sibling**, fixing what chemistry can't reach: **forming gas** (H₂/N₂, 350–450 °C) passivates Si/SiO₂ interface dangling bonds with hydrogen (10–100× interface-trap reduction — the standard last step of CMOS and a routine resurrection for misbehaving oxide devices); UHV anneals desorb water and hydrocarbons ([[Vacuum Engineering|bakeout]] logic applied to a chip); high-T anneals in controlled atmosphere heal implant damage and activate dopants — and for NV centers, the 400–1200 °C anneal sequence after implantation is what mobilizes vacancies to form the centers and repairs the lattice around them, followed by tri-acid cleaning and O₂ anneal to set an oxygen termination.
+## Anneals
 
-**Why the device physics cares** (the payoff section):
+- **Forming gas** (H₂/N₂, 350–450 °C): hydrogen passivates Si/SiO₂ dangling bonds — 10–100× interface-trap reduction; the standard last step of CMOS and the routine resurrection of misbehaving oxide devices.
+- **UHV anneal**: desorbs water/hydrocarbons — [[Vacuum Engineering|bakeout]] applied to a chip.
+- **Activation/repair anneals**: heal implant damage, activate dopants. NV formation: implant, then 800–1200 °C (vacancies mobilize and pair with N), then tri-acid clean + O₂ anneal for oxygen termination.
 
-- **Surface Fermi-level pinning:** unpassivated dangling bonds are mid-gap states dense enough to pin the surface potential regardless of gating — the reason GaAs surfaces are hostile, why Si won (its oxide passivates), and a chunk of why shallow [[Quantum Dots|dots]] and shallow NVs underperform bulk ones.
-- **Two-level systems (TLS):** amorphous oxides and adsorbed contamination host tunneling defects that absorb microwave energy — the dominant loss and noise mechanism in superconducting resonators and qubits at mK. The literature's Q improvements are substantially *surface-chemistry* papers (substrate HF treatment, interface-participation engineering).
-- **Electric-field noise over surfaces:** patch potentials and adsorbate dynamics on trap electrodes drive anomalous heating of trapped ions ($\propto d^{-4}$ in ion-electrode distance); in-situ ion milling or plasma treatment of trap surfaces measurably lowers it. Same story for NV dephasing from surface spins ([[Magnetism in Solids]]).
+Desorption and diffusion are Arrhenius, $r \propto e^{-E_a/k_BT}$ with $E_a$ the activation barrier (~0.5–1 eV for physisorbed water, higher for chemisorbed species): at 300 K, $k_BT = 25$ meV sits far below the barrier, so rates are exponentially slow; at 200 °C the same barrier is crossed $10^3$–$10^5\times$ faster. Annealing trades days at 25 °C for minutes hot — and the barrier hierarchy is why a bake removes water but not carbon, and plasma or piranha must handle what heat cannot.
 
-The unifying claim: **a "materials-limited" coherence number is usually an interface-limited number**, and the interface is set by the last thing that touched the surface and the first thing deposited on it.
+## Why device physics cares
 
-> [!question]- Two nominally identical Josephson-junction runs differ 3× in resistance. Same deposition, same oxidation recipe. Where do you look first?
-> Upstream, at the surface the barrier grew on. Junction resistance is exponential in barrier thickness ([[Evanescent Waves|tunneling]]), so ~1 Å of difference is a factor of ~2–3 — far below any deposition monitor's visibility. Resist residue or adsorbed water on the base electrode changes the effective oxidation (thickness *and* barrier height); time-in-air between base layer and oxidation, chamber water background, and the descum step's consistency are the usual suspects. The tell that it's surface chemistry rather than the oxidation recipe: the spread *within* a wafer (local cleanliness) versus *between* runs (ambient/timing). Junction fabs obsess over descum recipes and queue times for exactly this reason.
+- **Fermi-level pinning**: unpassivated dangling bonds are mid-gap states dense enough to pin the surface potential against any gate — why GaAs surfaces are hostile, why Si (whose oxide passivates) won, and part of why shallow [[Quantum Dots|dots]] and shallow NVs underperform bulk.
+- **Two-level systems**: amorphous oxides and adsorbates host tunneling defects that absorb microwave power — the dominant loss/noise mechanism in superconducting resonators at mK; Q improvements in the literature are substantially surface-chemistry results (HF-last substrates, interface-participation engineering).
+- **Electric-field noise over electrodes**: adsorbate and patch-potential dynamics drive trapped-ion anomalous heating ($\propto d^{-4}$; [[Noise Spectra and Coupling to Systems]]); in-situ Ar⁺ milling of trap electrodes measurably lowers it. Surface electron spins dephase shallow NVs the same way ([[Magnetism in Solids]]).
+
+> [!question]- Two nominally identical junction runs differ 3× in resistance; same deposition, same oxidation recipe. Where to look first?
+> The surface the barrier grew on. Tunneling resistance is exponential in barrier thickness ([[Evanescent Waves]]), so ~1 Å — invisible to any monitor — is a factor 2–3. Residue or adsorbed water on the base electrode changes the effective oxidation; queue time in air, chamber water background, and descum consistency are the suspects. Spread *within* a wafer implicates local cleanliness; spread *between* runs implicates ambient and timing.
 
 # Connections
 
-- [[Etching]] — wet chemistry's other job; HF and piranha reappear here as cleans
+- [[Etching]] — HF and piranha in their subtractive role
 - [[Thin-Film Deposition]] — adhesion and film quality start at the prepared surface
-- [[Vacuum Engineering]] — adsorbed water and monolayer time; bakeout as a clean
-- [[Packaging and Interconnects]] — bondability is surface cleanliness
-- [[NV Centers (atlas)]] — implantation anneals and surface termination as coherence engineering
+- [[Vacuum Engineering]] — adsorbed water, monolayer time, bakeout
+- [[Packaging and Interconnects]] — bondability = cleanliness
+- [[NV Centers (atlas)]] — implantation anneals and termination as coherence engineering
 - [[Superconducting Qubits]] — TLS loss as interface chemistry
-- [[Paul Traps]] — anomalous heating and electrode surface treatment
+- [[Noise Spectra and Coupling to Systems]] — surface fluctuators as a noise source class
 
 ---
-Source: Kern, "The evolution of silicon wafer cleaning technology," *J. Electrochem. Soc.* 137, 1887 (1990); Reinhold, *Handbook of Silicon Wafer Cleaning Technology*; Müller, Cappellaro et al. reviews on NV surface engineering; Hite et al., *Phys. Rev. Lett.* 109, 103001 (2012) (ion-trap surface treatment)
+Source: Kern, *J. Electrochem. Soc.* 137, 1887 (1990); Reinhold, *Handbook of Silicon Wafer Cleaning Technology*; Hite et al., *Phys. Rev. Lett.* 109, 103001 (2012)

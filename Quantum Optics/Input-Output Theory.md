@@ -10,6 +10,8 @@ $$
 \dot{a} = -\frac{i}{\hbar}[a, H_\mathrm{sys}] - \frac{\kappa}{2}a - \sqrt{\kappa}\, a_\mathrm{in}, \qquad a_\mathrm{out} = a_\mathrm{in} + \sqrt{\kappa}\, a
 $$
 
+$a$ = intracavity mode operator (dimensionless, $a^\dagger a$ = photon *number*); $a_{\text{in}}, a_{\text{out}}$ = propagating field operators (units of $\sqrt{\text{photons/s}}$, since $a_{\text{in}}^\dagger a_{\text{in}}$ is a photon *flux*); $\kappa$ = energy decay rate (s⁻¹). The $\sqrt{\kappa}$ is exactly the unit converter between a stored number and a flux — and the $\kappa/2$ on the amplitude versus $\kappa$ for energy is the usual field-vs-power factor of 2.
+
 **The output is the interference of the promptly-reflected input with the field leaking from inside.** (Sign conventions vary between texts — the physics is this interference; check signs before porting formulas.)
 
 **Worked case — empty one-sided cavity, drive detuned by $\Delta$:** steady state gives the reflection coefficient

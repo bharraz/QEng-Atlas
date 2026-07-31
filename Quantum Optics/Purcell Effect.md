@@ -10,7 +10,9 @@ $$
 F_P = \frac{\Gamma_\mathrm{cav}}{\Gamma_\mathrm{free}} = \frac{3}{4\pi^2}\left(\frac{\lambda}{n}\right)^3 \frac{Q}{V}
 $$
 
-— **quality factor over mode volume,** the same $Q/V$ battle as all of [[Cavity QED]]. Indeed $F_P = 2C$: Purcell enhancement is just cooperativity wearing a decay-rate costume.
+$F_P$ = Purcell factor (dimensionless decay-rate enhancement); $\Gamma$'s = decay rates (s⁻¹); $\lambda$ = free-space emission wavelength (m); $n$ = refractive index, so $\lambda/n$ is the wavelength in the medium; $Q = \omega/\kappa$ = cavity quality factor (dimensionless — optical cycles a photon survives, hence how sharply the mode density is peaked in frequency); $V$ = mode volume (m³), the effective volume the field occupies, $V = \int \epsilon|E|^2 dV / \max(\epsilon|E|^2)$.
+
+The structure is one factor of concentration in each domain: $(\lambda/n)^3/V$ concentrates the field in space, $Q$ concentrates the mode density in frequency, and $F_P$ is their product — halve $V$ or double $Q$ and you gain the same factor 2. Note $F_P = 2C$: Purcell enhancement is cooperativity expressed as a decay rate.
 
 **Both directions work.** Detuned cavity or photonic bandgap ⇒ $\rho(\omega)$ *below* free space ⇒ inhibited emission; excited atoms between close mirrors demonstrably live longer. The vacuum modes aren't a fixed backdrop — you can renovate them.
 

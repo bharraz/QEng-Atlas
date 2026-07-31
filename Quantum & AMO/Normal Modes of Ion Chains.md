@@ -10,7 +10,9 @@ Expand the potential (trap + mutual Coulomb) around the equilibrium positions an
 
 **Coupling:** ion $i$'s Lamb–Dicke parameter for mode $m$ is
 
-$$\eta_i^m = \eta_m\, b_i^m, \qquad \eta_m = k\sqrt{\frac{\hbar}{2 M \omega_m}}\;\text{(per unit vector)}$$
+$$\eta_i^m = \eta_m\, b_i^m, \qquad \eta_m = k\sqrt{\frac{\hbar}{2 M \omega_m}}$$
+
+$\eta_i^m$ = effective Lamb–Dicke parameter (dimensionless) for driving ion $i$ through mode $m$; $b_i^m$ = participation amplitude of ion $i$ in mode $m$ (dimensionless, $\sum_i (b_i^m)^2 = 1$ — the eigenvector component from diagonalizing the Hessian, i.e. what fraction of that mode's motion ion $i$ carries); $\eta_m$ = the mode's bare parameter for a unit-normalized displacement; $k$ = projected laser wavevector (m⁻¹); $M$ = single-ion mass (kg); $\omega_m$ = mode frequency (rad/s). Sideband Rabi rates and gate strengths carry $\eta_i^m$, so participation decides which ions a mode couples — and since $\eta_m \propto 1/\sqrt{\omega_m}$, higher-frequency modes couple more weakly (slower gates) but sit further from noise and heat less.
 
 so sideband Rabi rates and gate strengths are weighted by participation — a gate through the stretch mode doesn't see common-mode motion (useful: COM heats fastest, since uniform electric-field noise couples only to it; stretch and higher modes are far quieter).
 

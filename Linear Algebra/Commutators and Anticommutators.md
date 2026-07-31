@@ -40,7 +40,7 @@ $$
 - [[Simultaneous Diagonalization]] — $[A,B]=0$ is exactly when common eigenbases (quantum numbers) exist
 - [[Ladder Operators]] — $[a,a^\dagger]=1$ and eigenoperator relations $[H,a]=-\hbar\omega a$: commutators as the solving tool
 - [[Baker-Campbell-Hausdorff]] — nested commutators as the currency of exponential manipulations
-- [[Pauli Matrices]] — the compact case study: $[\sigma_i,\sigma_j]=2i\varepsilon_{ijk}\sigma_k$, $\{\sigma_i,\sigma_j\}=2\delta_{ij}$
+- [[Reference Atlas/Linear Algebra/Pauli Matrices]] — the compact case study: $[\sigma_i,\sigma_j]=2i\varepsilon_{ijk}\sigma_k$, $\{\sigma_i,\sigma_j\}=2\delta_{ij}$
 - [[Heisenberg and Schrodinger Pictures]] — dynamics as commutation with $H$
 
 ---

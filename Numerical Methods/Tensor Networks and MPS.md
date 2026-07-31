@@ -1,38 +1,52 @@
 #numerics #quantum-info
 
-**A many-body wavefunction needs $2^N$ numbers in general — but physically relevant states (ground states of local Hamiltonians, short quenches) are only weakly entangled, and a matrix product state stores exactly that corner of Hilbert space with $\sim N D^2$ numbers, where the bond dimension $D$ meters the entanglement kept.** Tensor networks are lossy compression whose compression ratio is set by an entanglement law — and the reason 50-qubit-scale ion/Rydberg experiments can (sometimes) be simulated classically.
+**A general $N$-qubit state needs $2^N$ amplitudes; a matrix product state stores $\sim N D^2$ of them, where the bond dimension $D$ counts the entanglement kept across each cut.** Ground states of local 1D Hamiltonians obey an area law — entanglement bounded independent of size — so they live exactly in this compressible corner. The compression engine is the SVD.
 
 # Reference
 
-**The construction is iterated [[Singular Value Decomposition|SVD]].** Cut an $N$-qubit state between sites $k$ and $k{+}1$; the Schmidt decomposition $|\psi\rangle = \sum_\alpha \lambda_\alpha |L_\alpha\rangle|R_\alpha\rangle$ has as many terms as the entanglement across the cut demands ($S = -\sum \lambda_\alpha^2 \ln \lambda_\alpha^2$). Do this at every bond, keep only the $D$ largest Schmidt values per cut, and the state factorizes into a chain of tensors:
+**Construction.** Cut the chain between sites $k$ and $k{+}1$; Schmidt-decompose ([[Singular Value Decomposition]]):
 
-$$\psi_{s_1 s_2 \cdots s_N} = A^{s_1}_{[1]} A^{s_2}_{[2]} \cdots A^{s_N}_{[N]},$$
+$$|\psi\rangle = \sum_{\alpha=1}^{\chi} \lambda_\alpha\, |L_\alpha\rangle |R_\alpha\rangle, \qquad S = -\sum_\alpha \lambda_\alpha^2 \ln \lambda_\alpha^2,$$
 
-each $A^{s_k}$ a $D\times D$ matrix (hence *matrix product state*). Truncation error = discarded Schmidt weight — controlled, measurable, and the single convergence knob: **rerun with larger $D$; if observables move, you were truncating physics.**
+where $\lambda_\alpha$ = Schmidt coefficients across the cut and $S$ = entanglement entropy. Keep the $D$ largest $\lambda_\alpha$ at every bond:
 
-**Why it works — the area law.** Ground states of gapped local 1D Hamiltonians have entanglement *independent of system size* (area law): constant $D$ suffices for arbitrarily large $N$. That's the miracle. Conversely, everything that fails follows from the same accounting: critical points ($S \sim \ln N$, $D$ grows polynomially — fine), 2D systems (area law now means $S \sim$ boundary length: $D \sim e^{L}$ for an $L$-wide cylinder — the practical ceiling of "2D DMRG"), and **quench dynamics** ($S$ grows *linearly* in time after a global quench → $D$ must grow exponentially in $t$: MPS simulates short-time dynamics superbly and long-time dynamics not at all — this, not qubit count, is where classical simulability of quantum experiments actually dies).
+$$\psi_{s_1 \cdots s_N} = A^{s_1}_{[1]} A^{s_2}_{[2]} \cdots A^{s_N}_{[N]}, \qquad A^{s_k}\ \text{a}\ D \times D\ \text{matrix per local state } s_k.$$
 
-**The algorithm names decoded** (what the packages — ITensor, TeNPy, quimb — do):
-- **DMRG**: variational ground-state search over MPS, sweeping site by site, each local update an eigenproblem (via [[Exact Diagonalization and Sparse Methods|Lanczos]]). The most accurate method in existence for 1D ground states — energies to 10⁻¹⁰ routinely.
-- **TEBD / TDVP**: time evolution — Trotterize $e^{-iHt}$ into local gates ([[Trotter Product Formula]]), apply, re-truncate by SVD each step (TEBD); or project the Schrödinger equation onto the MPS manifold (TDVP, better for long-range terms). Also imaginary time → thermal states.
-- **MPO**: operators in the same chain form; Hamiltonians of local + power-law terms compress to tiny MPOs (this is how long-range ion-chain $J_{ij} \sim 1/r^\alpha$ Hamiltonians are handled).
-- **Beyond chains:** PEPS (2D generalization, expensive contractions), tree networks/MERA (critical systems, holography-adjacent literature), and tensor-network *circuit* simulators — the "quantum supremacy spoofing" literature is contraction-order optimization on the circuit's network.
+Truncation error $= \sum_{\alpha > D} \lambda_\alpha^2$ (discarded weight) — measured, controlled, and the single convergence knob: rerun at larger $D$; if observables move, physics was being truncated.
 
-**Reading-the-literature glossary:** *bond dimension* $D$ (also χ) — entanglement kept; *truncation/discarded weight* — the error meter; *canonical form* — the gauge that makes truncation optimal and local measurements cheap; *entanglement spectrum* — the Schmidt values themselves, now used as a diagnostic (degeneracies signal topological order); *area law* — the compressibility criterion; *volume law* — the death sentence.
+**Where it works and where it dies** — all entanglement accounting:
 
-**When to reach for it** (vs [[Exact Diagonalization and Sparse Methods|ED]]): ED is exact and unstructured but caps at ~20 qubits (state vector) — use it below that and for validation. MPS handles hundreds of sites in 1D when entanglement is low. Neither helps deep 2D or long-time dynamics — that's QMC (sign problem permitting) or an actual quantum simulator; knowing *which side of the line an experiment sits on* is precisely the classical-vs-quantum-advantage question the field argues about.
+| regime | $S$ scaling | required $D$ |
+|---|---|---|
+| gapped 1D ground state | const (area law) | const — arbitrary $N$ |
+| 1D critical point | $\ln N$ | polynomial in $N$ |
+| 2D (cylinder of width $L$) | $\propto L$ | $e^{L}$ — the practical ceiling |
+| global quench, time $t$ | $\propto t$ | $e^{t}$ — long-time dynamics inaccessible |
 
-> [!question]- A tensor-network simulation "verifies" a 100-qubit Rydberg quench experiment to good accuracy. Does that deflate the experiment's claim to quantum advantage?
-> It's the right question and the answer is quantitative, not rhetorical: check the entanglement clock. If the quench was short, or the dynamics stayed near-adiabatic (gap open, low entanglement generation), the state never left the MPS-compressible corner and classical simulation was always going to work — the experiment demonstrated control, not classical intractability. Advantage claims live specifically where entanglement growth outruns any feasible $D$ before decoherence outruns the experiment — a race with the bond dimension on one side and $T_2$ on the other, which is why both numbers appear in every such paper's rebuttal cycle.
+The last row is where classical simulability of quantum experiments actually dies — entanglement growth, not qubit count.
+
+**Algorithms** (ITensor, TeNPy, quimb):
+
+- **DMRG** — variational ground-state search over MPS, sweeping site by site; each local update is a small eigenproblem ([[Exact Diagonalization and Sparse Methods|Lanczos]]). Energies to $10^{-10}$ in 1D routinely.
+- **TEBD** — Trotterize $e^{-iHt}$ into local gates ([[Trotter Product Formula]]), apply, re-truncate by SVD per step. **TDVP** — project the Schrödinger equation onto the MPS manifold; better for long-range terms. Imaginary time → thermal states.
+- **MPO** — operators in the same chain form; local and power-law Hamiltonians (ion-chain $J_{ij} \propto 1/r^\alpha$) compress to small MPOs.
+- Beyond chains: PEPS (2D, expensive contraction), MERA (critical/scale-invariant), tensor-network contraction of circuits (the quantum-supremacy-spoofing computations).
+
+**Glossary for the literature:** bond dimension $D$ (also $\chi$) — entanglement kept; discarded weight — the error meter; canonical form — the gauge making truncation optimal and local expectation values $O(D^3)$; entanglement spectrum — the $\lambda_\alpha$ themselves (degeneracies diagnose topological order); area vs volume law — compressible vs not.
+
+**Versus ED:** ED is exact and structure-free to ~20 qubits; MPS reaches hundreds of sites in 1D when $S$ is low. Neither reaches deep 2D or long-time quenches — QMC (sign problem permitting) or a quantum simulator. Which side of that line an experiment sits on is the quantum-advantage question.
+
+> [!question]- A tensor-network simulation reproduces a 100-qubit Rydberg quench. Does that deflate the experiment?
+> Check the entanglement clock, not the qubit count. A short or near-adiabatic quench generates little entanglement — the state never left the MPS corner and classical simulation was guaranteed. Advantage claims live where $S(t)$ outruns any feasible $D$ before decoherence outruns the experiment: a race between bond dimension and $T_2$, which is why both numbers appear in every claim-and-rebuttal cycle.
 
 # Connections
 
-- [[Singular Value Decomposition]] — the engine: truncation is optimal low-rank approximation
+- [[Singular Value Decomposition]] — truncation = optimal low-rank approximation
+- [[Entanglement Measures]] — the entropy that sets the cost
+- [[Trotter Product Formula]] — TEBD's decomposition
+- [[Exact Diagonalization and Sparse Methods]] — the exact validator below 20 qubits
 - [[Tensor Product]] — the Hilbert-space structure being compressed
-- [[Entanglement Measures]] — Schmidt/entanglement entropy as the compression criterion
-- [[Trotter Product Formula]] — TEBD's decomposition of time evolution
-- [[Exact Diagonalization and Sparse Methods]] — the exact small-system complement and validator
-- [[Normal Modes of Ion Chains]] — the 1D systems these methods simulate at scale
+- [[Normal Modes of Ion Chains]] — the 1D systems simulated at scale
 
 ---
-Source: Schollwöck, "The DMRG in the age of MPS," *Ann. Phys.* 326, 96 (2011); Orús, *Ann. Phys.* 349, 117 (2014); Cirac et al., *Rev. Mod. Phys.* 93, 045003 (2021)
+Source: Schollwöck, *Ann. Phys.* 326, 96 (2011); Orús, *Ann. Phys.* 349, 117 (2014)

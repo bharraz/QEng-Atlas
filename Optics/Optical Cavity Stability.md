@@ -8,6 +8,8 @@ $$
 g_i = 1 - \frac{L}{R_i}, \qquad 0 \le g_1 g_2 \le 1
 $$
 
+$L$ = mirror separation (m); $R_i$ = radius of curvature of mirror $i$ (m, positive for concave); $g_i$ = dimensionless stability parameter, essentially "how strongly this mirror refocuses relative to how far the beam had to travel." $g = 1$ is a flat mirror (no refocusing), $g = 0$ means $R = L$ (mirror exactly at the focus), $g < 0$ means the beam over-focuses before returning. The product $g_1g_2$ is what matters because stability is a round-trip property, and the boundaries $0$ and $1$ are where the round trip stops being a stable orbit.
+
 Equivalent to the round-trip ABCD matrix having $|A+D| \le 2$ (bounded ray orbits). The stable Gaussian mode is the $q$ that maps to itself in one round trip; its waist for a symmetric cavity ($R_1 = R_2 = R$):
 
 $$

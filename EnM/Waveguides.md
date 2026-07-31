@@ -10,7 +10,7 @@ $$
 k_z^2 = \frac{\omega^2}{c^2} - k_\perp^2, \qquad f_c = \frac{c\,k_\perp}{2\pi}
 $$
 
-where $k_\perp$ is fixed by the boundary conditions. Above $f_c$: propagation with $v_g < c < v_p$. Below $f_c$: $k_z$ imaginary — **evanescent decay** $e^{-z/\ell}$, $\ell = c/\sqrt{\omega_c^2 - \omega^2} \to c/\omega_c$ well below cutoff.
+$k_z$ = propagation constant along the guide (m⁻¹); $\omega/c$ = the free-space wavevector the wave would have (m⁻¹); $k_\perp$ = transverse wavevector (m⁻¹), fixed entirely by the cross-section geometry and boundary conditions — for a rectangular guide $k_\perp = \sqrt{(m\pi/a)^2 + (n\pi/b)^2}$, so it is set by the guide dimensions, not the drive; $f_c$ = cutoff frequency (Hz). The relation is Pythagorean: the total wavevector is fixed by frequency and split between transverse (spent on fitting the boundary) and longitudinal (left over for travel). When the geometry demands more transverse wavevector than the frequency provides, $k_z^2 < 0$ and the wave is evanescent. Above $f_c$: propagation with $v_g < c < v_p$. Below $f_c$: $k_z$ imaginary — **evanescent decay** $e^{-z/\ell}$, $\ell = c/\sqrt{\omega_c^2 - \omega^2} \to c/\omega_c$ well below cutoff.
 
 **Rectangular guide (a × b, a > b):** dominant mode is **TE₁₀** ($E$ vertical, one half-sine across the broad wall), $f_c = c/2a$. Single-mode band runs from $f_c$ to $2f_c$ (next mode) — e.g. WR-90: 8.2–12.4 GHz. TE modes have $E_z=0$; TM modes $B_z=0$; hollow single-conductor guides support **no TEM mode** (that needs two conductors — that's a [[Transmission Lines]] job).
 

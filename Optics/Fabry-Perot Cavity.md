@@ -8,7 +8,9 @@ $$
 \mathrm{FSR} = \frac{c}{2L}, \qquad \mathcal{F} = \frac{\pi\sqrt{R}}{1-R} = \frac{\mathrm{FSR}}{\delta\nu}
 $$
 
-where $R$ is the (equal) mirror power reflectivity and $\delta\nu$ the resonance FWHM. Numbers: $L = 10$ cm → FSR = 1.5 GHz; $R = 0.99$ → $\mathcal{F} \approx 313$ → $\delta\nu \approx 4.8$ MHz. ULE reference cavities: $\mathcal{F} \sim 10^5$–$10^6$, kHz linewidths.
+FSR = free spectral range (Hz), the spacing between resonances = inverse round-trip time, with $L$ = mirror separation (m); $R$ = mirror power reflectivity (dimensionless, equal mirrors assumed); $\mathcal{F}$ = finesse (dimensionless) — how many resolvable linewidths fit in one FSR, equivalently $2\pi\times$ the round trips a photon survives; $\delta\nu$ = resonance FWHM (Hz).
+
+The two knobs are independent: $\mathcal{F}$ depends only on mirror loss ($\mathcal{F} \approx \pi/(1-R)$ for $R \to 1$, so $R = 0.99 \to 313$ and $R = 0.9999 \to 3.1\times10^4$), while $\delta\nu = \mathrm{FSR}/\mathcal{F} \propto 1/L\mathcal{F}$ — narrow lines need good mirrors *and* a long cavity. Numbers: $L = 10$ cm → FSR = 1.5 GHz; $R = 0.99$ → $\mathcal{F} \approx 313$ → $\delta\nu \approx 4.8$ MHz. ULE reference cavities: $\mathcal{F} \sim 10^5$–$10^6$, kHz linewidths.
 
 **Transmission (Airy function):**
 $$

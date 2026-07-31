@@ -8,6 +8,8 @@ $$
 g^{(2)}(\tau) = \frac{\langle a^\dagger(0)\, a^\dagger(\tau)\, a(\tau)\, a(0)\rangle}{\langle a^\dagger a\rangle^2}
 $$
 
+$\tau$ = delay between the two detections (s); numerator = normally-ordered joint detection probability (both creation operators outside, because detection *removes* a photon — that ordering is what makes $g^{(2)}(0) = 0$ possible); denominator = the same quantity for uncorrelated detections, so $g^{(2)}$ is dimensionless and normalized to 1 for no correlation. Being a *ratio* of two-photon to (one-photon)² rates is why detection efficiency cancels: both scale as $\eta^2$.
+
 | Light | $g^{(2)}(0)$ | Number statistics |
 |---|---|---|
 | Thermal | 2 | super-Poissonian (bunched) |

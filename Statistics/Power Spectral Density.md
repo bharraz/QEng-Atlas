@@ -8,6 +8,8 @@ $$
 S_x(f) = \lim_{T\to\infty}\frac{1}{T}\left\langle |\tilde{x}_T(f)|^2 \right\rangle, \qquad \sigma^2 = \int_{\text{band}} S_x(f)\, df
 $$
 
+$x(t)$ = the fluctuating quantity (V, T, Hz, rad — whatever you measure); $\tilde x_T(f)$ = its Fourier transform over a record of length $T$; $S_x$ = power spectral density in (units of $x$)²/Hz; $\sigma^2$ = mean-square fluctuation contributed by the integration band. The $1/T$ and the ensemble average are what make $S$ converge: $|\tilde x_T|^2$ alone grows with record length and fluctuates 100% shot to shot, so a *single* periodogram never converges no matter how long you measure — only averaging does ([[PSD Estimation]]).
+
 **Units — where everyone gets burned:**
 - **PSD**: $\mathrm{V^2/Hz}$ (power-like). **Amplitude spectral density**: $\sqrt{S}$ in $\mathrm{V/\sqrt{Hz}}$.
 - Convert to rms: $v_{\text{rms}} = \sqrt{S \cdot B}$ for flat $S$ over bandwidth $B$ — e.g. $4\,\mathrm{nV/\sqrt{Hz}}$ over 1 MHz → 4 μV rms.

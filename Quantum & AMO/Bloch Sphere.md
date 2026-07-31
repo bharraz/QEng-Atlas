@@ -25,7 +25,7 @@ Caveat: this ball is special to 2 levels — for $d \geq 3$ the state space is n
 
 # Connections
 
-- [[Pauli Matrices]] — the coordinate axes of the ball
+- [[Reference Atlas/Linear Algebra/Pauli Matrices]] — the coordinate axes of the ball
 - [[Single-Qubit Gates]] — named rotations of this sphere
 - [[Density Matrix]] — the object being visualized; $|\vec r|$ is purity
 - [[T1 and T2]] — shrink-along-z vs shrink-in-xy, drawn

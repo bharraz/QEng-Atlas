@@ -29,6 +29,7 @@ Near-field coupling (capacitive/inductive) falls off fast with distance — phys
 - [[Grounding and Shielding Practice]] — the prevention playbook once you know the mechanism
 - [[Faraday Induction]] — the physics under the inductive row
 - [[Antennas]] — why every cable is an accidental λ/4 receiver
+- [[Noise Spectra and Coupling to Systems]] — what the noise does after it enters: spectra and system response
 
 ---
 Source: Ott, *Electromagnetic Compatibility Engineering*, Chs. 2–3

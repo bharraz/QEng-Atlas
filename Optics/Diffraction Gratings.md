@@ -13,7 +13,8 @@ $$
 $$
 \frac{\lambda}{\Delta\lambda} = mN
 $$
-where $N$ is the number of *illuminated* grooves — resolution comes from the beam footprint on the grating, not just groove density. Under-fill the grating and you throw resolution away.
+
+$m$ = diffraction order (integer); $N$ = number of *illuminated* grooves = beam footprint ÷ groove spacing; $\lambda/\Delta\lambda$ = resolving power (dimensionless). Both factors do the same thing — $mN$ counts total wavelengths of path difference across the beam, so resolution is really "how many wave periods you can make interfere," whether by using more grooves or by taking a higher order. Note $N$ is the number of *illuminated* grooves — resolution comes from the beam footprint on the grating, not just groove density. Under-fill the grating and you throw resolution away.
 
 **Blaze:** grooves are tilted micro-mirrors so specular reflection off each facet coincides with the chosen order — concentrates power into one order at the blaze wavelength instead of splattering across all $m$.
 

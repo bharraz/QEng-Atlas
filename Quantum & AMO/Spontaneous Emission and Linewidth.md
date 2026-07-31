@@ -8,6 +8,8 @@ Golden rule + free-space mode density $\rho(\omega) \propto \omega^2$:
 
 $$\Gamma = \frac{\omega_0^3 d^2}{3\pi\varepsilon_0 \hbar c^3}, \qquad \tau = \frac{1}{\Gamma}$$
 
+$\Gamma$ = decay rate (s⁻¹, angular — divide by $2\pi$ for linewidth in Hz); $\omega_0$ = transition frequency (rad/s); $d = \langle e|\hat d|g\rangle$ = transition dipole matrix element (C·m, of order $ea_0$ for a strong optical line); $\tau$ = excited-state lifetime (s). The $\omega_0^3$ comes from the vacuum mode density ($\propto\omega^2$) times the photon energy scaling of the coupling; $d^2$ is the usual coupling-squared of the golden rule.
+
 **The $\omega^3 d^2$ scaling** is the one to remember: strong optical dipole lines decay in ns–tens of ns ($\Gamma/2\pi \sim 10\text{–}30$ MHz — Ca⁺ 397 nm: 21.6 MHz; Yb⁺ 369 nm: 19.6 MHz), while microwave hyperfine transitions, down by $(\omega_{\mathrm{opt}}/\omega_{\mu w})^3 \sim 10^{12}$, effectively never decay — free $T_1$ for hyperfine qubits. Quadrupole clock lines are slow via small $d_{\mathrm{eff}}$ instead: $\tau \sim 1$ s.
 
 **Lineshape:** exponential decay $e^{-\Gamma t/2}$ of the amplitude Fourier-transforms to a Lorentzian in the spectrum:

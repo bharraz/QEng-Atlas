@@ -4,7 +4,9 @@
 
 # Reference
 
-Pockels effect: $\Delta n \propto V$, giving phase $\phi = \pi V/V_\pi$ where $V_\pi$ is the half-wave voltage — hundreds of volts for bulk crystals, a few volts for waveguide EOMs, often lowered further with a resonant RF tank at fixed frequency.
+Pockels effect: $\Delta n \propto V$, giving phase $\phi = \pi V/V_\pi$ (rad). $V_\pi$ = half-wave voltage (V), the voltage producing $\pi$ of optical phase — the single figure of merit, scaling as $V_\pi \propto \lambda d / (n^3 r\, L)$ with $d$ the electrode gap, $L$ the interaction length, $r$ the electro-optic coefficient. Hence hundreds of volts for bulk crystals (large $d$) versus a few volts for waveguide devices (µm gaps, cm lengths), and why a resonant RF tank — which multiplies the applied voltage by its $Q$ — is the standard workaround at a fixed frequency.
+
+Modulation depth $\beta = \pi V_{\text{pk}}/V_\pi$ (rad) is just the peak phase excursion.
 
 Phase modulation at $\Omega$ with depth $\beta$:
 $$

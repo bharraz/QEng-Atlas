@@ -26,7 +26,7 @@ $$
 
 # Connections
 
-- [[Pauli Matrices]] — the generators; the rotation formula is theirs
+- [[Reference Atlas/Linear Algebra/Pauli Matrices]] — the generators; the rotation formula is theirs
 - [[Bloch Sphere]] — where these rotations act
 - [[Rabi Oscillations]] — how a resonant drive physically implements $R_{x,y}(\theta)$
 - [[Universal Gate Sets]] — why the T gate has to join the party

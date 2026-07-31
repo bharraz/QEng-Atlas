@@ -10,6 +10,8 @@ $$
 \frac{1}{T_1} = \Gamma, \qquad \frac{1}{T_2} = \frac{1}{2T_1} + \gamma_\varphi \;\;\Rightarrow\;\; T_2 \le 2T_1
 $$
 
+$\Gamma$ = energy relaxation rate (s⁻¹); $\gamma_\varphi$ = pure dephasing rate (s⁻¹), which randomizes phase without moving population; rates add because independent decoherence channels are additive in rate, never in time. The $1/2$ is the field-vs-power factor again: $T_1$ describes populations ($\propto$ amplitude²) while $T_2$ describes the coherence amplitude itself, so a given decay rate costs the coherence half as much.
+
 Decay-limited qubit ($\gamma_\varphi = 0$): $T_2 = 2T_1$ — the factor 2 because $T_1$ moves *population* ($\propto$ amplitude²) while $T_2$ tracks *amplitude*.
 
 **$T_2^*$ vs $T_2$**: shot-to-shot and ensemble inhomogeneity (B-field drift, laser detuning wander) adds quasi-static dephasing → free-induction decays in $T_2^* \le T_2$. It's reversible: a $\pi$ pulse refocuses the static part, so echo recovers the "true" $T_2$.

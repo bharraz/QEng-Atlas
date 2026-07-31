@@ -1,49 +1,54 @@
 #nanofab
 
-**Lithography transfers a pattern into a radiation-sensitive polymer (resist): expose, develop, then use the resist as a stencil for etching or deposition.** Everything downstream inherits its resolution and alignment. The physics of every litho method is the same question twice: how tightly can you confine the exposure, and how far does the energy spread once it's in the resist and substrate?
+**Lithography transfers a pattern into a radiation-sensitive polymer (resist): expose, develop, use the resist as a stencil for etching or deposition.** Every method answers the same two questions: how tightly the exposure is confined, and how far the deposited energy spreads in the resist and substrate afterward.
 
 # Reference
 
-**The universal flow:** spin-coat resist → soft bake → expose → develop → (etch or deposit) → strip. Exposure changes the polymer's solubility: **positive resist** — radiation breaks chains, exposed regions dissolve; **negative resist** — radiation crosslinks chains, exposed regions stay.
+Flow: spin resist → soft bake → expose → develop → etch/deposit → strip. **Positive** resist: exposure scissions chains, exposed regions dissolve. **Negative**: exposure crosslinks, exposed regions remain. Resist **contrast** $\gamma = [\log_{10}(D_{100}/D_0)]^{-1}$, where $D_0$ is the largest dose leaving the resist untouched and $D_{100}$ the smallest that fully clears it: a high-$\gamma$ resist switches over a narrow dose range, so even a blurred exposure profile develops into a sharp edge — the resist acts as a threshold that partially rescues imperfect optics.
 
 ## Photolithography
 
-UV light projects a mask onto the resist. The confinement limit is diffraction: light passing an aperture of size ~λ spreads, so the sharpest printable feature is
+Resolution and depth of focus for projection optics:
 
-$$R = k_1 \frac{\lambda}{\mathrm{NA}},$$
+$$R = k_1\frac{\lambda}{\mathrm{NA}}, \qquad \mathrm{DOF} = k_2\frac{\lambda}{\mathrm{NA}^2}, \qquad k_1 \approx 0.25\text{–}0.8.$$
 
-where NA is the numerical aperture of whatever optics recollect the diffracted orders (you need at least the first order to reconstruct any spatial information — lose it and the pattern is gone), and $k_1 \approx 0.25$–0.8 encodes process cleverness (resist contrast, phase-shift masks, off-axis illumination). Lab contact aligners at $\lambda = 365$ nm print ~1 µm reliably; industry got to 193 nm immersion and then EUV (13.5 nm) by attacking λ directly.
+$R$ = smallest printable half-pitch; NA = numerical aperture of the projection lens (sine of the half-angle of light it collects — its spatial-frequency bandwidth, [[Numerical Aperture and Spot Size]]); DOF = depth of focus, the vertical range over which the image stays sharp. A pattern of period $p$ diffracts light into orders at angles $\sin\theta = \lambda/p$; the lens must capture at least the first order to reconstruct the period at all — that geometric requirement is the resolution limit, and $k_1, k_2$ are order-unity factors absorbing resist contrast and tricks that squeeze below it (phase-shift masks, off-axis illumination). The $\mathrm{NA}^2$ in DOF is the price of resolution: focusing harder shortens the focal region quadratically.
 
-The three exposure geometries differ in how they manage diffraction: **contact** (mask touches resist — diffraction has no distance to spread, best resolution for a simple tool, but every touch transfers defects to mask and wafer, which is why the mask degrades and why production abandoned it); **proximity** (small gap $g$ — spreading over the gap costs you, blur $\sim \sqrt{\lambda g}$); **projection/stepper** (image the mask through reduction optics — resolution set by NA, mask flies clean, the production standard).
+Exposure geometries: **contact** (blur $\approx$ resist thickness scale; defects transfer to the mask every touch), **proximity** (gap $g$: blur $\sim\sqrt{\lambda g}$ — 1.9 µm at $\lambda = 365$ nm, $g = 10$ µm), **projection** (mask imaged through reduction optics; the production standard). Lab i-line contact tools: ~1 µm practical. Industry: 193 nm immersion (NA = 1.35 via water) → EUV at 13.5 nm.
 
-Character of the method: the entire wafer exposes in one flash, so throughput is essentially unbeatable and cost-per-device tiny — but the pattern is frozen into a physical mask that takes days/weeks and real money to change. Photolitho is what you use when the design is settled or the features are coarse.
+Character: parallel exposure — whole wafer per flash, unmatched throughput; pattern frozen in a physical mask. Direct-write laser (scanned spot, ~0.6–1 µm) is the maskless lab default for coarse layers.
 
-## Electron-beam lithography (EBL)
+## Electron-beam lithography
 
-Replace photons with 10–100 keV electrons: λ is picometers, so diffraction is irrelevant and the beam focuses to ~nm. Being a serial scanned probe, it needs no mask — the pattern is a file, and design-to-device is same-day. That combination (resolution + agility) makes it the research workhorse for gate-defined [[Quantum Dots]], Josephson junctions, photonic crystals.
+10–100 keV electrons, $\lambda \sim$ pm: diffraction irrelevant, beam focus ~nm, pattern from a file. Resolution is set by where the energy goes after entry:
 
-What limits it is not the spot but **where the electrons go afterward**. A keV electron doesn't stop in the 100 nm resist; it plows into the substrate and scatters:
+- **Forward scattering** broadens the beam through the resist by $\sim$ few nm (worse in thick resist; improves with kV).
+- **Backscattering** returns electrons from µm deep in the substrate: the deposited-energy point-spread function is modeled as a double Gaussian,
+$$f(r) \propto \frac{1}{\alpha^2}e^{-r^2/\alpha^2} + \frac{\eta}{\beta^2}e^{-r^2/\beta^2},$$
+with $\alpha \sim$ 10 nm (forward), $\beta \sim$ 3 µm at 30 keV in Si (backscatter), $\eta \approx 0.5$–0.8. Dense patterns accumulate the $\beta$ background — **proximity effect** — corrected by solving for a per-shape dose map (a deconvolution against $f$).
+- **Secondary electrons** generated in the resist blur chemistry over ~5 nm: the practical resolution floor (~10 nm) is exposure physics, not optics, and barely improves from 30 to 100 keV.
+- **Charging** on insulating substrates deflects the beam; discharge layer (thin metal or conducting polymer) on top of the resist.
 
-- **Forward scattering** — small-angle deflections on the way through the resist broaden the written line by a few nm (worse in thick resist, better at high kV where the beam stiffens).
-- **Backscattering** — a fraction of electrons return from deep in the substrate and re-expose the resist over a radius of *microns* (at 30 keV, ~3 µm in Si). Every shape you write sprays background dose over its whole neighborhood: the **proximity effect**. Dense patterns accumulate this background, so correct exposure requires solving for a dose map — isolated features get more, crowded ones less — before writing (proximity-effect correction is a deconvolution done in the pattern file).
-- **Charging** — on insulating substrates (glass, GaAs, diamond) the injected charge has nowhere to go; the accumulated field deflects the incoming beam and warps the pattern. Fix: a nm-scale metal or conducting-polymer discharge layer on top of the resist.
+Serial writing: hours–days per wafer. Resist stack for lift-off: a faster-developing bottom layer (MMA under PMMA) self-forms an undercut; a suspended top-layer bridge over a wide undercut plus two-angle evaporation places overlapping electrodes with an oxidation step between — the Dolan-bridge Josephson junction, no alignment required.
 
-The costs are the mirror of the benefits: serial writing means hours-to-days per wafer (fine for twenty devices, absurd for production), and the machine time is expensive.
+**Others:** nanoimprint (stamped master: nm resolution, parallel; master made by EBL, defects replicate), laser interference lithography (periodic patterns over large areas).
 
-**Two-layer resists and the undercut.** For lift-off (see [[Thin-Film Deposition]]) you *want* the resist profile to overhang, so the deposited film breaks at the edge. Standard trick: a bottom layer that develops faster (more sensitive copolymer, e.g. MMA under PMMA) automatically develops wider than the top — a self-formed undercut. A free-standing bridge of top-layer resist over a wide undercut is the **Dolan bridge**: evaporate at two angles through it and the shadows place two overlapping electrodes with the oxide barrier grown between — a Josephson junction with no alignment step.
+| | photo (contact) | direct-write laser | EBL |
+|---|---|---|---|
+| resolution | ~1 µm | ~0.6–1 µm | ~10 nm |
+| throughput | wafer/flash | ~min/wafer | hours–days |
+| mask | required | none | none |
 
-**Honorable mentions:** direct-write laser (a scanned focused laser spot: maskless like EBL, resolution ~0.6–1 µm like photolitho — the modern lab default for coarse layers and mask-making); nanoimprint (press a master stamp into resist: nm resolution at parallel throughput, but you need EBL to make the master and stamp defects replicate forever).
-
-> [!question]- Why does EBL resolution barely improve between 30 and 100 keV even though the beam gets sharper?
-> The spot was never the bottleneck — resist and scattering are. Higher kV stiffens the beam (less forward scatter, good) but pushes backscatter *further out* rather than eliminating it (the dose background gets flatter and easier to correct, not smaller in total). Meanwhile the resist itself imposes a floor: secondary electrons generated during exposure blur chemistry over ~5–10 nm regardless of beam size, and resist polymer granularity adds roughness. That ~10 nm practical floor is set by the exposure physics, not the optics.
+> [!question]- Why can exposing a denser pattern in EBL require a lower per-shape dose?
+> Each shape receives its own dose plus the backscatter tails ($\beta \sim$ µm) of every neighbor. In a dense region the accumulated background is a significant fraction of the clearing dose, so the direct dose must be reduced to avoid overexposure; isolated features get the opposite correction. Proximity-effect correction is the deconvolution of the target dose against $f(r)$.
 
 # Connections
 
-- [[Etching]] — one of the two ways the stencil becomes a device; dictates resist thickness via selectivity
-- [[Thin-Film Deposition]] — the other way (lift-off), enabled by undercut + line-of-sight evaporation
-- [[Electron Microscopy (SEM and TEM)]] — an EBL tool is an SEM with a pattern generator; same beam, same scattering physics
-- [[Quantum Dots]] — gate geometries drawn by EBL
-- [[Superconducting Qubits]] — Dolan-bridge double-angle evaporation makes the junctions
+- [[Etching]] — pattern transfer; etch selectivity dictates resist thickness
+- [[Thin-Film Deposition]] — lift-off through the undercut stencil
+- [[Electron Microscopy (SEM and TEM)]] — same beam and scattering physics, reading instead of writing
+- [[Numerical Aperture and Spot Size]] — $R \propto \lambda/\mathrm{NA}$, $\mathrm{DOF} \propto \lambda/\mathrm{NA}^2$
+- [[Quantum Dots]] / [[Superconducting Qubits]] — gate patterns and Dolan junctions
 
 ---
 Source: Campbell, *Fabrication Engineering at the Micro- and Nanoscale*, Ch. 7–9; Franssila, *Introduction to Microfabrication*, Ch. 8–10

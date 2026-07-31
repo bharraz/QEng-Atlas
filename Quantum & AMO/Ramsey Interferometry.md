@@ -8,7 +8,7 @@ Sequence: $\tfrac{\pi}{2}$ — free evolution $T$ — $\tfrac{\pi}{2}$. A detuni
 
 $$P_e = \frac{1}{2}\left[1 + C\cos(\delta T + \varphi)\right]$$
 
-with fringe period $2\pi/T$ in $\delta$ and contrast $C$ decaying on the coherence time ($T_2^*$ for a bare Ramsey). Scanning the second pulse's phase $\varphi$ instead of $\delta$ gives the same fringe without retuning — the standard calibration move.
+$P_e$ = excited-state probability; $\delta$ = qubit-drive detuning (rad/s); $T$ = free-evolution (dark) time (s); $\varphi$ = relative phase of the second π/2 pulse (rad); $C$ = fringe contrast (0–1), decaying with $T$ on the coherence time ($T_2^*$ for bare Ramsey). Only the *product* $\delta T$ appears, which is the whole point: fringe period is $2\pi/T$ in detuning, so frequency resolution improves linearly with dark time — and the phase-slope $dP_e/d\delta = CT/2$ at mid-fringe says sensitivity is linear in both $C$ and $T$. Scanning the second pulse's phase $\varphi$ instead of $\delta$ gives the same fringe without retuning — the standard calibration move.
 
 **Why it beats Rabi spectroscopy:** during $T$ the drive is off — no power broadening, no drive-induced light shifts, no sensitivity to pulse-amplitude error at the fringe's steepest point. Linewidth $\sim 1/T$ is set by *your patience*, not the drive. Frequency sensitivity per shot: $\delta f \sim 1/(2\pi T \cdot C)$, degraded by projection noise as $1/\sqrt{N}$ over $N$ shots — clocks are exactly this, maximized $T$ plus statistics.
 

@@ -10,6 +10,8 @@ $$
 P_e(t) = \frac{\Omega^2}{\Omega^2 + \Delta^2}\,\sin^2\!\left(\frac{\tilde\Omega\, t}{2}\right), \qquad \tilde\Omega = \sqrt{\Omega^2 + \Delta^2}
 $$
 
+$P_e$ = excited-state population (dimensionless probability); $\Omega$ = resonant Rabi frequency (rad/s), $\propto d\sqrt{I}$ — dipole matrix element × field amplitude; $\Delta$ = detuning (rad/s); $\tilde\Omega$ = generalized Rabi frequency (rad/s), the length of the drive vector $(\Omega, 0, \Delta)$ on the Bloch sphere. The prefactor $\Omega^2/\tilde\Omega^2$ is the squared sine of that vector's tilt from the $z$-axis: contrast is set by the *ratio* $\Omega/\Delta$, rate by the *magnitude*. A π-time therefore scales as $1/\Omega \propto 1/\sqrt{I}$ — quadrupling laser power halves the pulse time.
+
 **On resonance** ($\Delta = 0$): full-contrast flopping $P_e = \sin^2(\Omega t/2)$.
 - **$\pi$ pulse** ($\Omega t = \pi$): complete inversion $|g\rangle \to |e\rangle$.
 - **$\pi/2$ pulse**: equal superposition — the beamsplitter of [[Ramsey Interferometry]].

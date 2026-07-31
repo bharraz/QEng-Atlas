@@ -12,6 +12,10 @@ $$
 C_f \approx \sqrt{\frac{C_\text{in}}{2\pi R_f\,\text{GBW}}}, \qquad f_{-3\text{dB}} \approx \sqrt{\frac{\text{GBW}}{2\pi R_f C_\text{in}}}
 $$
 
+$R_f$ = feedback resistor (Ω), which *is* the gain in V/A; $C_\text{in}$ = total capacitance at the summing node (F) — photodiode + op-amp input + cable + board strays, all in parallel; $C_f$ = feedback capacitor (F) chosen to place a compensating zero; GBW = op-amp gain–bandwidth product (Hz).
+
+Both results are geometric means, which is the useful reading: bandwidth $\propto \sqrt{\mathrm{GBW}/R_f C_\text{in}}$ means doubling the transimpedance costs only $\sqrt{2}$ in bandwidth (so high-gain TIAs are less painful than they look), but it also means cutting $C_\text{in}$ — reverse bias, short cable — buys bandwidth on the same square-root footing as buying a faster op-amp.
+
 Numbers: 10 pF diode, 100 kΩ, 10 MHz GBW → $C_f \approx 1.3$ pF, BW ≈ 1.3 MHz. Sub-pF is real — board strays count as part of $C_f$.
 
 **Noise-gain peaking:** even when stable, the amp's $e_n$ appears at the output multiplied by $1 + C_\text{in}/C_f$ at high frequency — a noise bump near the loop crossover that integrates ugly in wideband measurements. Bigger $C_f$ trades bandwidth for a flatter floor.

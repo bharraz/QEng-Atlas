@@ -8,6 +8,8 @@
 
 $$F(\theta) = \left\langle \left(\partial_\theta \ln p(x|\theta)\right)^2 \right\rangle, \qquad \mathrm{Var}(\hat\theta) \geq \frac{1}{N F(\theta)} \quad (\text{Cramér–Rao, } N \text{ repetitions}).$$
 
+$\theta$ = the parameter being estimated (a phase, a field, a frequency); $x$ = the measurement outcome; $p(x|\theta)$ = likelihood, the probability of that outcome given $\theta$; $F$ = Fisher information, units of 1/$\theta^2$ — so $1/F$ is already a variance; $\hat\theta$ = the estimator; $N$ = number of independent repetitions. The derivative is the content: $F$ measures how *sharply the outcome distribution moves* when $\theta$ changes. A measurement whose statistics barely shift with $\theta$ carries no information about it, however precise the individual readings.
+
 Fisher information is *additive* over independent shots — hence every sensitivity improves as $1/\sqrt{N\,\text{(shots)}} \propto 1/\sqrt{T}$, the universal $\sqrt{\text{Hz}}$ in sensitivity units. [[Maximum Likelihood Estimation|MLE]] saturates the bound asymptotically, which is *why* MLE is the default estimator.
 
 **Quantum.** A parameter is imprinted on a state, $\rho_\theta$; a measurement (POVM) converts it to a likelihood; the classical bound then applies. Maximizing over all possible measurements gives the **quantum Fisher information** $F_Q$ and the quantum Cramér-Rao bound:
@@ -17,6 +19,8 @@ $$\mathrm{Var}(\hat\theta) \geq \frac{1}{N F_Q}, \qquad F_Q = 4\left(\langle \pa
 For the ubiquitous case — phase imprinted by a generator, $|\psi_\phi\rangle = e^{-i\phi \hat{G}}|\psi\rangle$:
 
 $$F_Q = 4\,\mathrm{Var}(\hat{G}).$$
+
+$\hat G$ = the generator of the parameter (the operator in $e^{-i\phi\hat G}$: $\sigma_z/2$ for a qubit phase, $\hat n$ for an optical phase, $J_z$ for a collective spin); $\mathrm{Var}(\hat G) = \langle G^2\rangle - \langle G\rangle^2$ evaluated in the probe state. Since a Fock or eigenstate of $\hat G$ has zero variance, an eigenstate of the generator carries *no* information about the phase it generates — sensitivity requires superposition across the generator's spectrum, and the wider the spread, the faster the state rotates per unit $\phi$.
 
 **Read that equation twice; it is the design principle of all quantum sensing:** sensitivity to a phase is the *variance of the generator* in your probe state. A state spread widely across the eigenvalues of $\hat G$ rotates "faster" per unit φ. Everything in metrology — squeezing, entanglement, Fock states, Schrödinger cats — is a scheme to enlarge $\mathrm{Var}(\hat G)$ subject to practical constraints.
 

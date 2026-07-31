@@ -8,6 +8,8 @@
 
 $$\psi_{n\mathbf{k}}(\mathbf{r}) = e^{i\mathbf{k}\cdot\mathbf{r}}\,u_{n\mathbf{k}}(\mathbf{r}),$$
 
+$\mathbf{k}$ = crystal momentum (m⁻¹), a label from discrete translational symmetry — *not* true momentum, since only $\mathbf{k}$ modulo a reciprocal lattice vector is meaningful; $n$ = band index (which solution at that $\mathbf{k}$); $u_{n\mathbf{k}}$ = a function with the *lattice's* periodicity, carrying the atomic-scale structure; the plane-wave factor carries the long-range phase. The split is the content of the theorem: a periodic potential cannot destroy the plane wave, only modulate it.
+
 where $u_{n\mathbf{k}}$ is periodic with the lattice, $\mathbf{k}$ is the crystal momentum in the Brillouin zone, and $n$ is the band index. The energy $E_n(\mathbf{k})$ is a function over the zone — the **band structure**. A **band gap** is an energy range containing no states.
 
 **The two limiting models** (every band structure interpolates between them):
@@ -24,6 +26,8 @@ Near a band edge the dispersion is parabolic, $E(\mathbf{k}) \approx E_0 + \hbar
 **Semiclassical dynamics** — how a Bloch electron responds to applied fields:
 
 $$\mathbf{v}_n(\mathbf{k}) = \frac{1}{\hbar}\nabla_{\mathbf{k}} E_n(\mathbf{k}), \qquad \hbar\dot{\mathbf{k}} = -e(\mathbf{E} + \mathbf{v}\times\mathbf{B}).$$
+
+$\mathbf{v}_n$ = group velocity of the wavepacket (m/s) — the *slope* of the band, so a flat band means immobile electrons regardless of energy; $E_n(\mathbf{k})$ = band energy (J); $\mathbf{E}, \mathbf{B}$ = applied fields. The second equation says applied force changes $\mathbf{k}$, not velocity: the lattice's forces are already inside $E_n(\mathbf{k})$, so external fields only move the electron *through the band*, and what it then does is read off the dispersion.
 
 The field steers $\mathbf{k}$ through the band; the *band structure* (not $\hbar\mathbf{k}/m$) sets the velocity. All transport — conductivity, Hall effect, cyclotron resonance — is these two lines plus scattering.
 

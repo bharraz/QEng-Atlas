@@ -1,55 +1,61 @@
 #nanofab #characterization
 
-**The non-destructive everyday toolbox: profilometry and AFM measure topography by touching it, ellipsometry infers film thickness from how a film changes reflected polarization, and XRD reads crystal structure from diffraction angles.** The organizing question for each: is the number measured *directly*, or inferred through a *model* — because model-based tools are fast and precise right up until the model is wrong.
+**Profilometry and AFM measure topography by contact; ellipsometry infers thickness from polarized reflection; XRD reads structure from diffraction angles. The organizing distinction: direct measurements vs model-based fits — the latter are fast and precise until the model is wrong.**
 
 # Reference
 
-## Stylus profilometry — direct height measurement
+## Stylus profilometry
 
-A diamond stylus (µm-scale tip radius, µN force) is dragged in a line; its vertical motion is the surface profile. Height is measured against an interferometric or capacitive reference, so it's absolute and calibration is trivial — this is why "measure the step where the mask was" is the routine check of every etch depth and deposition.
+Diamond tip (µm radius, µN force) dragged in a line; height measured interferometrically — absolute, calibration-free. The recorded profile is the surface dilated by the tip: lateral resolution ~ tip radius (a µm sphere cannot enter a 100 nm trench; steps become ramps of the tip's own shape). Vertical: nm (vibration-limited). µN on a point contact plows soft films. The routine check of every etch depth and deposition (measure the masked step). Optical profilometers: non-contact, full-field, but measure *optical* path — transparent films silently corrupt the height map unless modeled.
 
-The tip radius is the resolution limit, and it's geometric: the recorded profile is the surface *dilated by the tip shape*. A µm-radius sphere cannot enter a 100 nm trench at all, and reports every sharp step as a ramp with the tip's own radius. Lateral resolution ~µm; vertical resolution nm (limited by vibration, not the sensor). The µN contact force concentrated on the tip point can plow soft films (resists, polymers) — you're measuring with a plow. Optical profilometers do the same job interferometrically without contact and over a whole field at once, but they measure *optical* path: a transparent film adds phase from both surfaces, and the height map silently becomes wrong unless the film is modeled.
+## AFM
 
-## AFM — the same idea at nN and nm
+Tip (~10 nm radius) on a cantilever; contact mode holds deflection constant, tapping/non-contact holds the resonance shift constant:
 
-Shrink the tip to ~10 nm radius on a flexible cantilever, and detect force instead of position: either static deflection (contact mode) or the shift of the cantilever's resonance as the tip enters the force gradient (tapping/non-contact):
+$$\Delta f \approx -\frac{f_0}{2k}\frac{\partial F}{\partial z},$$
 
-$$\Delta f \approx -\frac{f_0}{2k}\frac{\partial F}{\partial z}.$$
+with $f_0$ the cantilever's free resonance frequency, $k$ its spring constant, and $\partial F/\partial z$ the gradient of the tip–surface force: an attractive gradient effectively softens the spring and pulls the resonance down. The feedback holds $\Delta f$ (or the oscillation amplitude) constant by moving the sample vertically, and that feedback voltage is the topography. Works on insulators in air (no coating/vacuum — the advantage over [[Electron Microscopy (SEM and TEM)|SEM]]). Sub-nm vertical: RMS roughness of films is the standard output. Variants map the force channel: MFM (magnetic), KPFM (surface potential), force curves (mechanics).
 
-A feedback loop moves the sample vertically to hold the force signal constant; the feedback voltage *is* the topography. Because force detection works on any surface, AFM needs no conductivity, coating, or vacuum — the advantage over [[Electron Microscopy (SEM and TEM)|SEM]] for insulators and delicate samples. Sub-nm vertical resolution makes RMS roughness of a deposited film its bread-and-butter output; swap the tip and the same feedback maps magnetic force (MFM), surface potential (KPFM), or stiffness.
+Limits: image = surface ⊗ tip (a doubled tip prints repeated ghost shapes — the sample imaging the tip); minutes per frame, ≲100 µm fields; top surface only.
 
-The limits are the probe's, and they're the same ones as profilometry scaled down: the image is surface ⊗ tip, so a blunt or doubled tip prints its own shape into every feature (the classic artifact: identical ghost shapes repeated across the image — that's your tip, imaged by the sample). Serial scanning through a mechanical feedback loop means minutes per frame and ≲100 µm fields, and the tip only knows the top surface — nothing buried is visible.
+## Ellipsometry
 
-## Ellipsometry — thickness by model fit
+$p$ and $s$ polarizations reflect differently; interference between top- and bottom-interface reflections encodes thickness in the complex ratio
 
-Reflect polarized light off the film; p- and s-polarizations reflect with different amplitude and phase (they see different boundary conditions), and interference between the top-surface and film-bottom reflections encodes the film thickness in that difference. Measure the complex ratio
+$$\rho = \frac{r_p}{r_s} = \tan\Psi\, e^{i\Delta},$$
 
-$$\rho = \frac{r_p}{r_s} = \tan\Psi\; e^{i\Delta},$$
+where $r_p, r_s$ are the complex reflection coefficients for polarization in and perpendicular to the plane of incidence, $\tan\Psi$ their amplitude ratio, and $\Delta$ their relative phase — the phase is where the Å-level thickness sensitivity lives. Fit a layer model (thicknesses, refractive indices) to $(\Psi, \Delta)$ vs wavelength. Phase sensitivity → Å-level thickness in seconds, non-contact: the standard readout for oxides, nitrides, resists, ALD films.
 
-then fit a stack model — layer thicknesses and refractive indices — until it reproduces $(\Psi, \Delta)$ across wavelength. Phase is exquisitely sensitive, so thickness precision reaches Ångströms in seconds, non-contact: the standard readout for oxides, nitrides, resists, ALD films.
+Thickness is a **fit parameter**: the data constrain (thickness × index), so a wrong model index (porosity, hydrogen in PECVD films, hydration in ALD) converges to a wrong thickness with small residuals. Cross-check new films against a direct method. Opaque films return only optical constants — no light from the bottom interface.
 
-But the thickness is a *fit parameter*, not a measurement. The data constrain the product of thickness and optical path; if the film's real index differs from the model's (porosity, hydrogen in PECVD films, hydration in ALD films), the fit converges happily to a wrong thickness with small residuals — confidently wrong is the signature failure. Cross-check against a direct method whenever the film is new. Opaque films are opaque to the method too: no light returns from the bottom interface, so metals thicker than the skin depth yield only optical constants, not thickness.
+## XRD / XRR
 
-## XRD — structure without imaging
+Bragg peaks ($2d\sin\theta = n\lambda$, [[Crystal Diffraction]]): positions → lattice constants and strain; identity → phase; width → coherently diffracting size via Scherrer,
 
-Bragg diffraction ($2d\sin\theta = n\lambda$, see [[Crystal Diffraction]]) from the film's lattice planes: peak *positions* give the lattice constants (and via their shift, strain), peak *identity* fingerprints the phase. Peak *width* measures how many planes diffract coherently — a grain of finite size $t$ truncates the interference sum, broadening the peak by the same Fourier logic that broadens the spectrum of a truncated pulse:
+$$t \approx \frac{0.9\,\lambda}{\beta\cos\theta},$$
 
-$$t \approx \frac{0.9\,\lambda}{\beta\cos\theta} \quad (\text{Scherrer}; \; \beta = \text{FWHM in rad}).$$
+$t$ = coherently diffracting crystallite size (nm; a lower bound on grain size — strain broadens too); $\lambda$ = X-ray wavelength (nm; 0.15406 for Cu Kα); $\beta$ = peak FWHM in **radians**, instrument broadening subtracted; $\theta$ = Bragg angle. Since $t \propto 1/\beta$, halving the grain size doubles the peak width — fewer coherent planes, broader peak, the same inverse relation as
 
-The beam averages over mm² — real statistics, the complement to TEM's statistics-of-one — but that is also the limitation: no spatial resolution, weak signal from thin films (grazing incidence increases path length in the film to compensate), and nothing at all from amorphous films, since there are no planes to diffract. For those, **XRR** (same tool, grazing incidence, watching interference fringes vs angle rather than diffraction) gives thickness, density, and roughness of any film, crystalline or not — it only needs interfaces, not order.
+the Fourier width of a truncated lattice ([[Fourier Transform]]). Averages over mm² — the statistical complement to TEM. Thin films: grazing incidence for path length; amorphous films show nothing in XRD but everything in **XRR** — grazing-incidence interference fringes with spacing $\Delta\theta \approx \lambda/2t$ give thickness, density, and roughness of any film with interfaces, crystalline or not, model-light.
 
-**Choosing:** step height → profilometer (direct, absolute); roughness or nm morphology → AFM (direct, slow); transparent-film thickness → ellipsometer (model-based, fast) sanity-checked by XRR (direct-ish, slower); crystallinity/strain/grain size → XRD; when tools disagree or the answer is buried → cross-section [[Electron Microscopy (SEM and TEM)|TEM]], the destructive ground truth.
+| quantity | tool | direct? |
+|---|---|---|
+| step height, etch depth | profilometer | yes |
+| roughness, nm morphology | AFM | yes (⊗ tip) |
+| transparent-film thickness | ellipsometer | model fit |
+| thickness/density, any film | XRR | fringe spacing |
+| phase, strain, grain size | XRD | yes |
+| buried structure | cross-section TEM | destructive ground truth |
 
-> [!question]- Ellipsometry says your ALD alumina is 42 nm; XRR says 38 nm. Which do you believe, and what's actually wrong?
-> XRR — its fringe spacing depends on thickness and (weakly) density, with no refractive-index assumption. The disagreement is telling you the film's index is lower than the textbook Al₂O₃ value in your ellipsometer model (low-temperature ALD films are commonly porous or hydrated); the ellipsometer honored its wrong index by inflating the thickness. The productive move: fix the thickness at the XRR value, refit ellipsometry for the index — now you've measured the porosity too, and calibrated the fast tool for the rest of the run.
+> [!question]- Ellipsometry reports 42 nm of ALD alumina; XRR reports 38 nm. Which is right, and what is the discrepancy worth?
+> XRR — fringe spacing depends on thickness with no index assumption. The gap means the film's index is below the model value (porous or hydrated low-temperature ALD); the ellipsometer honored its wrong index by inflating thickness. Fix the thickness at the XRR value and refit ellipsometry for the index: the discrepancy has now measured the film porosity and calibrated the fast tool for the rest of the run.
 
 # Connections
 
-- [[Electron Microscopy (SEM and TEM)]] — the destructive escalation path and ground truth
-- [[Crystal Diffraction]] — the physics under XRD and XRR
-- [[Thin-Film Deposition]] — what these tools qualify, film by film
+- [[Electron Microscopy (SEM and TEM)]] — the destructive escalation
+- [[Crystal Diffraction]] — the physics under XRD/XRR
+- [[Thin-Film Deposition]] — what these tools qualify
 - [[Etching]] — depth and profile verification
-- [[FFT in Practice]] — Scherrer broadening is spectral leakage of a truncated lattice
 
 ---
 Source: Ohring, *Materials Science of Thin Films*, Ch. 10; Fujiwara, *Spectroscopic Ellipsometry*; Birkholz, *Thin Film Analysis by X-Ray Scattering*

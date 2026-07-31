@@ -8,12 +8,14 @@
 
 **Leakage:** a tone that doesn't complete an integer number of cycles in the record has a discontinuity at the wrap-around, and its power smears into all bins (sinc-shaped skirts, falling only 6 dB/octave). Fix by **windowing** — taper the record edges to zero.
 
-| Window | Main-lobe width | Highest sidelobe | ENBW (bins) | Use when |
-|---|---|---|---|---|
-| Rectangular (none) | 1 bin | −13 dB | 1.00 | exactly periodic / transient data |
-| Hann | 2 bins | −31 dB | 1.50 | **default for everything** |
-| Blackman-Harris | 4 bins | −92 dB | 2.00 | small tone next to big tone |
-| Flat-top | 5 bins | −93 dB | 3.77 | accurate amplitude readout |
+| Window | Highest sidelobe | ENBW (bins) | Use when |
+|---|---|---|---|
+| Rectangular (none) | −13 dB | 1.00 | exactly periodic / transient data |
+| Hann | −31 dB | 1.50 | **default for everything** |
+| Blackman-Harris | −92 dB | 2.00 | small tone next to big tone |
+| Flat-top | −93 dB | 3.77 | accurate amplitude readout |
+
+Full table with main-lobe widths, sidelobe rolloff rates, and scalloping loss — plus why the rolloff rate is set by edge smoothness — is in [[Window Functions and Apodization]].
 
 **Zero-padding interpolates the display; it adds no information.** Padding to $4N$ gives you a smoother curve through the same underlying spectrum — peak positions read off more easily, but resolution (ability to split two tones) is still set by the original record length.
 
@@ -23,7 +25,11 @@ $$
 S_{xx}(f_k) = \frac{2\,|X_k|^2}{f_s \sum_n w_n^2}
 $$
 
-where the window power $\sum w_n^2$ replaces the naive $N$. The **equivalent noise bandwidth** $\mathrm{ENBW} = f_s \frac{\sum w_n^2}{(\sum w_n)^2}$ is the effective width of one bin: to quote a noise floor in V/√Hz you divide bin power by ENBW, and to convert a *tone's* PSD bin back to power you multiply by it. Amplitude of a tone and density of noise scale differently — check with a known sine + known resistor's Johnson noise ([[Johnson-Nyquist Noise]] gives you a calibrated 4 nV/√Hz source for free).
+$X_k$ = the windowed DFT output at bin $k$ (V, unnormalized as most libraries return it); $w_n$ = window coefficients (dimensionless, $w_n = 1$ for no window); $f_s$ = sample rate (Sa/s); the 2 folds negative frequencies into a one-sided density. The denominator $f_s\sum w_n^2$ is what carries the units: $\sum w_n^2$ replaces the naive $N$ because a taper removes effective samples, and dividing by $f_s$ turns per-bin power into per-Hz density.
+
+$$\mathrm{ENBW} = f_s\,\frac{\sum_n w_n^2}{\left(\sum_n w_n\right)^2}$$
+
+= the effective width of one bin (Hz) — the bandwidth a brick-wall filter would need to pass the same noise power as this window's bin. Divide bin power by ENBW for a noise floor in V/√Hz; multiply by it to recover a *tone's* total power. Tones and noise scale differently precisely because a tone occupies one bin regardless of window while noise fills all of them. Amplitude of a tone and density of noise scale differently — check with a known sine + known resistor's Johnson noise ([[Johnson-Nyquist Noise]] gives you a calibrated 4 nV/√Hz source for free).
 
 **Averaging:** power averaging ($\langle |X|^2 \rangle$, Welch-style) reduces the variance of the spectrum estimate but the noise floor stays put; **coherent averaging** (average the complex $X_k$, needs a phase-stable trigger) pulls signals out of the noise, floor drops by $1/\sqrt{N_\text{avg}}$.
 

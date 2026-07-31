@@ -4,10 +4,10 @@
 
 # Reference
 
-Loop: phase detector → loop filter → VCO → (÷N) → back. Locked: $f_\text{out} = N f_\text{ref}$; step N and you have a frequency synthesizer with the reference's stability.
+Loop: phase detector → loop filter → VCO → (÷N) → back. Locked: $f_\text{out} = N f_\text{ref}$; step $N$ and you have a synthesizer carrying the reference's stability. The loop gain is $K = K_d K_v F(s)/N$, with $K_d$ = phase-detector gain (V/rad), $K_v$ = VCO tuning sensitivity (rad/s per V — the datasheet's MHz/V × 2π), and $F(s)$ the filter; the $1/N$ is why high-$N$ loops are slow and why the comparison frequency, not the output frequency, sets achievable bandwidth.
 
 **Loop bandwidth is THE design choice:**
-- **Inside** the loop BW: output follows the reference — VCO noise suppressed, reference phase noise appears **multiplied by N ($+20\log N$ dB)**
+- **Inside** the loop BW: output follows the reference — VCO noise suppressed, reference phase noise appears **multiplied by $N$ in amplitude, i.e. $+20\log_{10}N$ dB in phase-noise power** (multiplying a frequency multiplies its phase excursions by the same factor)
 - **Outside:** the VCO free-runs and shows its own phase noise
 → put the crossover where the (reference × N) and free-VCO noise curves intersect. Wide loop = agile tracking, jitter cleanup from a good reference; narrow loop = flywheel that filters a noisy reference.
 

@@ -8,6 +8,10 @@ $$
 \Gamma = \frac{Z_L - Z_0}{Z_L + Z_0}
 $$
 
+$\Gamma$ = voltage reflection coefficient (dimensionless, complex: magnitude = fraction of *amplitude* returned, phase = the sign/delay of the return); $Z_L$ = load impedance (Ω, generally complex); $Z_0$ = characteristic impedance of the line (Ω, real for a low-loss line — the fixed ratio $V/I$ that a travelling wave must obey, set by geometry via $Z_0 = \sqrt{L'/C'}$ from the per-length inductance and capacitance).
+
+The form is a normalized *mismatch over sum*: reflection is driven by the difference of the impedances and scaled by their total, so what matters is the ratio $Z_L/Z_0$, not either value alone. Reflected power fraction $= |\Gamma|^2$; return loss $= -20\log_{10}|\Gamma|$ dB.
+
 | Load | Γ | What comes back |
 |---|---|---|
 | Matched ($Z_L = Z_0$) | 0 | nothing — line looks infinite |

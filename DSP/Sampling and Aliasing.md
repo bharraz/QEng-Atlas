@@ -12,6 +12,8 @@ $$
 f_\text{alias} = \left| f - n f_s \right|, \quad n = \mathrm{round}(f/f_s)
 $$
 
+$f$ = true input frequency (Hz); $f_s$ = sample rate (Sa/s); $n$ = the nearest integer multiple of $f_s$, i.e. which Nyquist zone the input lives in; $f_{\text{alias}}$ = where it appears in the data (Hz, always inside $[0, f_s/2]$). The operation is subtract-the-nearest-multiple-then-fold — sampling multiplies by an impulse train, whose Fourier transform is another impulse train ([[Fourier Transform]]), so the spectrum is *convolved* with a comb of spacing $f_s$ and every copy overlaps the baseband.
+
 i.e. reflect off $f_s/2$ repeatedly until you're inside $[0, f_s/2]$. A 1.1 MHz tone sampled at 1 MSa/s shows up at 100 kHz, looking perfectly innocent.
 
 **The anti-alias filter must be analog and must come before the ADC.** After sampling, the alias *is* the data — no digital filter can unmix it. Practical consequence: your filter's stopband must be down by the time you reach $f_s - f_\text{max}$, which is why oversampling then decimating digitally is so popular (relaxes the analog filter to a gentle roll-off).

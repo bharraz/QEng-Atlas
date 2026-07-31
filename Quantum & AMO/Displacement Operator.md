@@ -8,6 +8,8 @@ $$
 D(\alpha) = e^{\alpha a^\dagger - \alpha^* a}, \qquad D^\dagger(\alpha)\, a\, D(\alpha) = a + \alpha, \qquad D(\alpha)|0\rangle = |\alpha\rangle
 $$
 
+$\alpha$ = complex displacement (dimensionless): its real and imaginary parts are the shifts in the two quadratures, measured in units of the ground-state spread $x_0 = \sqrt{\hbar/2m\omega}$, and $|\alpha|^2 = \bar n$ is the mean quanta added. The exponent is anti-Hermitian ($\alpha a^\dagger - \alpha^* a$), which is what makes $D$ unitary; in position–momentum language it is $e^{i(p_0\hat x - x_0\hat p)/\hbar}$, so momentum generates position shifts and vice versa.
+
 Unitary, $D^\dagger(\alpha) = D(-\alpha)$. Normal-ordered form (from BCH, since $[a, a^\dagger]=1$ is central): $D(\alpha) = e^{-|\alpha|^2/2}\,e^{\alpha a^\dagger}e^{-\alpha^* a}$.
 
 **The composition phase — THE point of this card.** BCH with $[A,B]$ a c-number gives $e^A e^B = e^{A+B}e^{[A,B]/2}$, hence

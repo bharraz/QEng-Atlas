@@ -39,7 +39,7 @@ Below $T_C$ ($T_N$ for antiferromagnets) a ferromagnet breaks into **domains** a
 - [[Spin-1-2]] — the elementary moment and its operators
 - [[Angular Momentum in QM]] — the spin algebra the Heisenberg model is built from
 - [[Zeeman Effect (Atlas)]] — how an external field couples to and splits the spins
-- [[Pauli Matrices]] — the same $\mathbf{S}_i\cdot\mathbf{S}_j$ coupling appears in qubit Hamiltonians
+- [[Reference Atlas/Linear Algebra/Pauli Matrices]] — the same $\mathbf{S}_i\cdot\mathbf{S}_j$ coupling appears in qubit Hamiltonians
 - [[Symmetry in Quantum Mechanics]] — ordering spontaneously breaks spin-rotation symmetry
 
 ---

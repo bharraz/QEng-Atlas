@@ -27,7 +27,7 @@ Arbitrary-angle element: $M(\theta) = R(\theta)\, M(0)\, R(-\theta)$ — rotate 
 - [[Polarization of EM Waves]] — the physical states these 2-vectors encode
 - [[Waveplates]] — the workhorse matrices above, with their lab gotchas
 - [[Birefringence]] — where the differential phase in waveplate matrices physically comes from
-- [[Pauli Matrices]] — Jones matrices of lossless elements are exactly SU(2); polarization is a flying qubit
+- [[Reference Atlas/Linear Algebra/Pauli Matrices]] — Jones matrices of lossless elements are exactly SU(2); polarization is a flying qubit
 
 ---
 Source: Hecht, *Optics*, Ch. 8

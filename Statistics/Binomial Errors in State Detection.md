@@ -8,7 +8,7 @@ $$
 \hat{p} = \frac{k}{N}, \qquad \sigma_{\hat p} = \sqrt{\frac{\hat p(1 - \hat p)}{N}}
 $$
 
-Error is largest at $p = 1/2$ ($\sigma = 1/2\sqrt{N}$), and the formula is fine for $Np(1-p) \gtrsim 10$.
+$k$ = successes counted; $N$ = shots; $\hat p$ = estimated probability (dimensionless). The $p(1-p)$ numerator is the variance of a single Bernoulli trial, and dividing by $N$ is the usual variance-of-the-mean — so $\sigma \propto 1/\sqrt{N}$ as always, but with a prefactor that *vanishes at the extremes*. Error is largest at $p = 1/2$ ($\sigma = 1/2\sqrt N$) and the Gaussian approximation holds for $Np(1-p) \gtrsim 10$; note this means the required shot count depends on where $p$ sits, not just on the precision you want.
 
 **The edge failure:** $k = 0$ or $k = N$ gives $\sigma = 0$ — a 100%-confident fidelity claim from finite data. Never quote it. Use instead:
 - **Wilson interval** (good default): center $\tilde p = \frac{k + z^2/2}{N + z^2}$, half-width $\frac{z}{N + z^2}\sqrt{\frac{k(N-k)}{N} + \frac{z^2}{4}}$, with $z = 1$ for 68%. Never returns zero width, respects $[0,1]$.

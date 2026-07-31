@@ -10,7 +10,7 @@ $$
 P_{LZ} = \exp\!\left(-\frac{\pi\,\hbar\,\Omega^2}{2\,\alpha}\right)
 $$
 
-(One form among equivalent conventions — check the factor when comparing papers; here $\hbar\Omega$ = full minimum gap.)
+$P_{LZ}$ = probability of the *diabatic* outcome (staying in the bare state, jumping between adiabatic curves); $\hbar\Omega$ = minimum gap at the crossing (J), i.e. twice the off-diagonal coupling; $\alpha = d(E_1 - E_2)/dt$ = sweep rate of the bare splitting (J/s). The exponent is dimensionless: $\hbar\Omega^2/\alpha$ compares the time spent inside the gap ($\sim \hbar\Omega/\alpha$) against the time the gap needs to act ($\sim 1/\Omega$). Gap enters *squared*, sweep rate linearly — halving the coupling costs the same as quadrupling the speed. (Conventions differ by factors of 2; check before comparing papers.)
 
 | Regime | $\hbar\Omega^2/\alpha$ | Outcome |
 |---|---|---|

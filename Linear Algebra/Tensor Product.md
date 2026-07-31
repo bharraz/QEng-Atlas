@@ -23,7 +23,10 @@ $$
 Ordering convention (left factor = most significant index) must match your basis ordering $|00\rangle, |01\rangle, |10\rangle, |11\rangle$ — the classic source of silently wrong two-qubit simulations.
 
 **Useful algebra:** $\mathrm{Tr}(A\otimes B) = \mathrm{Tr}A\cdot\mathrm{Tr}B$; $(A\otimes B)^\dagger = A^\dagger\otimes B^\dagger$; eigenvalues of $A\otimes B$ = all products $\lambda_i\mu_j$.
-
+- It is distributive, associative, scalars come out of it once, non-commutative
+- Mixed-product property $(A \otimes B)(C \otimes D) = (AC)\otimes (BD)$, so $(A \otimes B) = (I \otimes B)(A \otimes I)$
+- Can be vectorized when applied to a matrix $V$: $(A \otimes B) vec(V) = vec(B V A^T)$
+  
 **Entanglement = failure to factor:** generic $|\psi\rangle \in \mathcal{H}_A\otimes\mathcal{H}_B$ is *not* $|u\rangle\otimes|v\rangle$. Product states are a measure-zero set; the rest are entangled — quantified by the Schmidt decomposition.
 
 > [!question]- Why can't $(|00\rangle + |11\rangle)/\sqrt{2}$ be written as $|u\rangle\otimes|v\rangle$?

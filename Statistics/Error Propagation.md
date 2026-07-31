@@ -8,6 +8,8 @@ $$
 \sigma_f^2 = \sum_i \left(\frac{\partial f}{\partial x_i}\right)^{\!2}\sigma_i^2 \;+\; 2\sum_{i<j}\frac{\partial f}{\partial x_i}\frac{\partial f}{\partial x_j}\,\mathrm{Cov}(x_i, x_j)
 $$
 
+Each partial derivative is the *sensitivity* — units of $f$ per unit of $x_i$ — so the product $(\partial f/\partial x_i)\sigma_i$ is an error contribution already in the units of $f$, and the sum is a Pythagorean addition of those contributions. Reading it as a sensitivity budget is the useful move: compute each term separately and the dominant one names the measurement worth improving; halving an error that contributes 30% of the quadrature sum changes almost nothing.
+
 Drop the covariance term only if inputs are actually independent — shared calibration constants make them not.
 
 **The quick table** (independent inputs):

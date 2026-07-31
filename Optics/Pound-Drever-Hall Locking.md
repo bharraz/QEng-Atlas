@@ -8,7 +8,8 @@
 $$
 \epsilon \propto -2\sqrt{P_c P_s}\; \mathrm{Im}\{F(\omega)F^*(\omega+\Omega) - F^*(\omega)F(\omega-\Omega)\}
 $$
-with $F$ the cavity reflection coefficient.
+
+$\epsilon$ = demodulated error signal (V at the mixer output); $P_c, P_s$ = optical power in the carrier and in each sideband (W) — the $\sqrt{P_cP_s}$ says the signal is a *beat*, so it scales with the geometric mean, maximized when the modulation index puts comparable power in both ($\beta \approx 1.08$); $\Omega$ = modulation frequency (rad/s), chosen $\gg$ cavity linewidth so the sidebands reflect promptly and act as an unshifted phase reference; $F(\omega)$ = cavity reflection coefficient (dimensionless, complex — amplitude and phase of what comes back). Taking $\mathrm{Im}\{\cdot\}$ selects the *phase* difference between carrier and sidebands, which is what makes the signal antisymmetric in detuning and insensitive to intensity.
 
 **The shape:** steep linear zero-crossing at resonance with slope $\propto 1/\delta\nu$ (finesse buys slope), flat wings, and smaller inverted zero-crossings out at $\pm\Omega$ — the sideband resonances. The sign of $\epsilon$ tells you *which way* you're detuned; the wide capture range comes from the wings holding sign all the way to the sidebands.
 

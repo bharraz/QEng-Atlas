@@ -11,6 +11,8 @@ E_\pm = \pm\frac{\hbar}{2}\sqrt{\Omega^2 + \Delta^2}, \qquad
 \tan 2\theta = -\Omega/\Delta
 $$
 
+$E_\pm$ = dressed-state energies (J) — the eigenvalues of the 2×2 rotating-frame Hamiltonian, i.e. a hyperbola in $\Delta$ with minimum gap $\hbar\Omega$; $\Omega$ = Rabi coupling (rad/s), the off-diagonal element; $\Delta = \omega_L - \omega_0$ = detuning (rad/s), the diagonal splitting; $\theta$ = mixing angle (rad), whose tangent is the ratio of off-diagonal to diagonal — the universal 2×2 statement that mixing is strong when coupling beats detuning and weak when it does not. At $\Delta = 0$, $\theta = 45°$ (maximal mixing); at $|\Delta| \gg \Omega$, $\theta \to 0$ and the dressed states collapse onto the bare ones.
+
 **At resonance** ($\Delta = 0$): dressed states are $(|g\rangle \pm |e\rangle)/\sqrt2$, split by exactly $\hbar\Omega$ — the minimum gap of the avoided crossing as the laser is scanned through resonance.
 
 **Far detuned** ($|\Delta| \gg \Omega$): dressed states are nearly bare states, shifted by

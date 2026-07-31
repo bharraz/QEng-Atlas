@@ -8,7 +8,9 @@ $$
 \frac{1}{q(z)} = \frac{1}{R(z)} - \frac{i\lambda}{\pi w^2(z)}
 $$
 
-With waist $w_0$ at $z=0$ and Rayleigh range $z_R = \pi w_0^2/\lambda$ (distance to $\sqrt{2}$-larger spot):
+$q$ = complex beam parameter (m); $R(z)$ = radius of curvature of the wavefront (m, infinite at the waist where the wavefront is flat); $w(z)$ = $1/e^2$ intensity radius (m); $\lambda$ = wavelength in the medium (m). The two physical properties sit in the two parts of one number: curvature in the real part, spot size in the imaginary part — which is what lets a single Möbius transform propagate both at once.
+
+With waist $w_0$ at $z=0$ and Rayleigh range $z_R = \pi w_0^2/\lambda$ (m; the distance over which the spot grows by $\sqrt2$, i.e. the depth of focus):
 
 $$
 w(z) = w_0\sqrt{1 + (z/z_R)^2}, \qquad R(z) = z\left[1 + (z_R/z)^2\right]
@@ -19,6 +21,8 @@ $R$ is flat at the waist, tightest at $z = z_R$, then approaches $R \to z$ (sphe
 $$
 \theta = \frac{\lambda}{\pi w_0}
 $$
+
+$\theta$ = far-field half-angle (rad). Every relation on this page is one statement in disguise: $w_0\theta = \lambda/\pi$, the beam's étendue-like invariant. Small waist ⇔ large divergence ⇔ short $z_R$; you may move the constraint but never beat it (except by shortening $\lambda$).
 
 **Waist–divergence tradeoff: $w_0\theta = \lambda/\pi$ is invariant.** Tight focus buys you a short depth of focus $2z_R \propto w_0^2$ — halve the waist, quarter the working range. Numbers at $\lambda = 1\,\mu$m: $w_0 = 1$ mm gives $z_R \approx 3.1$ m, $\theta \approx 0.32$ mrad; $w_0 = 10\,\mu$m gives $z_R \approx 0.31$ mm.
 

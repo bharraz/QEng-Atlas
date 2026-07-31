@@ -26,6 +26,8 @@ typically 1–10 meV for gate-defined dots. When $E_C \gg k_B T$ and the contact
 
 $$H = J(V)\; \mathbf{S}_1 \cdot \mathbf{S}_2, \qquad J \approx \frac{4t_c^2}{U} \;\;(\text{Hubbard limit}),$$
 
+$J$ = exchange splitting between singlet and triplet (J, or quoted as $J/h$ in MHz–GHz) — the two-qubit coupling rate; $t_c$ = interdot tunnel coupling (J), set by the barrier gate voltage; $U$ = on-site charging energy for double occupancy (J). The form is second-order perturbation theory (coupling² / energy cost): spins exchange only by virtually hopping onto the same dot, which costs $U$ and is allowed only for the singlet by Pauli exclusion — hence the singlet-triplet splitting. Since $t_c$ depends *exponentially* on barrier height, $J \propto t_c^2$ is exponentially gate-tunable, which is what makes ns-scale on/off two-qubit gates possible and simultaneously makes $J$ exquisitely sensitive to charge noise on that gate.
+
 with $t_c$ the interdot tunnel coupling and $U$ the on-site charging energy — gate-voltage-tunable over decades on ns timescales; $\sqrt{\text{SWAP}}$ and CZ gates come directly from pulsing $J$. Readout is spin-to-charge conversion: **Pauli spin blockade** (a triplet cannot tunnel into a singlet (0,2) state) turns spin into a charge movement detected by a nearby charge sensor. Single-spin rotations: ESR microwaves or electrically via micromagnet gradients (EDSR). Main decoherence: nuclear-spin bath (fatal in GaAs, engineered away in $^{28}$Si) and charge noise rattling $J$.
 
 > [!question]- Why did the field migrate from GaAs — with its cleaner heterostructures — to silicon for spin qubits?

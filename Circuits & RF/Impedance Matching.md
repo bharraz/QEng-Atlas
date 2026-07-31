@@ -11,9 +11,10 @@
 $$
 Q = \sqrt{\frac{R_\text{high}}{R_\text{low}} - 1}
 $$
-Series reactance $QR_\text{low}$ on the low side, shunt reactance $R_\text{high}/Q$ across the high side; choose L/C placement for low-pass flavor (usually — it filters harmonics for free).
 
-**Bandwidth cost:** the match holds over roughly $f_0/Q$ — big transformation ratios are inherently narrowband. 50 Ω → 5 kΩ: Q ≈ 10, ~10% bandwidth. Broadband needs cascaded L-sections (each with lower Q) or a transmission-line transformer.
+$Q$ = loaded quality factor of the matching section (dimensionless) — here it plays two roles at once: it is the reactance-to-resistance ratio each element must have, *and* it sets the bandwidth. $R_\text{high}, R_\text{low}$ = the two resistances being matched (Ω). Series reactance $QR_\text{low}$ on the low side, shunt reactance $R_\text{high}/Q$ across the high side; pick L/C placement for a low-pass topology so harmonics are filtered for free.
+
+**Bandwidth cost:** the match holds over roughly $f_0/Q$, so with $Q \approx \sqrt{R_\text{high}/R_\text{low}}$ the fractional bandwidth goes as the inverse square root of the transformation ratio — big ratios are inherently narrowband. 50 Ω → 5 kΩ: Q ≈ 10, ~10% bandwidth. Broadband needs cascaded L-sections (each with lower Q) or a transmission-line transformer.
 
 Worked numbers: 50 → 200 Ω at 100 MHz: $Q = \sqrt3 \approx 1.7$; series X = 87 Ω (139 nH), shunt X = 115 Ω (13.8 pF).
 

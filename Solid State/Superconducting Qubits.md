@@ -10,6 +10,10 @@ A plain **LC oscillator** has evenly spaced levels (it is a harmonic oscillator)
 
 $$H = 4E_C\,(\hat{n} - n_g)^2 - E_J\cos\hat\varphi, \qquad E_C = \frac{e^2}{2C_\Sigma},$$
 
+$\hat n$ = number of Cooper pairs transferred across the junction (dimensionless integer operator — the "momentum"); $\hat\varphi$ = superconducting phase difference across the junction (rad — the "position"), conjugate to $\hat n$; $n_g$ = offset charge in pairs (dimensionless, set by the environment and drifting — the noise source the transmon defeats); $E_C$ = charging energy per electron (J), with $C_\Sigma$ the total island capacitance (F) — the factor 4 converts it to per-Cooper-pair ($(2e)^2/2C = 4E_C$); $E_J$ = Josephson energy (J), the depth of the cosine.
+
+The two energies compete as kinetic vs potential: large $E_C$ (small capacitor) localizes charge and makes phase uncertain; large $E_J$ localizes phase and makes charge uncertain. $E_J/E_C$ is therefore the single dimensionless parameter naming the qubit type — charge qubit ($\ll 1$), transmon ($\sim 50$), flux/phase qubit ($\gg 1$).
+
 with $n_g$ the offset charge (environment-controlled, noisy). Expanding $\cos\hat\varphi$: the quadratic term is the LC oscillator; the quartic term $-E_J\hat\varphi^4/24$ is the anharmonicity. It is a quantum pendulum: $E_C$ the kinetic (charging) energy, $E_J$ the gravitational (Josephson) term.
 
 The dominant design is the **transmon**: a junction shunted by a large capacitor, run at $E_J/E_C \sim 50\text{–}100$. In this limit
