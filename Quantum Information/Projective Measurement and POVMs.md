@@ -28,7 +28,7 @@ No orthogonality, no repeatability, any number of outcomes. The POVM fixes only 
 - [[Postulates of Quantum Mechanics]] — the projective postulate this generalizes
 - [[Projectors]] — the special case, and the Naimark endpoint
 - [[Kraus Operators]] — post-measurement states and the channel-measurement unification
-- [[Quantum State Tomography]] — informationally complete POVMs are its input
+- [[Quantum State Tomography (Atlas)]] — informationally complete POVMs are its input
 
 ---
 Source: Nielsen & Chuang, Ch. 2.2.3–2.2.6

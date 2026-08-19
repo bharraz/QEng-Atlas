@@ -23,7 +23,7 @@ $\chi$ is $d^2 \times d^2$, positive semidefinite, with trace preservation const
 
 # Connections
 
-- [[Quantum State Tomography]] — the subroutine run on every output state
+- [[Quantum State Tomography (Atlas)]] — the subroutine run on every output state
 - [[Quantum Channels]] — $\chi$ is one parametrization of a CPTP map
 - [[Randomized Benchmarking]] — the scalable, SPAM-free alternative
 - [[Kraus Operators]] — diagonalizing $\chi$ hands you a Kraus set

@@ -61,4 +61,4 @@ Two rows deserve attention. **Hamming vs Hann**: Hamming cancels the first sidel
 - [[Numerical Aperture and Spot Size]] / [[Diffraction]] — apertures as spatial windows; Airy rings as sidelobes
 
 ---
-Further reading: Harris, "On the use of windows for harmonic analysis with the discrete Fourier transform," *Proc. IEEE* 66, 51 (1978) — the definitive table; Heinzel, Rüdiger & Schilling, "Spectrum and spectral density estimation by the DFT" (2002) — scaling conventions; Slepian, "Prolate spheroidal wave functions V," *Bell Syst. Tech. J.* 57, 1371 (1978) — the optimal concentration trade
+Source: Harris, "On the use of windows for harmonic analysis with the discrete Fourier transform," *Proc. IEEE* 66, 51 (1978); Heinzel, Rüdiger & Schilling, "Spectrum and spectral density estimation by the DFT" (2002)

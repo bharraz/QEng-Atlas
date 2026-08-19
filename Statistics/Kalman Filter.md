@@ -19,6 +19,11 @@ The honest cost: performance is only "optimal" relative to the declared $Q$ and 
 
 # Connections
 
+> [!question]- Your filter's estimate is smooth and confident but drifts away from reality. Which matrix is wrong, and how do you tell?
+> $Q$ is too small — you told the filter the model is better than it is, so the gain collapses and measurements stop being believed. The diagnostic is the innovation sequence: it should be white with the predicted covariance. Innovations that are correlated, or larger than the filter's own error bars, mean $Q$ is understated.
+
+# Connections
+
 - [[Control Beyond PID]] — LQG: this filter feeding an optimal controller
 - [[Maximum Likelihood Estimation]] — the Bayesian-update machinery underneath
 - [[Autocorrelation]] — innovation whiteness as the tuning criterion

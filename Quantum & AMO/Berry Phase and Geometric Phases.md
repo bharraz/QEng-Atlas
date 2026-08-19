@@ -12,7 +12,7 @@ the **Berry connection** $\mathbf{A}$ acting exactly like a vector potential in 
 
 **The canonical example carries the field's key numbers:** a spin-$\tfrac12$ following a magnetic field traced around a solid angle $\Theta$ acquires $\gamma = -\Theta/2$ — the curvature of a spin-$j$ is a monopole of charge $j$ at the degeneracy $\mathbf{B} = 0$. Two lessons generalize: **degeneracies are the sources of curvature** (near any level crossing the physics is monopole-like), and the phase counts solid angle — pure geometry.
 
-**Geometric gates.** A phase that depends only on the enclosed area is first-order insensitive to how the loop is traversed — timing and rate noise that would wreck a dynamical phase leave the area unchanged. The [[Molmer-Sorensen Gate]] is exactly this in phase space: the spin-dependent loop encloses an area, the area is the entangling phase ($\Omega_2$ of the [[Reference Atlas/Math/Magnus Expansion]]), and closing the loop decouples the gate from the motional state. Adiabatic (Berry) and non-adiabatic (Aharonov–Anandan) geometric single-qubit gates run the same logic on the Bloch sphere. The robustness is real but specific: protection against *path-speed* noise, not against noise that deforms the *area*.
+**Geometric gates.** A phase that depends only on the enclosed area is first-order insensitive to how the loop is traversed — timing and rate noise that would wreck a dynamical phase leave the area unchanged. The [[Molmer-Sorensen Gate]] is exactly this in phase space: the spin-dependent loop encloses an area, the area is the entangling phase ($\Omega_2$ of the [[Magnus Expansion]]), and closing the loop decouples the gate from the motional state. Adiabatic (Berry) and non-adiabatic (Aharonov–Anandan) geometric single-qubit gates run the same logic on the Bloch sphere. The robustness is real but specific: protection against *path-speed* noise, not against noise that deforms the *area*.
 
 **Berry curvature in crystals — the topological dictionary.** In a band structure the parameter space is the Brillouin zone, $\mathbf{R} \to \mathbf{k}$, and each band carries a curvature $\Omega_n(\mathbf{k})$ that enters the semiclassical equations of motion (extending those in [[Bloch's Theorem and Band Structure]]) as an **anomalous velocity**:
 
@@ -32,7 +32,7 @@ Zak phase (1D bands), polarization theory, and photonic/mechanical topological b
 - [[Adiabatic Theorem]] — the transport condition under which Berry's derivation holds
 - [[Gauge Freedom]] — the connection/curvature structure, met first in electromagnetism
 - [[Molmer-Sorensen Gate]] — geometric phase as an entangling gate, in phase space
-- [[Reference Atlas/Math/Magnus Expansion]] — the enclosed-area term is $\Omega_2$
+- [[Magnus Expansion]] — the enclosed-area term is $\Omega_2$
 - [[Bloch's Theorem and Band Structure]] — semiclassical dynamics completed by the anomalous velocity
 - [[Landau-Zener Transitions]] — what happens at the avoided crossings where curvature concentrates
 - [[Bloch Sphere]] — solid angle = geometric phase for the two-level case

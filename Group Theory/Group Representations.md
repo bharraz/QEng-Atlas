@@ -48,7 +48,10 @@ for $SU(2)$ — angular momentum addition *is* tensor-product decomposition, and
 
 # Connections
 
-- [[(Atlas) Group Theory]] — the abstract structure being represented
+- [[(Map) Group Theory]] — the abstract structure being represented
+- [[Cartan Subalgebras, Roots, and Weights]] — how irreps are *constructed* for a Lie algebra: weights, highest weight, classification
+- [[Universal Enveloping Algebra and PBW Basis]] — Casimirs as the center; reps as $U(\mathfrak g)$-modules
+- [[Noether's Theorem]] — degeneracy as a representation statement; hidden symmetry from unexplained degeneracy
 - [[Symmetry in Quantum Mechanics]] — degenerate multiplets are irreps; good quantum numbers are irrep labels
 - [[SU(2) and SO(3)]] — the concrete irreps you meet first: spin-$j$ multiplets
 - [[Point Groups and Character Tables]] — the character machinery applied to finite symmetry groups

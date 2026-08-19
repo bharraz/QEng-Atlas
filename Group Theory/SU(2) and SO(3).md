@@ -42,7 +42,7 @@ $$j_1 \otimes j_2 = |j_1 - j_2| \oplus \cdots \oplus (j_1 + j_2),$$
 
 each irrep appearing exactly once ($SU(2)$ is multiplicity-free — one reason angular momentum bookkeeping is as easy as it is). Basis change between $|j_1 m_1; j_2 m_2\rangle$ and $|J M\rangle$ is the [[Clebsch-Gordan Coefficients]] table. Standard checks: $\tfrac12 \otimes \tfrac12 = 0 \oplus 1$ (singlet + triplet), $\tfrac12 \otimes 1 = \tfrac12 \oplus \tfrac32$ (spin-orbit in a $p$ level).
 
-**Casimir**: $J^2$ commutes with all three generators and equals $j(j+1)$ on the spin-$j$ irrep — the irrep label is the Casimir eigenvalue (see [[Lie Algebras]]).
+**Casimir**: $J^2$ commutes with all three generators and equals $j(j+1)$ on the spin-$j$ irrep — the irrep label is the Casimir eigenvalue (see [[Lie Algebras (Atlas)]]).
 
 > [!question]- Where do you physically "see" that spin-1/2 belongs to $SU(2)$ rather than $SO(3)$?
 > In interference: rotate one arm of a spin-1/2 (e.g. neutron) interferometer by $2\pi$ and the pattern shifts as if the amplitude were multiplied by $-1$; only a $4\pi$ rotation restores it. A vector quantity would return after $2\pi$. The measurable $4\pi$ periodicity is the double cover made visible.
@@ -50,8 +50,8 @@ each irrep appearing exactly once ($SU(2)$ is multiplicity-free — one reason a
 # Connections
 
 - [[Group Representations]] — spin-$j$ multiplets are the irreps; $2j+1$ is their dimension
-- [[Lie Algebras]] — the shared $\mathfrak{su}(2)$ algebra both groups exponentiate from
-- [[Reference Atlas/Linear Algebra/Pauli Matrices]] — $\sigma_i/2$ are the generators; $e^{-i\theta\hat n\cdot\vec\sigma/2}$ is the group element
+- [[Lie Algebras (Atlas)]] — the shared $\mathfrak{su}(2)$ algebra both groups exponentiate from
+- [[Pauli Matrices (Atlas)]] — $\sigma_i/2$ are the generators; $e^{-i\theta\hat n\cdot\vec\sigma/2}$ is the group element
 - [[Bloch Sphere]] — $SU(2)$ acting on a qubit, drawn as rotations of a sphere
 - [[Angular Momentum in QM]] — the ladder structure and the integer/half-integer split
 - [[Clebsch-Gordan Coefficients]] — the tensor-product change of basis

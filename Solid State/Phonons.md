@@ -37,7 +37,7 @@ The $T^3$ is pure mode counting: the thermally accessible phonon sphere has radi
 
 - [[Quantum Harmonic Oscillator]] — each normal mode is one, exactly
 - [[Ladder Operators]] — phonon creation/annihilation and the $\hbar\omega(n+\tfrac12)$ ladder
-- [[Second Quantization]] — the field-quantization framing shared with photons
+- [[Second Quantization (Atlas)]] — the field-quantization framing shared with photons
 - [[Thermal States]] — Bose–Einstein occupation sets heat capacity and mode population
 - [[Superconductivity]] — phonon exchange is the pairing glue in BCS
 - [[Crystal Lattices and Reciprocal Space]] — modes are labeled by $\mathbf{k}$ in the Brillouin zone

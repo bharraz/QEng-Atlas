@@ -21,10 +21,10 @@ $4^{n+1}$ elements; the phases make it a genuine group ($XY = iZ$ needs the $i$)
 
 # Connections
 
-- [[Reference Atlas/Linear Algebra/Pauli Matrices]] — the single-qubit generators and their algebra
+- [[Pauli Matrices (Atlas)]] — the single-qubit generators and their algebra
 - [[Stabilizer Formalism]] — states defined as +1 eigenspaces of commuting Pauli subsets
 - [[Clifford Group]] — the unitaries that permute the Pauli group
-- [[Quantum Error Correction]] — where the error-basis property pays rent
+- [[Quantum Error Correction (Atlas)]] — where the error-basis property pays rent
 
 ---
 Source: Gottesman, *Stabilizer Codes and Quantum Error Correction*, PhD thesis (1997), Ch. 2

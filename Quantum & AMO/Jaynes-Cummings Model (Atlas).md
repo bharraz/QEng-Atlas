@@ -29,7 +29,7 @@ $n$ = photon number of the lower member of the pair; $\Delta = \omega_0 - \omega
 
 # Connections
 
-- [[Rotating Wave Approximation]] — what reduces the Rabi model to this solvable form
+- [[Rotating Wave Approximation (Atlas)]] — what reduces the Rabi model to this solvable form
 - [[Sideband Transitions]] — the trapped-ion incarnation, phonons for photons
 - [[Cavity QED]] — the platform where $g$ vs $\kappa, \Gamma$ decides visibility
 - [[Dressed States]] — $|\pm, n\rangle$ are their fully quantized version

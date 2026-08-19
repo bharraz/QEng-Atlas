@@ -53,6 +53,7 @@ $$e^{-i\frac{\theta}{2}\sigma_z}\, \sigma_x\, e^{i\frac{\theta}{2}\sigma_z} = \s
 - [[Rotating Frame Transformation]] / [[Interaction Picture]] — conjugation as frame change
 - [[Displacement Operator]] — the c-number case in daily use
 - [[Simultaneous Diagonalization]] — commuting = jointly measurable
+- [[Operators and Superoperators]] — the general-math frame: operators beyond QM, and the rung above
 
 ---
 Source: Sakurai & Napolitano, *Modern Quantum Mechanics*, Ch. 1–2; Barnett & Radmore, *Methods in Theoretical Quantum Optics*, Ch. 3

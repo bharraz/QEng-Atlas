@@ -23,7 +23,7 @@ Everything is a rotation on the [[Bloch Sphere]]: $H = \frac{\hbar}{2}\vec\Omega
 
 - [[Rabi Oscillations]] — the dynamics of this Hamiltonian under resonant drive
 - [[Landau-Zener Transitions]] — sweeping $\Delta$ through the avoided crossing
-- [[Reference Atlas/Linear Algebra/Pauli Matrices]] — the natural basis for any 2×2 Hermitian $H$
+- [[Pauli Matrices (Atlas)]] — the natural basis for any 2×2 Hermitian $H$
 - [[Dressed States]] — the $E_\pm$ eigenstates named and used
 - [[Qubits]] — the same object, quantum-information flavored
 

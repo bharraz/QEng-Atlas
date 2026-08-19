@@ -27,7 +27,7 @@ $$H = -\hbar g_0\, a^\dagger a\, (b + b^\dagger), \qquad g_0 = G\, x_{\text{zpf}
 
 - [[Resolved Sideband Cooling]] — the same physics on an ion; this page's Rosetta stone
 - [[Sideband Transitions]] — red/blue sideband algebra
-- [[Cavity QED]] / [[Jaynes-Cummings Model]] — the two-level analogue; optomechanics is the oscillator-oscillator version
+- [[Cavity QED]] / [[Jaynes-Cummings Model (Atlas)]] — the two-level analogue; optomechanics is the oscillator-oscillator version
 - [[Input-Output Theory]] — how the cooling and readout leave through κ
 - [[Squeezed States]] — backaction evasion and the blue-detuned interaction
 - [[Optical Tweezers]] — levitated optomechanics

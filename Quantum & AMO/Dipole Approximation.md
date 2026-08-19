@@ -23,7 +23,7 @@ $$H_{\mathrm{int}} = -\,\mathbf{d}\cdot\mathbf{E}(t), \qquad \Omega = \frac{\lan
 
 - [[Selection Rules]] — E1 rules are the dipole approximation's angular-momentum content; M1/E2 are its corrections
 - [[Lamb-Dicke Regime]] — the kept $e^{ik\hat{x}}$ on the COM, expanded in $\eta$
-- [[Multipole Expansion]] — the same long-wavelength hierarchy in classical radiation language
+- [[Multipole Expansion (Atlas)]] — the same long-wavelength hierarchy in classical radiation language
 
 ---
 Source: Foot, *Atomic Physics*, §7.1

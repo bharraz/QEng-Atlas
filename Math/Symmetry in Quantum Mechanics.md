@@ -10,7 +10,7 @@ $$[U, H] = 0.$$
 
 Three consequences follow directly, and each is something you can spot in data:
 
-- **Conserved quantities.** If $U = e^{-i\theta G}$ is a continuous symmetry, then $[G, H] = 0$, so $\langle G \rangle$ is constant in time. The generator $G$ *is* the conserved observable — angular momentum for rotational symmetry, momentum for translations. (See [[Lie Algebras]] for why the generator carries the physics.)
+- **Conserved quantities.** If $U = e^{-i\theta G}$ is a continuous symmetry, then $[G, H] = 0$, so $\langle G \rangle$ is constant in time. The generator $G$ *is* the conserved observable — angular momentum for rotational symmetry, momentum for translations. (See [[Lie Algebras (Atlas)]] for why the generator carries the physics.)
 - **Degeneracy.** States related by a symmetry have equal energy. A degeneracy in a spectrum is almost never accidental; it signals a symmetry group, and the size of the degenerate multiplet is the dimension of an irreducible representation (see [[Group Representations]]).
 - **Selection rules.** Whether $\langle f | \hat{O} | i \rangle$ can be nonzero is fixed by how $|i\rangle$, $|f\rangle$, and $\hat{O}$ transform under the group. If the representations don't match, the matrix element vanishes by symmetry alone — no integral required.
 
@@ -27,9 +27,9 @@ Three consequences follow directly, and each is something you can spot in data:
 
 # Connections
 
-- [[(Atlas) Group Theory]] — the object doing the acting
+- [[(Map) Group Theory]] — the object doing the acting
 - [[Group Representations]] — degenerate multiplets are irreps; this is the precise statement
-- [[Lie Algebras]] — continuous symmetries and their conserved generators
+- [[Lie Algebras (Atlas)]] — continuous symmetries and their conserved generators
 - [[Selection Rules]] — the atomic-physics payoff: which transitions are allowed
 - [[Wigner-Eckart Theorem]] — matrix elements factored by symmetry; selection rules quantified
 - [[Zeeman Effect (Atlas)]] — multiplet splitting as $SO(3) \to SO(2)$ branching

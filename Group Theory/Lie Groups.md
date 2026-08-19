@@ -33,20 +33,24 @@ Why it matters physically: quantum states are rays, so a symmetry need only be r
 ## Building bigger groups
 
 - **Direct product** $G \times H$: independent symmetries, commuting factors — e.g. $SU(2)_{\text{spin}} \times SO(3)_{\text{orbit}}$ before spin-orbit coupling locks them into the diagonal subgroup.
-- **Semidirect product** $G \ltimes H$: one factor acts on the other — the Euclidean group (rotations acting on translations) and the Poincaré group are the standard cases; the commutator of a rotation and a translation is another translation, so the factors don't decouple.
+- **Semidirect product** $N \rtimes G$: the normal factor $N$ is acted on by $G$. Euclidean group $= \mathbb R^3 \rtimes SO(3)$ and Poincaré $= \mathbb R^{3,1} \rtimes SO^+(3,1)$ — translations are normal, rotations act on them, and the commutator of a rotation and a translation is another translation, so the factors do not decouple. The algebra-level version, including which factor may be quotiented away, is [[Subalgebras, Ideals, and Quotients]].
 
-Why the continuity matters: a continuous symmetry can be built from infinitesimal ones, and each infinitesimal generator is a conserved quantity (Noether). The generators and their commutation relations — the [[Lie Algebras|Lie algebra]] — hold essentially all the local structure, which is why physicists work with the algebra and exponentiate back to the group.
+Why the continuity matters: a continuous symmetry can be built from infinitesimal ones, and each infinitesimal generator is a conserved quantity ([[Noether's Theorem]]). The generators and their commutation relations — the [[Lie Algebras (Atlas)|Lie algebra]] — hold essentially all the local structure, which is why physicists work with the algebra and exponentiate back to the group.
 
 > [!question]- Why can a discrete symmetry (like parity) not give a conservation law by Noether's theorem, while a rotation can?
 > Noether's theorem needs a continuous family of symmetries so it can take a derivative with respect to the parameter and build a conserved current. A discrete symmetry has no parameter to differentiate. Rotations form a Lie group with a continuous angle; parity is a single isolated element with no neighborhood — it gives a conserved *quantum number* (parity eigenvalue) but not a Noether current.
 
 # Connections
 
-- [[Lie Algebras]] — the infinitesimal version; the generators and their commutators
+- [[Lie Algebras (Atlas)]] — the infinitesimal version; the generators and their commutators
+- [[Noether's Theorem]] — one conserved quantity per generator; the callout above in full
+- [[Cartan Subalgebras, Roots, and Weights]] — classification, real forms, and why compactness decides the dynamics
 - [[Generators and the Exponential Map]] — how $e^{-i\theta G}$ turns a generator into a group element
 - [[SU(2) and SO(3)]] — the two three-dimensional Lie groups you meet first, and their subtle relationship
-- [[(Atlas) Group Theory]] — the discrete-friendly axioms these also satisfy
+- [[(Map) Group Theory]] — the discrete-friendly axioms these also satisfy
 - [[Unitary Matrices]] — $U(N)$ and $SU(N)$ are the unitary Lie groups
+- [[Bilinear Forms and Preserved Structures]] — the classical groups manufactured as form-preservers, $A^{\mathsf T}BA = B$
+- [[Dynamical Lie Algebras and Closure]] — the algebra a physical system actually generates, and what its size decides
 
 ---
 Source: Hall, *Lie Groups, Lie Algebras, and Representations*, Ch. 1; Zee, *Group Theory in a Nutshell*, Ch. IV

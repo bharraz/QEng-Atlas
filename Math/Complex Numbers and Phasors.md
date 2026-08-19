@@ -26,7 +26,7 @@ The $e^{-i2\omega t}$ term you drop in the rotating wave approximation is exactl
 # Connections
 
 - [[Complex Impedance]] — the phasor recipe institutionalized: $Z_C = 1/i\omega C$, $Z_L = i\omega L$
-- [[Rotating Wave Approximation]] — dropping the counter-rotating exponential; the quantum version of this note
+- [[Rotating Wave Approximation (Atlas)]] — dropping the counter-rotating exponential; the quantum version of this note
 - [[Driven Damped Harmonic Oscillator]] — the three-line phasor derivation above, unpacked
 - [[Fourier Transform]] — phasors are the single-frequency slice of the full decomposition
 

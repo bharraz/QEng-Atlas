@@ -1,6 +1,8 @@
 #AMO
 
-**A red-detuned, tightly focused laser beam is a trap for a single atom: the AC Stark shift turns "more intensity" into "lower potential energy," so the focus becomes a 3D well a few hundred µK deep.** One tweezer is a trap; a thousand of them, imaged and rearranged, are the register of neutral-atom quantum computing — and the whole platform's character (stochastic loading, µK depths, state-dependent potentials) follows from the trap physics on this page.
+**A red-detuned, tightly focused laser beam traps a single atom: the AC Stark shift turns "more intensity" into "lower potential energy," so the focus becomes a 3D well a few hundred µK deep.**
+
+The platform's whole character — stochastic loading, µK depths, state-dependent potentials, soft traps — follows from that one shallow well.
 
 # Reference
 
@@ -14,7 +16,7 @@ The prefactor $3\pi c^2/2\omega_0^3$ is just the atom's resonant cross-section b
 
 $$\frac{\hbar\Gamma_{\text{sc}}}{|U_{\text{dip}}|} = \frac{\Gamma}{|\Delta|}$$
 
-— at fixed depth, more detuning (paid for with more power, $U \propto I/\Delta$) buys proportionally less scattering. Hence FORTs run hundreds of nm from resonance (852/1064 nm for Rb/Cs on D lines at 780/852 nm... i.e. the *trap* wavelength sits far red of *every* strong transition), where an atom scatters a photon every ~seconds instead of every µs.
+**At fixed trap depth, more detuning buys proportionally less scattering** — paid for with more power, since $U \propto I/\Delta$ must be held constant. Hence far-off-resonant traps sit hundreds of nm from every strong transition (1064 nm against Rb's 780 nm D line, for instance), where an atom scatters a photon every few seconds rather than every µs.
 
 **Geometry** ([[Gaussian Beams]], [[Numerical Aperture and Spot Size]]): $w_0 \approx \lambda/\pi\mathrm{NA}$, $I_0 = 2P/\pi w_0^2$, $z_R = \pi w_0^2/\lambda$. NA 0.5–0.9 pushes $w_0$ to 0.5–1 µm; a few mW then gives $U_0/k_B \sim$ 0.1–1 mK. **Trap frequencies** from the harmonic expansion:
 
@@ -22,9 +24,11 @@ $$\omega_r = \sqrt{\frac{4U_0}{m w_0^2}}, \qquad \omega_z = \sqrt{\frac{2U_0}{m 
 
 $\omega_r, \omega_z$ = radial and axial trap frequencies (rad/s); $U_0$ = trap depth (J); $m$ = atomic mass (kg); $w_0$ = beam waist (m); $z_R = \pi w_0^2/\lambda$ = Rayleigh range (m). These are just $\omega = \sqrt{\text{curvature}/m}$ with the curvature of the intensity profile: the trap is stiff over $w_0$ radially but only over $z_R \gg w_0$ axially. Note $\omega \propto \sqrt{U_0}/w_0 \propto \sqrt{P}/w_0^2$ — tightening the focus buys trap frequency far faster than raising power does.
 
-— typically $\omega_r/2\pi \sim$ 20–150 kHz, $\omega_z$ ~5× softer: the trap is a cigar along the beam, because intensity falls off over $w_0$ radially but over the much longer $z_R$ axially. The softness of these traps relative to ion traps (MHz) is the platform's defining constraint: Lamb-Dicke parameters are marginal, thermal motion matters, and everything wants ground-state cooling.
+**The trap is a cigar along the beam** — $\omega_r/2\pi$ lands in the tens-to-hundred kHz range and $\omega_z$ is several times softer, because intensity falls off over $w_0$ radially but over the much longer $z_R$ axially. **Softness relative to ion traps (MHz) is the platform's defining constraint:** Lamb–Dicke parameters are marginal, thermal motion matters, and everything wants ground-state cooling ([[Debye-Waller Factor]]).
 
-**Orders of magnitude to carry:** depth mK ≫ atom temperature (10–50 µK post-loading) ≫ trap-frequency scale (µK-equivalent ~ kHz×ħ/k_B ~ 50 nK per kHz... i.e. $\bar n \sim 10$ thermally); photon recoil per scattering event heats by $T_{\text{rec}} \sim 200$ nK — a budget of ~10³–10⁴ scattering events before boiling out, which is what "seconds of trap lifetime at big detuning" means.
+**The scale hierarchy to carry:**
+$$U_0/k_B \;(\text{mK}) \;\gg\; T_{\text{atom}} \;(\text{tens of }\mu\text{K}) \;\gg\; \hbar\omega_{\text{trap}}/k_B \;(\sim 50\ \text{nK per kHz})$$
+The second inequality is why a freshly loaded atom sits at $\bar n \sim 10$ rather than in the ground state. Photon recoil adds $T_{\text{rec}} \sim 200$ nK per scattering event, so the trap tolerates $10^3$–$10^4$ scattering events before the atom boils out — that budget, divided by $\Gamma_\text{sc}$, *is* what "seconds of trap lifetime at large detuning" means.
 
 ## From one trap to a machine
 

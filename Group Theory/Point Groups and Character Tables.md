@@ -33,7 +33,7 @@ Conventions: columns are conjugacy classes (with class sizes), rows are irreps. 
 
 # Connections
 
-- [[(Atlas) Group Theory]] — $C_{3v} \cong D_3$: the abstract group behind the worked triangle example
+- [[(Map) Group Theory]] — $C_{3v} \cong D_3$: the abstract group behind the worked triangle example
 - [[Group Representations]] — character orthogonality and the multiplicity formula used throughout
 - [[Symmetry in Quantum Mechanics]] — degeneracy, branching, and selection rules in general form
 - [[NV Centers (atlas)]] — the flagship application: level labels, strain splitting, optical polarization

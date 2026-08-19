@@ -32,7 +32,8 @@ Cousins with different orderings: $P$ (normal order; wildly singular for nonclas
 # Connections
 
 - [[Coherent States]] — the positive-Gaussian corner of the zoo
-- [[Quantum State Tomography]] — homodyne marginals → inverse Radon → $W$
+- [[Bosonic Codes]] — cat and GKP code words, and negativity as the verification signature
+- [[Quantum State Tomography (Atlas)]] — homodyne marginals → inverse Radon → $W$
 - [[Squeezed States]] — quadrature variances read directly off the ellipse
 - [[Fock States]] — negativity in its purest form
 - [[Homodyne Detection]] — the measurement whose statistics are $W$'s marginals

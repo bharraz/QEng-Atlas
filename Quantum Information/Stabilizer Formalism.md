@@ -24,7 +24,7 @@ $$
 # Connections
 
 - [[Pauli Group]] — the raw material; commute-or-anticommute is what makes updates cheap
-- [[Quantum Error Correction]] — syndromes are stabilizer eigenvalues
+- [[Quantum Error Correction (Atlas)]] — syndromes are stabilizer eigenvalues
 - [[Clifford Group]] — the gates that preserve the formalism
 - [[Bell States]] — two-generator worked example above
 

@@ -29,6 +29,7 @@ These are why potentials exist: curl-free fields come from a scalar potential ($
 
 # Connections
 
+- [[Index Notation and Tensors]] — $\varepsilon_{ijk}$ and the one identity that proves every curl identity in two lines
 - [[Stokes and Divergence Theorems]] — Stokes turns circulation integrals into curl fluxes
 - [[Vector Potential]] — B = ∇×A exists because div curl = 0
 - [[Maxwell's Equations]] — both dynamic equations are curl equations

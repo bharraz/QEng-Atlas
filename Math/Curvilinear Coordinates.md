@@ -41,6 +41,7 @@ $$
 
 # Connections
 
+- [[Index Notation and Tensors]] — where upper vs. lower indices stops being cosmetic; the metric as raiser/lowerer
 - [[Gradient]] — what the metric factors mean physically
 - [[Laplacian]] — the radial-part tricks and where each form gets used
 - [[Bessel Functions]] — what separation in cylindrical coordinates spits out

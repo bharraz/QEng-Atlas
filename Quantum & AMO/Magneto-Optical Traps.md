@@ -50,3 +50,6 @@ a MOT alone bottoms out here; polarization-gradient (sub-Doppler) cooling goes l
 - [[Two-Level Systems]] — the underlying scattering-rate formula both $\beta$ and $\kappa$ derive from
 - [[Optical Tweezers]] — the MOT is usually the atom source loaded into the trap
 - [[Photodetection and Shot Noise]] — fluorescence imaging of MOT number/density
+
+---
+Source: Metcalf & van der Straten, *Laser Cooling and Trapping*, Ch. 11; Foot, *Atomic Physics*, Ch. 9

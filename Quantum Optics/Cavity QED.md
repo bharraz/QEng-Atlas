@@ -8,7 +8,7 @@ Single-photon coupling from the zero-point field: $g = d\,\mathcal{E}_0/\hbar = 
 
 **Small $V$ is the whole game**: $g \propto d/\sqrt{V}$ while $\kappa$ is fixed by the mirrors and $\Gamma$ by the atom, so the only lever that improves both $g/\kappa$ and $g/\Gamma$ at once is shrinking the mode.
 
-**Strong coupling** $g \gg \kappa, \Gamma$: the [[Jaynes-Cummings Model]] doublets are resolvable and the **vacuum Rabi splitting $2g$** appears in the transmission spectrum of the coupled system — a single atom visibly splits the cavity line.
+**Strong coupling** $g \gg \kappa, \Gamma$: the [[Jaynes-Cummings Model (Atlas)]] doublets are resolvable and the **vacuum Rabi splitting $2g$** appears in the transmission spectrum of the coupled system — a single atom visibly splits the cavity line.
 
 **Cooperativity** is the figure of merit that survives even when strong coupling fails:
 
@@ -25,7 +25,7 @@ $C$ = cooperativity (dimensionless): coherent coupling rate squared over the pro
 
 # Connections
 
-- [[Jaynes-Cummings Model]] — the Hamiltonian underneath; cavity QED is JC plus dissipation
+- [[Jaynes-Cummings Model (Atlas)]] — the Hamiltonian underneath; cavity QED is JC plus dissipation
 - [[Purcell Effect]] — what large $C$ buys you when $g \gg \kappa$ is out of reach
 - [[Fabry-Perot Cavity]] — where $\kappa$ comes from: FSR/finesse
 - [[Spontaneous Emission and Linewidth]] — the $\Gamma$ leg of the triangle

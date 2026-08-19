@@ -38,7 +38,7 @@ Ladder bounded below because $\langle n|\hat n|n\rangle = \|a|n\rangle\|^2 \geq 
 
 - [[Quantum Harmonic Oscillator]] — the canonical deployment
 - [[Commutators and Anticommutators]] — the algebra this insight lives in
-- [[Second Quantization]] — the same operators promoted to field modes
+- [[Second Quantization (Atlas)]] — the same operators promoted to field modes
 - [[Angular Momentum in QM]] — $J_\pm$: the other famous ladder
 - [[Lamb-Dicke Regime]] — where $x = x_0(a + a^\dagger)$ enters $e^{ikx}$ and makes sidebands
 

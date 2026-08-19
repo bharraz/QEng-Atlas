@@ -1,4 +1,4 @@
-#math #reference
+#reference #math
 
 **Bandwidth = how wide a slice of frequency space something occupies — and the one fact under every version of it: a signal of duration $T$ and bandwidth $W$ contains $\approx 2WT$ independent numbers.** Every relation on this page is that counting argument in a different domain's clothes, and every "why is X limited?" question below reduces to "X ran out of degrees of freedom."
 

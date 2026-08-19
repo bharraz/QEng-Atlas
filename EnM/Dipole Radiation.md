@@ -28,7 +28,7 @@ $\theta$ measured from the dipole axis: **maximum broadside, exactly zero along 
 - [[Antennas]] — engineered dipole radiation; reciprocity makes it the pickup pattern too
 - [[Poynting Vector and Energy Flow]] — integrate $\mathbf{S}$ over the sphere to get $P$
 - [[Near and Far Field]] — the $1/r$ radiation field is only the far zone; up close the dipole is quasi-static
-- [[Multipole Expansion]] — dipole is just the leading radiating term; E2/M1 follow
+- [[Multipole Expansion (Atlas)]] — dipole is just the leading radiating term; E2/M1 follow
 
 ---
 Source: Griffiths, *Introduction to Electrodynamics*, Ch. 11.1; Jackson Ch. 9

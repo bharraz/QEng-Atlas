@@ -41,6 +41,7 @@ $\hat G$ = the generator of the parameter (the operator in $e^{-i\phi\hat G}$: $
 
 # Connections
 
+- [[Quantum Sensing]] — the measurement template this bound applies to, across platforms
 - [[Standard Quantum Limit and Spin Squeezing]] — SQL vs Heisenberg made operational: squeezing, GHZ fragility, decoherence limits
 - [[Maximum Likelihood Estimation]] — the estimator that saturates Cramér-Rao
 - [[Ramsey Interferometry]] — the canonical phase-estimation protocol

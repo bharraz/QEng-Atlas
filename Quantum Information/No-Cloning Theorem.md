@@ -11,7 +11,7 @@ Claim: no unitary satisfies $U|\psi\rangle|0\rangle = |\psi\rangle|\psi\rangle$ 
 > Unitarity preserves inner products: $\langle\phi|\psi\rangle = \langle\phi|\psi\rangle^2$.
 > So $\langle\phi|\psi\rangle \in \{0,1\}$ — only *orthogonal* states can share a cloner. Classical copying survives because pointer states are orthogonal.
 
-**Consequences, all load-bearing:**
+**Consequences:**
 
 - **QKD is secure**: an eavesdropper can't copy the qubit and forward the original intact — interception leaves fingerprints.
 - **No noiseless quantum amplifier**: amplifying a signal is cloning its state onto more photons; the mandatory added noise is this theorem in gain form.

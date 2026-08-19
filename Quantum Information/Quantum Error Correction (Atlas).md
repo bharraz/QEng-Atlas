@@ -25,6 +25,7 @@ Works on any $\alpha|000\rangle + \beta|111\rangle$: both branches give the *sam
 # Connections
 
 - [[Stabilizer Formalism]] — the bookkeeping language of syndromes and code spaces
+- [[Bosonic Codes]] — encoding in one oscillator instead of many qubits; designed around photon loss
 - [[Surface Code]] — the version that hardware actually builds
 - [[Pauli Group]] — errors discretize onto it
 - [[Projectors]] — syndrome extraction is projection onto stabilizer eigenspaces

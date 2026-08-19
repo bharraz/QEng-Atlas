@@ -27,7 +27,7 @@ In quantum-info practice: linear inversion state tomography is literally $\rho =
 - [[Singular Value Decomposition]] — the pseudo-inverse is defined and computed through it
 - [[Least Squares and Chi-Squared Fitting]] — $A^+$ is the linear least-squares solution in closed form
 - [[Condition Number]] — small singular values are why naive inversion explodes; truncation is the fix
-- [[Quantum State Tomography]] — linear-inversion reconstruction is a pseudo-inverse applied to measurement data
+- [[Quantum State Tomography (Atlas)]] — linear-inversion reconstruction is a pseudo-inverse applied to measurement data
 
 ---
 Source: Trefethen & Bau, *Numerical Linear Algebra*, Lecture 11

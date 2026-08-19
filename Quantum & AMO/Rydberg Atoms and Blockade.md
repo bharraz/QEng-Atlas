@@ -1,6 +1,6 @@
 #AMO #quantum-info
 
-**A Rydberg state is a hydrogen-like state of huge principal quantum number $n$; its exaggerated size makes atoms interact over microns, and the blockade — one excitation shifting its neighbors out of resonance — converts that interaction into the two-qubit gate of neutral-atom quantum computing.** This is the page that turns tweezer arrays from a trapping story into a computing platform.
+**A Rydberg state is a hydrogen-like state of huge principal quantum number $n$; its exaggerated size makes atoms interact over microns, and the blockade — one excitation shifting its neighbors out of resonance — converts that interaction into the two-qubit gate of neutral-atom quantum computing.**
 
 # Reference
 
@@ -20,13 +20,24 @@ The $n^{11}$ is the punchline: interactions tunable over ~12 orders of magnitude
 
 $$R_b = \left(\frac{C_6}{\hbar\Omega}\right)^{1/6} \sim 5\text{–}10\ \mu\text{m},$$
 
-$R_b$ = blockade radius (m) — the separation at which the interaction shift equals the drive's linewidth; $C_6$ = van der Waals coefficient (J·m⁶, often quoted in GHz·µm⁶), scaling as $n^{11}$; $\hbar\Omega$ = energy width of the excitation drive (J), with $\Omega$ the ground→Rydberg Rabi frequency (rad/s). $R_b$ is set by where $V(r) = C_6/r^6$ crosses $\hbar\Omega$: inside it the doubly-excited state is pushed out of resonance and cannot be populated.
+$R_b$ = blockade radius (m) — the separation at which the interaction shift equals the drive's linewidth; $C_6$ = van der Waals coefficient (J·m⁶, often quoted in GHz·µm⁶), scaling as $n^{11}$; $\hbar\Omega$ = energy width of the excitation drive (J), with $\Omega$ the ground→Rydberg Rabi frequency (rad/s). $R_b$ is set by where $V(r) = C_6/r^6$ crosses $\hbar\Omega$.
 
-the ensemble supports at most one excitation. Two signatures worth remembering: the allowed state is the *symmetric* one, $(|rg\rangle + |gr\rangle)/\sqrt 2$ — blockade **creates entanglement by forbidding a state** — and it couples with enhanced Rabi frequency $\sqrt{N}\,\Omega$ ($\sqrt 2$ for a pair), the experimental fingerprint of being blockaded. The $1/6$ power means $R_b$ is insensitive to everything — blockade is robust to distance and intensity fluctuations, which is *why* the gate works without interferometric positioning.
+**Inside $R_b$ the ensemble supports at most one excitation.** Two signatures worth remembering:
 
-**The gate.** Canonical protocol (π on control, 2π on target, π on control): if the control was excited, the target's 2π pulse is blockaded and returns no phase; if not, it acquires −1. Result: controlled-Z, with the entangling phase coming from *blocked dynamics* — the atoms never need to sit at a calibrated interaction strength, only inside $R_b$. Modern variants (two-pulse, amplitude/phase-shaped) reach fidelities ~99.5%; the error budget is Rydberg-state decay (finite $n^3$ lifetime — you want to spend as little time Rydberg as possible), Doppler dephasing of the two-photon drive (atoms are ~µK, not at rest), and stray-field sensitivity ($n^7$).
+- The allowed state is the *symmetric* one, $(|rg\rangle + |gr\rangle)/\sqrt 2$ — blockade **creates entanglement by forbidding a state**, not by engineering an interaction strength.
+- It couples with enhanced Rabi frequency $\sqrt N\,\Omega$ ($\sqrt2$ for a pair) — the experimental fingerprint that you are blockaded.
 
-**Why the platform scales:** the same atom is qubit (hyperfine clock states, seconds of coherence), and gate resource (Rydberg, on demand); tweezers rearrange to arbitrary geometries; blockade needs only proximity, so connectivity is reconfigurable — physically moving qubits mid-circuit is a working primitive. Current arrays: hundreds to ~1000 atoms, logical-qubit demonstrations. The same blockade physics run in "analog mode" (global drive, fixed geometry) makes the arrays quantum simulators of Ising models — the second half of the literature.
+The $1/6$ power is why the mechanism is usable at all: $R_b$ barely moves with $C_6$ or $\Omega$, so blockade tolerates distance and intensity fluctuations, and the gate needs no interferometric positioning.
+
+**The gate.** Canonical protocol (π on control, 2π on target, π on control): if the control was excited, the target's 2π pulse is blockaded and returns no phase; if not, it acquires −1. Result: controlled-Z, with the entangling phase coming from *blocked dynamics* — the atoms never need to sit at a calibrated interaction strength, only inside $R_b$. The error budget, in the order it usually bites: **Rydberg-state decay** (finite $n^3$ lifetime, so minimize time spent Rydberg), **Doppler dephasing** of the two-photon drive (atoms are µK, not at rest, and axial position spread dominates — see [[Optical Tweezers]]), and **stray-field sensitivity** through the $n^7$ polarizability. Amplitude- and phase-shaped protocols attack the first by shortening Rydberg residence.
+
+**Why the platform scales**, structurally:
+
+- **One atom, two roles** — hyperfine clock states are the memory (long-lived, field-insensitive), the Rydberg state is the gate resource, summoned only when needed. Idle qubits do not interact at all.
+- **Reconfigurable connectivity** — blockade needs only proximity, and tweezers can move atoms, so physically transporting qubits mid-circuit is a working primitive rather than an exotic one.
+- **Identical qubits by construction** — atoms of a species are indistinguishable, so there is no fabrication-disorder problem of the kind that afflicts solid-state platforms.
+
+Run with a global drive on a fixed geometry instead, and the same blockade becomes an Ising-model quantum simulator — the analog half of the literature.
 
 **Rydberg dressing** (the perturbative cousin): admix a small Rydberg fraction into the ground state with an off-resonant drive — a tunable ground-state interaction $\sim (\Omega/2\Delta)^4 V$, paid for with $(\Omega/2\Delta)^2$ of the Rydberg decay. Simulation tool more than gate tool.
 

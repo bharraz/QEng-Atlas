@@ -30,7 +30,7 @@ with spontaneous-emission error per π-pulse $\sim \Gamma/\Delta \times$ (order 
 - [[Lamb-Dicke Regime]] — $\eta$ built from $\Delta k$; the coupling and its thermal suppression
 - [[Sideband Transitions]] — what counter-propagating Raman drives
 - [[Stark Effect and Light Shifts]] — $\delta_{\text{AC}}$ is a differential AC Stark shift
-- [[Dressed States]] / [[Rotating Wave Approximation]] — the adiabatic-elimination machinery
+- [[Dressed States]] / [[Rotating Wave Approximation (Atlas)]] — the adiabatic-elimination machinery
 - [[EIT and STIRAP]] — the same Λ system used adiabatically
 - [[Rydberg Atoms and Blockade]] — two-photon excitation with the same Doppler bookkeeping
 - [[Acousto-Optic Modulator]] — where the frequency difference and common path are made

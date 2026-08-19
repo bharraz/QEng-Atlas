@@ -53,4 +53,4 @@ The distinguishing capability is **multimodality**: a Kalman filter carries one 
 - [[Noise Spectra and Coupling to Systems]] — non-Gaussian noise as the reason to leave Kalman behind
 
 ---
-Further reading: Doucet & Johansen, "A tutorial on particle filtering and smoothing" (2011); Arulampalam et al., *IEEE Trans. Signal Process.* 50, 174 (2002); Granade et al., "Robust online Hamiltonian learning," *New J. Phys.* 14, 103013 (2012) — particle filtering for qubit parameter estimation
+Source: Doucet & Johansen, "A tutorial on particle filtering and smoothing" (2011); Arulampalam et al., *IEEE Trans. Signal Process.* 50, 174 (2002)

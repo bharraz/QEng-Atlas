@@ -23,7 +23,7 @@ Rough budget: $p = 10^{-3}$, target $p_L = 10^{-12}$ → $d \approx 25$ → $\si
 
 # Connections
 
-- [[Quantum Error Correction]] — the general machinery this code instantiates
+- [[Quantum Error Correction (Atlas)]] — the general machinery this code instantiates
 - [[Stabilizer Formalism]] — plaquette/star checks are stabilizer generators
 - [[Magic and Nonstabilizerness]] — the missing $T$ gate and the distillation bill
 

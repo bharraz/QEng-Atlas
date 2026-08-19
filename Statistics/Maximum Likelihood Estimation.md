@@ -30,7 +30,7 @@ Asymptotically MLE is unbiased and saturates the minimum possible variance — f
 - [[Least Squares and Chi-Squared Fitting]] — the Gaussian special case everyone uses daily
 - [[Confidence Intervals]] — $\Delta\ln L = -1/2$ contours generalize the $\Delta\chi^2 = 1$ rule
 - [[Poisson Distribution]] — the statistics of the counting data where MLE earns its keep
-- [[Quantum State Tomography]] — MLE reconstruction keeps the density matrix physical
+- [[Quantum State Tomography (Atlas)]] — MLE reconstruction keeps the density matrix physical
 
 ---
 Source: Cowan, *Statistical Data Analysis*, Ch. 6

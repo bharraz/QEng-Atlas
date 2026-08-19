@@ -11,10 +11,10 @@
 **Krylov methods — everything from matvecs alone.** The span $\{|\psi\rangle, H|\psi\rangle, H^2|\psi\rangle, \dots\}$ contains excellent approximations to whatever you actually want:
 
 - **Ground state / low excitations:** **Lanczos** (Hermitian; `eigsh(H, k=6, which='SA')`) converges extreme eigenvalues in tens-to-hundreds of matvecs — $N = 24$–30 ground states are routine where full spectra are impossible. Two footnotes that bite: interior eigenvalues converge terribly (use shift-invert), and finite-precision Lanczos produces *ghost* duplicate eigenvalues (the library handles it; hand-rolled versions must reorthogonalize).
-- **Dynamics:** $e^{-iHt}|\psi\rangle$ via `expm_multiply` / Krylov propagators — short-time-exact stepping using only matvecs; never form $e^{-iHt}$ ($2^N \times 2^N$ dense — see [[Matrix Exponential]]). This plus matrix-free $H$ is how 25+-qubit quench dynamics are computed exactly. For time-dependent/driven $H(t)$, combine with Magnus/commutator-free steps ([[Reference Atlas/Math/Magnus Expansion]]).
+- **Dynamics:** $e^{-iHt}|\psi\rangle$ via `expm_multiply` / Krylov propagators — short-time-exact stepping using only matvecs; never form $e^{-iHt}$ ($2^N \times 2^N$ dense — see [[Matrix Exponential]]). This plus matrix-free $H$ is how 25+-qubit quench dynamics are computed exactly. For time-dependent/driven $H(t)$, combine with Magnus/commutator-free steps ([[Magnus Expansion]]).
 - The same machinery runs Liouvillians ([[Lindblad Master Equation]]) — dimension $4^N$, so the ceiling drops to ~12–13 qubits; beyond that, quantum trajectories (stochastic unfolding, $2^N$ per trajectory, embarrassingly parallel) beat the density matrix.
 
-**Symmetry — block-diagonalize before you diagonalize.** If $[H, G] = 0$, eigenstates sort into $G$'s sectors and $H$ never mixes them ([[Simultaneous Diagonalization]], and the payoff of [[Symmetry in Quantum Mechanics]] as *engineering*): conserve total $S_z$ / excitation number → restrict to the fixed-Hamming-weight subspace ($\binom{N}{N/2}$ vs $2^N$: ~30× at $N=20$, and the [[Jaynes-Cummings Model|JC]]/spin-boson ladders reduce to per-excitation blocks); translation symmetry → momentum sectors ($\times N$ savings); parity, point-group sectors likewise. The mechanics: build the basis of one sector (hash table from bit patterns to indices), express $H$ within it. Symmetry sectors are also physics — level statistics *within* a sector distinguish integrable from chaotic; mixing sectors buries that signal.
+**Symmetry — block-diagonalize before you diagonalize.** If $[H, G] = 0$, eigenstates sort into $G$'s sectors and $H$ never mixes them ([[Simultaneous Diagonalization]], and the payoff of [[Symmetry in Quantum Mechanics]] as *engineering*): conserve total $S_z$ / excitation number → restrict to the fixed-Hamming-weight subspace ($\binom{N}{N/2}$ vs $2^N$: ~30× at $N=20$, and the [[Jaynes-Cummings Model (Atlas)|JC]]/spin-boson ladders reduce to per-excitation blocks); translation symmetry → momentum sectors ($\times N$ savings); parity, point-group sectors likewise. The mechanics: build the basis of one sector (hash table from bit patterns to indices), express $H$ within it. Symmetry sectors are also physics — level statistics *within* a sector distinguish integrable from chaotic; mixing sectors buries that signal.
 
 **Truncation as silent ED:** bosonic modes get a Fock-space cutoff $n_{\max}$ — always converge in $n_{\max}$ like any other parameter (coherent/thermal states need $n_{\max} \gtrsim \bar n + 5\sqrt{\bar n}$; driven and squeezed dynamics climb higher than intuition suggests, and a truncation artifact looks exactly like physics: population piling at the cutoff reflects back).
 
@@ -27,7 +27,7 @@
 
 - [[Tensor Networks and MPS]] — where to go when $2^N$ wins; ED is its validator below 20 qubits
 - [[Matrix Exponential]] — why propagators are applied, never formed
-- [[Reference Atlas/Math/Magnus Expansion]] — stepping driven Hamiltonians within the Krylov framework
+- [[Magnus Expansion]] — stepping driven Hamiltonians within the Krylov framework
 - [[Simultaneous Diagonalization]] / [[Symmetry in Quantum Mechanics]] — the sector machinery
 - [[Lindblad Master Equation]] — the $4^N$ version and the trajectory escape
 - [[Floating Point and Numerical Error]] — Lanczos ghosts are its loss-of-orthogonality story

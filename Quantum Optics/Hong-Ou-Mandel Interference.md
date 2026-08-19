@@ -18,7 +18,7 @@ $$V = |\langle \psi_1 | \psi_2 \rangle|^2.$$
 
 **That last equation is why HOM matters beyond being a pretty effect: the dip visibility is a direct meter of photon indistinguishability.** No spectrometer measures this — two sources can have identical spectra yet distinguishable (mixed) wavepackets. Raw visibility > 50% also certifies nonclassical light (classical fields cap at 1/2).
 
-**Where it is load-bearing:**
+**Where it matters:**
 
 - **Source qualification.** "HOM visibility" is *the* headline spec for single-photon sources ([[Quantum Dots|quantum-dot]] sources: >98% for consecutive photons; the hard version is photons from *separate* emitters, where spectral wander between sources caps V). Also diagnoses purity of heralded SPDC photons.
 - **Bell-state measurement = HOM.** Photonic teleportation, entanglement swapping, and quantum repeaters all hinge on projecting two photons onto Bell states, implemented as HOM interference + coincidence pattern (the singlet is the *only* Bell state producing coincidences at the two outputs — antisymmetric under exchange, so it "fermionizes"). No indistinguishability → no repeater network: HOM visibility between independent, remote sources is the metric that gates the whole quantum-network program. The same two-photon interference between "early/late" modes underlies memory-photon entanglement heralding (DLCZ).

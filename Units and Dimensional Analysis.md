@@ -82,6 +82,9 @@ One quantity, six habitats:
 5. **Track dB *of what*.** Power dB and voltage/amplitude dB differ by a factor 2 in the exponent; optical density, RF attenuation, and noise figures all quietly choose one. (See [[dB Conventions]].)
 6. **Angular or not** — see the 2π tax above; worst in spectral densities, where one-sided vs two-sided *and* Hz vs rad/s give four conventions differing by 2π and 2 (see [[PSD Estimation]]).
 
+> [!question]- A result passes dimensional analysis. What has that actually established?
+> Only that you have not mixed incompatible quantities — dimensional consistency is **necessary, never sufficient**. It cannot see dimensionless factors, so $2\pi$, $\tfrac12$, and a sign all pass unnoticed, and those are the errors that actually occur. Use it as a fast filter, then check limits and a special case ([[(Guide) Thinking Mathematically]]).
+
 # Connections
 
 - [[dB Conventions]] — the logarithmic half of this sheet

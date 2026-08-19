@@ -32,6 +32,7 @@ This single result explains the shape of the field: nobody chases raw Heisenberg
 # Connections
 
 - [[Fisher Information and the Cramér-Rao Bound]] — the framework this page operationalizes
+- [[Quantum Sensing]] — where the SQL/Heisenberg distinction lands in a real sensing sequence
 - [[Squeezed States]] — the photonic quadrature version
 - [[Bell States]] / [[Entanglement Measures]] — GHZ structure; ξ² < 1 as a witness
 - [[Molmer-Sorensen Gate]] — the $J^2$-type interaction that twists ion ensembles

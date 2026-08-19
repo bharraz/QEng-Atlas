@@ -25,7 +25,7 @@ $$
 - [[Laplacian]] — the operator and its average-value interpretation
 - [[Method of Images]] — solution-by-guessing licensed by uniqueness
 - [[Paul Traps]] — Earnshaw's theorem is the founding constraint of ion trapping
-- [[Multipole Expansion]] — the systematic form of "smooth potential near the center"
+- [[Multipole Expansion (Atlas)]] — the systematic form of "smooth potential near the center"
 - [[Green's Functions]] — Poisson's equation solved by superposing point-charge responses
 
 ---

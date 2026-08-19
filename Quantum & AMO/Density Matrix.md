@@ -1,7 +1,7 @@
 #quantum
 
 **The state when you don't have a ket: a probability-weighted mixture of projectors, carrying exactly the information that survives ignorance and entanglement.** Classical uncertainty and quantum superposition in one object.
-
+.
 # Reference
 
 $$

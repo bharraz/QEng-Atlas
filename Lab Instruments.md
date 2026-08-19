@@ -15,7 +15,7 @@
 - **AC coupling** removes DC *and* rolls off below ~10 Hz — slow drift vanishes silently.
 - **Acquisition mode**: "peak detect" catches glitches but exaggerates noise; "average" hides single events entirely; "high-res" trades bandwidth for bits. A noise measurement in average mode is meaningless.
 - **Memory depth vs timebase**: at a long timebase the scope drops $f_s$ to fill the record — you can be aliasing at slow sweeps while the front end is fast.
-- **Trigger**: edge triggering shows you only the events you already expected. Pulse-width, runt, dropout, and logic-pattern triggers exist to catch the failure you cannot see ([[Debugging Method]] rule 3).
+- **Trigger**: edge triggering shows you only the events you already expected. Pulse-width, runt, dropout, and logic-pattern triggers exist to catch the failure you cannot see ([[(Guide) Debugging Method]] rule 3).
 
 **Reach for something else when:** you need the frequency content (spectrum analyzer), sub-µV sensitivity (lock-in), phase noise (analyzer or PLL), or absolute frequency (counter/wavemeter).
 
@@ -74,7 +74,7 @@ No single instrument is trustworthy alone. The cheap habits: measure a known sig
 
 # Connections
 
-- [[Debugging Method]] — rule 3 (look) and rule 7 (test the tool) in practice
+- [[(Guide) Debugging Method]] — rule 3 (look) and rule 7 (test the tool) in practice
 - [[Bandwidth]] — the rise-time/bandwidth and ENBW relations these specs rest on
 - [[Time Constants and Reactance Rules of Thumb]] — probe loading, 50 Ω vs 1 MΩ
 - [[Sampling and Aliasing]] — why sample rate and analog bandwidth are separate specs

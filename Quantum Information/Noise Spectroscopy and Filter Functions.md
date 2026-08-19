@@ -20,7 +20,7 @@ $$S(\omega_0) \approx \frac{\pi^2}{4}\,\frac{\chi(T)}{T} \quad (\text{narrow-fil
 
 reconstructs the spectrum point by point. This is how the standard results were established: the $1/f$-like flux and charge noise in superconducting qubits, the Lorentzian $^{13}$C bath spectrum seen by an NV, spin-bath vs charge-noise attribution in quantum dots. More elaborate protocols (varying pulse number at fixed rate, spectral deconvolution, non-Gaussian extensions) refine the same idea. For $T_1$-type (transverse) noise, the complementary probe is **spin-locking / $T_{1\rho}$**: drive continuously at Rabi frequency $\Omega_R$ and the decay rate samples $S(\Omega_R)$ — sweep the drive power to sweep the probe frequency.
 
-**Design direction.** Given a measured $S(\omega)$, choose the sequence whose filter avoids it: $1/f$-dominated → push the passband high (many fast pulses — coherence grows as $T_2 \propto N^{2/3}$ for $1/f$); a sharp spur (50 Hz, a mechanical resonance) → place filter notches on it; finite-width real π-pulses → their errors accumulate, hence the phase-alternating families (XY-8, KDD) whose filter functions are engineered to cancel pulse imperfections too. The [[Reference Atlas/Math/Magnus Expansion]] is the time-domain view of the same design problem; the filter function is its frequency-domain twin.
+**Design direction.** Given a measured $S(\omega)$, choose the sequence whose filter avoids it: $1/f$-dominated → push the passband high (many fast pulses — coherence grows as $T_2 \propto N^{2/3}$ for $1/f$); a sharp spur (50 Hz, a mechanical resonance) → place filter notches on it; finite-width real π-pulses → their errors accumulate, hence the phase-alternating families (XY-8, KDD) whose filter functions are engineered to cancel pulse imperfections too. The [[Magnus Expansion]] is the time-domain view of the same design problem; the filter function is its frequency-domain twin.
 
 **AC sensing is the same object used as a receiver:** an AC field at the filter's passband frequency accumulates *coherently* while everything else is filtered — DD sensing of nT AC fields at kHz–MHz (the NV workhorse), and by sweeping $\tau$, spectroscopy of single nearby nuclear spins (the NMR-of-single-molecules program). Sensitivity bookkeeping then follows [[Fisher Information and the Cramér-Rao Bound]] with $T_2^{\text{(DD)}}$ as the interrogation time.
 
@@ -35,7 +35,7 @@ reconstructs the spectrum point by point. This is how the standard results were 
 - [[PSD Estimation]] / [[Power Spectral Density]] — the $S(\omega)$ being measured, and its unit conventions
 - [[Flicker Noise]] — the $1/f$ spectra that dominate solid-state qubits
 - [[Lock-In Detection]] — the classical instrument this scheme reimplements on a qubit
-- [[Reference Atlas/Math/Magnus Expansion]] — time-domain design; filter functions are the frequency-domain view
+- [[Magnus Expansion]] — time-domain design; filter functions are the frequency-domain view
 - [[Fisher Information and the Cramér-Rao Bound]] — from filtered phase to sensitivity
 - [[NV Centers (atlas)]] — the platform where DD-based sensing is the core business
 

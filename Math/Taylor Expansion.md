@@ -27,7 +27,7 @@ $(1+x)^n \approx 1+nx$ is the single most-used line: it covers relativistic corr
 
 # Connections
 
-- [[Multipole Expansion]] — Taylor in $d/r$; each order is a physical moment
+- [[Multipole Expansion (Atlas)]] — Taylor in $d/r$; each order is a physical moment
 - [[Lamb-Dicke Regime]] — $e^{i\eta(a+a^\dagger)}$ expanded in $\eta$: the orders are carrier and sidebands
 - [[Time-Independent Perturbation Theory]] — the quantum version: energies as a series in the coupling
 - [[Error Propagation]] — first-order Taylor is where $\sigma_f^2 = \sum(\partial f/\partial x_i)^2\sigma_i^2$ comes from

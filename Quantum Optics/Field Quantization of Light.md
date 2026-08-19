@@ -23,7 +23,7 @@ where $E_0$ is the zero-point field amplitude and each mode carries $H = \hbar\o
 
 # Connections
 
-- [[Second Quantization]] — the general machinery this note applies to the EM field
+- [[Second Quantization (Atlas)]] — the general machinery this note applies to the EM field
 - [[Vacuum Fluctuations]] — $\langle E \rangle = 0$ but $\langle E^2 \rangle = E_0^2$: the empty mode still shakes
 - [[Quantum Harmonic Oscillator]] — each mode is exactly this, with $x, p \to X_1, X_2$
 - [[Cavity QED]] — where the $1/\sqrt{V}$ in $E_0$ becomes an engineering target

@@ -27,6 +27,8 @@ Still minimum-uncertainty — an ellipse of the same area, orientation set by $\
 # Connections
 
 - [[Coherent States]] — the round blob this deforms; displaced squeezed states combine both
+- [[Bosonic Codes]] — squeezing as the resource behind GKP states, and its finite-squeezing limit
+- [[Quantum Sensing]] — squeezed light beating the shot-noise limit
 - [[Vacuum Fluctuations]] — the noise floor being redistributed
 - [[Homodyne Detection]] — the quadrature-selective measurement that cashes in
 - [[Wigner Function]] — squeezed states: elliptical Gaussians, still positive

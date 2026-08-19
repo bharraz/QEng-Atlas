@@ -24,7 +24,7 @@ Given $U|u\rangle = e^{2\pi i \varphi}|u\rangle$, estimate $\varphi$ to $t$ bits
 - [[Quantum Fourier Transform]] — the readout stage
 - [[Phase Kickback]] — the write stage
 - [[Canonical Quantum Algorithms]] — Shor is this plus classical number theory
-- [[Trotterization]] — how $U = e^{-iHt}$ gets implemented for chemistry
+- [[Trotterization (Atlas)]] — how $U = e^{-iHt}$ gets implemented for chemistry
 
 ---
 Source: Nielsen & Chuang, Ch. 5.2

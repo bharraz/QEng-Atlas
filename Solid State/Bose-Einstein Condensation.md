@@ -20,7 +20,7 @@ The condensate is described by a single **order parameter** $\psi = \sqrt{n}\,e^
 - [[Thermal States]] — Bose–Einstein statistics and the occupation that condenses
 - [[Coherent States]] — the order parameter behaves like a classical coherent field with a definite phase
 - [[Superconductivity]] — Cooper-pair condensation is the charged, paired cousin of a BEC
-- [[Second Quantization]] — the bosonic field whose ground mode becomes macroscopically occupied
+- [[Second Quantization (Atlas)]] — the bosonic field whose ground mode becomes macroscopically occupied
 - [[Doppler Cooling]] — the first stage of the cooling chain that reaches condensation
 
 ---

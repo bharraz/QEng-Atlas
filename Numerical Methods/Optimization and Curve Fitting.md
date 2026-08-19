@@ -50,6 +50,8 @@ Multistart (many seeds, keep the best) is the honest global method in low dimens
 
 # Connections
 
+- [[Objective Functions and Constraints]] — choosing the loss, regularizer and constraints before minimizing
+- [[Machine Learning Methods]] — what to reach for when the functional form is unknown
 - [[Floating Point and Numerical Error]] — conditioning and cancellation underneath
 - [[Singular Value Decomposition]] — stable linear least squares; diagnosing degenerate directions
 - [[Condition Number]] — gradient-descent zigzag; normal-equation damage

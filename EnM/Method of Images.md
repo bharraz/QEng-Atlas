@@ -23,7 +23,7 @@ Always attractive; the induced surface charge integrates to exactly $-q$.
 
 - [[Electrostatic Potential and Poisson Equation]] — the uniqueness theorem that makes the trick legal
 - [[Paul Traps]] — electrode boundary conditions, induced charges, ion–electrode coupling
-- [[Multipole Expansion]] — the complementary far-from-source expansion
+- [[Multipole Expansion (Atlas)]] — the complementary far-from-source expansion
 - [[Capacitance and Inductance]] — image method computes wire-over-ground-plane capacitance
 
 ---

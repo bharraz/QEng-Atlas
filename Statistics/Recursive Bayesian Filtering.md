@@ -66,4 +66,4 @@ The recursion is the right frame whenever a quantity is estimated repeatedly fro
 - [[Noise Spectra and Coupling to Systems]] — when the Markov assumption fails and the state must be enlarged
 
 ---
-Further reading: Särkkä, *Bayesian Filtering and Smoothing* (2013) — the standard unified treatment, freely available; Barfoot, *State Estimation for Robotics*, Ch. 3–4; Chen, "Bayesian filtering: from Kalman filters to particle filters and beyond" (2003)
+Source: Särkkä, *Bayesian Filtering and Smoothing* (2013); Barfoot, *State Estimation for Robotics*, Ch. 3–4

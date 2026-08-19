@@ -24,7 +24,7 @@ The RSB is literally the **Jaynes–Cummings Hamiltonian** with the cavity mode 
 # Connections
 
 - [[Lamb-Dicke Regime]] — where these couplings and their $\eta$-scalings come from
-- [[Jaynes-Cummings Model]] — RSB realizes it exactly, phonon-for-photon
+- [[Jaynes-Cummings Model (Atlas)]] — RSB realizes it exactly, phonon-for-photon
 - [[Resolved Sideband Cooling]] — RSB cycling as a cooling engine
 - [[Molmer-Sorensen Gate]] — both sidebands at once, off-resonantly: the entangling force
 

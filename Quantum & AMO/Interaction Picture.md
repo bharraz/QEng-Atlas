@@ -12,7 +12,7 @@ $$
 i\hbar\,\partial_t|\psi_I\rangle = V_I(t)\,|\psi_I\rangle, \qquad V_I = U_0^\dagger V U_0
 $$
 
-States evolve under $V_I$ *only* — if $V=0$, interaction-picture states sit still. The price: $V_I$ picks up oscillating factors. Sandwiching $|m\rangle\langle n|$ terms of $V$ between the $U_0$'s dresses them with $e^{i\omega_{mn}t}$, $\omega_{mn} = (E_m - E_n)/\hbar$ — **every matrix element now oscillates at its transition frequency.** A drive at $\omega$ near $\omega_{mn}$ produces slow terms $e^{i(\omega_{mn}-\omega)t}$ (keep) and fast terms $e^{i(\omega_{mn}+\omega)t}$ (drop — that's the [[Rotating Wave Approximation]]).
+States evolve under $V_I$ *only* — if $V=0$, interaction-picture states sit still. The price: $V_I$ picks up oscillating factors. Sandwiching $|m\rangle\langle n|$ terms of $V$ between the $U_0$'s dresses them with $e^{i\omega_{mn}t}$, $\omega_{mn} = (E_m - E_n)/\hbar$ — **every matrix element now oscillates at its transition frequency.** A drive at $\omega$ near $\omega_{mn}$ produces slow terms $e^{i(\omega_{mn}-\omega)t}$ (keep) and fast terms $e^{i(\omega_{mn}+\omega)t}$ (drop — that's the [[Rotating Wave Approximation (Atlas)]]).
 
 **Why bother:** the remaining evolution is slow (rate $\sim V/\hbar$, not $E_n/\hbar$), so iterating the equation of motion converges — that iteration is the Dyson series of [[Time-Dependent Perturbation Theory]].
 
@@ -24,7 +24,7 @@ Interaction picture with $H_0 = \hbar\omega_{\text{drive}}\,(\text{number-like o
 # Connections
 
 - [[Rotating Frame Transformation]] — the same unitary trick with a frame you choose, not necessarily $H_0$
-- [[Rotating Wave Approximation]] — executed on $V_I$'s fast terms
+- [[Rotating Wave Approximation (Atlas)]] — executed on $V_I$'s fast terms
 - [[Time-Dependent Perturbation Theory]] — iterate $i\hbar\,\partial_t|\psi_I\rangle = V_I|\psi_I\rangle$ and you have it
 - [[Heisenberg and Schrodinger Pictures]] — the two limits this interpolates between
 

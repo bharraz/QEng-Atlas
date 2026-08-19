@@ -33,7 +33,7 @@ Choosing between them is a spectral question, not a preference: CPMG for smoothl
 - [[T1 and T2]] — echo is the operational definition of $T_2$ as opposed to $T_2^*$
 - [[Flicker Noise]] — the $1/f$ spectra DD is built to defeat
 - [[Rabi Oscillations]] — pulse fidelity limits how many $\pi$'s you can afford
-- [[Reference Atlas/Math/Magnus Expansion]] — the design theory: sequences engineered so $\bar{H}^{(0)}$ (and, if time-symmetric, all odd orders) vanish
+- [[Magnus Expansion]] — the design theory: sequences engineered so $\bar{H}^{(0)}$ (and, if time-symmetric, all odd orders) vanish
 - [[Window Functions and Apodization]] — $y(t)$ as a window; the same main-lobe/sidelobe trade as spectral analysis
 - [[Noise Spectroscopy and Filter Functions]] — running the filter picture backwards to measure $S(\omega)$
 

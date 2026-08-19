@@ -18,7 +18,7 @@ $$
 $$
 matters when calibrating qubit frequencies at high Rabi power.
 
-Same move in field quantization: keeping $a\sigma_+ + a^\dagger\sigma_-$ (excitation-number conserving) and dropping $a\sigma_- + a^\dagger\sigma_+$ is what turns the Rabi model into the solvable [[Jaynes-Cummings Model]].
+Same move in field quantization: keeping $a\sigma_+ + a^\dagger\sigma_-$ (excitation-number conserving) and dropping $a\sigma_- + a^\dagger\sigma_+$ is what turns the Rabi model into the solvable [[Jaynes-Cummings Model (Atlas)]].
 
 > [!question]- Why exactly does the counter-rotating term contribute so little, and what does it do in second order?
 > In the rotating frame it oscillates at $2\omega$: its first-order effect time-averages to zero over any evolution slow compared to $1/2\omega$. In second order it survives as a level shift (like any off-resonant coupling, $\sim\Omega^2/4\omega_0$) — the Bloch-Siegert shift.
@@ -27,7 +27,7 @@ Same move in field quantization: keeping $a\sigma_+ + a^\dagger\sigma_-$ (excita
 
 - [[Interaction Picture]] — where the $e^{\pm i2\omega t}$ factors become visible to drop
 - [[Rotating Frame Transformation]] — the frame change performed before the approximation
-- [[Jaynes-Cummings Model]] — RWA applied to the quantized field
+- [[Jaynes-Cummings Model (Atlas)]] — RWA applied to the quantized field
 - [[Complex Numbers and Phasors]] — the classical shadow: keeping one of two counter-rotating phasors
 - [[Rabi Oscillations]] — the clean dynamics that emerge once RWA is made
 

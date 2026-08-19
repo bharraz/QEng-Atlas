@@ -10,7 +10,7 @@ H' = U H U^\dagger + i\hbar\, \dot{U} U^\dagger
 $$
 The second term is the **fictitious contribution** — the quantum version of centrifugal/Coriolis terms in a rotating mechanical frame. It's why the transformed Hamiltonian is *not* just $H$ conjugated.
 
-**Spin/qubit at drive frequency $\omega$:** $U = e^{+i\omega t\,\sigma_z/2}$ on $H = \frac{\hbar\omega_0}{2}\sigma_z + \hbar\Omega\cos(\omega t)\,\sigma_x$ gives (after [[Rotating Wave Approximation]])
+**Spin/qubit at drive frequency $\omega$:** $U = e^{+i\omega t\,\sigma_z/2}$ on $H = \frac{\hbar\omega_0}{2}\sigma_z + \hbar\Omega\cos(\omega t)\,\sigma_x$ gives (after [[Rotating Wave Approximation (Atlas)]])
 $$
 H' = -\frac{\hbar\Delta}{2}\sigma_z + \frac{\hbar\Omega}{2}\sigma_x, \qquad \Delta = \omega - \omega_0
 $$
@@ -26,7 +26,7 @@ Bookkeeping gotchas: the frame is a choice, so **quote which frame a phase or fr
 # Connections
 
 - [[Interaction Picture]] — the special case $U = e^{iH_0t/\hbar}$
-- [[Rotating Wave Approximation]] — the cleanup step done in this frame
+- [[Rotating Wave Approximation (Atlas)]] — the cleanup step done in this frame
 - [[Unitary Matrices]] — the transformation machinery
 - [[Rabi Oscillations]] — solved trivially once the frame makes $H$ static
 - [[Molmer-Sorensen Gate]] — lives entirely in a doubly-rotating frame (spin ⊗ motion)

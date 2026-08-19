@@ -35,7 +35,7 @@ From $|gg\rangle$: the Bell state $(|gg\rangle - i|ee\rangle)/\sqrt{2}$. Gate ti
 - [[Entangling Gates]] — MS is the native two-qubit gate that compiles to CNOT
 - [[Sideband Spectrum of Modulated Light]] — generating and sanity-checking the bichromatic drive
 - [[Normal Modes of Ion Chains]] — which shared mode carries the force, and the crowding problem at large N
-- [[Reference Atlas/Math/Magnus Expansion]] — why the gate is exactly solvable: $H$ linear in phase-space operators terminates the series at $\Omega_2$, the geometric phase
+- [[Magnus Expansion]] — why the gate is exactly solvable: $H$ linear in phase-space operators terminates the series at $\Omega_2$, the geometric phase
 
 ---
 Source: Leibfried, Blatt, Monroe & Wineland, *Rev. Mod. Phys.* 75, 281 (2003)

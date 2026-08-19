@@ -52,12 +52,15 @@ Every irrep of every semisimple Lie algebra is built this same way — pick a hi
 # Connections
 
 - [[Lie Groups]] — the curved object this is the tangent space of
+- [[Cartan Subalgebras, Roots, and Weights]] — the $\mathfrak{su}(2)$ ladder template generalized: roots, weights, classification, real forms
+- [[Subalgebras, Ideals, and Quotients]] — which subspaces can be restricted to, and which can be discarded
+- [[Universal Enveloping Algebra and PBW Basis]] — where $J^2$ and the other Casimirs actually live
 - [[Generators and the Exponential Map]] — $e^{i\theta X}$, the algebra-to-group bridge
 - [[Commutators and Anticommutators]] — the algebra's product and its identities
 - [[Baker-Campbell-Hausdorff]] — how generators combine when you multiply exponentials
-- [[Reference Atlas/Math/Magnus Expansion]] — time-dependent evolution generated within the algebra
+- [[Magnus Expansion]] — time-dependent evolution generated within the algebra
 - [[Angular Momentum in QM]] — $\mathfrak{su}(2)$ realized as the physical angular-momentum operators
-- [[Reference Atlas/Linear Algebra/Pauli Matrices]] — the $\mathfrak{su}(2)$ basis; Pauli strings as the $\mathfrak{u}(2^n)$ basis
+- [[Pauli Matrices (Atlas)]] — the $\mathfrak{su}(2)$ basis; Pauli strings as the $\mathfrak{u}(2^n)$ basis
 
 ---
 Source: Hall, *Lie Groups, Lie Algebras, and Representations*, Ch. 2–3; Wiersema et al., "Lie algebras for quantum computing" (arXiv:2308.01306) for the QC framing

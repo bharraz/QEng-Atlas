@@ -33,7 +33,7 @@ Dressed states are also what you adiabatically follow: chirping through resonanc
 - [[Stark Effect and Light Shifts]] — the far-detuned limit as its own subject; dipole traps
 - [[Two-Level Systems]] — the avoided-crossing structure being diagonalized
 - [[Adiabatic Theorem]] — dressed states are the rails for adiabatic passage
-- [[Jaynes-Cummings Model]] — dressed states with the field quantized: the $\pm$ doublet ladder
+- [[Jaynes-Cummings Model (Atlas)]] — dressed states with the field quantized: the $\pm$ doublet ladder
 - [[Rabi Oscillations]] — bare-basis beating between the dressed eigenstates
 
 ---

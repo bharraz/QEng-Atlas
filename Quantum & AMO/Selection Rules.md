@@ -25,7 +25,7 @@
 - [[Clebsch-Gordan Coefficients]] — the rules are exactly the vanishing conditions of $\langle J m; 1 q | J' m'\rangle$
 - [[Dipole Approximation]] — E1 dominance comes from $e^{ik\cdot r} \approx 1$; its corrections are M1/E2
 - [[Optical Pumping]] — engineering these rules to funnel population into one state
-- [[Multipole Expansion]] — the classical ancestor of the E1/M1/E2 hierarchy
+- [[Multipole Expansion (Atlas)]] — the classical ancestor of the E1/M1/E2 hierarchy
 
 ---
 Source: Foot, *Atomic Physics*, §2.2 & §5.4
