@@ -1,6 +1,6 @@
 #optics #metrology
 
-**A frequency comb is a mode-locked laser viewed in the frequency domain: a train of phase-coherent pulses is equivalently millions of laser lines spaced exactly by the repetition rate, every line's frequency fixed by just two radio frequencies.** It is a gear that meshes optical frequencies (hundreds of THz, uncountable) with electronics (GHz, countable) — the invention that made optical clocks and modern frequency metrology possible.
+**A frequency comb is a mode-locked laser viewed in the frequency domain: a train of phase-coherent pulses is equivalently millions of laser lines spaced exactly by the repetition rate, every line's frequency fixed by two radio frequencies.** It is a gear that meshes optical frequencies (hundreds of THz, uncountable) with electronics (GHz, countable) — the invention that made optical clocks and modern frequency metrology possible.
 
 # Reference
 
@@ -10,7 +10,9 @@ $$f_n = n\, f_{\text{rep}} + f_{\text{ceo}}, \qquad f_{\text{ceo}} = \frac{\Delt
 
 $n \sim 10^5$–$10^6$. Two microwave-domain numbers ($f_{\text{rep}}$: ~0.1–10 GHz, detect with a photodiode; $f_{\text{ceo}}$: the comb's overall offset) pin *every* optical line. Comb rigidity is the nontrivial physical fact: mode-locking forces all lines to share one phase relationship, so the spacing is uniform to ~10⁻¹⁹ — the comb is a ruler, not a bundle of independent lasers.
 
-**Self-referencing** — measuring $f_{\text{ceo}}$, the enabling trick (Nobel 2005): broaden the spectrum to an octave (photonic-crystal fiber, supercontinuum), then beat the frequency-doubled red end against the blue end:
+**Picture:** a ruler in frequency: evenly spaced teeth whose spacing $f_{\text{rep}}$ and offset $f_{\text{ceo}}$ are both radio frequencies you can count, so any optical frequency is read as a tooth number plus a small beat.
+
+**Self-referencing** — measuring $f_{\text{ceo}}$, the enabling technique (Nobel 2005): broaden the spectrum to an octave (photonic-crystal fiber, supercontinuum), then beat the frequency-doubled red end against the blue end:
 
 $$2f_n - f_{2n} = 2(nf_{\text{rep}} + f_{\text{ceo}}) - (2nf_{\text{rep}} + f_{\text{ceo}}) = f_{\text{ceo}}.$$
 
@@ -22,10 +24,10 @@ Lock $f_{\text{ceo}}$ (pump-power feedback) and $f_{\text{rep}}$ (cavity length)
 - **Transfer oscillator.** Lock one comb line to a stable reference (cavity-stabilized laser, clock transition) and the *whole comb* inherits the stability at every color — one ultrastable laser stabilizes lasers across the visible/IR. Comparing two clocks at different wavelengths = counting two beat notes against one comb.
 - **Direct comb work:** dual-comb spectroscopy (two combs, slightly different $f_{\text{rep}}$, heterodyne every line pair at once — broadband spectroscopy with RF resolution and no spectrometer), calibration of astronomical spectrographs (exoplanet radial velocities), ranging/LIDAR, attosecond science (where $\Delta\phi_{\text{ce}}$ control shapes the field under the envelope).
 
-**Reading a comb spec:** $f_{\text{rep}}$ sets line spacing (resolvable by a wavemeter? dense enough to always have a nearby line?) and photodetected harmonics; octave span needed only if self-referencing; the per-line power matters ($\mu$W-level: total power ÷ 10⁶ lines) — beat-note SNR is the daily constraint. Platforms: Ti:sapph (legacy), Er/Yb fiber (the workhorse — turnkey, robust), microresonator Kerr combs (chip-scale, ~10–1000 GHz spacing, the current integration push).
+**Reading a comb spec:** $f_{\text{rep}}$ sets line spacing (resolvable by a wavemeter? dense enough to always have a nearby line?) and photodetected harmonics; octave span needed only if self-referencing; the per-line power matters ($\mu$W-level: total power ÷ 10⁶ lines) — beat-note SNR is the daily constraint. Platforms: Ti:sapph (legacy), Er/Yb fiber (the most common — turnkey, robust), microresonator Kerr combs (chip-scale, ~10–1000 GHz spacing, the current integration push).
 
 > [!question]- Why does dividing an optical frequency down to microwaves *preserve* fractional stability, when multiplying microwaves up to optical was never viable?
-> Phase noise scales with the multiplication factor squared: synthesizing 500 THz from 10 GHz multiplies phase noise by $(5\times10^4)^2 = 2.5\times10^9$ — any electronic reference is buried. Division runs the same scaling in your favor: the comb coherently divides optical phase by $n \sim 10^5$, *shrinking* phase fluctuations by $n^2$ in power. Fractional frequency stability $\delta f/f$ is conserved by ideal division, so a $10^{-18}$ optical clock read out through a comb delivers $10^{-18}$-grade timing to electronics — the comb is a lossless gearbox, and the reason clocks went optical only once the comb existed.
+> Multiplying a frequency by $N$ multiplies its phase fluctuations by $N$, so phase-noise power grows as $N^2$: synthesizing 500 THz from 10 GHz raises it by $(5\times10^4)^2 = 2.5\times10^9$, burying any electronic reference. Division runs the same scaling the other way: the comb divides the optical phase by $n \sim 10^5$, shrinking phase-noise power by $n^2$. Ideal division conserves $\delta f/f$, so a $10^{-18}$ optical clock read out through a comb delivers $10^{-18}$-grade timing to electronics. This is why clocks could go optical only once the comb existed.
 
 # Connections
 

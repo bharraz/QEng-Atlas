@@ -1,12 +1,14 @@
 #quantum-info #AMO
 
-**Every quantum sensor runs the same three steps — prepare a superposition, let the signal accumulate phase, read the phase out — so the whole subject is about what limits the phase you can resolve.**
+**Every quantum sensor runs the same three steps — prepare a superposition, let the signal accumulate phase, read the phase out — so the subject reduces to what limits the phase you can resolve.**
 
 # Reference
 
 $$\text{initialize} \;\to\; \underbrace{\phi = \gamma \int_0^\tau V(t)\,dt}_{\text{accumulate}} \;\to\; \text{read out}$$
 
 $\gamma$ = the coupling converting the quantity you want into a precession rate. Everything a platform does is a choice of $\gamma$, of how long $\tau$ can be, and of how well the phase can be read.
+
+**Picture:** a stopwatch for phase: open the interferometer, let the signal turn the state for a time $\tau$, close it, and count how far it turned.
 
 **The sensitivity formula, in the form that transfers between platforms:**
 $$\eta \;\sim\; \frac{1}{\gamma\, C \sqrt{N\,\tau}} \qquad \left[\text{signal}/\sqrt{\text{Hz}}\right]$$
@@ -34,12 +36,12 @@ A decoupling sequence is a **band-pass filter** on environmental noise, and its 
 
 | Limit | Scaling of $\Delta\phi$ | Requires |
 |---|---|---|
-| **Standard quantum limit** | $1/\sqrt N$ | $N$ independent probes — just counting statistics |
+| **Standard quantum limit** | $1/\sqrt N$ | $N$ independent probes — only counting statistics |
 | **Heisenberg limit** | $1/N$ | entanglement (GHZ) or squeezing |
 
 The SQL is not a quantum mystery: it is the [[Central Limit Theorem]] applied to $N$ independent binary outcomes. The Heisenberg limit is the genuinely quantum statement, and the general machinery behind both is Fisher information — the [[Fisher Information and the Cramér-Rao Bound|Cramér–Rao bound]] gives $\Delta\phi \ge 1/\sqrt{F}$, with the quantum Fisher information setting the best any measurement could do.
 
-**The honest caveat on entanglement.** A GHZ state accumulates phase $N$ times faster, but also decoheres $N$ times faster, so under realistic dephasing the net gain often evaporates. **Spin squeezing** is the practical middle ground — a modest, robust improvement rather than the full $1/N$ ([[Standard Quantum Limit and Spin Squeezing]]).
+**Caveat on entanglement.** A GHZ state accumulates phase $N$ times faster, but also decoheres $N$ times faster, so under realistic dephasing the net gain often evaporates. **Spin squeezing** is the practical middle ground — a modest, robust improvement rather than the full $1/N$ ([[Standard Quantum Limit and Spin Squeezing]]).
 
 ## What the platforms trade
 
@@ -56,7 +58,7 @@ Reading across: **the same formula with a different $\gamma$**. What differs is 
 **Other quantities from the same probe.** Any term in the sensor's Hamiltonian that shifts with an external quantity becomes a sensing channel: for NV, $dD/dT$ gives thermometry and the strain term $E$ gives electrometry, with no change to the sequence — only to what you calibrate against.
 
 > [!question]- Doubling $T_2$ improves your sensitivity by $\sqrt2$. Doubling readout contrast improves it by 2. Why the asymmetry?
-> $\eta \propto 1/(C\sqrt\tau)$. Coherence buys interrogation time, and longer shots mean proportionally fewer of them in a fixed window, so the gain is square-root. Contrast is per-shot information, with no compensating loss — it enters linearly. Hence effort spent on readout fidelity usually beats equal effort on coherence.
+> $\eta \propto 1/(C\sqrt\tau)$. Coherence gives interrogation time, and longer shots mean proportionally fewer of them in a fixed window, so the gain is square-root. Contrast is per-shot information, with no compensating loss — it enters linearly. Hence effort spent on readout fidelity usually beats equal effort on coherence.
 
 # Connections
 
@@ -69,6 +71,7 @@ Reading across: **the same formula with a different $\gamma$**. What differs is 
 - [[Squeezed States]] — beating shot noise in the optical version
 - [[Central Limit Theorem]] — why the SQL is $1/\sqrt N$
 - [[SNR and Averaging]] — the classical averaging this sits on top of
+- [[Spin-Defect Sensing Protocols]] — the protocols for solid-state spin sensors
 
 ---
 Source: Degen, Reinhard & Cappellaro, "Quantum sensing," *Rev. Mod. Phys.* 89, 035002 (2017); Giovannetti, Lloyd & Maccone, *Nat. Photonics* 5, 222 (2011)

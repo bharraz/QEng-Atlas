@@ -15,11 +15,13 @@ $$
 t_r = t - \frac{|\mathbf{r}-\mathbf{r}'|}{c}
 $$
 
+**Picture:** every source's influence travels outward at $c$, so the field here is a letter the source posted a time $r/c$ ago.
+
 **Trap:** this works for the *potentials*, not the fields — naively retarding Coulomb's law is wrong (Jefimenko's equations carry extra $\dot\rho$, $\dot{\mathbf{J}}$ terms).
 
 **Why near field ≠ far field:** differentiate the retarded integrand and you get two kinds of terms — ones going as $1/r^2$ (retarded statics, no net energy escape) and ones $\propto \dot{\mathbf{J}}/r$ from the retardation itself. Within $r\ll\lambda/2\pi$ retardation is negligible and the field is **quasi-static** (Coulomb/Biot-Savart, instantaneous for all practical purposes); beyond it the $1/r$ radiation terms dominate. The crossover *is* the [[Near and Far Field]] boundary.
 
-**Practical calibration:** signals in cable propagate at ~2/3 c ≈ 20 cm/ns; free space 30 cm/ns. Retardation across a 30 cm circuit at 10 MHz is 1% of a period — ignorable; at 1 GHz it's 10 periods — the "circuit" is now a distributed system and lumped analysis is dead.
+**Practical calibration:** signals in cable propagate at ~2/3 c ≈ 20 cm/ns; free space 30 cm/ns. Retardation across a 30 cm circuit at 10 MHz is 1% of a period — ignorable; at 1 GHz it's 10 periods — the "circuit" is now a distributed system and lumped analysis no longer applies.
 
 > [!question]- A charge abruptly stops. What does the field configuration look like one second later?
 > Inside radius $c\cdot(1\,\mathrm{s})$: the static Coulomb field of the stationary charge. Outside: the field of the still-moving charge, as if nothing happened. The spherical shell stitching them together is a kink of transverse field propagating outward — that kink *is* the radiation.

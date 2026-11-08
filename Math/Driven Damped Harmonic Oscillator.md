@@ -1,12 +1,14 @@
 #math
 
-**The one differential equation the lab runs on: drive a lossy oscillator and, after transients die, it responds at the drive frequency with a Lorentzian amplitude and a phase that walks through 90° at resonance.** Cavity field, RLC tank, atomic dipole, ion motion — same equation, different labels.
+**The one differential equation the lab runs on: drive a lossy oscillator and, after transients decay, it responds at the drive frequency with a Lorentzian amplitude and a phase that walks through 90° at resonance.** Cavity field, RLC tank, atomic dipole, ion motion — same equation, different labels.
 
 # Reference
 
 $$
 \ddot{x} + \gamma\dot{x} + \omega_0^2 x = \frac{F_0}{m}\cos\omega t
 $$
+
+**Picture:** pushing a swing: pushing at its natural frequency builds the largest motion; well below it the swing follows the push, well above it the swing moves opposite to the push.
 
 **Steady state** $x(t) = A\cos(\omega t - \phi)$:
 $$

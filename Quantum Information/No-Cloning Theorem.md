@@ -6,6 +6,8 @@
 
 Claim: no unitary satisfies $U|\psi\rangle|0\rangle = |\psi\rangle|\psi\rangle$ for all $|\psi\rangle$.
 
+**Picture:** a copier must work the same way on every input; copying two different states correctly would force their overlap to equal its own square, which only 0 or 1 satisfies.
+
 > [!question]- Prove it in three lines.
 > Suppose $U|\psi\rangle|0\rangle = |\psi\rangle|\psi\rangle$ and $U|\phi\rangle|0\rangle = |\phi\rangle|\phi\rangle$.
 > Unitarity preserves inner products: $\langle\phi|\psi\rangle = \langle\phi|\psi\rangle^2$.
@@ -18,7 +20,7 @@ Claim: no unitary satisfies $U|\psi\rangle|0\rangle = |\psi\rangle|\psi\rangle$ 
 - **Measurement is destructive**: you can't dodge back-action by copying first and measuring the copy.
 - **Teleportation must destroy the original** — otherwise it would be a cloner.
 
-Approximate cloning exists: the optimal universal qubit cloner reaches fidelity $5/6$ — quantum information leaks, it just can't leak perfectly.
+Approximate cloning exists: the optimal universal qubit cloner reaches fidelity $5/6$ — quantum information leaks, it can't leak perfectly.
 
 # Connections
 

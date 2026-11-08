@@ -9,9 +9,20 @@ $$
 S_{ij} = \frac{b_i}{a_j}\bigg|_{\text{other ports matched}}
 $$
 
-$a_j$ = complex amplitude of the wave going *into* port $j$, $b_i$ = wave coming *out* of port $i$, both normalized so that $|a|^2$ is power in watts — which is why $S$ is dimensionless and $|S|^2$ reads directly as a power fraction. The subscript order is destination-then-source ($S_{21}$ = out of port 2, in at port 1). $Z_0 = 50\ \Omega$ is the reference impedance defining the wave decomposition; quote it, since $S$ changes if the reference does.
+- $a_j$ — complex amplitude of the wave going *into* port $j$
+- $b_i$ — complex amplitude of the wave coming *out* of port $i$
+- $Z_0 = 50\ \Omega$ — the reference impedance defining the wave decomposition
 
-$S_{11}$ = input reflection (equals Γ when port 2 is matched); $S_{21}$ = forward transmission (gain or insertion loss); $S_{12}$ = reverse isolation; $S_{22}$ = output match. In dB: $20\log_{10}|S|$ because $S$ is an amplitude ratio, so $-20$ dB means 10% of the amplitude and 1% of the power.
+Both waves are normalized so that $|a|^2$ is power in watts — which is why $S$ is dimensionless and $|S|^2$ reads directly as a power fraction. The subscript order is destination-then-source ($S_{21}$ = out of port 2, in at port 1). Quote $Z_0$, since $S$ changes if the reference does.
+
+- $S_{11}$ — input reflection (equals Γ when port 2 is matched)
+- $S_{21}$ — forward transmission (gain or insertion loss)
+- $S_{12}$ — reverse isolation
+- $S_{22}$ — output match
+
+**Picture:** sending a wave into a black box at each port in turn and recording the fraction, in amplitude and phase, that comes back out of every port.
+
+In dB: $20\log_{10}|S|$ because $S$ is an amplitude ratio, so $-20$ dB means 10% of the amplitude and 1% of the power.
 
 | $S_{11}$ | reflected power | verdict |
 |---|---|---|
@@ -31,7 +42,7 @@ $S_{11}$ = input reflection (equals Γ when port 2 is matched); $S_{21}$ = forwa
 - [[Characteristic Impedance and Reflection]] — S11 is Γ measured with proper terminations
 - [[Smith Chart]] — how S11 is displayed and interpreted
 - [[dB Conventions]] — the 20-log vs 10-log bookkeeping used above
-- [[Transmission Lines]] — why V/I fail and waves win
+- [[Transmission Lines]] — why V/I fail and waves are the natural variables
 
 ---
 Source: Pozar, *Microwave Engineering* 4th ed., §4.3

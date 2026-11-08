@@ -12,6 +12,8 @@ $$R(\tau) = \langle x(t)\, x(t + \tau)\rangle, \qquad S(\omega) = \int_{-\infty}
 
 The correlation time (decay scale of $R$) and the spectral width are reciprocal. Total variance is the integral of the spectrum, $\sigma^2 = \frac{1}{2\pi}\int S(\omega)\, d\omega$ — a variance is always an integrated spectrum, and quoting one without stating the bandwidth is meaningless. Conventions to fix before any calculation: one-sided $S(f)$ vs two-sided $S(\omega)$ differ by a factor of 2 and a $2\pi$ ([[PSD Estimation]]); amplitude spectral density is $\sqrt{S}$, in units of $x/\sqrt{\mathrm{Hz}}$.
 
+**Picture:** noise as a mix of tones at every frequency; a system responds only to the tones it is sensitive to, drifting with the slowest ones, dephasing with those near DC, heating with those at its resonance.
+
 Two independent attributes beyond the spectrum: **Gaussianity** (a Gaussian process is fully specified by $S(\omega)$; non-Gaussian noise such as random telegraph noise is not — see below) and **stationarity** (drift is non-stationary noise; $1/f$ noise sits at the boundary, with divergent low-frequency weight).
 
 ## The colors and their origins
@@ -39,7 +41,7 @@ $$S(\omega) = \int p(\gamma)\, \frac{\gamma}{\gamma^2 + \omega^2}\, d\gamma \;\p
 
 over the band where fluctuators exist. Deviations from $\alpha = 1$ encode the barrier distribution: $p(\gamma) \propto \gamma^{-\beta}$ gives $\alpha = 2 - \beta$. This is why measured exponents are material- and surface-dependent and rarely exactly 1, and why a temperature dependence of $\alpha$ points to the activation spectrum. Integration also shifts exponents: a system responding to the *integral* of a noise multiplies $\alpha$ by adding 2 (frequency noise $\to$ phase noise).
 
-**Divergences and their regularization.** $1/f^{\alpha \geq 1}$ diverges at low frequency: the variance depends on the observation time, growing as measurements lengthen. Standard deviation vs averaging time is then the honest statistic — the [[Allan Variance]], whose slopes map one-to-one onto $\alpha$ (white frequency noise: $\sigma_y \propto \tau^{-1/2}$; flicker: constant; random walk: $\tau^{+1/2}$) and which converges where the naive variance does not.
+**Divergences and their regularization.** $1/f^{\alpha \geq 1}$ diverges at low frequency: the variance depends on the observation time, growing as measurements lengthen. Standard deviation vs averaging time is then the appropriate statistic — the [[Allan Variance]], whose slopes map one-to-one onto $\alpha$ (white frequency noise: $\sigma_y \propto \tau^{-1/2}$; flicker: constant; random walk: $\tau^{+1/2}$) and which converges where the naive variance does not.
 
 ## How noise couples into a system
 
@@ -71,8 +73,8 @@ so the heating rate is a *single-frequency* measurement of $S_E$. Measured heati
 
 **Diagnostic summary.** Measure the spectrum (directly, or through the system: heating rate vs $\omega_t$, DD noise spectroscopy, Allan deviation vs $\tau$); read $\alpha$ and the knees to identify the mechanism class; check the coupling type to know which spectral region matters; then either suppress the source, filter the path ($|H|^2$), or move the sampling frequency away from the noise (stiffer trap, DD, higher IF).
 
-> [!question]- An ion trap's heating rate improves 100× on cooling the electrodes from 300 K to 4 K, but a Johnson-noise estimate predicts only ~75× from the resistance change. What does the discrepancy pattern actually establish?
-> The near-agreement in magnitude is coincidental and the framing is inverted: Johnson noise is excluded not by the size of the temperature dependence but by the other exponents — the measured $S_E \propto 1/\omega^{\alpha}$ (Johnson noise from an electrode is flat at MHz frequencies) and the $d^{-4}$ distance scaling (Johnson fields fall as $d^{-2}$; a dense sheet of *uncorrelated microscopic* dipole-like sources gives $d^{-4}$). The strong temperature dependence then identifies thermally activated surface fluctuators, and its detailed form (often Arrhenius-like, sometimes with plateaus) constrains the activation-energy distribution — the same $p(E_b)$ that sets $\alpha$ in the $1/f^\alpha$ construction. Consistency between the temperature and frequency exponents is the test of the fluctuator model, not any single number.
+> [!question]- An ion trap's heating rate drops 100× on cooling the electrodes from 300 K to 4 K, close to the 75× the temperature ratio predicts for Johnson noise. It also scales as $d^{-4}$ with distance and falls with frequency. Is it Johnson noise?
+> No. Johnson noise from an electrode is flat in frequency at MHz and falls as $d^{-2}$; $d^{-4}$ is the signature of a dense sheet of uncorrelated microscopic sources on the surface, so the exponents exclude it however close 100× is to 75×. The strong (often Arrhenius-like) temperature dependence points to thermally activated surface fluctuators, whose activation-energy distribution $p(E_b)$ also sets $\alpha$ in $1/f^\alpha$; agreement between the two exponents tests the model.
 
 # Connections
 

@@ -1,6 +1,6 @@
 #linear-algebra #math
 
-**An operator is a linear map whose inputs and outputs are vectors — $d/dx$ eats a function and returns a function — and a superoperator is one rung up, a linear map on operators; the entire matrix toolkit applies at every rung because linearity is the only structure it ever used.**
+**An operator is a linear map whose inputs and outputs are vectors — $d/dx$ takes a function and returns a function — and a superoperator is one rung up, a linear map on operators; the entire matrix toolkit applies at every rung because linearity is the only structure it ever used.**
 
 This is the mathematician's version of [[Operators and Observables]]: same machinery, no $\hbar$ required.
 
@@ -11,6 +11,8 @@ This is the mathematician's version of [[Operators and Observables]]: same machi
 | Vector | — | $\mathbb R^n$, $L^2$ | states, signals, wavefunctions |
 | **Operator** | vectors → vectors | matrices; $d/dx$ on functions | $H$, filters, $\nabla^2$ |
 | **Superoperator** | operators → operators | matrices on vectorized matrices | $[H,\cdot\,]$, Lindbladian, channels |
+
+**Picture:** a ladder of linear maps: vectors at the bottom, operators acting on vectors one rung up, superoperators acting on operators above that, and the same matrix methods on every rung.
 
 Membership requires only $L(\alpha f + \beta g) = \alpha Lf + \beta Lg$. Eigenvectors, spectral decomposition, exponentials and the resolvent are consequences of linearity plus an inner product, so they climb the ladder unchanged.
 
@@ -28,7 +30,7 @@ Other members of the same category:
 - **Integral operators** $f \mapsto \int K(x,y)f(y)\,dy$ — [[Green's Functions]] are inverses of differential operators in this sense.
 - **Shift/delay** — $z^{-1}$ in discrete time.
 
-**What infinite dimension changes** — three items, all of which bite in practice:
+**What infinite dimension changes** — three items, all of which matter in practice:
 
 1. **Spectra need not be discrete.** $D$ on the full line has continuous spectrum and non-normalizable "eigenfunctions" $e^{ikx}$; the [[Dirac Delta]] formalism is the accounting system for this.
 2. **Boundary conditions are part of the operator.** $-iD$ on $[0,L]$ with periodic, Dirichlet, or open boundaries are *different operators* with different spectra — the operational meaning of "domain," and why [[Sturm-Liouville Theory]] fixes an interval and boundary conditions before promising an orthogonal basis.

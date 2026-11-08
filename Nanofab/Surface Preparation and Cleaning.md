@@ -13,6 +13,8 @@
 | native oxide | Si grows 1–2 nm SiO₂ in hours | dilute HF dip | leaves H-terminated, hydrophobic Si (water beads = pass); passivation window minutes–hours — "HF-last" timing is a process parameter |
 | particles | handling, drying | megasonic, CO₂ snow, spin-rinse | mostly prevention; uncontrolled drying = watermarks |
 
+**Picture:** every layer in a finished device is a surface that was once exposed; whatever was adsorbed at that moment stays buried at the interface.
+
 Hardened resist (post-RIE, post-implant) resists solvents: O₂ plasma, hot NMP strippers, or piranha (no metals present). Al's native oxide is the counterexample of harnessed surface chemistry: self-limiting 2–3 nm AlOₓ *is* the Josephson tunnel barrier.
 
 ## Anneals
@@ -23,7 +25,7 @@ Hardened resist (post-RIE, post-implant) resists solvents: O₂ plasma, hot NMP 
 
 Desorption and diffusion are Arrhenius, $r \propto e^{-E_a/k_BT}$ with $E_a$ the activation barrier (~0.5–1 eV for physisorbed water, higher for chemisorbed species): at 300 K, $k_BT = 25$ meV sits far below the barrier, so rates are exponentially slow; at 200 °C the same barrier is crossed $10^3$–$10^5\times$ faster. Annealing trades days at 25 °C for minutes hot — and the barrier hierarchy is why a bake removes water but not carbon, and plasma or piranha must handle what heat cannot.
 
-## Why device physics cares
+## Why it matters for devices
 
 - **Fermi-level pinning**: unpassivated dangling bonds are mid-gap states dense enough to pin the surface potential against any gate — why GaAs surfaces are hostile, why Si (whose oxide passivates) won, and part of why shallow [[Quantum Dots|dots]] and shallow NVs underperform bulk.
 - **Two-level systems**: amorphous oxides and adsorbates host tunneling defects that absorb microwave power — the dominant loss/noise mechanism in superconducting resonators at mK; Q improvements in the literature are substantially surface-chemistry results (HF-last substrates, interface-participation engineering).
@@ -41,6 +43,7 @@ Desorption and diffusion are Arrhenius, $r \propto e^{-E_a/k_BT}$ with $E_a$ the
 - [[NV Centers (atlas)]] — implantation anneals and termination as coherence engineering
 - [[Superconducting Qubits]] — TLS loss as interface chemistry
 - [[Noise Spectra and Coupling to Systems]] — surface fluctuators as a noise source class
+- [[Chemical Cleaning]] — the solvent, oxidizer, and acid chemistry behind each clean
 
 ---
 Source: Kern, *J. Electrochem. Soc.* 137, 1887 (1990); Reinhold, *Handbook of Silicon Wafer Cleaning Technology*; Hite et al., *Phys. Rev. Lett.* 109, 103001 (2012)

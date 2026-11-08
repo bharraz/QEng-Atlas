@@ -1,6 +1,6 @@
 #circuits #electronics
 
-**A comparator is an op-amp-shaped part with no feedback manners: built to slam between rails fast, not to be linear — and any comparator watching a noisy signal near threshold will chatter unless you give it hysteresis.**
+**A comparator is an op-amp-shaped part used without feedback, built to switch between its output rails quickly rather than to be linear. A noisy signal crossing its threshold slowly makes it switch many times (chatter), unless hysteresis gives it two thresholds.**
 
 # Reference
 
@@ -15,6 +15,8 @@ $$
 V_\text{hyst} = V_\text{swing}\,\frac{R_1}{R_1+R_2}
 $$
 Rule of thumb: 10–100 mV handles most lab noise; a small RC ahead of the input helps when the noise is RF.
+
+**Picture:** a thermostat with a dead band: it switches on at one temperature and off at a slightly different one, so noise smaller than the gap cannot flip it back and forth.
 
 Also: many comparators are open-collector — **no pull-up, no output** (bug #1); and slow ramps through threshold invite oscillation via stray feedback even with clean signals — hysteresis fixes that too.
 

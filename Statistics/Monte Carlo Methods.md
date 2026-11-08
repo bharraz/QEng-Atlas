@@ -1,6 +1,6 @@
 #statistics #math
 
-**Turn an integral or error budget into an average over random samples** — the estimate is just the sample mean, and its error shrinks as $1/\sqrt{N}$ *regardless of dimension*, which is why MC beats grid quadrature the moment the problem has more than a few variables.
+**Turn an integral or error budget into an average over random samples** — the estimate is the sample mean, and its error shrinks as $1/\sqrt{N}$ *regardless of dimension*, which is why MC beats grid quadrature the moment the problem has more than a few variables.
 
 # Reference
 
@@ -14,9 +14,11 @@ $$
 \sigma_{\text{est}} = \frac{\sigma_f}{\sqrt{N}}, \qquad \sigma_f^2 = \mathrm{Var}[f(x)]
 $$
 
-estimated from the samples themselves. Compare grid methods: error $\sim N^{-k/d}$ — dead by $d \gtrsim 4$. MC's $N^{-1/2}$ doesn't care about $d$ (it's the [[Central Limit Theorem]] at work).
+estimated from the samples themselves. Compare grid methods: error $\sim N^{-k/d}$ — impractical by $d \gtrsim 4$. MC's $N^{-1/2}$ is independent of $d$ (it's the [[Central Limit Theorem]] at work).
 
-**Lab workflow:** propagate errors through any nasty pipeline by drawing inputs from their error distributions, pushing each draw through the full analysis, and reading $\sigma$ off the output histogram. Works where linearized [[Error Propagation]] fails.
+**Picture:** estimating an area by throwing darts at random and counting hits: the error shrinks as $1/\sqrt N$ whatever the number of dimensions.
+
+**Lab workflow:** propagate errors through any complicated pipeline by drawing inputs from their error distributions, pushing each draw through the full analysis, and reading $\sigma$ off the output histogram. Works where linearized [[Error Propagation]] fails.
 
 **Importance sampling:** sample from $q$ concentrated where $|f|p$ is large, weight each sample by $p/q$ — same mean, smaller $\sigma_f$.
 

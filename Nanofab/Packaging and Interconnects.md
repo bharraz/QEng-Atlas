@@ -1,12 +1,14 @@
 #nanofab
 
-**Packaging is everything between finished chip and working experiment: dicing, die attach, and signal I/O. Every interconnect is simultaneously a transmission-line discontinuity, a thermal joint, and a mechanical stress point — devices that measured perfectly at the probe station die of exactly these.**
+**Packaging is everything between finished chip and working experiment: dicing, die attach, and signal I/O. Every interconnect is simultaneously a transmission-line discontinuity, a thermal joint, and a mechanical stress point — devices that measured perfectly at the probe station fail from exactly these.**
 
 # Reference
 
 ## Dicing and die attach
 
 Dicing: diamond saw (fast; edge chipping — keep devices ≳100 µm from streets, protect with resist), laser scribe, or cleave along crystal planes ({110} of a (100) Si wafer cleave at right angles — scribe and snap for lab work).
+
+**Picture:** the chip's last few millimetres to the outside world: every bond wire, solder joint, and box wall is part of the microwave circuit, the thermal path, and the mechanical mount at once.
 
 Die attach chooses along four axes: thermal contact (solder ≫ Ag epoxy ≫ clamp), electrical contact (metallized backside + solder), removability (GE varnish), and **CTE mismatch** — the packaging failure mode:
 
@@ -28,7 +30,10 @@ Solder or indium bumps, chip flipped onto a carrier: ~10 µm vertical interconne
 
 ## Microwave packaging
 
-The package is a cavity: lowest mode $f \approx c/(2L\sqrt{\epsilon_r})$, with $L$ the largest interior dimension and $\epsilon_r$ the effective dielectric constant filling it — a half-wavelength must fit in the box. A 20 mm air box: ~7.5 GHz, squarely in the qubit band; the mode steals signal, couples channels, and adds loss. Shrink the cavity (push $f$ up), break its symmetry, or load it with absorber where the mode has field and the signal does not. Launches (connector → PCB → chip) are impedance steps to be tapered ([[Impedance Matching]]); characterize the assembled package, not the bare chip ([[S-Parameters]]). Ground must be simply connected — split ground planes without stitching form slot antennas ([[Grounding and Shielding Practice]]). Hermeticity: epoxy lids breathe; welded/glass-frit packages hold vacuum or dry N₂; at mK, light-tightness doubles as IR shielding ([[Cryogenics]] — stray IR breaks Cooper pairs).
+The package is a cavity: lowest mode $f \approx c/(2L\sqrt{\epsilon_r})$, with $L$ the largest interior dimension and $\epsilon_r$ the effective dielectric constant filling it — a half-wavelength must fit in the box. A 20 mm air box: ~7.5 GHz, squarely in the qubit band; the mode diverts signal, couples channels, and adds loss. Shrink the cavity (push $f$ up), break its symmetry, or load it with absorber where the mode has field and the signal does not.
+- **Launches** (connector → PCB → chip) are impedance steps to be tapered ([[Impedance Matching]]); characterize the assembled package, not the bare chip ([[S-Parameters]]).
+- **Ground** must be simply connected: split ground planes without stitching form slot antennas ([[Grounding and Shielding Practice]]).
+- **Hermeticity:** epoxy lids breathe; welded/glass-frit packages hold vacuum or dry N₂; at mK, light-tightness doubles as IR shielding ([[Cryogenics]] — stray IR breaks Cooper pairs).
 
 > [!question]- A resonator measured Q = 10⁶ on the probe station reads 10⁴ packaged. The film did not change — what did?
 > The electromagnetic environment. In order of likelihood: a package or slotline mode overlapping the resonance (fix: bond fences, smaller cavity, absorber); radiation loss into a roomy box; lossy die-attach adhesive wicked into the field region; trapped flux from a magnetized part cooled nearby. Film Q is only an upper bound — the empty package deserves the same characterization as the device.

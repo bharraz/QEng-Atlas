@@ -13,9 +13,11 @@ $$
 \mathbf{A}(\mathbf{r}) = \frac{1}{4\pi}\int \frac{\nabla'\times\mathbf{F}(\mathbf{r}')}{|\mathbf{r}-\mathbf{r}'|}\, dV'
 $$
 
+**Picture:** a flow split into sources and sinks (the curl-free part, like water from a hose) and swirls (the divergence-free part, like a whirlpool).
+
 - $-\nabla\varphi$: **longitudinal** (curl-free) part — carries all the divergence.
 - $\nabla\times\mathbf{A}$: **transverse** (divergence-free) part — carries all the curl.
-- Uniqueness requires $\mathbf{F} \to 0$ faster than $1/r$ at infinity; on finite domains, boundary terms (a harmonic piece) sneak in.
+- Uniqueness requires $\mathbf{F} \to 0$ faster than $1/r$ at infinity; on finite domains, boundary terms (a harmonic piece) appear.
 
 **In Fourier space it's trivial:** longitudinal = component of $\tilde{\mathbf{F}}(\mathbf{k})$ along $\hat{k}$, transverse = perpendicular. "Longitudinal/transverse" is literal there.
 

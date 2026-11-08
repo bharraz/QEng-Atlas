@@ -17,6 +17,8 @@ with $w(x) > 0$ the **weight function**. With suitable boundary conditions the o
 - **complete:** any decent $f(x)$ expands as $f = \sum c_n y_n$ with $c_n = \frac{1}{N_n}\int f\, y_n\, w\, dx$
 - $n$-th eigenfunction has $n$ nodes (more wiggles = higher eigenvalue)
 
+**Picture:** a vibrating string with varying density and tension: its modes are still orthogonal and complete, with the weight function $w(x)$ playing the role of the density.
+
 All the coefficient functions are continuous, but $p(x) > 0$ and $w(x) > 0$ are further constraints. 
 
 **The named-polynomials table** — each is Sturm-Liouville with its own interval and weight:
@@ -29,7 +31,7 @@ All the coefficient functions are continuous, but $p(x) > 0$ and $w(x) > 0$ are 
 | Bessel $J_m(k_{mn}x)$ | $[0,a]$            | $x$             | $-m^2/x$ | $x$          | $k_{mn}^2$ (numerical zeros of $J_m$, no closed form) | cylindrical modes             |
 | $\sin,\cos$           | $[0,L]$            | $1$             | $0$      | $1$          | $(n\pi/L)^2$                                          | Fourier series                |
 
-**The practical payoff:** don't re-derive orthogonality for each family — it's automatic. But *always include the weight* in inner products; forgetting the $x$ in Bessel orthogonality or the $e^{-x^2}$ in Hermite is the classic error.
+**Practical consequence:** don't re-derive orthogonality for each family — it's automatic. But *always include the weight* in inner products; forgetting the $x$ in Bessel orthogonality or the $e^{-x^2}$ in Hermite is the most common error.
 
 Usually the weight is either baked into the normalization, coordinate system, or $\sqrt{w(x)}$ is attached to the basis functions so that the **inner product is always implemented by** $\langle f, g \rangle_w = \int f \ g \ w dx$.
 
@@ -50,7 +52,7 @@ This is all analogous to Quantum Mechanics, as in the following comparison:
 
 - [[Hermite Polynomials]] — the Gaussian-weight family, QHO eigenfunctions
 - [[Legendre Polynomials and Spherical Harmonics]] — the angular family
-- [[Bessel Functions]] — the cylindrical family (weight x!)
+- [[Bessel Functions]] — the cylindrical family (weight $x$)
 - [[Separation of Variables]] — where S-L problems come from
 - [[Hermitian Matrices]] — the finite-dimensional version of the same theorem
 

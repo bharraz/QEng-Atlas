@@ -1,10 +1,12 @@
 #quantum-info #quantum-optics
 
-**Encode a qubit inside one oscillator's infinite Hilbert space rather than across many two-level systems — the redundancy lives in a single mode, and the code is designed around photon loss because that is the error an oscillator actually has.**
+**Encode a qubit inside one oscillator's infinite Hilbert space rather than across many two-level systems — the redundancy lives in a single mode, and the code is designed around photon loss because that is the error an oscillator has.**
 
 # Reference
 
 **The hardware-efficiency argument.** A qubit-based code needs many physical qubits, each with its own control lines and its own error channels. An oscillator supplies unlimited Hilbert space in *one* mode with *one* dominant error channel — so you can build in redundancy without multiplying the hardware.
+
+**Picture:** one oscillator's ladder of levels as the redundancy: code words are spread out so that losing one photon moves the state into a recognizable error space instead of onto another code word.
 
 **The error to design against** is photon loss, $\hat a$, from the [[Lindblad Master Equation|Lindblad]] term $\mathcal D[\hat a]$. Also present but usually subdominant: dephasing $\hat a^\dagger\hat a$, and heating $\hat a^\dagger$. A bosonic code is a choice of two states in the oscillator such that loss maps them to a *detectable and reversible* place.
 
@@ -50,7 +52,7 @@ The trapped-ion row is worth noting: the motional mode you cool and displace for
 **The common structure:** all three families work by making the error take you to a state *orthogonal* to the code space, so the syndrome measurement learns that an error occurred without learning the logical state. That is the same principle as any stabilizer code ([[Stabilizer Formalism]]); only the group being stabilized is a group of displacements or a parity, rather than Paulis on qubits.
 
 > [!question]- Why is photon loss the design target rather than a generic "bit flip"?
-> Because it is the error an oscillator actually suffers — $\mathcal D[\hat a]$ dominates the Lindbladian for a cavity or a motional mode. Codes are designed against the physical noise channel, not an abstract one: cat codes use parity because loss flips parity, and GKP uses modular quadratures because loss looks like a small displacement. Importing a qubit code would protect against errors that do not occur while ignoring the one that does.
+> Because it is the error an oscillator suffers — $\mathcal D[\hat a]$ dominates the Lindbladian for a cavity or a motional mode. Codes are designed against the physical noise channel, not an abstract one: cat codes use parity because loss flips parity, and GKP uses modular quadratures because loss looks like a small displacement. Importing a qubit code would protect against errors that do not occur while ignoring the one that does.
 
 # Connections
 
@@ -64,6 +66,8 @@ The trapped-ion row is worth noting: the motional mode you cool and displace for
 - [[Superconducting Qubits]] — dispersive ancilla coupling, the parity-measurement tool
 - [[Lindblad Master Equation]] — where $\mathcal D[\hat a]$ comes from
 - [[Quantum Error Correction (Atlas)]] — the general framework this specializes
+- [[Leakage, Erasure, and Biased Noise]] — biased noise in cat qubits and why it is cheaper to correct
+- [[Controlling Bosonic Modes]] — the operations that prepare and manipulate code words
 
 ---
 Source: Terhal, Conrad & Vuillot, "Towards scalable bosonic quantum error correction," *Quantum Sci. Technol.* 5, 043001 (2020); Gottesman, Kitaev & Preskill, *Phys. Rev. A* 64, 012310 (2001)

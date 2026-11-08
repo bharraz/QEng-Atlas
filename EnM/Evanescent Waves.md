@@ -1,6 +1,6 @@
 #EnM
 
-**When a wave is pushed where it can't propagate, k goes imaginary: the field doesn't vanish, it decays exponentially while carrying no power** — unless you catch it within a decay length, in which case it happily resumes propagating (frustration/tunneling).
+**When a wave is pushed where it can't propagate, k goes imaginary: the field doesn't vanish, it decays exponentially while carrying no power** — unless you catch it within a decay length, in which case it resumes propagating (frustration/tunneling).
 
 # Reference
 
@@ -11,6 +11,8 @@ e^{ikz} \to e^{-\kappa z}, \qquad E(z) = E_0\,e^{-z/\ell}, \quad \ell = 1/\kappa
 $$
 
 Pure evanescent fields are **reactive**: time-averaged Poynting flux along the decay direction is zero (E and H are 90° out of phase) — energy stored, not transmitted. Bring a second propagating medium within ~ℓ and the wave **tunnels**: frustrated total internal reflection, the photon's version of quantum tunneling (mathematically identical).
+
+**Picture:** a wave meeting a region it cannot enter leaves a short exponential tail across the boundary; place another medium within that tail and the wave tunnels through.
 
 **Where they appear, with decay lengths:**
 
@@ -32,7 +34,7 @@ Pure evanescent fields are **reactive**: time-averaged Poynting flux along the d
 - [[Waveguides]] — below-cutoff modes are evanescent; exploited for shield penetrations
 - [[Plasma Frequency and Drude Model]] — why field in a metal below ω_p is evanescent, making metals mirrors
 - [[Optical Fibers and Fiber Coupling]] — guided modes have evanescent cladding tails; couplers and bend loss live there
-- [[Skin Depth]] — the lossy-conductor cousin: decay with phase, power dissipated rather than reflected
+- [[Skin Depth]] — the lossy-conductor counterpart: decay with phase, power dissipated rather than reflected
 
 ---
 Source: Griffiths, *Introduction to Electrodynamics*, §9.3.3; Jackson §7.4

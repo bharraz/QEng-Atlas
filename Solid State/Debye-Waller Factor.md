@@ -12,11 +12,13 @@ Thermally averaging its square gives the **Debye–Waller factor**
 
 $$\boxed{\;\text{DWF} = e^{-\langle (\mathbf k\cdot\mathbf x)^2\rangle} = e^{-k^2\langle x^2\rangle/3}\;}$$
 
-for isotropic motion. One statement, three readings: **the fraction of the process that proceeds without exchanging a vibrational quantum is $e^{-\langle\text{phase excursion}^2\rangle}$.** Everything below is this formula in different clothes.
+for isotropic motion. One statement, three readings: **the fraction of the process that proceeds without exchanging a vibrational quantum is $e^{-\langle\text{phase excursion}^2\rangle}$.** Everything below is this formula applied to a different process.
+
+**Picture:** a blurred target: the more the atom jiggles relative to the wavelength, the smaller the fraction of scattering events that leave its motion untouched.
 
 The exponent is the mean squared *phase* the wave accumulates across the zero-point-plus-thermal spread of position. It grows with $k$ (shorter wavelength probes motion more harshly) and with $\langle x^2\rangle$ (hotter or looser confinement).
 
-## The three faces
+## The same factor in three fields
 
 | Field | Process required to be "elastic" | Suppression factor | Where the lost weight goes |
 |---|---|---|---|
@@ -30,7 +32,7 @@ The exponent is the mean squared *phase* the wave accumulates across the zero-po
 
 - NV in diamond has a large excited-state geometry change, so its room-temperature ZPL fraction is small — most photons come out in the sideband, useless for interference. **This single number is why NV is a superb magnetometer and a poor photonic node.**
 - Group-IV centres (SiV, SnV) sit on inversion-symmetric sites: the linear electron–phonon coupling vanishes by symmetry, the geometry barely changes, and the ZPL fraction is large ([[Color Centers]]).
-- Cooling helps by reducing $\langle x^2\rangle$ toward its zero-point value — but **zero-point motion sets a floor the DWF cannot beat**, which is why symmetry, not cryogenics, is the real lever.
+- Cooling helps by reducing $\langle x^2\rangle$ toward its zero-point value — but **zero-point motion sets a floor the DWF cannot beat**, which is why symmetry, not cryogenics, is the effective lever.
 
 **Trapped ions and neutral atoms.** With $\eta = k x_0$ the [[Lamb-Dicke Regime|Lamb–Dicke parameter]] ($x_0$ the ground-state wavepacket size), the carrier Rabi frequency is reduced to
 $$\Omega_{n,n} = \Omega_0\,e^{-\eta^2/2}L_n(\eta^2) \;\xrightarrow{\text{thermal}}\; \Omega_0\, e^{-\eta^2(2\bar n+1)/2}$$
@@ -42,7 +44,7 @@ $$\Omega_{n,n} = \Omega_0\,e^{-\eta^2/2}L_n(\eta^2) \;\xrightarrow{\text{thermal
 **The Lamb–Dicke regime is the small-DWF-exponent limit:** $\eta^2(2\bar n + 1) \ll 1$ means the phase excursion is small, sidebands are weak, and the carrier is barely suppressed. Outside it, expansions in $\eta$ fail and the Laguerre polynomial structure matters.
 
 > [!question]- Cooling an NV to 4 K sharpens its zero-phonon line but barely raises the ZPL *fraction*. Why, and what does raise it?
-> Cooling removes only the thermal part of $\langle x^2\rangle$; the zero-point part remains, and it sets a floor on the Debye–Waller exponent. The fraction is set by how much the equilibrium geometry shifts between ground and excited state, so the fix is symmetry — an inversion-symmetric site kills the linear electron–phonon coupling, which is what group-IV centres exploit.
+> Cooling removes only the thermal part of $\langle x^2\rangle$; the zero-point part remains, and it sets a floor on the Debye–Waller exponent. The fraction is set by how much the equilibrium geometry shifts between ground and excited state, so the fix is symmetry — an inversion-symmetric site cancels the linear electron–phonon coupling, which is what group-IV centres exploit.
 
 # Connections
 

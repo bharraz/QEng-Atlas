@@ -10,7 +10,14 @@ $$
 \delta = \sqrt{\frac{2}{\mu\sigma\omega}}
 $$
 
-$\delta$ = skin depth (m), the $1/e$ decay length of field amplitude into the metal; $\mu = \mu_r\mu_0$ = permeability (H/m) — magnetic metals have $\mu_r \sim 10^3$–$10^5$, which shrinks $\delta$ dramatically and is why steel shields at low frequency where copper cannot; $\sigma$ = conductivity (S/m); $\omega = 2\pi f$ = angular frequency (rad/s). Fields decay as $e^{-z/\delta}$ with a phase lag of one radian per skin depth (amplitude and phase are locked because the wave is diffusive, not propagating).
+- $\delta$ — skin depth (m), the $1/e$ decay length of field amplitude into the metal
+- $\mu = \mu_r\mu_0$ — permeability (H/m)
+- $\sigma$ — conductivity (S/m)
+- $\omega = 2\pi f$ — angular frequency (rad/s)
+
+Magnetic metals have $\mu_r \sim 10^3$–$10^5$, which shrinks $\delta$ dramatically and is why steel shields at low frequency where copper cannot. Fields decay as $e^{-z/\delta}$ with a phase lag of one radian per skin depth (amplitude and phase are locked because the wave is diffusive, not propagating).
+
+**Picture:** eddy currents induced in the surface layer push back against the field, so each deeper layer sees less of the field and carries less current.
 
 All three parameters enter as inverse square roots, so $\delta \propto 1/\sqrt{f}$: every factor of 100 in frequency costs a factor of 10 in penetration.
 
@@ -29,7 +36,7 @@ All three parameters enter as inverse square roots, so $\delta \propto 1/\sqrt{f
 - **Shielding**: a shield attenuates by ~8.7 dB per skin depth of thickness (plus reflection loss). At 1 MHz, 0.5 mm of copper is ~8δ — excellent. At 60 Hz it's 0.06δ — nearly transparent, which is why low-frequency magnetic fields are the hard shielding case.
 - Litz wire beats skin effect below ~1 MHz by braiding insulated strands thinner than δ.
 
-> [!question]- Why does a copper box that kills 100 MHz interference do nothing for 60 Hz magnetic pickup?
+> [!question]- Why does a copper box that blocks 100 MHz interference do nothing for 60 Hz magnetic pickup?
 > δ(60 Hz) = 8.5 mm — far thicker than the wall, so the field walks through with negligible attenuation and there's little reflection loss for near-field B. You need flux diversion (mu-metal) or smaller loop area, not more copper.
 
 # Connections

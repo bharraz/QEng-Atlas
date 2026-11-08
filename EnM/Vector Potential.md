@@ -14,6 +14,8 @@ $$
 $$
 — **A is "shaped like the current"** (points along J, falls off like a potential). Useful instant intuition: a solenoid's A circles azimuthally even *outside*, where B = 0.
 
+**Picture:** $\mathbf A$ is the momentum per unit charge that a charge at rest would receive if the field were switched off suddenly; it points along the currents that produce it.
+
 **Why it's more than bookkeeping:**
 - **Aharonov–Bohm:** an electron encircling a solenoid picks up phase $\frac{q}{\hbar}\oint\mathbf{A}\cdot d\boldsymbol{\ell} = q\Phi/\hbar$ despite touching zero B — interference shifts observably. Flux, via A, is physical even where fields vanish.
 - **Minimal coupling:** charged-particle QM couples through $\mathbf{p}\to\mathbf{p}-q\mathbf{A}$; the photon field in quantum optics *is* the quantized A ([[Field Quantization of Light]]).

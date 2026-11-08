@@ -1,6 +1,6 @@
 #quantum
 
-**The Hamiltonian generates time translation: solve its eigenvalue problem once and every state just spins phases $e^{-iEt/\hbar}$ on the eigencomponents.** All quantum dynamics is "diagonalize, attach phases, transform back."
+**The Hamiltonian generates time translation: solve its eigenvalue problem once and every state spins phases $e^{-iEt/\hbar}$ on the eigencomponents.** All quantum dynamics is "diagonalize, attach phases, transform back."
 
 # Reference
 
@@ -8,6 +8,8 @@
 $$
 i\hbar\,\partial_t|\psi(t)\rangle = H|\psi(t)\rangle \;\;\Rightarrow\;\; |\psi(t)\rangle = e^{-iHt/\hbar}|\psi(0)\rangle \quad (H \text{ time-independent})
 $$
+
+**Picture:** each energy eigenstate as a clock hand turning at its own rate $E/\hbar$; any state is a set of hands, and evolution lets them all turn.
 
 **Time-independent (TISE)** — the eigenvalue problem that TDSE reduces to:
 $$

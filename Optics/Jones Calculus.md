@@ -6,6 +6,8 @@
 
 Basis $\begin{pmatrix}E_x \\ E_y\end{pmatrix}$: horizontal $\binom{1}{0}$, diagonal $\frac{1}{\sqrt2}\binom{1}{1}$, circular $\frac{1}{\sqrt2}\binom{1}{\pm i}$.
 
+**Picture:** the polarization state as an arrow with two complex components: a waveplate phase-shifts one component, a polarizer projects onto an axis, and chaining elements multiplies their matrices.
+
 | Element | Jones matrix |
 |---|---|
 | Polarizer along $x$ | $\begin{pmatrix}1 & 0\\ 0 & 0\end{pmatrix}$ |
@@ -25,7 +27,7 @@ Arbitrary-angle element: $M(\theta) = R(\theta)\, M(0)\, R(-\theta)$ — rotate 
 # Connections
 
 - [[Polarization of EM Waves]] — the physical states these 2-vectors encode
-- [[Waveplates]] — the workhorse matrices above, with their lab gotchas
+- [[Waveplates]] — the matrices above as physical parts, with their practical pitfalls
 - [[Birefringence]] — where the differential phase in waveplate matrices physically comes from
 - [[Pauli Matrices (Atlas)]] — Jones matrices of lossless elements are exactly SU(2); polarization is a flying qubit
 

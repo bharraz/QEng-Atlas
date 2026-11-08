@@ -6,6 +6,8 @@
 
 The problem: a spin flip costs GHz of energy, far too little to detect directly. The solution is not to detect it, but to make an optical cycle's *brightness* depend on the spin, and count eV-scale photons instead.
 
+**Picture:** a fluorescence cycle with a dark detour open to only one spin state: the detour costs photons, so brightness reports the spin.
+
 **Three ingredients are required.** Miss any one and the scheme fails:
 
 1. **A spin-conserving optical transition** — excitation preserves $m_s$, so the optical cycle does not scramble the thing you want to measure.
@@ -31,7 +33,14 @@ The two are inseparable: the same asymmetry that reads the spin also destroys it
 
 **Sensitivity has a universal shape.** Whatever the observable, a phase-accumulating sequence gives
 $$\eta \sim \frac{1}{\gamma\, C\sqrt{N\tau}}$$
-$\eta$ = smallest signal resolvable per $\sqrt{\text{Hz}}$; $\gamma$ = the coupling converting the field into precession rate; $\tau$ = interrogation time per shot, capped by coherence; $N$ = emitters; $C$ = contrast and collection efficiency. Two consequences worth internalizing:
+
+- $\eta$ — sensitivity: smallest signal resolvable per $\sqrt{\text{Hz}}$
+- $\gamma$ — coupling that converts the field into a precession rate
+- $\tau$ — interrogation time per shot: capped by coherence
+- $N$ — number of emitters
+- $C$ — contrast and collection efficiency
+
+Two consequences:
 
 - **Contrast enters linearly, coherence only as $\sqrt\tau$** — so improving readout fidelity is worth more than an equal fractional improvement in $T_2$. This is why single-shot readout schemes (spin-to-charge conversion, nuclear-assisted repetitive readout) matter so much.
 - The $\sqrt\tau$ rather than $\tau$ is the trade: phase accumulates linearly in $\tau$, but fewer shots fit in a fixed averaging window.
@@ -56,6 +65,7 @@ $\eta$ = smallest signal resolvable per $\sqrt{\text{Hz}}$; $\gamma$ = the coupl
 - [[Hyperfine Structure]] — nuclear registers and repetitive readout
 - [[Zeeman Effect (Atlas)]] — the field dependence that makes ODMR a magnetometer
 - [[Binomial Errors in State Detection]] — turning photon counts into a state assignment and its error
+- [[Spin-Defect Sensing Protocols]] — the sensing sequences that end in this readout
 
 ---
 Source: Doherty et al., "The nitrogen-vacancy colour centre in diamond," *Phys. Rep.* 528, 1 (2013); Degen, Reinhard & Cappellaro, "Quantum sensing," *Rev. Mod. Phys.* 89, 035002 (2017)

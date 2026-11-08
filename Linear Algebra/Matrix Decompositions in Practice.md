@@ -1,6 +1,6 @@
 #linear-algebra #quantum #math
 
-**Every decomposition answers one question — what basis makes this operator simple, and what does "simple" cost — and each row below buys generality by surrendering structure.**
+**Every decomposition answers one question — what basis makes this operator simple, and what does "simple" cost — and each row below gains generality by giving up structure.**
 
 # Reference
 
@@ -11,6 +11,8 @@
 | **Schur**       | $A = QTQ^\dagger$, $T$ upper triangular | **every** square $A$           | orthonormal basis; eigenvalues on $\mathrm{diag}\,T$ | only triangular, not diagonal                                |
 | **SVD**         | $A = U\Sigma V^\dagger$                 | **every** matrix, any shape    | two orthonormal bases, nonneg. diagonal              | input and output bases differ                                |
 | Polar           | $A = (UV^\dagger)(V\Sigma V^\dagger)$   | every square $A$               | rotation × positive stretch                          | — (a regrouping of SVD)                                      |
+
+**Picture:** each decomposition rewrites one matrix as a sequence of simple moves (rotate, stretch, shear, permute); the more general the matrix, the less simple the moves you are allowed.
 
 The two that always exist — Schur and SVD — are the two that get used numerically.
 
@@ -49,7 +51,7 @@ $$|\psi\rangle = \sum_{ij} c_{ij}|i\rangle_A|j\rangle_B = \sum_{k=1}^{r} \sigma_
 Geometry, Eckart–Young, and the engineering uses of the SVD (MIMO gain, POD/PCA, ill-determined fit parameters, regularized inversion) are in [[Singular Value Decomposition]] and [[Pseudo-Inverse]].
 
 > [!question]- A control loop has all eigenvalues in the left half-plane, yet produces a large transient excursion before settling. Which decomposition explains it?
-> Eigenvalues govern asymptotic decay only, and correctly say "stable." For non-normal $A$ the eigenvectors are strongly non-orthogonal, so the state grows before the exponentials win. $\sigma_{\max}(e^{At})$ bounds the actual excursion; Schur's upper-triangular part measures the non-normality causing it.
+> Eigenvalues govern asymptotic decay only, and correctly say "stable." For non-normal $A$ the eigenvectors are strongly non-orthogonal, so the state grows before the exponentials take over. $\sigma_{\max}(e^{At})$ bounds the actual excursion; Schur's upper-triangular part measures the non-normality causing it.
 
 # Connections
 

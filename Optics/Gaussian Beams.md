@@ -1,6 +1,6 @@
 #optics
 
-**One complex number $q(z) = z + iz_R$ carries the whole beam** — real part is distance from the waist, imaginary part the Rayleigh range, and spot size + wavefront curvature both fall out of $1/q$.
+**One complex number $q(z) = z + iz_R$ carries the entire beam** — real part is distance from the waist, imaginary part the Rayleigh range, and spot size + wavefront curvature both fall out of $1/q$.
 
 # Reference
 
@@ -8,7 +8,14 @@ $$
 \frac{1}{q(z)} = \frac{1}{R(z)} - \frac{i\lambda}{\pi w^2(z)}
 $$
 
-$q$ = complex beam parameter (m); $R(z)$ = radius of curvature of the wavefront (m, infinite at the waist where the wavefront is flat); $w(z)$ = $1/e^2$ intensity radius (m); $\lambda$ = wavelength in the medium (m). The two physical properties sit in the two parts of one number: curvature in the real part, spot size in the imaginary part — which is what lets a single Möbius transform propagate both at once.
+- $q$ — complex beam parameter (m)
+- $R(z)$ — wavefront radius of curvature (m): infinite at the waist, where the wavefront is flat
+- $w(z)$ — $1/e^2$ intensity radius (m)
+- $\lambda$ — wavelength in the medium (m)
+
+The two physical properties sit in the two parts of one number: curvature in the real part, spot size in the imaginary part — which is what lets a single Möbius transform propagate both at once.
+
+**Picture:** an hourglass: within $z_R$ of the waist the beam stays nearly collimated, and far beyond it spreads at a fixed angle, like light from a point source.
 
 With waist $w_0$ at $z=0$ and Rayleigh range $z_R = \pi w_0^2/\lambda$ (m; the distance over which the spot grows by $\sqrt2$, i.e. the depth of focus):
 
@@ -22,9 +29,9 @@ $$
 \theta = \frac{\lambda}{\pi w_0}
 $$
 
-$\theta$ = far-field half-angle (rad). Every relation on this page is one statement in disguise: $w_0\theta = \lambda/\pi$, the beam's étendue-like invariant. Small waist ⇔ large divergence ⇔ short $z_R$; you may move the constraint but never beat it (except by shortening $\lambda$).
+- $\theta$ — far-field half-angle (rad)
 
-**Waist–divergence tradeoff: $w_0\theta = \lambda/\pi$ is invariant.** Tight focus buys you a short depth of focus $2z_R \propto w_0^2$ — halve the waist, quarter the working range. Numbers at $\lambda = 1\,\mu$m: $w_0 = 1$ mm gives $z_R \approx 3.1$ m, $\theta \approx 0.32$ mrad; $w_0 = 10\,\mu$m gives $z_R \approx 0.31$ mm.
+**Waist–divergence tradeoff: $w_0\theta = \lambda/\pi$ is invariant** (the beam's étendue-like invariant), and all of the relations above follow from it: small waist ⇔ large divergence ⇔ short $z_R$; you may move the constraint but never beat it (except by shortening $\lambda$). A tight focus comes with a short depth of focus $2z_R \propto w_0^2$ — halve the waist, quarter the working range. Numbers at $\lambda = 1\,\mu$m: $w_0 = 1$ mm gives $z_R \approx 3.1$ m, $\theta \approx 0.32$ mrad; $w_0 = 10\,\mu$m gives $z_R \approx 0.31$ mm.
 
 **Intensity:** $I(r) = \frac{2P}{\pi w^2}e^{-2r^2/w^2}$ — note the 2: peak intensity is *twice* the naive $P/\pi w^2$. $w$ is the $1/e^2$ intensity radius.
 
@@ -38,7 +45,7 @@ $\theta$ = far-field half-angle (rad). Every relation on this page is one statem
 # Connections
 
 - [[Ray Transfer Matrices]] — the ABCD formalism that transforms $q$ through any paraxial system
-- [[Mode Matching]] — overlapping your $q$ with a target mode (fiber, cavity) is the whole game
+- [[Mode Matching]] — overlapping your $q$ with a target mode (fiber, cavity) sets the coupling efficiency
 - [[Higher-Order Beam Modes]] — the TEM$_{00}$ described here is the ground state of a complete family
 - [[Optical Cavity Stability]] — a cavity's eigenmode is the Gaussian whose $q$ reproduces itself per round trip
 - [[Beam Quality M2]] — real beams diverge $M^2$ times faster than this ideal

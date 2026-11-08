@@ -12,6 +12,8 @@ $$\omega(k) = 2\sqrt{\frac{K}{M}}\,\left|\sin\frac{ka}{2}\right|.$$
 
 Linear near $k=0$ ($\omega \approx v_s k$ with sound speed $v_s = a\sqrt{K/M}$), flat at the zone boundary $k = \pi/a$ (group velocity zero — standing wave, Bragg condition). With **two alternating masses** the zone halves and the branch folds into two: an **acoustic** branch ($\omega \to 0$, cells move together) and an **optical** branch (finite $\omega$ at $k=0$, atoms within a cell beat against each other), separated by a gap at the zone edge.
 
+**Picture:** atoms as masses joined by springs: the collective vibration patterns are independent oscillators, and each quantum of vibration is a phonon.
+
 **Branches in 3D:**
 - **Acoustic** — 3 branches (one longitudinal, two transverse); these are sound.
 - **Optical** — $3p - 3$ branches for $p$ atoms per cell; the $k\approx 0$ optical modes are what IR light and Raman scattering couple to (light's tiny $k$ pins you to the zone center).
@@ -26,7 +28,21 @@ $$C \xrightarrow{T \ll \Theta_D} \frac{12\pi^4}{5} N k_B \left(\frac{T}{\Theta_D
 
 The $T^3$ is pure mode counting: the thermally accessible phonon sphere has radius $\propto T$, hence $\propto T^3$ modes, each carrying $\sim k_B$.
 
-**Zero-point motion and the Debye–Waller factor.** Atoms are never at rest; the mean-square displacement $\langle u^2 \rangle$ (zero-point + thermal) multiplies every diffraction peak by $e^{-G^2\langle u^2\rangle/3}$ — the Debye–Waller factor — attenuating high-$\mathbf{G}$ peaks without broadening them. The same physics as the [[Lamb-Dicke Regime]] factor on sideband transitions: recoil taken up elastically by the whole lattice (Mössbauer) vs. phonon-creating events.
+**Einstein vs. Debye.** The Einstein model gives every mode the same frequency $\omega_E$ — correct for *optical* branches, which are nearly flat, and it recovers Dulong–Petit at high $T$. But it predicts $C \propto e^{-\hbar\omega_E/k_BT}$ at low $T$, exponentially too small, because it has no low-frequency modes. Debye's linear branch supplies exactly those, giving the observed $T^3$. **Use Einstein for optical modes and Debye for acoustic ones**; the two together are the standard cheap fit.
+
+**Anharmonicity is what the harmonic picture cannot give you.** Perfectly harmonic springs mean phonons never scatter, so thermal conductivity would be infinite and the lattice would never expand. Real potentials are asymmetric, and the leading measure is the **Grüneisen parameter** $\gamma = -\partial\ln\omega/\partial\ln V$ — how mode frequencies shift with volume. It sets thermal expansion ($\alpha \propto \gamma C/B$) and phonon–phonon scattering.
+
+**Thermal conductivity** follows kinetic theory, $\kappa \approx \tfrac13 C v_s \ell$, with the mean free path $\ell$ set by whichever scattering dominates:
+
+| Regime | Limiting scattering | $\kappa$ |
+|---|---|---|
+| Low $T$ | boundaries and sample size ($\ell$ fixed) | $\propto C \propto T^3$ |
+| Intermediate | peak where the two cross | maximum |
+| High $T$ | **Umklapp** phonon–phonon, requiring a reciprocal-lattice vector ([[Crystal Lattices and Reciprocal Space]]) | $\propto 1/T$ |
+
+Only Umklapp processes degrade heat current — normal processes conserve total crystal momentum and cannot, by themselves, produce thermal resistance. Isotopes and defects add their own $\ell$, which is why isotopically pure diamond and silicon conduct heat markedly better. This is the phonon side of the cryogenic heat budget ([[Cryogenics]]).
+
+**Zero-point motion and the Debye–Waller factor.** Atoms are never at rest; the mean-square displacement $\langle u^2 \rangle$ (zero-point + thermal) multiplies every diffraction peak by $e^{-G^2\langle u^2\rangle/3}$ — the Debye–Waller factor — attenuating high-$\mathbf{G}$ peaks without broadening them. The same physics as the [[Lamb-Dicke Regime]] factor on sideband transitions: recoil taken up elastically by the entire lattice (Mössbauer) vs. phonon-creating events.
 
 **Why they matter beyond heat:** electron–phonon scattering is a main source of electrical resistance, and the same electron–phonon coupling provides the attractive interaction that binds Cooper pairs in conventional [[Superconductivity]].
 
@@ -40,9 +56,13 @@ The $T^3$ is pure mode counting: the thermally accessible phonon sphere has radi
 - [[Second Quantization (Atlas)]] — the field-quantization framing shared with photons
 - [[Thermal States]] — Bose–Einstein occupation sets heat capacity and mode population
 - [[Superconductivity]] — phonon exchange is the pairing glue in BCS
-- [[Crystal Lattices and Reciprocal Space]] — modes are labeled by $\mathbf{k}$ in the Brillouin zone
+- [[Crystal Lattices and Reciprocal Space]] — modes are labeled by $\mathbf{k}$ in the Brillouin zone; Umklapp needs a $\mathbf{G}$
+- [[Spin Chains and Magnons]] — the magnetic analogue; AFM magnons share the linear dispersion and $T^3$
+- [[Debye-Waller Factor]] — the suppression factor in full, across diffraction, colour centres and ion traps
+- [[Cryogenics]] — where phonon heat capacity and conductivity enter the heat budget
 - [[Normal Modes of Ion Chains]] — the same quantization on a finite chain; phonons are its $N \to \infty$ limit
 - [[Lamb-Dicke Regime]] — Debye–Waller and Lamb-Dicke are the same recoil-suppression factor
+- [[Quantum Statistics and Fermi Gases]] — bosons with zero chemical potential
 
 ---
 Source: Ashcroft & Mermin, *Solid State Physics*, Ch. 22–23; Kittel, *Introduction to Solid State Physics*, Ch. 4–5

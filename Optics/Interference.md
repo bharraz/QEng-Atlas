@@ -8,6 +8,8 @@ $$
 I = I_1 + I_2 + 2\sqrt{I_1 I_2}\cos\Delta\phi, \qquad \Delta\phi = k\,\Delta L
 $$
 
+**Picture:** two waves meeting: where crest meets crest the intensity exceeds the sum, where crest meets trough it falls below, and averaged over the pattern the energy is conserved.
+
 **Visibility (contrast):**
 $$
 V = \frac{I_{\max} - I_{\min}}{I_{\max} + I_{\min}} = \frac{2\sqrt{I_1 I_2}}{I_1 + I_2}\,|\gamma_{12}|
@@ -20,7 +22,7 @@ $$
 $$
 Numbers: free-running diode laser ($\Delta\nu \sim 1$ MHz) → 300 m; He-Ne (~1 GHz multimode) → 30 cm; LED ($\Delta\nu \sim 10$ THz) → 30 µm. Rule: interferometers with path mismatch $\gg \ell_c$ show no fringes — which is also a *feature* (white-light fringes locate zero path difference to µm; unwanted etalons vanish for broadband light).
 
-**Requirements checklist when fringes are missing:** path difference $< \ell_c$; polarizations parallel (crossed pol → zero cross term — the classic silent killer after a fiber); spatial overlap and matched wavefronts (mismatched curvature = bullseye rings, tilt = straight fringes); detector faster than any relative phase drift, or fringes average away.
+**Requirements checklist when fringes are missing:** path difference $< \ell_c$; polarizations parallel (crossed pol → zero cross term — a common unnoticed failure after a fiber); spatial overlap and matched wavefronts (mismatched curvature = bullseye rings, tilt = straight fringes); detector faster than any relative phase drift, or fringes average away.
 
 > [!question]- Your Mach-Zehnder shows weak fringes ($V \approx 0.3$) with balanced arms and equal powers. Top two suspects?
 > Polarization mismatch between arms (check with a polarizer at the output — visibility restored means one arm's polarization rotated, e.g. by mirror phase shifts or fiber) and transverse mode/wavefront mismatch (fringe pattern shows rings or high spatial frequency — fix mode overlap). Coherence is exonerated by the balanced arms.

@@ -10,9 +10,9 @@ $$
 
 $\kappa = 1$ for unitaries (they don't distort at all); $\kappa \to \infty$ as $A$ approaches singular. **Rule of thumb: you lose $\log_{10}\kappa$ digits of precision.** In double precision ($\sim 16$ digits), $\kappa \gtrsim 10^{16}$ means the answer is numerically meaningless — and $\kappa \sim 10^8$ already halves your digits.
 
-**Geometric picture:** $A$ maps the unit sphere to an ellipsoid with axes $\sigma_i$. Large $\kappa$ = a very squashed ellipsoid; inverting stretches the squashed direction back out, amplifying any noise that landed along it.
+**Picture:** $A$ maps the unit sphere to an ellipsoid with axes $\sigma_i$. Large $\kappa$ = a very squashed ellipsoid; inverting stretches the squashed direction back out, amplifying any noise that landed along it.
 
-**Ill-conditioned fitting** — the place you actually meet this: nearly-degenerate model parameters (two decay constants close together, polynomial fits with a bad basis) give a design matrix or Hessian with tiny $\sigma_{\min}$. Symptoms: fit parameters swing wildly run-to-run while the fit curve barely changes, huge anti-correlated error bars. Fixes: reparametrize (orthogonal polynomials, centered variables), regularize, or accept that the data only constrains the well-conditioned combinations.
+**Ill-conditioned fitting** — the place you meet this: nearly-degenerate model parameters (two decay constants close together, polynomial fits with a bad basis) give a design matrix or Hessian with tiny $\sigma_{\min}$. Symptoms: fit parameters swing wildly run-to-run while the fit curve barely changes, huge anti-correlated error bars. Fixes: reparametrize (orthogonal polynomials, centered variables), regularize, or accept that the data only constrains the well-conditioned combinations.
 
 Note $\kappa(A^\dagger A) = \kappa(A)^2$ — forming normal equations squares the condition number, which is why QR or SVD beats solving $A^\dagger A x = A^\dagger b$ directly.
 

@@ -10,14 +10,20 @@ $$
 P_{LZ} = \exp\!\left(-\frac{\pi\,\hbar\,\Omega^2}{2\,\alpha}\right)
 $$
 
-$P_{LZ}$ = probability of the *diabatic* outcome (staying in the bare state, jumping between adiabatic curves); $\hbar\Omega$ = minimum gap at the crossing (J), i.e. twice the off-diagonal coupling; $\alpha = d(E_1 - E_2)/dt$ = sweep rate of the bare splitting (J/s). The exponent is dimensionless: $\hbar\Omega^2/\alpha$ compares the time spent inside the gap ($\sim \hbar\Omega/\alpha$) against the time the gap needs to act ($\sim 1/\Omega$). Gap enters *squared*, sweep rate linearly — halving the coupling costs the same as quadrupling the speed. (Conventions differ by factors of 2; check before comparing papers.)
+- $P_{LZ}$ — probability of the *diabatic* outcome: staying in the bare state, jumping between adiabatic curves
+- $\hbar\Omega$ — minimum gap at the crossing (J), i.e. twice the off-diagonal coupling
+- $\alpha = d(E_1 - E_2)/dt$ — sweep rate of the bare splitting (J/s)
+
+The exponent is dimensionless: $\hbar\Omega^2/\alpha$ compares the time spent inside the gap ($\sim \hbar\Omega/\alpha$) against the time the gap needs to act ($\sim 1/\Omega$). Gap enters *squared*, sweep rate linearly — halving the coupling costs the same as quadrupling the speed. (Conventions differ by factors of 2; check before comparing papers.)
+
+**Picture:** two roads that approach and then veer apart: a slow car follows its road around the bend (adiabatic), a fast one goes straight and ends on the other road (diabatic).
 
 | Regime | $\hbar\Omega^2/\alpha$ | Outcome |
 |---|---|---|
 | Fast (diabatic) | $\ll 1$ | $P_{LZ} \to 1$: sails through, no transfer between adiabatic states |
 | Slow (adiabatic) | $\gg 1$ | $P_{LZ} \to 0$: follows the avoided crossing, population transferred |
 
-The exponential is brutal in both directions: a modest change in gap (enters **squared**) or speed moves you decades in jump probability. Intermediate sweeps create coherent superpositions of the two outcomes — sweep back and forth and the amplitudes interfere (Landau-Zener-Stückelberg interferometry, a spectroscopy tool in its own right).
+The exponential is steep in both directions: a modest change in gap (enters **squared**) or speed moves you decades in jump probability. Intermediate sweeps create coherent superpositions of the two outcomes — sweep back and forth and the amplitudes interfere (Landau-Zener-Stückelberg interferometry, a spectroscopy tool in its own right).
 
 Where you meet it: RAP pulse design (choose $\alpha \ll \Omega^2$), qubit transport across level crossings, molecular curve crossings, and diagnosing unwanted population loss when a frequency ramp crosses a spectator resonance too slowly to ignore, too fast to follow.
 
@@ -29,6 +35,7 @@ Where you meet it: RAP pulse design (choose $\alpha \ll \Omega^2$), qubit transp
 - [[Adiabatic Theorem]] — the general criterion this makes exact for one solvable case
 - [[Two-Level Systems]] — the avoided crossing being swept
 - [[Dressed States]] — the adiabatic curves you either follow or jump between
+- [[Degeneracy and Level Crossings]] — why one tuning knob gives an avoided crossing
 
 ---
 Source: Zener, *Proc. R. Soc. A* **137**, 696 (1932); modern review: Shevchenko et al., *Phys. Rep.* **492**, 1 (2010)

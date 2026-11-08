@@ -10,7 +10,9 @@ $$
 A = A^\dagger \quad\Longleftrightarrow\quad \langle x, Ay\rangle = \langle Ax, y\rangle \;\;\forall x,y
 $$
 
-**Guaranteed structure** (this is the payoff):
+**Picture:** a stretch along perpendicular axes by real factors, with no rotation: in its eigenbasis a Hermitian matrix only scales.
+
+**Guaranteed structure**:
 - All eigenvalues $\lambda_i \in \mathbb{R}$
 - Eigenvectors of distinct eigenvalues are orthogonal; a full orthonormal eigenbasis always exists (Hermitian ⊂ normal, so the [[Spectral Theorem]] applies)
 - Spectral decomposition: $A = \sum_i \lambda_i |v_i\rangle\langle v_i|$
@@ -25,10 +27,11 @@ $$
 # Connections
 
 - [[Spectral Theorem]] — the diagonalization guarantee Hermitian matrices inherit as normal matrices
-- [[Unitary Matrices]] — the sibling class: $e^{iA}$ of a Hermitian $A$ is unitary (generator ↔ evolution)
+- [[Unitary Matrices]] — the related class: $e^{iA}$ of a Hermitian $A$ is unitary (generator ↔ evolution)
 - [[Eigenvalues and Eigenvectors]] — the general machinery, before Hermiticity adds reality and orthogonality
 - [[Rayleigh Quotient and Variational Principle]] — $\langle x|A|x\rangle/\langle x|x\rangle$ is bounded by the extreme eigenvalues, only meaningful because they're real
 - [[Positive Semidefinite Matrices]] — Hermitian with the extra constraint $\lambda_i \ge 0$
+- [[Reading Matrices and Hamiltonians]] — what the entries of a Hermitian Hamiltonian do
 
 ---
 Source: Horn & Johnson, *Matrix Analysis*, Ch. 4; Nielsen & Chuang §2.1.

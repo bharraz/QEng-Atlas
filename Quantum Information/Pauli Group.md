@@ -1,6 +1,6 @@
 #quantum-info
 
-**The n-qubit Pauli group is all tensor products of $I,X,Y,Z$ with phases $\pm1,\pm i$** — its two superpowers: any two elements either commute or anticommute, and the Paulis form a complete basis for errors.
+**The n-qubit Pauli group is all tensor products of $I,X,Y,Z$ with phases $\pm1,\pm i$** — two properties make it central: any two elements either commute or anticommute, and the Paulis form a complete basis for errors.
 
 # Reference
 
@@ -10,11 +10,13 @@ $$
 
 $4^{n+1}$ elements; the phases make it a genuine group ($XY = iZ$ needs the $i$).
 
+**Picture:** the four Paulis as the four ways a qubit can be wrong: unchanged, bit-flipped, phase-flipped, or both; strings of them describe every error on $n$ qubits.
+
 **The ± check**: two Pauli strings commute iff they anticommute on an *even* number of tensor slots. Per slot: identical or one is $I$ → commute; two different non-identity Paulis → anticommute. Count odd slots, take parity. This binary (symplectic over $\mathbb{F}_2$) structure is why stabilizer codes reduce to classical linear algebra.
 
 **Weight** = number of non-identity slots. A distance-$d$ code corrects all Paulis of weight $\le \lfloor(d-1)/2\rfloor$.
 
-**Error basis**: the $4^n$ phase-free Paulis span all operators — any error, including a coherent over-rotation, is a linear combination of Paulis. Correct the Paulis and you've corrected everything: the discretization miracle of QEC.
+**Error basis**: the $4^n$ phase-free Paulis span all operators — any error, including a coherent over-rotation, is a linear combination of Paulis. Correct the Paulis and you've corrected everything: the discretization of errors in QEC.
 
 > [!question]- Why does correcting only bit and phase flips handle *arbitrary* single-qubit errors?
 > Any error acts as $E = \alpha I + \beta X + \gamma Y + \delta Z$. Syndrome measurement projects the state onto one definite Pauli branch, which recovery then undoes — the measurement discretizes the continuum for you.

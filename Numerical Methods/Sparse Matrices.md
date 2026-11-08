@@ -4,7 +4,9 @@
 
 # Reference
 
-**When sparse wins.** Dense storage $n^2 \times 16$ B (complex float64) vs sparse $\sim$ nnz $\times$ 20 B; matvec $O(n^2)$ vs $O(\text{nnz})$. Break-even ~5–10% density; the useful regime is ≪1% — a $10^6$-dimensional Hamiltonian with 100 nonzeros/row is 8 TB dense, 2 GB sparse. Local operators are sparse in a local basis (few-body Hamiltonians; a finite-difference Laplacian on $N$ points: nnz $\approx 3N$); the same operator can be dense in another basis — basis choice is a sparsity decision.
+**When sparse storage is better.** Dense storage $n^2 \times 16$ B (complex float64) vs sparse $\sim$ nnz $\times$ 20 B; matvec $O(n^2)$ vs $O(\text{nnz})$. Break-even ~5–10% density; the useful regime is ≪1% — a $10^6$-dimensional Hamiltonian with 100 nonzeros/row is 8 TB dense, 2 GB sparse. Local operators are sparse in a local basis (few-body Hamiltonians; a finite-difference Laplacian on $N$ points: nnz $\approx 3N$); the same operator can be dense in another basis — basis choice is a sparsity decision.
+
+**Picture:** a mostly empty grid where only the occupied cells are written down; operations that fill empty cells (fill-in) can turn a cheap problem into a dense one.
 
 **Formats** (SciPy names):
 
@@ -26,7 +28,7 @@ Workflow: build in COO/LIL → convert to CSR/CSC to compute. Writing single ent
 
 **Solving $Ax = b$:**
 
-- **Direct** (sparse LU/Cholesky): factor once, solve many; exact. Cost = **fill-in** — the factors are denser than $A$, dependent on elimination order (solvers permute to minimize it; banded/tree-structured systems fill almost nothing). Fine for 1D/2D-sized problems; fill kills 3D.
+- **Direct** (sparse LU/Cholesky): factor once, solve many; exact. Cost = **fill-in** — the factors are denser than $A$, dependent on elimination order (solvers permute to minimize it; banded/tree-structured systems fill almost nothing). Fine for 1D/2D-sized problems; fill-in makes 3D impractical.
 - **Iterative** (CG for symmetric positive definite; GMRES/BiCGSTAB general): matvecs only, memory stays $O(\text{nnz})$; iteration count grows with the [[Condition Number|condition number]] ($\sqrt{\kappa}$ for CG). A **preconditioner** $M^{-1} \approx A^{-1}$, cheap to apply (incomplete factorization, diagonal, physics-informed), replaces $\kappa(A)$ by $\kappa(M^{-1}A)$ — routinely the difference between 30 and 30 000 iterations.
 - Eigenproblems split the same way: dense solvers below $\sim 10^4$, Lanczos/Arnoldi above ([[Exact Diagonalization and Sparse Methods]]).
 

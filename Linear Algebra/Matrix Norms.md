@@ -12,6 +12,8 @@ The three that matter, all expressible in singular values $\sigma_i$:
 | Frobenius | $\sqrt{\mathrm{Tr}(A^\dagger A)}$ | $\sqrt{\sum_i \sigma_i^2}$ | average/RMS size, least-squares distance |
 | Trace (nuclear) | $\mathrm{Tr}\sqrt{A^\dagger A}$ | $\sum_i \sigma_i$ | state distinguishability: $\tfrac12\|\rho-\sigma\|_1$ is trace distance |
 
+**Picture:** the operator norm is the longest stretch the matrix applies to any unit vector, the Frobenius norm the root-mean-square stretch, and the trace norm the sum of all the stretches.
+
 These are the $p=\infty, 2, 1$ members of the Schatten family ($\ell_p$ norms on the singular value list). Ordering: $\|A\| \le \|A\|_F \le \|A\|_{\mathrm{tr}} \le \sqrt{r}\,\|A\|_F$ with $r$ the rank.
 
 **Unitary invariance:** all three satisfy $\|UAV\| = \|A\|$ for unitary $U,V$ — the norm sees only the singular values, not the bases. This is why they're basis-independent measures of gate or channel error.

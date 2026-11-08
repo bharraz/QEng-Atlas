@@ -4,11 +4,13 @@
 
 # Reference
 
-**The Euler kit:**
+**Euler identities:**
 $$
 e^{i\theta} = \cos\theta + i\sin\theta, \qquad \cos\theta = \frac{e^{i\theta}+e^{-i\theta}}{2}, \qquad \sin\theta = \frac{e^{i\theta}-e^{-i\theta}}{2i}
 $$
 $|e^{i\theta}|=1$; multiplying by $e^{i\phi}$ rotates by $\phi$; $i = e^{i\pi/2}$ is "advance by 90°."
+
+**Picture:** a rotating arrow in the complex plane whose shadow on the real axis is the cosine you measure; differentiating turns the arrow 90° ahead and scales it by $\omega$.
 
 **Phasor recipe:** write the drive as $\mathrm{Re}[\tilde F e^{i\omega t}]$, assume response $\mathrm{Re}[\tilde x e^{i\omega t}]$, substitute — $d/dt \to i\omega$, so the ODE becomes complex algebra:
 $$
@@ -20,13 +22,13 @@ $|\tilde x|$ is the amplitude, $\arg\tilde x$ the phase lag — both in one comp
 
 The $e^{-i2\omega t}$ term you drop in the rotating wave approximation is exactly the counter-rotating half of a cosine drive — RWA is phasor thinking applied to quantum dynamics.
 
-> [!question]- Why can't you compute power by just multiplying two phasors?
+> [!question]- Why can't you compute power by multiplying two phasors?
 > Multiplication is nonlinear, and phasors silently carry only the $e^{+i\omega t}$ half of the real signal. The product of two real signals contains cross terms ($2\omega$ and DC) that the naive phasor product misrepresents. The fix for time-averaged quantities is $\tfrac12\mathrm{Re}[\tilde A\tilde B^*]$; for actual mixing products, write out both exponentials.
 
 # Connections
 
 - [[Complex Impedance]] — the phasor recipe institutionalized: $Z_C = 1/i\omega C$, $Z_L = i\omega L$
-- [[Rotating Wave Approximation (Atlas)]] — dropping the counter-rotating exponential; the quantum version of this note
+- [[Rotating Wave Approximation (Atlas)]] — dropping the counter-rotating exponential; the quantum version of phasor thinking
 - [[Driven Damped Harmonic Oscillator]] — the three-line phasor derivation above, unpacked
 - [[Fourier Transform]] — phasors are the single-frequency slice of the full decomposition
 

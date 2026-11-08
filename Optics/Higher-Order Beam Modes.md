@@ -18,6 +18,8 @@ $$
 \nu_{qmn} = \mathrm{FSR}\left[ q + (m+n+1)\frac{\arccos(\pm\sqrt{g_1 g_2})}{\pi} \right]
 $$
 
+**Picture:** the Gaussian as the ground state of a 2D harmonic oscillator, and the higher modes as its excited states, with more nodes and more Gouy phase.
+
 **Practical:** transverse mode splitting is a feature — scan a cavity and the little peaks between TEM$_{00}$ resonances diagnose your mode matching (each higher-order peak is power you failed to couple). Degenerate geometries (confocal: splitting = FSR/2, modes overlap in pairs) hide this information.
 
 > [!question]- You scan a cavity and see a strong peak at ~1/3 of an FSR after the main one. What is it telling you?
@@ -29,7 +31,7 @@ $$
 - [[Hermite Polynomials]] — same functions as QHO eigenstates; paraxial optics is a 2D oscillator
 - [[Optical Cavity Stability]] — $g_1g_2$ sets the transverse mode spacing via the Gouy phase
 - [[Mode Matching]] — mismatch decomposes into higher-order modes; the cavity scan shows the coefficients
-- [[Fabry-Perot Cavity]] — where the mode spectrum is actually observed
+- [[Fabry-Perot Cavity]] — where the mode spectrum is observed
 
 ---
 Source: Siegman, *Lasers*, Ch. 16–17, 19

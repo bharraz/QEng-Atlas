@@ -14,6 +14,8 @@ $$\pm U \in SU(2) \;\longmapsto\; \text{the same rotation } R \in SO(3).$$
 
 $SU(2)$ is the **double cover** of $SO(3)$. A rotation by $2\pi$ is the identity in $SO(3)$, but the corresponding $SU(2)$ element is $-\mathbb{1}$; you need $4\pi$ to return $SU(2)$ to the identity.
 
+**Picture:** a belt fastened at both ends: a 360° twist cannot be undone without moving the ends, but a 720° twist can; spinors keep track of that difference, vectors do not.
+
 **The spinor sign**: a spin-1/2 state transforms under $SU(2)$, so a full $2\pi$ rotation multiplies it by $-1$,
 
 $$R_{\hat{n}}(\theta) = e^{-i\theta\,\hat{n}\cdot\vec{\sigma}/2}, \qquad R_{\hat{n}}(2\pi) = -\mathbb{1}.$$
@@ -55,6 +57,7 @@ each irrep appearing exactly once ($SU(2)$ is multiplicity-free — one reason a
 - [[Bloch Sphere]] — $SU(2)$ acting on a qubit, drawn as rotations of a sphere
 - [[Angular Momentum in QM]] — the ladder structure and the integer/half-integer split
 - [[Clebsch-Gordan Coefficients]] — the tensor-product change of basis
+- [[Topology and Topological Invariants]] — $\pi_1(SO(3)) = \mathbb{Z}_2$, the topology behind the double cover
 
 ---
 Source: Sakurai & Napolitano, *Modern Quantum Mechanics*, Ch. 3; Hall, *Lie Groups, Lie Algebras, and Representations*, Ch. 4

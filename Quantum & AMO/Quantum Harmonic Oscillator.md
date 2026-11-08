@@ -1,6 +1,6 @@
 #quantum
 
-**The one problem physics actually solves, so everything gets mapped onto it: equally spaced levels $\hbar\omega(n+\tfrac12)$ built by ladder operators, with a Gaussian ground state that saturates the uncertainty bound.** Trap motion, cavity modes, phonons — all this Hamiltonian.
+**The one problem physics solves, so everything gets mapped onto it: equally spaced levels $\hbar\omega(n+\tfrac12)$ built by ladder operators, with a Gaussian ground state that saturates the uncertainty bound.** Trap motion, cavity modes, phonons — all this Hamiltonian.
 
 # Reference
 
@@ -8,7 +8,9 @@ $$
 H = \frac{p^2}{2m} + \frac{1}{2}m\omega^2x^2 = \hbar\omega\left(a^\dagger a + \tfrac{1}{2}\right), \qquad E_n = \hbar\omega\left(n + \tfrac{1}{2}\right)
 $$
 
-**Ladder solution in one breath:** define $a = \frac{1}{2x_0}x + \frac{i x_0}{\hbar}p$ with $x_0 = \sqrt{\hbar/2m\omega}$; then $[a,a^\dagger] = 1$, $[H,a] = -\hbar\omega a$, so $a$ lowers energy in steps of $\hbar\omega$; positivity of $\langle a^\dagger a\rangle$ terminates the ladder at $a|0\rangle = 0$. Full machinery in [[Ladder Operators]].
+**Picture:** a ladder of equally spaced rungs of height $\hbar\omega$, starting half a rung above the floor; the ground state is the Gaussian sitting at the bottom of the parabola.
+
+**Ladder-operator solution:** define $a = \frac{1}{2x_0}x + \frac{i x_0}{\hbar}p$ with $x_0 = \sqrt{\hbar/2m\omega}$; then $[a,a^\dagger] = 1$, $[H,a] = -\hbar\omega a$, so $a$ lowers energy in steps of $\hbar\omega$; positivity of $\langle a^\dagger a\rangle$ terminates the ladder at $a|0\rangle = 0$. Full machinery in [[Ladder Operators]].
 
 **THE conversion formulas** (memorize; convention $x_0 = \sqrt{\hbar/2m\omega}$):
 $$
@@ -29,6 +31,7 @@ $$
 - [[Hermite Polynomials]] — position-space wavefunctions
 - [[Coherent States]] — the classical-motion states of this Hamiltonian
 - [[Normal Modes of Ion Chains]] — each mode is one of these
+- [[Parity and Time Reversal]] — alternating parity of the ladder and its selection rules
 
 ---
 Source: Sakurai & Napolitano, *Modern Quantum Mechanics*, §2.3

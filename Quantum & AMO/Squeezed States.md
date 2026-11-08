@@ -9,7 +9,14 @@ $$
 S(\xi) = \exp\!\left[\tfrac{1}{2}\left(\xi^* a^2 - \xi\, a^{\dagger 2}\right)\right], \qquad \xi = r e^{i\theta}
 $$
 
-$\xi$ = complex squeezing parameter; $r \geq 0$ = squeeze magnitude (dimensionless — the exponent by which one quadrature's noise shrinks, $e^{-r}$), $\theta$ = squeeze angle (rad), with the squeezed quadrature oriented at $\theta/2$ — halved because $S$ is quadratic in $a$, the same factor-2 that makes a $2\omega$ parametric drive act at $\omega$; $a, a^\dagger$ = mode annihilation/creation operators (dimensionless). $r$ accumulates as (parametric gain rate) × (interaction time), and noise falls exponentially in it: 8.7 dB per unit $r$.
+- $\xi$ — complex squeezing parameter
+- $r \geq 0$ — squeeze magnitude (dimensionless): the exponent by which one quadrature's noise shrinks, $e^{-r}$
+- $\theta$ — squeeze angle (rad); the squeezed quadrature is oriented at $\theta/2$
+- $a, a^\dagger$ — mode annihilation/creation operators (dimensionless)
+
+The orientation is halved because $S$ is quadratic in $a$, the same factor-2 that makes a $2\omega$ parametric drive act at $\omega$. $r$ accumulates as (parametric gain rate) × (interaction time), and noise falls exponentially in it: 8.7 dB per unit $r$.
+
+**Picture:** the vacuum's round uncertainty disk pressed into an ellipse: thinner along one quadrature, longer along the other, with the same area.
 
 Acting on vacuum, with quadratures $X_1 = (a + a^\dagger)/2$, $X_2 = (a - a^\dagger)/2i$ (vacuum: $\Delta X_i = 1/2$):
 $$
@@ -19,14 +26,14 @@ Still minimum-uncertainty — an ellipse of the same area, orientation set by $\
 
 **Where it comes from:** any Hamiltonian $\propto a^2 + a^{\dagger 2}$ — parametric down-conversion, four-wave mixing, modulating a trap frequency at $2\omega$ (parametric drive on an ion's motion squeezes the same way).
 
-**Why you care:** homodyne detection locked to the squeezed quadrature beats the shot-noise limit — LIGO runs squeezed light routinely; spin squeezing is the same idea for atomic clocks beating projection noise. **Gotcha: loss is lethal** — mixing in vacuum through efficiency $\eta$ degrades toward $\Delta X^2 \to \eta\,\Delta X_{sq}^2 + (1-\eta)/4$; 3 dB of loss caps you near 3 dB of usable squeezing no matter what the source made.
+**Why it matters:** homodyne detection locked to the squeezed quadrature beats the shot-noise limit — LIGO runs squeezed light routinely; spin squeezing is the same idea for atomic clocks beating projection noise. **Loss destroys squeezing:** mixing in vacuum through efficiency $\eta$ degrades toward $\Delta X^2 \to \eta\,\Delta X_{sq}^2 + (1-\eta)/4$; 3 dB of loss caps you near 3 dB of usable squeezing no matter what the source made.
 
 > [!question]- Squeezing doesn't violate the uncertainty principle — so where does the "free" sensitivity come from?
 > The product $\Delta X_1\Delta X_2$ is unchanged; you've rotated the noise into the quadrature you don't measure. It only pays if your measurement genuinely uses one quadrature (homodyne at fixed phase) — measure both and the advantage cancels.
 
 # Connections
 
-- [[Coherent States]] — the round blob this deforms; displaced squeezed states combine both
+- [[Coherent States]] — the round Gaussian this deforms; displaced squeezed states combine both
 - [[Bosonic Codes]] — squeezing as the resource behind GKP states, and its finite-squeezing limit
 - [[Quantum Sensing]] — squeezed light beating the shot-noise limit
 - [[Vacuum Fluctuations]] — the noise floor being redistributed

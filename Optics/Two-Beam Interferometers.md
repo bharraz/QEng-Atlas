@@ -10,6 +10,8 @@ I_{\rm out} = \frac{I_0}{2}\left[1 + V\cos(2k\,\Delta L)\right]
 $$
 The 2 in $2k\Delta L$: **one fringe per λ/2 of mirror motion** — fringe counting is displacement metrology (HeNe: 316 nm per fringe). The complementary output goes back toward the source (feedback hazard — isolate the laser).
 
+**Picture:** a ruler marked in wavelengths: each output fringe is one $\lambda$ of path difference, which in a Michelson is $\lambda/2$ of mirror motion.
+
 **Mach-Zehnder:** two beamsplitters, paths recombine once; two accessible output ports with complementary fringes ($I_A + I_B = $ const — energy conservation, and the reason balanced detection works). One fringe per λ of path change. Paths are separate, so you can put a sample, modulator, or atom in one arm without double-passing it.
 
 **Where each is used:** Michelson — FTIR spectrometers (scan arm, FT the interferogram), gravitational-wave detectors, displacement/vibration metrology, white-light zero-path-finding. Mach-Zehnder — EOM-based intensity modulators, phase measurement of samples, the template for atom and photon interferometry.

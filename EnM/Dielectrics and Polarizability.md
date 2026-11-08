@@ -10,13 +10,15 @@ $$
 
 Bound charge: $\rho_b=-\nabla\cdot\mathbf{P}$, $\sigma_b=\mathbf{P}\cdot\hat{n}$ — polarization piles up charge where it starts, stops, or varies.
 
+**Picture:** each atom's electron cloud pulled slightly off its nucleus by the field; the stretched atoms partly cancel the field inside, which is why $\varepsilon_r > 1$.
+
 **Micro→macro (Clausius–Mossotti):** with number density $N$ and the local-field correction,
 $$
 \frac{\varepsilon_r - 1}{\varepsilon_r + 2} = \frac{N\alpha}{3\varepsilon_0}
 $$
 Dilute limit: $\varepsilon_r\approx 1+N\alpha/\varepsilon_0$.
 
-**α is frequency-dependent** — a driven-oscillator response with resonances at the transitions: large and real far below resonance, dispersive/absorptive near it. Evaluated at optical ω, **α is exactly what sets AC Stark shifts: $U=-\frac{1}{2}\alpha(\omega)\langle E^2\rangle$** — a dipole trap is a region of high $E^2$ and a light shift is the same expression rebranded. Sign flips with detuning because α does. DC α also gives static Stark shifts and blackbody shifts in clocks.
+**α is frequency-dependent** — a driven-oscillator response with resonances at the transitions: large and real far below resonance, dispersive/absorptive near it. Evaluated at optical ω, **α is exactly what sets AC Stark shifts: $U=-\frac{1}{2}\alpha(\omega)\langle E^2\rangle$** — a dipole trap is a region of high $E^2$ and a light shift is the same expression. Sign flips with detuning because α does. DC α also gives static Stark shifts and blackbody shifts in clocks.
 
 Practical numbers: $\varepsilon_r\approx$ 2.1 (PTFE), 3.9 (SiO₂), 4.4 (FR4), ~80 (water, DC). Energy density in a dielectric $\frac{1}{2}\mathbf{E}\cdot\mathbf{D}$; capacitors scale by $\varepsilon_r$.
 

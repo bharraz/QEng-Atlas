@@ -11,14 +11,16 @@ c_n = \frac{1}{T}\int_0^T f(t)\, e^{-in\omega_0 t}\, dt
 $$
 Real $f$ means $c_{-n} = c_n^*$. Sin/cos version: $a_n = c_n + c_{-n}$, $b_n = i(c_n - c_{-n})$.
 
-**The projection is just an inner product:** harmonics are orthonormal under $\frac{1}{T}\int_0^T e^{i(n-m)\omega_0 t} dt = \delta_{nm}$, so each $c_n$ is "the component of $f$ along mode $n$" — the same move as expanding a state in an eigenbasis.
+**Picture:** a periodic signal built from a fundamental tone and its overtones; each coefficient is how strongly one overtone is present, found by projecting onto it.
+
+**The projection is an inner product:** harmonics are orthonormal under $\frac{1}{T}\int_0^T e^{i(n-m)\omega_0 t} dt = \delta_{nm}$, so each $c_n$ is "the component of $f$ along mode $n$" — the same move as expanding a state in an eigenbasis.
 
 **Convergence facts worth knowing:** smoothness sets decay — a discontinuity gives $c_n \sim 1/n$ (square wave), a kink gives $1/n^2$ (triangle). **Gibbs:** at a jump the partial sums overshoot by ~9% no matter how many terms you keep; the overshoot narrows but never shrinks.
 
 **Parseval:** $\frac{1}{T}\int_0^T |f|^2 dt = \sum_n |c_n|^2$ — power splits among the harmonics. This is why a square-wave drive at $\omega_0$ also hits resonances at $3\omega_0, 5\omega_0, \ldots$ (with $1/n$ amplitudes) — relevant for anything driven with fast edges.
 
 > [!question]- Why does a square-wave drive excite a high-Q resonator sitting at three times the drive frequency?
-> The square wave's series has only odd harmonics with amplitudes $\propto 1/n$ — its $n=3$ line lands exactly on the resonance and the $Q$ does the rest. Any non-sinusoidal drive is secretly a comb of tones.
+> The square wave's series has only odd harmonics with amplitudes $\propto 1/n$ — its $n=3$ line lands exactly on the resonance and the $Q$ does the rest. Any non-sinusoidal periodic drive is a comb of tones.
 
 # Connections
 

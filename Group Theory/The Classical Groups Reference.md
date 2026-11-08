@@ -8,7 +8,10 @@ The construction that generates every row (fix a form, take its isometry group) 
 
 ## The catalogue
 
-$n$ = matrix size; dim = real dimension of the group = number of independent generators.
+- $n$ — matrix size
+- dim — real dimension of the group = number of independent generators
+
+**Picture:** each group is the symmetry of one measuring rule: lengths (orthogonal), complex lengths (unitary), signed areas (symplectic), volumes (special linear).
 
 | Group                         | Defining condition                  | Preserves               | Algebra (generators)     | dim                      | Physics home                                      |
 | ----------------------------- | ----------------------------------- | ----------------------- | ------------------------ | ------------------------ | ------------------------------------------------- |
@@ -28,7 +31,7 @@ $n$ = matrix size; dim = real dimension of the group = number of independent gen
 
 - $\dim SU(2) = 3$ — rotation axis and angle on the [[Bloch Sphere]].
 - $\dim Sp(2,\mathbb R) = 3$ — squeeze, rotation, shear: the ABCD matrices.
-- $\dim Sp(4,\mathbb R) = 10$ — the independent quadratic Hamiltonians on two modes, hence the generator count for universal two-mode Gaussian operations.
+- $\dim Sp(4,\mathbb R) = 10$ — independent quadratic two-mode Hamiltonians: the generators of all two-mode Gaussian operations
 
 **Semidirect products** ($\rtimes$) appear when one factor *acts on* the other instead of commuting with it. $\mathrm{Osc} = H_3 \rtimes U(1)$ is number-phase rotation acting on displacements; the same structure with spin in place of $U(1)$ is the [[Molmer-Sorensen Gate]] at zero detuning — spin acting on displacement, hence a spin-*dependent* displacement.
 

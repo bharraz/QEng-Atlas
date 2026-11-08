@@ -10,6 +10,8 @@ $$
 
 (source-free region, so $\nabla\cdot\mathbf{E}=0$). Same for B. Speed $v=1/\sqrt{\mu\varepsilon}=c/n$ with $n=\sqrt{\varepsilon_r\mu_r}\approx\sqrt{\varepsilon_r}$.
 
+**Picture:** a changing E field makes a curling B field, which makes a curling E field in turn, and the pair leapfrog forward at $c/n$.
+
 **Plane wave solutions:**
 $$
 \mathbf{E}=\mathbf{E}_0\,e^{i(\mathbf{k}\cdot\mathbf{r}-\omega t)}, \qquad \omega = v|\mathbf{k}|, \qquad \mathbf{B}=\frac{1}{\omega}\,\mathbf{k}\times\mathbf{E}
@@ -30,7 +32,7 @@ Useful conversions: $I=\frac{1}{2}c\varepsilon_0 E_0^2 = E_0^2/2\eta_0$; so $1\ 
 
 # Connections
 
-- [[Maxwell's Equations]] — parent equations; the curl-curl trick lives here
+- [[Maxwell's Equations]] — parent equations; taking the curl of Faraday's law and substituting the Ampère–Maxwell law gives the wave equation
 - [[Polarization of EM Waves]] — the leftover vector freedom of $\mathbf{E}_0$ in the transverse plane
 - [[Poynting Vector and Energy Flow]] — where the $I=E_0^2/2\eta_0$ conversion comes from
 - [[Dispersion Relations]] — what happens when $\varepsilon(\omega)$ makes $v$ frequency-dependent

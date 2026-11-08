@@ -8,9 +8,16 @@ $$
 S_x(f) = \lim_{T\to\infty}\frac{1}{T}\left\langle |\tilde{x}_T(f)|^2 \right\rangle, \qquad \sigma^2 = \int_{\text{band}} S_x(f)\, df
 $$
 
-$x(t)$ = the fluctuating quantity (V, T, Hz, rad — whatever you measure); $\tilde x_T(f)$ = its Fourier transform over a record of length $T$; $S_x$ = power spectral density in (units of $x$)²/Hz; $\sigma^2$ = mean-square fluctuation contributed by the integration band. The $1/T$ and the ensemble average are what make $S$ converge: $|\tilde x_T|^2$ alone grows with record length and fluctuates 100% shot to shot, so a *single* periodogram never converges no matter how long you measure — only averaging does ([[PSD Estimation]]).
+- $x(t)$ — the fluctuating quantity (V, T, Hz, rad — whatever you measure)
+- $\tilde x_T(f)$ — its Fourier transform over a record of length $T$
+- $S_x$ — power spectral density, in (units of $x$)²/Hz
+- $\sigma^2$ — mean-square fluctuation contributed by the integration band
 
-**Units — where everyone gets burned:**
+The $1/T$ and the ensemble average are what make $S$ converge: $|\tilde x_T|^2$ alone grows with record length and fluctuates 100% shot to shot, so a *single* periodogram never converges no matter how long you measure — only averaging does ([[PSD Estimation]]).
+
+**Picture:** a histogram of variance against frequency: the area over any band is the mean-square noise that band contributes.
+
+**Units — the most common error:**
 - **PSD**: $\mathrm{V^2/Hz}$ (power-like). **Amplitude spectral density**: $\sqrt{S}$ in $\mathrm{V/\sqrt{Hz}}$.
 - Convert to rms: $v_{\text{rms}} = \sqrt{S \cdot B}$ for flat $S$ over bandwidth $B$ — e.g. $4\,\mathrm{nV/\sqrt{Hz}}$ over 1 MHz → 4 μV rms.
 - **One- vs two-sided:** $S^{\text{1-sided}}(f) = 2\,S^{\text{2-sided}}(f)$ for $f > 0$ (fold negative frequencies onto positive). Instruments and datasheets quote one-sided; theory ($S_I = 2eI$, $S_V = 4k_BTR$ as written) is already one-sided. Mixing conventions silently costs a factor of 2 in power, $\sqrt{2}$ in amplitude.
@@ -30,7 +37,7 @@ $x(t)$ = the fluctuating quantity (V, T, Hz, rad — whatever you measure); $\ti
 
 - [[Wiener-Khinchin Theorem]] — the PSD's formal definition as FT of the autocorrelation
 - [[Johnson-Nyquist Noise]] — the canonical white PSD with a number attached
-- [[PSD Estimation]] — how to actually get $S(f)$ from sampled data without fooling yourself
+- [[PSD Estimation]] — how to get $S(f)$ from sampled data without fooling yourself
 - [[Allan Variance]] — the time-domain counterpart when drift makes $S(f)$ ill-defined near DC
 
 ---

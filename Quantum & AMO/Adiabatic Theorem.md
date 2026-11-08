@@ -8,9 +8,11 @@ For $H(t)$ with instantaneous eigenstates $H(t)|n(t)\rangle = E_n(t)|n(t)\rangle
 $$
 \frac{\hbar\,|\langle m|\dot H|n\rangle|}{(E_m - E_n)^2} \ll 1 \quad \text{for all } m \neq n
 $$
-**The gap enters squared** — halve the minimum gap and you must sweep four times slower. The danger zone is always the avoided-crossing bottleneck where $E_m - E_n$ is smallest; quantitative failure there is [[Landau-Zener Transitions]] ($P_{\text{jump}} = e^{-2\pi\Gamma}$).
+**The gap enters squared** — halve the minimum gap and you must sweep four times slower. The danger zone is always the avoided-crossing bottleneck where $E_m - E_n$ is smallest; quantitative failure there is [[Landau-Zener Transitions]] ($P_{\text{jump}} = e^{-\pi\hbar\Omega^2/2\alpha}$ for a minimum gap $\hbar\Omega$ swept at rate $\alpha$).
 
-**Adiabatic passage — the workhorse application:** chirp a drive from far below to far above resonance. The dressed eigenstate rotates continuously from $|g\rangle$ to $|e\rangle$, dragging the population with it. Result: **complete inversion robust to Rabi-frequency and pulse-area errors** — unlike a $\pi$ pulse, you don't need to hit $\Omega t = \pi$ exactly, just sweep slow enough ($|\dot\Delta| \ll \Omega^2$). This is rapid adiabatic passage (RAP); STIRAP is the three-level sibling riding a dark state.
+**Picture:** a marble in a slowly moving bowl stays at the bottom; move the bowl faster than the marble's oscillation period and it sloshes into excited motion.
+
+**Adiabatic passage — the main application:** chirp a drive from far below to far above resonance. The dressed eigenstate rotates continuously from $|g\rangle$ to $|e\rangle$, dragging the population with it. Result: **complete inversion robust to Rabi-frequency and pulse-area errors** — unlike a $\pi$ pulse, you don't need to hit $\Omega t = \pi$ exactly; sweep slow enough ($|\dot\Delta| \ll \Omega^2$). This is rapid adiabatic passage (RAP); STIRAP is the three-level version, following a dark state.
 
 Phases still accumulate along the way: dynamical $-\frac{1}{\hbar}\int E_n\,dt$ plus the geometric (Berry) phase depending only on the path in parameter space.
 
@@ -23,6 +25,7 @@ Phases still accumulate along the way: dynamical $-\frac{1}{\hbar}\int E_n\,dt$ 
 - [[Dressed States]] — the instantaneous eigenstates you follow in driven problems
 - [[Two-Level Systems]] — minimal setting: eigenstate rotation vs mixing angle
 - [[Resolved Sideband Cooling]] — RAP on sidebands for robust motional-state transfer
+- [[Degeneracy and Level Crossings]] — the gap closings where adiabatic following fails
 
 ---
 Source: Sakurai & Napolitano, *Modern Quantum Mechanics*, §5.6

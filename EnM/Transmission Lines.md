@@ -1,6 +1,6 @@
 #EnM
 
-**When a cable is longer than a fraction of a wavelength, voltage and current become waves propagating on its distributed L and C** — the lumped-circuit picture dies and every wire becomes a wave medium with its own impedance.
+**When a cable is longer than a fraction of a wavelength, voltage and current become waves propagating on its distributed L and C** — the lumped-circuit picture fails and every wire becomes a wave medium with its own impedance.
 
 # Reference
 
@@ -12,6 +12,8 @@ $$
 $$
 
 $Z_0$ is the V/I ratio of a single traveling wave — real, but **not a resistance** (no dissipation; it's the ratio the wave carries with it).
+
+**Picture:** a chain of tiny series inductors and shunt capacitors: a voltage step charges one capacitor after another, and the charging front moves down the line at the wave speed.
 
 **When do you care?** Rule of thumb: treat as a transmission line when length ≳ **λ/10** — equivalently when the round-trip delay is comparable to your signal's rise time ($\ell \gtrsim v\,t_r/6$). Coax delay ≈ 5 ns/m ($v \approx 0.66c$ for solid PE): a 1 m cable is "long" above ~20 MHz, or for edges faster than ~30 ns. Digital edges, not clock rates, set this.
 

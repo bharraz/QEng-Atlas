@@ -12,6 +12,8 @@ $$
 
 Reflection loss depends on the wave impedance vs the metal's (tiny) surface impedance — huge for far-field and near-field *electric* sources, **small for near-field magnetic sources** (low wave impedance already matches the metal).
 
+**Picture:** a metal wall as a mismatch plus a lossy layer: most of the wave bounces off the surface, the rest decays within a few skin depths, and any long slot or cable passing through bypasses both.
+
 **The regimes:**
 
 | Threat | What works |
@@ -34,8 +36,9 @@ Reflection loss depends on the wave impedance vs the metal's (tiny) surface impe
 - [[Skin Depth]] — sets the absorption term and why thin walls are fine at RF but useless at 60 Hz
 - [[Waveguides]] — below-cutoff evanescence is the design principle for honeycomb vents and viewing holes
 - [[Antennas]] — a seam is a slot antenna; Babinet reciprocity of the leak
-- [[Grounding and Shielding Practice]] — how to actually connect the shield without ruining it (pigtails, one end vs both)
+- [[Grounding and Shielding Practice]] — how to connect the shield without ruining it (pigtails, one end vs both)
 - [[Noise Coupling Mechanisms]] — shielding addresses the capacitive and radiated rows, not common-impedance coupling
+- [[Magnetic Field Coils and Shielding]] — static and low-frequency magnetic shielding for atomic experiments
 
 ---
 Source: Jackson, *Classical Electrodynamics*, §8.1; practical layer: Ott, *Electromagnetic Compatibility Engineering*, Ch. 6

@@ -1,6 +1,6 @@
 #quantum
 
-**The whole formalism is six rules: states are rays, observables are Hermitian operators, probabilities come from the Born rule, measurement collapses, closed systems evolve unitarily, composites tensor together.** Everything else in this vault's quantum section is consequences.
+**The entire formalism is six rules: states are rays, observables are Hermitian operators, probabilities come from the Born rule, measurement collapses, closed systems evolve unitarily, composites tensor together.** Everything else in quantum mechanics follows from these.
 
 # Reference
 
@@ -13,7 +13,9 @@
 | Evolution | $\|\psi(t)\rangle = U(t)\|\psi(0)\rangle$, $U = e^{-iHt/\hbar}$ unitary — deterministic between measurements |
 | Composition | Joint system lives in $\mathcal{H}_A \otimes \mathcal{H}_B$; entanglement = states that don't factor |
 
-**The tension worth remembering:** evolution is linear, deterministic, and reversible; measurement is stochastic and irreversible. All interpretation fights live in that seam. Operationally you never need to resolve it — [[Density Matrix]] + [[Projective Measurement and POVMs]] handle every lab situation, including open systems and weak measurements where the naive collapse rule is too blunt.
+**Picture:** two kinds of change: smooth, reversible, deterministic evolution between measurements, and a random, irreversible jump at each measurement.
+
+**The tension worth remembering:** evolution is linear, deterministic, and reversible; measurement is stochastic and irreversible. All debates about interpretation concern this boundary. Operationally you never need to resolve it — [[Density Matrix]] + [[Projective Measurement and POVMs]] handle every lab situation, including open systems and weak measurements where the naive collapse rule is too blunt.
 
 > [!question]- Which postulate forbids deterministically distinguishing non-orthogonal states?
 > The Born rule: if $\langle\phi|\psi\rangle \neq 0$, any measurement that sometimes fires on $|\phi\rangle$ also fires on $|\psi\rangle$ with nonzero probability. Unitarity then makes this permanent — no evolution changes overlaps.
@@ -21,7 +23,7 @@
 # Connections
 
 - [[Dirac Notation]] — the language the postulates are written in
-- [[Projective Measurement and POVMs]] — the measurement postulate generalized to the form you actually use
+- [[Projective Measurement and POVMs]] — the measurement postulate generalized to the form you use
 - [[Density Matrix]] — states when you're ignorant or entangled; postulates restated with $\rho$
 - [[Schrodinger Equation]] — the evolution postulate in differential form
 - [[Tensor Product]] — the composition postulate's machinery

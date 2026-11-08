@@ -1,14 +1,18 @@
 #group-theory #math
 
-**Pick a maximal commuting set of generators, diagonalize everything else against it, and any semisimple Lie algebra decomposes into ladder operators labeled by roots — the $\mathfrak{su}(2)$ construction, run in general.**
+**For spin, one operator $J_z$ labels the states and two operators $J_\pm$ step between them by a fixed amount; every symmetry algebra used in physics has the same anatomy — a largest set of mutually commuting generators supplies the quantum numbers, and every other generator is a ladder operator that shifts them by a fixed vector, called a root.** **In practice:** from the commutation relations alone you can read off how many quantum numbers label a multiplet, which states it contains, which transitions an operator can drive, and whether two algebras (such as $\mathfrak{su}(2)$ and $\mathfrak{su}(1,1)$) are really the same.
 
-The $\mathfrak{su}(2)$ template ($J_z$, $J_\pm$, $|j,m\rangle$) is on [[Lie Algebras (Atlas)]]. This page is that machinery for an arbitrary algebra, which is what lets you read multiplet structure off commutation relations alone.
+The $\mathfrak{su}(2)$ template ($J_z$, $J_\pm$, $|j,m\rangle$) is on [[Lie Algebras (Atlas)]]. Extending that machinery to an arbitrary algebra lets you read multiplet structure off the commutation relations alone.
 
 # Reference
+
+**Formally:** pick a maximal commuting set of generators, diagonalize everything else against it, and any semisimple Lie algebra decomposes into ladder operators labeled by roots — the $\mathfrak{su}(2)$ construction, run in general.
 
 ## Killing form and semisimplicity
 
 $$K(X, Y) = \mathrm{Tr}\big(\mathrm{ad}_X\, \mathrm{ad}_Y\big)$$
+
+**Picture:** a weight diagram, one dot per state placed by its commuting quantum numbers; each ladder operator is a fixed arrow (a root) from dot to dot.
 
 **Cartan's criterion:** $\mathfrak g$ is semisimple iff $K$ is nondegenerate. The Killing form is the invariant metric on the algebra — it is what raises and lowers root indices, and its signature separates compact from non-compact real forms (negative definite ⇔ compact). For $\mathfrak{su}(N)$ it reduces to $K(X,Y) \propto \mathrm{Tr}(XY)$, the familiar trace inner product.
 
@@ -27,7 +31,7 @@ $$\mathfrak g = \mathfrak h \;\oplus \bigoplus_{\alpha \in \Delta} \mathfrak g_\
 $$[\mathfrak g_\alpha, \mathfrak g_\beta] \subseteq \mathfrak g_{\alpha+\beta}$$
 (zero if $\alpha + \beta \notin \Delta \cup \{0\}$, and inside $\mathfrak h$ if $\beta = -\alpha$). Brackets *add* roots, so this is a genuine grading and root-based cutoffs are ideals — unlike degree filtrations ([[Graded and Filtered Lie Algebras]]).
 
-**Every root generates an $\mathfrak{su}(2)$.** The triple $\{E_\alpha,\, E_{-\alpha},\, H_\alpha = [E_\alpha, E_{-\alpha}]\}$ closes as $\mathfrak{sl}(2)$. So the whole subject reduces to "many copies of angular momentum, glued along a lattice" — and every $\mathfrak{su}(2)$ fact you know applies inside each copy.
+**Every root generates an $\mathfrak{su}(2)$.** The triple $\{E_\alpha,\, E_{-\alpha},\, H_\alpha = [E_\alpha, E_{-\alpha}]\}$ closes as $\mathfrak{sl}(2)$. So the entire subject reduces to "many copies of angular momentum, glued along a lattice" — and every $\mathfrak{su}(2)$ fact you know applies inside each copy.
 
 ## Weights and highest-weight representations
 

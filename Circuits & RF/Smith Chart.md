@@ -1,10 +1,12 @@
 #circuits #electronics
 
-**The Smith chart is the complex Γ-plane with a grid of constant-resistance circles and constant-reactance arcs drawn on it — impedance and reflection coefficient visible simultaneously, so matching becomes walking a point to the center.**
+**Plot the reflection coefficient Γ as a point in the complex plane and draw on it the curves of constant resistance (circles) and constant reactance (arcs): impedance and reflection are then read from the same point, and matching becomes moving that point to the center. That plot is the Smith chart.**
 
 # Reference
 
 Normalize $z = Z/Z_0$; then $\Gamma = (z-1)/(z+1)$ maps the entire right-half impedance plane into the unit disc.
+
+**Picture:** each added series or shunt element moves the point along a known circle; matching is choosing elements whose arcs end at the center.
 
 **Reading it:**
 - Center = $Z_0$ (matched, Γ = 0); left edge = short, right edge = open
@@ -13,7 +15,7 @@ Normalize $z = Z/Z_0$; then $\Gamma = (z-1)/(z+1)$ maps the entire right-half im
 
 **Moving along a lossless line** = rotation about the center, **clockwise toward the generator**, one full turn per λ/2 — which is why impedance repeats every half wavelength.
 
-**Matching moves:**
+**Matching steps:**
 - Series L or C: slide along a constant-R circle (up = L, down = C)
 - Shunt L or C: reflect through the center (admittance chart), slide along constant-G
 - An L-network = two slides that land on the center; the chart shows both solutions at a glance
@@ -27,6 +29,7 @@ Still the default display on every VNA — worth reading fluently even if you ne
 
 - [[Characteristic Impedance and Reflection]] — Γ, the coordinate this chart plots
 - [[Impedance Matching]] — the design activity the chart makes visual
+- [[Complex Impedance]] — what the resistance circles and reactance arcs measure
 - [[S-Parameters]] — S11 is what the VNA draws on the chart
 - [[Transmission Lines]] — the λ/2 rotation rule is line physics
 

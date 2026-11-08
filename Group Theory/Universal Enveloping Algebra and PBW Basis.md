@@ -8,7 +8,9 @@ $$U(\mathfrak g) = \frac{\text{free associative algebra on } \mathfrak g}{\big(X
 
 Read the quotient as an instruction: *you may multiply generators freely, and the only rule for reordering them is the bracket.* Everything else follows. The numerator — the free associative algebra, all words over the generators with no relations imposed — is defined in [[Free Algebras, Words, and Gradings]].
 
-**Why you need it.** $\mathfrak g$ is a vector space with a bracket; $J_z^2$ is not an element of $\mathfrak{su}(2)$. Any of the following forces you out of $\mathfrak g$ and into $U(\mathfrak g)$:
+**Picture:** the smallest place where generators can be multiplied, with the single rule that reordering two of them costs their commutator.
+
+**Why it is needed.** $\mathfrak g$ is a vector space with a bracket; $J_z^2$ is not an element of $\mathfrak{su}(2)$. Any of the following forces you out of $\mathfrak g$ and into $U(\mathfrak g)$:
 
 - Casimirs — $J^2 = J_x^2 + J_y^2 + J_z^2$ is quadratic.
 - Nonlinear Hamiltonians — Kerr terms $(a^\dagger a)^2$, anharmonicities, $\chi^{(3)}$ couplings.
@@ -26,7 +28,7 @@ form a vector-space basis of $U(\mathfrak g)$. So $U(\mathfrak g)$ is "polynomia
 $$\mathrm{gr}\,U(\mathfrak g) \cong \mathrm{Sym}(\mathfrak g),$$
 the commutative polynomial ring on $\mathfrak g$ ([[Graded and Filtered Lie Algebras]]). PBW is exactly the claim that this graded ring is as large as it could be, i.e. no unexpected collapses. The same mechanism as the Weyl algebra, which is the special case $A_1 = U(\mathfrak h_3)/(z-1)$ ([[Weyl Algebra and Degree Filtration]]).
 
-## The distinction that actually matters
+## Lie-algebra closure vs. operator closure
 
 | Claim | Means | Consequence |
 |---|---|---|

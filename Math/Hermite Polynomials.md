@@ -10,7 +10,9 @@ H_0 = 1, \quad H_1 = 2x, \quad H_2 = 4x^2 - 2, \quad H_3 = 8x^3 - 12x
 $$
 Parity alternates: $H_n(-x) = (-1)^n H_n(x)$.
 
-**Recursion** (how you actually generate them):
+**Picture:** a Gaussian envelope with $n$ wiggles inside; each higher state adds one node and spreads further out.
+
+**Recursion** (how you generate them):
 $$
 H_{n+1}(x) = 2x\, H_n(x) - 2n\, H_{n-1}(x), \qquad H_n'(x) = 2n\, H_{n-1}(x)
 $$
@@ -27,7 +29,7 @@ $$
 $$
 The weight function is the ground state squared — the polynomials encode how excitation reshapes the Gaussian. Highest-power term dominates at large $n$: the wavefunction piles up at the turning points, recovering the classical distribution.
 
-**Same math, optical version:** Hermite–Gaussian beam modes TEM$_{mn}$ have transverse profiles $H_m(\sqrt{2}x/w)H_n(\sqrt{2}y/w)\, e^{-(x^2+y^2)/w^2}$ — the paraxial wave equation is the 2D Schrödinger equation in disguise, so cavities emit oscillator eigenfunctions in space. A misaligned or mismatched Gaussian couples into TEM$_{10}$/TEM$_{20}$ exactly like a displaced oscillator populates $n=1, 2$.
+**Same math, optical version:** Hermite–Gaussian beam modes TEM$_{mn}$ have transverse profiles $H_m(\sqrt{2}x/w)H_n(\sqrt{2}y/w)\, e^{-(x^2+y^2)/w^2}$ — the paraxial wave equation has the form of the 2D Schrödinger equation, so cavities emit oscillator eigenfunctions in space. A misaligned or mismatched Gaussian couples into TEM$_{10}$/TEM$_{20}$ exactly like a displaced oscillator populates $n=1, 2$.
 
 > [!question]- Why do QHO eigenfunctions and laser cavity transverse modes share the same functional form?
 > The paraxial Helmholtz equation maps onto the time-dependent Schrödinger equation ($z \leftrightarrow t$), whose transverse confinement is harmonic for a stable cavity — same eigenvalue problem, same Hermite-Gaussian solutions. Mode order maps to oscillator quantum number, including the mode-dependent Gouy phase ↔ energy.

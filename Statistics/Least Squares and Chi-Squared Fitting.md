@@ -1,6 +1,6 @@
 #statistics #math
 
-**Minimize the error-weighted squared residuals** — each point pulls on the fit with strength $1/\sigma_i^2$, and the minimum value itself tells you whether the model and your error bars are honest.
+**Minimize the error-weighted squared residuals** — each point pulls on the fit with strength $1/\sigma_i^2$, and the minimum value itself tells you whether the model and your error bars are correct.
 
 # Reference
 
@@ -8,12 +8,19 @@ $$
 \chi^2(\theta) = \sum_i \frac{\left(y_i - f(x_i;\theta)\right)^2}{\sigma_i^2}
 $$
 
-$y_i$ = measured values; $f(x_i;\theta)$ = model with parameters $\theta$; $\sigma_i$ = the *known* uncertainty of point $i$ (same units as $y$) — each residual is divided by its own error, so $\chi^2$ is dimensionless and every point contributes in units of "how many of its own error bars off." That weighting is the whole content: a point with $\sigma$ ten times smaller pulls a hundred times harder, and $\sigma_i$ being wrong corrupts the fit itself, not just the error bars. Degrees of freedom $\nu = N - p$ ($N$ points, $p$ free parameters) — each fitted parameter absorbs one residual's worth of freedom.
+- $y_i$ — measured values
+- $f(x_i;\theta)$ — model with parameters $\theta$
+- $\sigma_i$ — the *known* uncertainty of point $i$ (same units as $y$)
+- $\nu = N - p$ — degrees of freedom ($N$ points, $p$ free parameters)
+
+Each residual is divided by its own error, so $\chi^2$ is dimensionless and every point contributes in units of "how many of its own error bars off." This weighting is the central idea: a point with $\sigma$ ten times smaller pulls a hundred times harder, and $\sigma_i$ being wrong corrupts the fit itself, not only the error bars. Each fitted parameter absorbs one residual's worth of freedom.
+
+**Picture:** springs from each data point to the curve, with stiffness $1/\sigma_i^2$: the fit is where the springs balance, and the stored spring energy is $\chi^2/2$.
 
 **The goodness check:** at the minimum, $\chi^2_\nu = \chi^2/(N - p) \approx 1 \pm \sqrt{2/(N-p)}$ if model and errors are right.
 - $\chi^2_\nu \gg 1$: wrong model, or $\sigma_i$ underestimated (unmodeled systematics).
 - $\chi^2_\nu \ll 1$: $\sigma_i$ overestimated — or you're overfitting.
-- Never quote parameter errors from a fit with bad $\chi^2_\nu$ without saying so (common bodge: scale errors by $\sqrt{\chi^2_\nu}$, which assumes the excess is just mis-set error bars).
+- Never quote parameter errors from a fit with bad $\chi^2_\nu$ without saying so (common bodge: scale errors by $\sqrt{\chi^2_\nu}$, which assumes the excess is mis-set error bars).
 
 **Parameter errors from curvature:** covariance matrix $C = H^{-1}$ where $H_{jk} = \tfrac{1}{2}\,\partial^2\chi^2/\partial\theta_j\partial\theta_k$; for linear-in-parameters models with Jacobian $J$, $C = (J^{\mathsf T} W J)^{-1}$, $W = \mathrm{diag}(1/\sigma_i^2)$. Then $\sigma_{\theta_j} = \sqrt{C_{jj}}$, off-diagonals = parameter trade-offs, and $\Delta\chi^2 = 1$ marks the 1σ boundary.
 
@@ -27,7 +34,7 @@ $y_i$ = measured values; $f(x_i;\theta)$ = model with parameters $\theta$; $\sig
 - [[Maximum Likelihood Estimation]] — χ² is MLE for Gaussian errors; switch to likelihood for counts
 - [[Confidence Intervals]] — the $\Delta\chi^2$ rules for turning curvature into quotable errors
 - [[Variance and Covariance]] — the returned covariance matrix and what its off-diagonals mean
-- [[Condition Number]] — ill-conditioned $J^{\mathsf T}J$ = degenerate parameters, absurd errors
+- [[Condition Number]] — ill-conditioned $J^{\mathsf T}J$ = degenerate parameters, very large errors
 - [[Pseudo-Inverse]] — the SVD route to linear least squares when it's degenerate anyway
 
 ---

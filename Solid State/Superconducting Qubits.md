@@ -10,7 +10,15 @@ A plain **LC oscillator** cannot be a qubit: its levels are evenly spaced, so a 
 
 $$H = 4E_C\,(\hat{n} - n_g)^2 - E_J\cos\hat\varphi, \qquad E_C = \frac{e^2}{2C_\Sigma}, \qquad E_J = \frac{\Phi_0 I_c}{2\pi}$$
 
-$\hat n$ = pair number (dimensionless integer operator — the "momentum"); $\hat\varphi$ = phase across the junction (rad — the "position"); $n_g$ = offset charge in pairs, set by the environment and drifting, the noise source the transmon defeats; $E_C$ = charging energy per electron, with $C_\Sigma$ the total island capacitance — the factor 4 converts to per-Cooper-pair, $(2e)^2/2C_\Sigma = 4E_C$; $E_J$ = Josephson energy, the depth of the cosine. Expanding $\cos\hat\varphi$, the quadratic term is the LC oscillator and the quartic term $-E_J\hat\varphi^4/24$ is the anharmonicity. It is a quantum pendulum: $E_C$ the inertia, $E_J$ the gravity.
+- $\hat n$ — pair number (dimensionless integer operator; the "momentum")
+- $\hat\varphi$ — phase across the junction (rad; the "position")
+- $n_g$ — offset charge in pairs, set by the environment and drifting: the noise source the transmon defeats
+- $E_C$ — charging energy per electron, $C_\Sigma$ the total island capacitance: per Cooper pair, $(2e)^2/2C_\Sigma = 4E_C$
+- $E_J$ — Josephson energy, the depth of the cosine
+
+Expanding $\cos\hat\varphi$, the quadratic term is the LC oscillator and the quartic term $-E_J\hat\varphi^4/24$ is the anharmonicity. It is a quantum pendulum: $E_C$ the inertia, $E_J$ the gravity.
+
+**Picture:** a pendulum whose swing is the superconducting phase: small swings are nearly harmonic, and the cosine potential's flattening at larger swings makes each level gap a little smaller than the last.
 
 ## $E_J/E_C$ names the qubit
 
@@ -23,10 +31,10 @@ The two energies compete as kinetic vs. potential. Large $E_C$ (small capacitor)
 | $\gg 1$ | flux / phase qubit | phase $\varphi$ | flux | large |
 | $\gg 1$ with inductive shunt | fluxonium | phase, in a multi-well potential | flux | very large |
 
-**The transmon's design insight, in one line:** as $E_J/E_C$ grows, charge dispersion (sensitivity to $n_g$) falls **exponentially** in $\sqrt{8E_J/E_C}$ while anharmonicity falls only **algebraically**. Trading a little anharmonicity buys an enormous amount of charge-noise immunity, so the optimum sits far into the large-$E_J/E_C$ regime rather than at a balance point. In that limit
+**The transmon's design insight, in one line:** as $E_J/E_C$ grows, charge dispersion (sensitivity to $n_g$) falls **exponentially** in $\sqrt{8E_J/E_C}$ while anharmonicity falls only **algebraically**. Trading a little anharmonicity gains an enormous amount of charge-noise immunity, so the optimum sits far into the large-$E_J/E_C$ regime rather than at a balance point. In that limit
 $$\hbar\omega_{01} \approx \sqrt{8E_J E_C} - E_C, \qquad \alpha \equiv \omega_{12} - \omega_{01} \approx -E_C/\hbar$$
 
-The price is a speed limit: pulses shorter than $\sim 1/|\alpha|$ have spectral content at $\omega_{12}$ and leak into $|2\rangle$, mitigated by pulse shaping (DRAG). **Gate speed and charge-noise immunity are the same trade**, read off the one ratio.
+The price is a speed limit: pulses shorter than $\sim 1/|\alpha|$ have spectral content at $\omega_{12}$ and leak into $|2\rangle$, mitigated by pulse shaping (DRAG; [[Pulse Shaping and Optimal Control]]). **Gate speed and charge-noise immunity are the same trade**, read off the one ratio.
 
 $\omega_{01}$ lands in the 4–8 GHz band for reasons that will not move: below it, $\hbar\omega \not\gg k_BT$ at millikelvin; above it, microwave components and $\Delta$ for aluminium get difficult.
 
@@ -40,7 +48,7 @@ the second factor being the transmon's third level correcting the two-level resu
 
 Readout only works because the signal is amplified before it can be swamped: a Josephson parametric amplifier or TWPA provides near-quantum-limited gain using the *same* junction nonlinearity that makes the qubit. Dispersive readout is a trade too — larger $\chi$ reads out faster but opens a **Purcell** channel for the qubit to decay through the resonator, fixed with a Purcell filter that is transparent at $\omega_r$ and opaque at $\omega_q$.
 
-**Two-qubit gates** come from turning couplings on and off, not from a fixed interaction: flux-tune two qubits into resonance (iSWAP), drive one at the other's frequency (cross-resonance, CR), or interpose a **tunable coupler** whose flux bias nulls the effective $g$ — the dominant modern choice, because always-on coupling means always-on crosstalk ([[Entangling Gates]]).
+**Two-qubit gates** come from turning couplings on and off, not from a fixed interaction: flux-tune two qubits into resonance (iSWAP), drive one at the other's frequency (cross-resonance, CR), or interpose a **tunable coupler** whose flux bias nulls the effective $g$ — the dominant modern choice, because always-on coupling means always-on crosstalk ([[Entangling Gates]], [[Two-Qubit Gate Mechanisms]]).
 
 ## What limits coherence
 
@@ -56,19 +64,21 @@ Structural mechanisms rather than current records, since the records move and th
 | **Thermal photons** | residual population in the readout line | attenuation and filtering at each fridge stage ([[Cryogenics]]) |
 
 > [!question]- Why does the transmon deliberately give up anharmonicity, when anharmonicity is the thing that makes a qubit possible?
-> Because the two costs scale differently in $E_J/E_C$: charge dispersion falls exponentially while anharmonicity falls only as a power. A modest loss of level separation — paid for later with pulse shaping — buys charge-noise immunity that no amount of shielding could.
+> Because the two costs scale differently in $E_J/E_C$: charge dispersion falls exponentially while anharmonicity falls only as a power. A modest loss of level separation — paid for later with pulse shaping — gives charge-noise immunity that no amount of shielding could.
 
 # Connections
 
 - [[Josephson Junction]] — the nonlinear lossless element, $E_J$, and SQUID tunability
-- [[Superconductivity]] — Cooper pairs and the gap the whole circuit relies on
-- [[TLS and Dielectric Loss]] — the dominant coherence limit and how design fights it
+- [[Superconductivity]] — Cooper pairs and the gap the entire circuit relies on
+- [[TLS and Dielectric Loss]] — the dominant coherence limit and how design reduces it
 - [[LC Resonators]] — the linear circuit the junction makes anharmonic
 - [[Jaynes-Cummings Model (Atlas)]] / [[Cavity QED]] — circuit QED and the dispersive limit
-- [[Quantum Dots]] — the normal-state cousin: same charging energy, no pair tunneling
+- [[Quantum Dots]] — the normal-state counterpart: same charging energy, no pair tunneling
 - [[T1 and T2]] — the coherence vocabulary the table above feeds
 - [[Entangling Gates]] — where CR and tunable-coupler gates sit among two-qubit families
 - [[Cryogenics]] — why millikelvin, and the filtering the readout chain needs
+- [[Circuit QED]] — dispersive readout, Kerr terms, and the amplifier chain in detail
+- [[Leakage, Erasure, and Biased Noise]] — leakage to the transmon's higher levels
 
 ---
 Source: Krantz et al., "A Quantum Engineer's Guide to Superconducting Qubits," *Appl. Phys. Rev.* 6, 021318 (2019); Koch et al., *Phys. Rev. A* 76, 042319 (2007)

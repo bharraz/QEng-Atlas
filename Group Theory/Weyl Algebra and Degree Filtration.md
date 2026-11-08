@@ -1,8 +1,12 @@
 #group-theory #math
 
-**The Weyl algebra $A_1$ is the algebra of all polynomials in $a$ and $a^\dagger$ — the correct name for "escalating products of ladder operators" — and its degree filtration is not a Lie grading, which is exactly why truncating in operator degree fails.**
+**Products of ladder operators — $a^\dagger a$, $a^2$, $a^{\dagger 2} a$, any polynomial in $a$ and $a^\dagger$ — form one algebra, the Weyl algebra $A_1$, and in it the commutator of a degree-$m$ and a degree-$n$ term has degree at most $m + n - 2$.** Two consequences follow. Operators of degree ≤ 2 close among themselves, which is why every quadratic Hamiltonian is exactly solvable, while one cubic term generates ever higher degrees and nothing closes. And truncating at operator degree is not exact, because a dropped high-degree term bracketed with a kept one lands back among the kept ones: $[a^3, a^\dagger] = 3a^2$.
+
+**In practice:** truncate by a quantity the commutator adds instead (excitation-number change, power of a small parameter), or restrict to one of the closed subalgebras below.
 
 # Reference
+
+**Formally:** the Weyl algebra $A_1$ is the algebra of all polynomials in $a$ and $a^\dagger$ — the correct name for "escalating products of ladder operators" — and its degree filtration is not a Lie grading, which is exactly why truncating in operator degree fails.
 
 $$A_1 = \mathbb C\langle a, a^\dagger\rangle \big/ \big([a, a^\dagger] = 1\big)$$
 
@@ -13,6 +17,8 @@ Equivalently $\mathbb C\langle x, \partial_x\rangle$ with $[\partial_x, x] = 1$:
 - **Normal ordering gives a basis:** $\{(a^\dagger)^m a^n\}_{m,n \geq 0}$. Every expression reduces to a unique normally ordered form by repeated use of $aa^\dagger = a^\dagger a + 1$.
 - **It contains the Heisenberg Lie algebra** $\mathfrak h_3 = \{a, a^\dagger, \mathbb 1\}$ as the degree-$\leq 1$ part, and $A_1 = U(\mathfrak h_3)/(z - 1)$ — the enveloping algebra of $\mathfrak h_3$ with the central generator set to $1$ ([[Universal Enveloping Algebra and PBW Basis]]).
 
+**Picture:** polynomials in $a$ and $a^\dagger$ sorted by degree: each commutator lowers the total degree by at least two, so degree ≤ 2 is closed, while a cubic term bracketed with itself climbs to degree 4 and beyond.
+
 ## The Bernstein filtration
 
 Assign $\deg a = \deg a^\dagger = 1$ and let $F_n$ = operators of total degree $\leq n$, so $\dim F_n = \binom{n+2}{2} = \tfrac12(n+1)(n+2)$. **This is the "degree in $(\hat a, \hat a^\dagger)$" that operator-ordering calculations count.** The filtration is exhaustive and nested, $F_0 \subseteq F_1 \subseteq \cdots$, with $F_m \cdot F_n \subseteq F_{m+n}$ for the *product*.
@@ -21,19 +27,23 @@ Assign $\deg a = \deg a^\dagger = 1$ and let $F_n$ = operators of total degree $
 $$[F_m, F_n] \subseteq F_{m+n-2}$$
 because each contraction $[a, a^\dagger] = 1$ removes one $a$ and one $a^\dagger$. The cheapest instance: $a$ and $a^\dagger$ both have degree 1, and $[a, a^\dagger] = 1$ has degree 0.
 
-Two consequences, and they are the point of the page:
+Two consequences:
 
 **1. "Degree $\geq N$" is not an ideal, so degree truncation is not a quotient.** Take $X$ of degree 1 and $Y$ of degree $N$: $[X, Y]$ has degree $N-1$, which sits in the sector you *kept*. Discarded high-degree operators therefore feed back into the retained low-degree ones under bracketing, and the error is uncontrolled at every subsequent order. Contrast a genuine grading, where brackets only push you further up and the tail *is* an ideal ([[Graded and Filtered Lie Algebras]], [[Subalgebras, Ideals, and Quotients]]).
 
 **2. The associated graded is a commutative polynomial ring.** Because the bracket strictly lowers the filtration index, the induced bracket on $\mathrm{gr}(A_1) = \bigoplus_n F_n/F_{n-1}$ vanishes identically:
+
 $$\mathrm{gr}(A_1) \;\cong\; \mathbb C[x, \xi], \qquad \text{commutative}$$
+
 Passing to the associated graded throws the commutator away entirely — which is a clean statement that the degree filtration is *not* a Lie grading. It is also the classical limit: $\mathbb C[x,\xi]$ is the ring of polynomial functions on phase space, and the commutator reappears one filtration level down as the Poisson bracket,
+
 $$\tfrac{1}{i\hbar}[\hat A, \hat B] \;\longrightarrow\; \{A, B\}_{\text{PB}}.$$
+
 This is the algebraic skeleton of the Wigner–Weyl symbol calculus: $A_1$ with its Moyal product deforms $\mathbb C[x,\xi]$, and $\hbar$ is the deformation parameter that reinstates the bracket the grading discarded.
 
 ## What to do instead
 
-| Situation | Move |
+| Situation | What to do |
 |---|---|
 | Want a legitimate cutoff | re-grade by a quantity the bracket **adds** — detuning index, excitation-number change, power of a small parameter |
 | Want the algebra to close | restrict to a finite-dimensional Lie subalgebra of $A_1$: $\mathfrak h_3$ (degree $\leq 1$), $\mathfrak{su}(1,1)$ (the quadratic part), or the 6-dimensional quadratic-plus-linear algebra |
@@ -44,7 +54,7 @@ This is the algebraic skeleton of the Wigner–Weyl symbol calculus: $A_1$ with 
 
 | Subalgebra | Span | Degree | Type |
 |---|---|---|---|
-| $\mathfrak h_3$ | $\{a, a^\dagger, \mathbb 1\}$ | $\leq 1$ | nilpotent — brackets die at depth 2 |
+| $\mathfrak h_3$ | $\{a, a^\dagger, \mathbb 1\}$ | $\leq 1$ | nilpotent — brackets vanish at depth 2 |
 | $\mathrm{osc}$ | $\mathfrak h_3 \rtimes \{a^\dagger a\}$ | $\leq 2$ | solvable |
 | $\mathfrak{su}(1,1)$ | $\{a^2, a^{\dagger 2}, a^\dagger a\}$ | $2$ | simple, non-compact ([[Symplectic Group]]) |
 | quadratic + linear | all of $F_2$ | $\leq 2$ | 6-dimensional, closes — *all* Gaussian evolution |

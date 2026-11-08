@@ -12,12 +12,14 @@ $$
 
 With $R_1 = R_2$: $Q = \tfrac12\sqrt{C_1/C_2}$ — **set Q by the capacitor ratio**. Butterworth ($Q=0.707$): $C_1 = 2C_2$. Higher-order filters: cascade sections with staggered $f_0$, Q from the family tables.
 
-**Why it won:** unity-gain follower = maximum bandwidth, no gain-resistor noise, gentle component sensitivities at low Q.
+**Picture:** a two-stage RC low-pass whose middle node is pushed along by the output: the more of the output fed back, the sharper the peak at the cutoff.
 
-**Gotchas:**
+**Why it is the common choice:** unity-gain follower = maximum bandwidth, no gain-resistor noise, gentle component sensitivities at low Q.
+
+**Pitfalls:**
 - $Q \gtrsim 5$ gets component-sensitive — switch to a state-variable/biquad topology.
 - Op-amp needs GBW ≫ 100·$f_0$, or the real poles shift and the response peaks.
-- **The stopband comes back up:** beyond the op-amp's reach, signal sneaks through $C_1$ and the amp's rising output impedance — real SK low-passes flatten out ~40–60 dB down. Follow with a passive RC if a spectrum analyzer will ever look.
+- **The stopband comes back up:** beyond the op-amp's reach, signal leaks through $C_1$ and the amp's rising output impedance — real SK low-passes flatten out ~40–60 dB down. Follow with a passive RC if a spectrum analyzer will ever look.
 
 > [!question]- Your SK low-pass measures textbook out to 10× f₀, but 60 dB down the response flattens and then rises. Why?
 > High-frequency feedthrough: past the op-amp's bandwidth its output impedance rises and the $C_1$ path bypasses the filter. Add a passive RC pole at the output to hold the stopband floor.

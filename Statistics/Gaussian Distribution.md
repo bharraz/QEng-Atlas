@@ -1,6 +1,6 @@
 #statistics #math
 
-**The distribution everything converges to** — average enough independent anythings and you get a Gaussian, which is why error bars, fit residuals, and averaged noise all end up looking like it.
+**The distribution that averages converge to** — average enough independent contributions and you get a Gaussian, which is why error bars, fit residuals, and averaged noise all end up looking like it.
 
 # Reference
 
@@ -9,6 +9,8 @@ f(x) = \frac{1}{\sigma\sqrt{2\pi}}\, e^{-(x-\mu)^2/2\sigma^2}
 $$
 
 with mean $\mu$ and variance $\sigma^2$ — a Gaussian is fully specified by two numbers; all higher cumulants vanish.
+
+**Picture:** a bell curve fixed by two numbers, centre and width; 68% of draws fall within one width of the centre.
 
 **The lookup numbers:**
 

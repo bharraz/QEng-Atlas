@@ -1,6 +1,6 @@
 #math
 
-**Re-express a convex function in terms of its slope instead of its coordinate, losing nothing — the move behind $L \to H$, every thermodynamic potential, and the pairing of conjugate variables.**
+**Re-express a convex function in terms of its slope instead of its coordinate, losing nothing — the operation behind $L \to H$, every thermodynamic potential, and the pairing of conjugate variables.**
 
 # Reference
 
@@ -11,6 +11,8 @@ For smooth convex $f$ the supremum is where the derivative vanishes, so the reci
 1. Set $p = \dfrac{df}{dx}$ — the new variable **is** the old slope.
 2. Solve for $x(p)$.
 3. Substitute: $f^*(p) = p\,x(p) - f(x(p))$.
+
+**Picture:** a convex curve described by its tangent lines instead of its points: give the intercept for each slope, and the curve is the envelope of those tangents.
 
 **Why nothing is lost.** A convex function is the envelope of its tangent lines, so specifying (slope, intercept) for every tangent determines the curve exactly as well as specifying every point. $f^*$ *is* that catalogue of tangents — $-f^*(p)$ is the intercept of the tangent with slope $p$. Hence the involution:
 $$f^{**} = f \qquad\text{(for convex } f)$$
@@ -25,7 +27,7 @@ so $x$ and $p$ are **conjugate**: each is the other's derivative of the appropri
 
 $$H(q,p) = p\dot q - L(q,\dot q), \qquad p = \frac{\partial L}{\partial \dot q}$$
 
-The transform is in $\dot q$ only; $q$ is a **passive variable**, carried along untouched. The payoff is structural, not cosmetic:
+The transform is in $\dot q$ only; $q$ is a **passive variable**, carried along untouched. The consequence is structural, not cosmetic:
 
 | | Lagrangian | Hamiltonian |
 |---|---|---|
@@ -51,25 +53,25 @@ Start from $U(S,V,N)$ with $dU = T\,dS - P\,dV + \mu\,dN$, and trade any extensi
 
 The conjugate pairs are $(T,S)$, $(P,V)$, $(\mu,N)$ — each product has units of energy, which is the check that you have paired them correctly. **You transform the variable you cannot control into the one you can:** a system in a bath has fixed $T$, not fixed $S$, so $F$ rather than $U$ is what is minimized.
 
-**Maxwell relations fall out for free** from equality of mixed second derivatives. From $dF = -S\,dT - P\,dV$:
+**Maxwell relations follow directly** from equality of mixed second derivatives. From $dF = -S\,dT - P\,dV$:
 $$\left(\frac{\partial S}{\partial V}\right)_T = \left(\frac{\partial P}{\partial T}\right)_V$$
 There is one such relation per potential, and they are all the statement that $\partial^2 f/\partial x\partial y$ does not care about order.
 
 **Convexity is thermodynamic stability.** $U$ convex in its extensive variables means $C_V > 0$ and $\kappa_T > 0$; where convexity fails the transform convexifies, and the flat region it produces *is* the coexistence region of a first-order phase transition.
 
-## The same move elsewhere
+## The same transform elsewhere
 
 - **Convex optimization** — $f^*$ is the conjugate function, and the dual problem is built from it; strong duality is the statement $f^{**}=f$.
 - **Large deviations** — the rate function is the Legendre transform of the cumulant generating function, which is why free energies and rate functions look alike.
 - **Statistics** — the cumulant generating function $\log M(t)$ and its transform relate moments to tail probabilities ([[Central Limit Theorem]]).
 
 > [!question]- Why is $F = U - TS$ minimized for a system in a thermal bath, rather than $U$?
-> Because you cannot hold $S$ fixed — the bath exchanges energy, so $T$ is the controlled variable. The Legendre transform swaps $S$ for $T$, producing the potential whose natural variables are the ones actually fixed. Minimizing $U$ would answer a question about an isolated system you do not have.
+> Because you cannot hold $S$ fixed — the bath exchanges energy, so $T$ is the controlled variable. The Legendre transform swaps $S$ for $T$, producing the potential whose natural variables are the ones fixed. Minimizing $U$ would answer a question about an isolated system you do not have.
 
 # Connections
 
 - [[Euler-Lagrange Equation]] — the Lagrangian side; the transform that produces $H$
-- [[Symplectic Group]] — the phase-space structure the transform buys, and $(q,p)$ as conjugate
+- [[Symplectic Group]] — the phase-space structure the transform leads to, and $(q,p)$ as conjugate
 - [[Gauge Freedom]] — degenerate transforms and constraints
 - [[Thermal States]] — where the thermodynamic potentials get used
 - [[Central Limit Theorem]] — cumulant generating functions and their transforms

@@ -14,6 +14,8 @@ d = \frac{\lambda}{2\pi\sqrt{n_1^2\sin^2\theta - n_2^2}} \sim \lambda/2\pi \text
 $$
 Bring a second interface within a few decay lengths and power tunnels across (**frustrated TIR** — variable attenuators, fingerprint sensors, and the optical analogue of quantum tunneling). Anything touching a TIR surface (dust, oil, fingerprint) frustrates it — TIR surfaces must be clean.
 
+**Picture:** at Brewster's angle the reflected beam would have to be radiated along the axis of the induced dipoles in the second medium, which dipoles cannot do, so p-polarized reflection vanishes.
+
 **Brewster's angle:**
 $$
 \theta_B = \arctan(n_2/n_1)
@@ -27,7 +29,7 @@ Air→glass: **56.3°**; at $\theta_B$, $R_p = 0$ exactly — reflected and refr
 
 # Connections
 
-- [[Fresnel Equations]] — both angles are just features of $r_s(\theta), r_p(\theta)$
+- [[Fresnel Equations]] — both angles are features of $r_s(\theta), r_p(\theta)$
 - [[Evanescent Waves]] — the field beyond critical angle: no average power flow unless frustrated
 - [[Optical Fibers and Fiber Coupling]] — guiding is TIR at the core–cladding step
 - [[Polarization of EM Waves]] — Brewster reflection as a polarization purifier

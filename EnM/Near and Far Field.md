@@ -6,6 +6,8 @@
 
 Boundary at $r \sim \lambda/2\pi$ (the "radian sphere"): for 60 Hz that's ~800 km — *all mains pickup is near-field*; for 2.4 GHz it's 2 cm — *almost everything is far-field*.
 
+**Picture:** close to a source the field is tied to it, like the bulge of water around a moving hand; far away it has detached into waves that travel on whatever the source does next.
+
 | | Near field ($r \ll \lambda/2\pi$) | Far field ($r \gg \lambda/2\pi$) |
 |---|---|---|
 | Character | quasi-static, reactive, energy sloshes back | radiation, energy leaves for good |
@@ -16,7 +18,7 @@ Boundary at $r \sim \lambda/2\pi$ (the "radian sphere"): for 60 Hz that's ~800 k
 
 The full dipole field contains $1/r^3$ (static), $1/r^2$ (induction), and $1/r$ (radiation) terms — all three cross at exactly $r = \lambda/2\pi$. Retardation is why the far zone exists at all: fields can't update instantaneously, and the un-updated part propagates away.
 
-**Debugging leverage:** identify the zone first. A 60 Hz problem is *never* radiation — hunting for "RF pickup" fixes is wasted; it's mutual C or M and geometry (distance, loop area, shielding) is the whole game. Conversely a 1 GHz problem at 3 m is pure far-field: think antennas and apertures, not loop area.
+**Identify the zone first:** a 60 Hz problem is *never* radiation, so fixes aimed at RF pickup do nothing; the coupling is mutual capacitance or inductance, and geometry (distance, loop area, shielding) decides it. Conversely a 1 GHz problem at 3 m is pure far-field: think antennas and apertures, not loop area.
 
 > [!question]- Moving the victim cable 2× farther from a switching supply drops 100 kHz pickup by ~18 dB. Near or far field?
 > Near field — 18 dB per doubling is $1/r^3$, the reactive dipole term (λ/2π at 100 kHz is 500 m, so far field was never in play). Far-field pickup would drop only 6 dB per doubling.

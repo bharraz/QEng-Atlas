@@ -12,6 +12,8 @@ $$
 
 States get labeled by the eigenvalue pair $|a, b\rangle$ — quantum numbers are born. Extends to any mutually commuting family; a **CSCO** (complete set of commuting observables) is one whose joint eigenvalues label states uniquely, e.g. $\{H, L^2, L_z\}$ for hydrogen.
 
+**Picture:** two commuting operators agree on a set of axes, so a state can carry a definite value of both; non-commuting ones disagree, so fixing one value spreads the other.
+
 **The degeneracy caveat** — where hand-waving fails. If $A$ has a degenerate eigenvalue, its eigenbasis is *not* unique within the degenerate subspace, and a random eigenbasis of $A$ will generally *not* diagonalize $B$. Commuting only guarantees $B$ maps each eigenspace of $A$ into itself (block-diagonal); you must then diagonalize $B$ *within* each block to pick the shared basis. Practical recipe (also numerically): diagonalize $A$, then diagonalize $B$ restricted to each degenerate subspace — or cheat by diagonalizing $A + \epsilon B$.
 
 **Conservation reading:** $[H, B] = 0$ ⇒ $B$'s eigenvalues are constants of motion (Heisenberg EOM $\dot{B} \propto [H,B] = 0$) — symmetry ⇒ good quantum number ⇒ selection rules.

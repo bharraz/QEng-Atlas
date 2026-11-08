@@ -10,6 +10,8 @@ $$
 a_{\text{out}} = \frac{a + i b}{\sqrt 2}, \qquad b_{\text{out}} = \frac{i a + b}{\sqrt 2}
 $$
 
+**Picture:** a rotation of the two modes into each other: a single photon becomes a superposition of the two outputs, and an empty input port still contributes its vacuum.
+
 **Single photon in one port:**
 $$
 |1,0\rangle \;\to\; \frac{1}{\sqrt 2}\left(|1,0\rangle + i\,|0,1\rangle\right)
@@ -20,7 +22,7 @@ $$
 
 **The vacuum port matters:** even with nothing entering port $b$, its vacuum fluctuations appear in both outputs. This is why optical loss is modeled as a beamsplitter tapping in vacuum, and why homodyne subtraction bottoms out at shot noise rather than zero.
 
-> [!question]- Why is "the photon splits 50/50" wrong, and what actually happens?
+> [!question]- Why is "the photon splits 50/50" wrong, and what happens?
 > The *mode* splits; the excitation goes into a superposition of being entirely in one output or the other. Coincidence counting settles it: $g^{(2)}(0)=0$ persists after the splitter — there are never two halves to detect.
 
 # Connections

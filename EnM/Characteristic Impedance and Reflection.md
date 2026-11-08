@@ -8,9 +8,13 @@ $$
 \Gamma = \frac{Z_L - Z_0}{Z_L + Z_0}
 $$
 
-$\Gamma$ = voltage reflection coefficient (dimensionless, complex: magnitude = fraction of *amplitude* returned, phase = the sign/delay of the return); $Z_L$ = load impedance (Ω, generally complex); $Z_0$ = characteristic impedance of the line (Ω, real for a low-loss line — the fixed ratio $V/I$ that a travelling wave must obey, set by geometry via $Z_0 = \sqrt{L'/C'}$ from the per-length inductance and capacitance).
+- $\Gamma$ — voltage reflection coefficient (dimensionless, complex): returned *amplitude* fraction (magnitude), its sign and delay (phase)
+- $Z_L$ — load impedance (Ω, generally complex)
+- $Z_0$ — characteristic impedance of the line (Ω, real for a low-loss line): $V/I$ of a travelling wave; $\sqrt{L'/C'}$, per-length inductance over capacitance
 
-The form is a normalized *mismatch over sum*: reflection is driven by the difference of the impedances and scaled by their total, so what matters is the ratio $Z_L/Z_0$, not either value alone. Reflected power fraction $= |\Gamma|^2$; return loss $= -20\log_{10}|\Gamma|$ dB.
+Reflection is driven by the difference of the impedances and scaled by their sum, so only the ratio $Z_L/Z_0$ matters. Reflected power fraction $= |\Gamma|^2$; return loss $= -20\log_{10}|\Gamma|$ dB.
+
+**Picture:** a pulse on a rope reaching its end: tied to a wall it returns inverted (like a short), left free it returns upright (like an open), and joined to an identical rope it does not return at all (matched).
 
 | Load | Γ | What comes back |
 |---|---|---|
@@ -19,13 +23,11 @@ The form is a normalized *mismatch over sum*: reflection is driven by the differ
 | Short | −1 | full reflection, inverted |
 | $Z_L = 2Z_0$ | +1/3 | partial |
 
-Reflected power fraction $= |\Gamma|^2$; return loss $= -20\log|\Gamma|$ dB.
-
-**Frequency domain:** incident + reflected waves interfere into a standing-wave pattern along the line; $\mathrm{VSWR} = (1+|\Gamma|)/(1-|\Gamma|)$ is what you read off the peak/trough ratio (VSWR 1.5 ↔ |Γ| = 0.2 ↔ 4% power reflected). The input impedance of a mismatched line rotates with length — a λ/4 line transforms $Z_{in} = Z_0^2/Z_L$ (shorts become opens!).
+**Frequency domain:** incident + reflected waves interfere into a standing-wave pattern along the line; $\mathrm{VSWR} = (1+|\Gamma|)/(1-|\Gamma|)$ is what you read off the peak/trough ratio (VSWR 1.5 ↔ |Γ| = 0.2 ↔ 4% power reflected). The input impedance of a mismatched line rotates with length — a λ/4 line transforms $Z_{in} = Z_0^2/Z_L$ (shorts become opens).
 
 **Time domain — the debugging picture:** drive an edge into an unterminated line and it bounces between the unmatched source and load, one round-trip time apart, until the bounces decay: **that's the ringing on fast digital edges and pulse lines.** The staircase/oscillation period gives you the cable's electrical length (TDR is exactly this). Fixes: series resistor at the source ($R_s + Z_{out} = Z_0$, one clean bounce absorbed at the source) or parallel $Z_0$ at the load. A scope's 1 MΩ input on a 50 Ω line *is* an open — switch in the 50 Ω termination.
 
-> [!question]- An edge into a 3 m unterminated coax rings with period ~30 ns. Why that number, and what kills it?
+> [!question]- An edge into a 3 m unterminated coax rings with period ~30 ns. Why that number, and what removes it?
 > Round trip = 2 × 3 m × 5 ns/m = 30 ns: the edge reflects off the open far end (Γ=+1) and again off the low-Z source (Γ≈−1), flipping sign each lap. Terminate one end in Z₀ — series 50 Ω at the driver or shunt 50 Ω at the load.
 
 # Connections

@@ -14,6 +14,8 @@ F_x & F_y & F_z
 $$
 The determinant mnemonic is Cartesian-only — in cylindrical/spherical use the table in [[Curvilinear Coordinates]].
 
+**Picture:** a tiny paddle wheel placed in the flow: it spins if the flow is faster on one side than the other, and the curl points along its axle with length set by the spin rate.
+
 **The two structural identities** (both follow from mixed partials commuting):
 $$
 \nabla\times(\nabla f) = 0, \qquad \nabla\cdot(\nabla\times\mathbf{A}) = 0
@@ -22,10 +24,10 @@ These are why potentials exist: curl-free fields come from a scalar potential ($
 
 **Physics:** the two curl Maxwell equations are the dynamic ones — Faraday $\nabla\times\mathbf{E} = -\partial_t\mathbf{B}$ and Ampère–Maxwell $\nabla\times\mathbf{B} = \mu_0\mathbf{J} + \mu_0\varepsilon_0\partial_t\mathbf{E}$. Curl of curl gives the wave equation via $\nabla\times(\nabla\times\mathbf{F}) = \nabla(\nabla\cdot\mathbf{F}) - \nabla^2\mathbf{F}$.
 
-**Gotcha:** a field can swirl visibly yet have zero curl ($\hat{\phi}/s$ — irrotational vortex, curl is a delta at the axis), and a straight shear flow can have nonzero curl. Curl is local rotation (drop a paddle wheel), not global geometry.
+**Swirl without curl:** a field can swirl visibly yet have zero curl ($\hat{\phi}/s$ — irrotational vortex, curl is a delta at the axis), and a straight shear flow can have nonzero curl. Curl is local rotation (drop a paddle wheel), not global geometry.
 
 > [!question]- Why does ∇·B = 0 guarantee a vector potential A exists with B = ∇×A?
-> Divergence-free is exactly the integrability condition: div of any curl vanishes identically, and (on nice domains) the converse holds — every divergence-free field is a curl. Same logic pairs curl-free with gradients.
+> Divergence-free is exactly the integrability condition: div of any curl vanishes identically, and (on well-behaved domains) the converse holds — every divergence-free field is a curl. Same logic pairs curl-free with gradients.
 
 # Connections
 

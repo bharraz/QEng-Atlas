@@ -10,18 +10,20 @@ $$
 
 with Poynting's theorem $\partial_t u + \nabla\cdot\mathbf{S} = -\mathbf{J}\cdot\mathbf{E}$ (field energy leaves either by flowing out or by doing work on charges).
 
+**Picture:** in a coax, energy flows through the dielectric between the conductors, guided by them like water between banks; the wires carry the current but not the power.
+
 **Time-averaged intensity of a plane/quasi-plane wave:**
 $$
 I = \langle S\rangle = \frac{1}{2}c\varepsilon_0 E_0^2 = \frac{E_0^2}{2\eta_0}
 $$
 
-Handy inversions: $E_0 = \sqrt{2\eta_0 I} \approx 27.4\sqrt{I\,[\mathrm{W/m^2}]}\ \mathrm{V/m}$. A 1 mW Gaussian beam at $w=1$ mm has peak $I = 2P/\pi w^2 \approx 64\ \mathrm{mW/cm^2}$ and $E_0\approx 690$ V/m — laser fields are *large* compared to your intuition from circuits.
+Useful inversions: $E_0 = \sqrt{2\eta_0 I} \approx 27.4\sqrt{I\,[\mathrm{W/m^2}]}\ \mathrm{V/m}$. A 1 mW Gaussian beam at $w=1$ mm has peak $I = 2P/\pi w^2 \approx 64\ \mathrm{mW/cm^2}$ and $E_0\approx 690$ V/m — laser fields are *large* compared to your intuition from circuits.
 
 **Radiation pressure:** momentum flux $= I/c$ (absorbed) or $2I/c$ (reflected). 1 W retroreflected: 6.7 nN — tiny, but it's the classical face of photon recoil and the raw force behind optical tweezers and laser cooling.
 
 For a wave in a medium use $\eta=\eta_0/n$: intensity for the same $E_0$ is $n$ times larger.
 
-> [!question]- In a DC circuit powering a resistor, along what path does the energy actually travel from battery to resistor?
+> [!question]- In a DC circuit powering a resistor, along what path does the energy travel from battery to resistor?
 > Through the *fields around the wires*: E points from wire to wire, H circles the current, and $\mathbf{E}\times\mathbf{H}$ points down the gap toward the resistor, converging into it. The wires guide the energy; they don't carry it. This picture becomes literal in [[Transmission Lines]].
 
 # Connections

@@ -1,10 +1,12 @@
 #group-theory #math
 
-**A Lie group is a group whose elements depend smoothly on continuous parameters — a group that is also a smooth surface, so you can rotate by any angle rather than in discrete steps.** Continuous symmetry lives here, and continuous symmetry is what produces conservation laws.
+**Rotations can be by any angle, and a small change of angle gives a nearby rotation: the transformations form a smooth continuous family, and a group with that property is a Lie group.** Continuous symmetry lives here, and continuous symmetry is what produces conservation laws.
 
 # Reference
 
 Formally a Lie group is a group that is also a differentiable manifold, with multiplication and inversion smooth. The practical content: elements sit arbitrarily close to the identity, so you can reach any of them by accumulating infinitesimal steps.
+
+**Picture:** a smooth surface whose points are transformations: you can move continuously away from the identity, and the directions you can move in are the generators.
 
 **The dimension** of a Lie group is the number of independent continuous parameters — the number of knobs.
 
@@ -50,7 +52,7 @@ Why the continuity matters: a continuous symmetry can be built from infinitesima
 - [[(Map) Group Theory]] — the discrete-friendly axioms these also satisfy
 - [[Unitary Matrices]] — $U(N)$ and $SU(N)$ are the unitary Lie groups
 - [[Bilinear Forms and Preserved Structures]] — the classical groups manufactured as form-preservers, $A^{\mathsf T}BA = B$
-- [[Dynamical Lie Algebras and Closure]] — the algebra a physical system actually generates, and what its size decides
+- [[Dynamical Lie Algebras and Closure]] — the algebra a physical system generates, and what its size decides
 
 ---
 Source: Hall, *Lie Groups, Lie Algebras, and Representations*, Ch. 1; Zee, *Group Theory in a Nutshell*, Ch. IV

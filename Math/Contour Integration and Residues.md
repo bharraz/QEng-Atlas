@@ -1,6 +1,6 @@
 #math
 
-**Close the contour in the complex plane and a hard real integral becomes bookkeeping: $2\pi i$ times the residues you enclose.** The integrand's poles carry all the information; the arc you add contributes nothing if you close on the side where the integrand dies.
+**Close the contour in the complex plane and a hard real integral becomes bookkeeping: $2\pi i$ times the residues you enclose.** The integrand's poles carry all the information; the arc you add contributes nothing if you close on the side where the integrand decays.
 
 # Reference
 
@@ -8,7 +8,9 @@ $$
 \oint_C f(z)\,dz = 2\pi i \sum_{\text{poles inside}} \mathrm{Res}\,f, \qquad \mathrm{Res}_{z_0} f = \lim_{z\to z_0}(z-z_0)f(z) \;\text{(simple pole)}
 $$
 
-For a pole of order $n$: $\frac{1}{(n-1)!}\lim_{z\to z_0}\frac{d^{n-1}}{dz^{n-1}}\left[(z-z_0)^n f(z)\right]$. For $p(z)/q(z)$ with simple zero of $q$: residue $= p(z_0)/q'(z_0)$ — the workhorse form.
+For a pole of order $n$: $\frac{1}{(n-1)!}\lim_{z\to z_0}\frac{d^{n-1}}{dz^{n-1}}\left[(z-z_0)^n f(z)\right]$. For $p(z)/q(z)$ with simple zero of $q$: residue $= p(z_0)/q'(z_0)$ — the form used most often.
+
+**Picture:** the integral along the real line as one side of a closed loop; if the rest of the loop contributes nothing, the entire answer comes from the poles trapped inside.
 
 **Closing contours:** for $\int_{-\infty}^{\infty} f(x)e^{i\omega x}dx$, close where the exponential decays — upper half-plane for $\omega>0$, lower for $\omega<0$. **Jordan's lemma** guarantees the arc vanishes as long as $f\to 0$ on it, even slowly (~$1/|z|$).
 

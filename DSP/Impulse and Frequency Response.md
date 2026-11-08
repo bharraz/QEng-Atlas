@@ -8,6 +8,8 @@ A system is **LTI** if it is linear and time-invariant. Any such system acts by 
 
 $$y(t) = (h * x)(t) = \int h(\tau)\,x(t-\tau)\,d\tau.$$
 
+**Picture:** strike a bell once and record the ringing: that ring is the impulse response, and its spectrum is the set of tones the bell favors.
+
 **Impulse response** $h(t)$: the output when the input is $\delta(t)$ (see [[Dirac Delta]]). Because any input is a superposition of shifted, scaled impulses, $h(t)$ determines the response to *everything*. It is precisely the [[Green's Functions|Green's function]] of the system's equation of motion.
 
 **Frequency response** $H(\omega)$: feed a pure tone $e^{i\omega t}$. An LTI system returns the *same frequency*, only scaled by a complex number:
@@ -22,7 +24,7 @@ so time-domain and frequency-domain descriptions carry identical information (se
 
 **Convolution theorem**: convolution in time is multiplication in frequency, $Y(\omega) = H(\omega)\,X(\omega)$. That is why the frequency domain is the natural home for LTI response — a messy integral becomes a product. **Causality** ($h(t)=0$ for $t<0$) constrains $H(\omega)$, linking its real and imaginary parts through the [[Kramers-Kronig Relations]].
 
-**Connection to resonance**: a resonator is an LTI system. Its frequency response is the complex Lorentzian of [[Resonance]], and its impulse response is a decaying oscillation $h(t)\propto e^{-\gamma t/2}\cos(\omega_0 t)$ — the ringdown. Measuring the ringdown or sweeping the frequency response yields the same $\omega_0$ and $\gamma$.
+**Connection to resonance**: a resonator is an LTI system. Its frequency response is the complex Lorentzian of [[Resonance (Atlas)]], and its impulse response is a decaying oscillation $h(t)\propto e^{-\gamma t/2}\cos(\omega_0 t)$ — the ringdown. Measuring the ringdown or sweeping the frequency response yields the same $\omega_0$ and $\gamma$.
 
 > [!question]- Why are complex exponentials special for LTI systems, and not for systems in general?
 > Because for an LTI system $e^{i\omega t}$ is an eigenfunction: the system can rescale its amplitude and shift its phase, but it can never change its frequency or generate new ones. Diagonalizing convolution by the Fourier transform is the precise expression of this — each frequency passes through independently with its own complex gain $H(\omega)$. A nonlinear or time-varying system breaks this and mixes frequencies.
@@ -34,7 +36,7 @@ so time-domain and frequency-domain descriptions carry identical information (se
 - [[Dirac Delta]] — the input that defines the impulse response
 - [[Green's Functions]] — the impulse response is the Green's function of the system
 - [[Transfer Functions and Bode Plots]] — $H(\omega)$ read off as gain and phase vs. frequency
-- [[Resonance]] — a resonator's frequency response is the complex Lorentzian; its impulse response is the ringdown
+- [[Resonance (Atlas)]] — a resonator's frequency response is the complex Lorentzian; its impulse response is the ringdown
 - [[Kramers-Kronig Relations]] — causality tying the real and imaginary parts of $H(\omega)$
 
 ---

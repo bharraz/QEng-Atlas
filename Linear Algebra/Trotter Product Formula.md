@@ -10,6 +10,8 @@ $$
 
 Unlike a truncated series, every partial product is a *product of group elements* and therefore in the group — so Trotter is structure-preserving in the same sense as Magnus ([[Propagators, Time Ordering, and the Dyson Series]]).
 
+**Picture:** zigzagging across a field in alternating short steps north and east: for small steps the path approaches the diagonal, with an error set by how much the two directions fail to commute.
+
 **First-order error**, from BCH at each slice, $e^{A/n}e^{B/n} = e^{(A+B)/n + [A,B]/2n^2 + \cdots}$, accumulated over $n$ slices:
 $$
 \left(e^{A/n}e^{B/n}\right)^n = e^{A+B} + \mathcal{O}\!\left(\frac{[A,B]}{2n}\right)
@@ -40,12 +42,12 @@ $$
 
 **Where you meet it:** digital quantum simulation (circuit depth vs. Trotter error), split-operator Schrödinger solvers (kinetic in $k$-space, potential in real space, FFT between), and symplectic integrators — leapfrog *is* Strang splitting, which is why it preserves phase-space area ([[Symplectic Group]]).
 
-> [!question]- Why does the symmetric splitting $e^{A\delta/2}e^{B\delta}e^{A\delta/2}$ kill the first-order error?
+> [!question]- Why does the symmetric splitting $e^{A\delta/2}e^{B\delta}e^{A\delta/2}$ cancel the first-order error?
 > The product is palindromic, so it is invariant under reversing the factor order. Reversal flips the sign of $[A,B]$, so the effective generator can contain no odd-order bracket terms — $\tfrac12[A,B]$ must vanish. The first surviving error is the double commutator at $O(\delta^3)$.
 
 # Connections
 
-- [[Baker-Campbell-Hausdorff]] — supplies the error terms Trotter fights; Zassenhaus is the exact splitting
+- [[Baker-Campbell-Hausdorff]] — supplies the error terms Trotter must control; Zassenhaus is the exact splitting
 - [[Magnus Expansion]] — the other structure-preserving option: one exponential rather than many
 - [[Trotterization (Atlas)]] — the quantum-simulation deployment: $H = \sum H_j$ compiled into gate sequences
 - [[Matrix Exponential]] — the object being approximated by interleaved factors

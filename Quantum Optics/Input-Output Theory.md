@@ -10,7 +10,13 @@ $$
 \dot{a} = -\frac{i}{\hbar}[a, H_\mathrm{sys}] - \frac{\kappa}{2}a - \sqrt{\kappa}\, a_\mathrm{in}, \qquad a_\mathrm{out} = a_\mathrm{in} + \sqrt{\kappa}\, a
 $$
 
-$a$ = intracavity mode operator (dimensionless, $a^\dagger a$ = photon *number*); $a_{\text{in}}, a_{\text{out}}$ = propagating field operators (units of $\sqrt{\text{photons/s}}$, since $a_{\text{in}}^\dagger a_{\text{in}}$ is a photon *flux*); $\kappa$ = energy decay rate (s⁻¹). The $\sqrt{\kappa}$ is exactly the unit converter between a stored number and a flux — and the $\kappa/2$ on the amplitude versus $\kappa$ for energy is the usual field-vs-power factor of 2.
+- $a$ — intracavity mode operator (dimensionless; $a^\dagger a$ = photon *number*)
+- $a_{\text{in}}, a_{\text{out}}$ — propagating field operators (units of $\sqrt{\text{photons/s}}$, since $a_{\text{in}}^\dagger a_{\text{in}}$ is a photon *flux*)
+- $\kappa$ — energy decay rate (s⁻¹)
+
+The $\sqrt{\kappa}$ is exactly the unit converter between a stored number and a flux — and the $\kappa/2$ on the amplitude versus $\kappa$ for energy is the usual field-vs-power factor of 2.
+
+**Picture:** the mirror as a leaky window: what you see outside is the light reflected directly off the window plus what leaks out from inside, and their interference carries the intracavity dynamics.
 
 **The output is the interference of the promptly-reflected input with the field leaking from inside.** (Sign conventions vary between texts — the physics is this interference; check signs before porting formulas.)
 
@@ -22,12 +28,12 @@ $$
 
 — unit modulus (lossless), but the phase swings through $2\pi$ across the linewidth. That dispersive phase is exactly what [[Pound-Drever-Hall Locking]] demodulates into an error signal. Add internal loss or a second mirror and $|r|<1$: a dip appears.
 
-**The noise term is not optional.** Damping alone ($-\kappa a/2$) would shrink $[a, a^\dagger]$ below 1 over time — unphysical. The vacuum entering through the same port ($a_\mathrm{in}$, with $[a_\mathrm{in}(t), a_\mathrm{in}^\dagger(t')] = \delta(t-t')$) restores the commutator: fluctuation-dissipation, operator edition. Same structure as the [[Lindblad Master Equation]], just in the Heisenberg picture with the environment kept explicit.
+**The noise term is not optional.** Damping alone ($-\kappa a/2$) would shrink $[a, a^\dagger]$ below 1 over time — unphysical. The vacuum entering through the same port ($a_\mathrm{in}$, with $[a_\mathrm{in}(t), a_\mathrm{in}^\dagger(t')] = \delta(t-t')$) restores the commutator: fluctuation-dissipation, operator edition. Same structure as the [[Lindblad Master Equation]], only in the Heisenberg picture with the environment kept explicit.
 
 **Why it matters in practice:** [[Homodyne Detection]] of $a_\mathrm{out}$ measures intracavity quadratures filtered through the cavity response — this is how you read out squeezing, optomechanical motion, or a qubit dispersively coupled to the mode.
 
 > [!question]- Why does an undriven, empty cavity still need the $a_\mathrm{in}$ term?
-> Without it, $\dot{a} = -\kappa a/2$ decays the operator itself and $[a,a^\dagger] \to 0$ — commutation relations die. Vacuum fluctuations entering the lossy port at exactly the rate coherence leaks out preserve $[a,a^\dagger]=1$. Every loss channel is also an input channel.
+> Without it, $\dot{a} = -\kappa a/2$ decays the operator itself and $[a,a^\dagger] \to 0$ — the commutation relation is lost. Vacuum fluctuations entering the lossy port at exactly the rate coherence leaks out preserve $[a,a^\dagger]=1$. Every loss channel is also an input channel.
 
 # Connections
 

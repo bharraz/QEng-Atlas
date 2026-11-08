@@ -10,19 +10,21 @@ $$[J_z, T^k_q] = q\, T^k_q, \qquad [J_\pm, T^k_q] = \sqrt{k(k+1) - q(q\pm1)}\; T
 
 Rank 0 is a scalar, rank 1 a vector in the spherical basis ($T^1_{\pm1} = \mp(V_x \pm iV_y)/\sqrt{2}$, $T^1_0 = V_z$) — the electric dipole $\hat{d}$ is the canonical rank-1 example; electric quadrupole is rank 2.
 
+**Picture:** a transition's strength split into a geometric factor (how the orientations of initial state, operator, and final state fit together) and one physical number shared by the entire multiplet.
+
 **The theorem:**
 
 $$\langle \alpha', j', m' |\, T^k_q\, | \alpha, j, m \rangle = \langle j, m;\, k, q\, |\, j', m' \rangle \, \langle \alpha', j' \| T^k \| \alpha, j \rangle$$
 
 The CG coefficient carries all $m, m', q$ dependence; the **reduced matrix element** $\langle \cdot \| T^k \| \cdot \rangle$ is independent of orientation and contains the radial/dynamical physics. (Convention warning: some texts divide by $\sqrt{2j'+1}$; check before comparing tables.)
 
-**Selection rules fall out for free** — the matrix element vanishes unless the CG coefficient survives:
+**Selection rules follow directly** — the matrix element vanishes unless the CG coefficient survives:
 
 $$m' = m + q, \qquad |j - k| \leq j' \leq j + k.$$
 
-For dipole ($k=1$): $\Delta m = 0, \pm1$ and $\Delta j = 0, \pm1$ with $j = 0 \not\to j' = 0$. This is [[Selection Rules]] derived in one line, and the $\pi$/$\sigma^\pm$ polarization labels are just $q = 0, \pm 1$.
+For dipole ($k=1$): $\Delta m = 0, \pm1$ and $\Delta j = 0, \pm1$ with $j = 0 \not\to j' = 0$. This is [[Selection Rules]] derived in one line, and the $\pi$/$\sigma^\pm$ polarization labels are $q = 0, \pm 1$.
 
-**Lab payoff — ratios within a multiplet.** For two Zeeman components of the same fine/hyperfine transition, the reduced matrix element cancels:
+**Lab use: ratios within a multiplet.** For two Zeeman components of the same fine/hyperfine transition, the reduced matrix element cancels:
 
 $$\frac{\Omega_{m_1 \to m_1'}}{\Omega_{m_2 \to m_2'}} = \frac{\langle j, m_1; k, q_1 | j', m_1' \rangle}{\langle j, m_2; k, q_2 | j', m_2' \rangle}.$$
 

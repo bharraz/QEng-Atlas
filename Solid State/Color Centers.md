@@ -6,6 +6,8 @@
 
 **Why a wide gap is the enabling requirement.** Defect levels must sit deep inside the bandgap, far from both band edges, so the bound electronic states cannot ionize into the continuum. That demands a host with a large gap — diamond (5.5 eV), SiC (3.2 eV), hBN (6 eV), oxides. The gap is what makes the defect atom-like rather than a shallow dopant, and it is why silicon, with its 1.1 eV gap, hosts telecom-wavelength centres but not visible ones.
 
+**Picture:** a missing atom plus an impurity inside a rigid insulator, behaving like an atom held in a vacuum chamber made of crystal, with the lattice vibrations as the walls' noise.
+
 **The four questions that sort every defect.** Given a new centre, these determine what it is good for:
 
 | Question | Why it decides everything |
@@ -38,8 +40,8 @@ That is one symmetry statement producing both photonic requirements. NV is *not*
 
 - **Optical spin initialization and readout** through a spin-selective non-radiative channel — [[Spin-Dependent Fluorescence and ODMR]]. Universal in mechanism, host-specific in contrast.
 - **Charge state is a variable, not a given.** NV$^0$ is dark and spinless; NV$^-$ is the useful one. Charge state depends on the Fermi level, so co-doping and surface termination are engineering knobs — and charge-state instability under illumination is a standard failure mode.
-- **Creation:** native incorporation during growth, or **ion implantation plus anneal** (implant N or Sn, anneal so vacancies become mobile and bind). Implantation buys position control and costs lattice damage; the resulting yield and depth straggle are the practical limits ([[Lithography]], [[Etching]]).
-- **Photon extraction** fights total internal reflection at a high-index host: nanopillars, solid immersion lenses, or coupling to a photonic cavity for [[Purcell Effect|Purcell]] enhancement — which also funnels emission into the ZPL, partially compensating a poor Debye–Waller factor.
+- **Creation:** native incorporation during growth, or **ion implantation plus anneal** (implant N or Sn, anneal so vacancies become mobile and bind). Implantation gives position control and costs lattice damage; the resulting yield and depth straggle are the practical limits ([[Lithography]], [[Etching]]).
+- **Photon extraction** must overcome total internal reflection at a high-index host: nanopillars, solid immersion lenses, or coupling to a photonic cavity for [[Purcell Effect|Purcell]] enhancement — which also funnels emission into the ZPL, partially compensating a poor Debye–Waller factor.
 - **Nuclear registers.** Host nuclei near the defect are long-lived memories addressable through the electron's hyperfine coupling ([[Hyperfine Structure]]).
 
 **What they are used for:** nanoscale sensing (magnetic, electric, thermal, strain — the defect can be nanometres from the target, unlike any atomic sensor), quantum network nodes (spin–photon entanglement, then entanglement swapping between distant nodes), and quantum registers combining an optically accessible electron with nuclear memories.
@@ -58,6 +60,8 @@ That is one symmetry statement producing both photonic requirements. NV is *not*
 - [[Hyperfine Structure]] — nuclear registers around the defect
 - [[Quantum Dots]] — the other solid-state emitter family; grown rather than defect-based
 - [[Phonons]] — the bath every defect couples to
+- [[Spin-Defect Sensing Protocols]] — sensing protocols shared across spin defects
+- [[Remote Entanglement and Quantum Networks]] — colour centres as network nodes
 
 ---
 Source: Awschalom et al., "Quantum technologies with optically interfaced solid-state spins," *Nat. Photonics* 12, 516 (2018); Bassett et al., "Quantum defects by design," *Nanophotonics* 8, 1867 (2019)

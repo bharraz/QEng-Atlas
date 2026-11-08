@@ -10,7 +10,9 @@ $$
 
 Each partial derivative is the *sensitivity* — units of $f$ per unit of $x_i$ — so the product $(\partial f/\partial x_i)\sigma_i$ is an error contribution already in the units of $f$, and the sum is a Pythagorean addition of those contributions. Reading it as a sensitivity budget is the useful move: compute each term separately and the dominant one names the measurement worth improving; halving an error that contributes 30% of the quadrature sum changes almost nothing.
 
-Drop the covariance term only if inputs are actually independent — shared calibration constants make them not.
+**Picture:** each input's error as a small arrow scaled by how steeply the result depends on that input; independent arrows add at right angles.
+
+Drop the covariance term only if inputs are independent — shared calibration constants make them not.
 
 **The quick table** (independent inputs):
 
@@ -29,7 +31,7 @@ Drop the covariance term only if inputs are actually independent — shared cali
 
 # Connections
 
-- [[Variance and Covariance]] — the machinery underneath; the formula is just $\mathrm{Var}(\nabla f \cdot \mathbf{x})$
+- [[Variance and Covariance]] — the machinery underneath; the formula is $\mathrm{Var}(\nabla f \cdot \mathbf{x})$
 - [[Confidence Intervals]] — turning the propagated $\sigma_f$ into a quotable interval
 - [[Central Limit Theorem]] — why quadrature-summed errors end up Gaussian
 - [[Monte Carlo Methods]] — the numerical fallback when derivatives or linearity fail

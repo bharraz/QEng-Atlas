@@ -8,6 +8,8 @@ $$
 U^\dagger U = U U^\dagger = \mathbb{1} \quad\Longleftrightarrow\quad \langle U\phi | U\psi \rangle = \langle \phi | \psi \rangle \;\;\forall \phi,\psi
 $$
 
+**Picture:** a rigid rotation of state space: lengths and angles between all states are kept, only their orientation changes.
+
 **Equivalent statements** (any one implies the rest):
 - Columns form an orthonormal basis (rows too)
 - $\|Ux\| = \|x\|$ for all $x$ (norm preservation is enough, by polarization)
@@ -27,6 +29,7 @@ $$
 - [[Hermitian Matrices]] — the generator class; anti-Hermitian exponents give unitaries
 - [[Single-Qubit Gates]] — SU(2) unitaries are exactly the qubit operations
 - [[Normal Matrices]] — unitaries are normal, hence spectrally decomposable
+- [[Reading Matrices and Hamiltonians]] — unitaries as machines that rotate without stretching
 
 ---
 Source: Nielsen & Chuang §2.1.4; Horn & Johnson, *Matrix Analysis*, Ch. 2.

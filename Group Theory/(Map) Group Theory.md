@@ -2,7 +2,7 @@
 
 **A group is the set of transformations leaving some structure unchanged, together with the rule for composing them — the minimal axioms for "reversible moves that stack."**
 
-Entry point and map for this folder: the axioms and the abstract/concrete distinction below, then a routing table for the other seventeen pages.
+The axioms and the difference between a group and its matrices come first below; the routing tables for the other eighteen pages are at the end, starting from the question you have.
 
 # Reference
 
@@ -20,7 +20,7 @@ A group is a set $G$ with a binary operation $\cdot$ satisfying four conditions:
 The group is the abstract structure: elements and a composition rule. Nothing in the axioms mentions matrices — the integers under addition are a group with no matrix anywhere.
 
 - Matrices enter when the moves must **act on something**. A representation assigns each element a matrix so that matrix multiplication reproduces composition.
-- **The tell that a group is not its matrices:** the *same* group has *many* representations — the rotation group acts on spin-$\tfrac12$ as $2\times2$ matrices and on 3-vectors as $3\times3$. So it cannot *be* either one; it is the common structure behind both.
+- **Evidence that a group is not its matrices:** the *same* group has *many* representations — the rotation group acts on spin-$\tfrac12$ as $2\times2$ matrices and on 3-vectors as $3\times3$. So it cannot *be* either one; it is the common structure behind both.
 - Some groups are *defined* as matrices ($SU(2)$ = the $2\times2$ unitaries with $\det = 1$), but that is still one representation among many.
 - Guarantee worth knowing: every finite group and every compact Lie group has a **faithful** matrix representation, so matrices are always available even when they are not the definition.
 
@@ -29,7 +29,7 @@ The group is the abstract structure: elements and a composition rule. Nothing in
 | Map | Definition | What it does |
 |---|---|---|
 | **Homomorphism** | $\varphi(a\cdot b) = \varphi(a)\cdot\varphi(b)$ | carries structure across; may lose information |
-| **Isomorphism** | bijective homomorphism | $G \cong H$ — the same group in different clothing |
+| **Isomorphism** | bijective homomorphism | $G \cong H$ — the same group written differently |
 | **Kernel** | $\ker\varphi = \{g : \varphi(g) = e_H\}$ | exactly what the map forgets; trivial kernel ⇔ injective |
 
 A **representation is precisely a homomorphism** $\rho: G \to GL(V)$ into invertible matrices ([[Group Representations]]).
@@ -57,7 +57,7 @@ Label the vertices $1,2,3$. The rigid motions mapping the triangle to itself: id
 | **Kernel** | of that map: the rotations $\{e, r, r^2\} = A_3$ — the even permutations. This is the sign-of-a-permutation map, and the structure behind the determinant's sign |
 | **Normal subgroup** | $\{e, r, r^2\} \trianglelefteq D_3$ (conjugating a rotation gives a rotation) |
 | **Quotient** | $D_3/\{e,r,r^2\} \cong \mathbb Z_2$ — exactly the orientation sign |
-| **Classes** | $\{e\}$, $\{r, r^2\}$, $\{s_1,s_2,s_3\}$ — three classes, hence three irreps, of dimensions $1,1,2$ (check: $1+1+4 = 6 = |G|$) |
+| **Classes** | $\{e\}$, $\{r, r^2\}$, $\{s_1,s_2,s_3\}$ — three classes, hence three irreps, of dimensions $1,1,2$ (check: $1+1+4 = 6 = \lvert G\rvert$) |
 
 Where it appears: $D_3$ as the point group $C_{3v}$ is the symmetry of a triangular molecule such as $\mathrm{NH_3}$ along its axis; $S_3$ governs three identical particles.
 
@@ -65,6 +65,23 @@ Where it appears: $D_3$ as the point group $C_{3v}$ is the symmetry of a triangu
 > Everything structural: multiplication table, element orders, which subgroups exist, whether it is abelian. Only the *labels* differ — what the elements "are" (rigid motions, permutations, matrices) and how the operation is written.
 
 # Map of this folder
+
+**Start from your question** — the term or problem in front of you, and where it is answered.
+
+| You are reading about, or asking                                                            | Go to                                                                                                                                                      |
+| ------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| "the dynamical Lie algebra", controllability, "the algebra closes"                          | [[Dynamical Lie Algebras and Closure]]                                                                                                                     |
+| an exact solution for a driven spin or oscillator; Wei–Norman; disentangling an exponential | [[Solving Dynamics on Closed Lie Algebras]]                                                                                                                |
+| can I truncate this expansion (in photon number, order, operator degree)?                   | [[Graded and Filtered Lie Algebras]], then [[Subalgebras, Ideals, and Quotients]]; for $a, a^\dagger$ specifically, [[Weyl Algebra and Degree Filtration]] |
+| Hamiltonians quadratic in $a, a^\dagger$: squeezing, beam splitters, Gaussian states        | [[Symplectic Group]]                                                                                                                                       |
+| frame changes, toggling frames, $e^{A}Be^{-A}$                                              | [[Conjugation]]                                                                                                                                            |
+| why BCH or Magnus coefficients are universal; when the series terminates                    | [[Free Algebras, Words, and Gradings]]                                                                                                                     |
+| degeneracies, selection rules, conserved quantities from a symmetry                         | [[Noether's Theorem]], [[Group Representations]]                                                                                                           |
+| level splitting at a defect or molecular site ($C_{3v}$, $T_d$, …)                          | [[Point Groups and Character Tables]]                                                                                                                      |
+| the $-1$ of spin-½ under a $2\pi$ rotation; qubit rotations                                 | [[SU(2) and SO(3)]]                                                                                                                                        |
+| multiplets, highest weight, $\mathfrak{su}(3)$, $\mathfrak{su}(1,1)$ vs $\mathfrak{su}(2)$  | [[Cartan Subalgebras, Roots, and Weights]]                                                                                                                 |
+| Casimir operators, $J^2$, products of generators                                            | [[Universal Enveloping Algebra and PBW Basis]]                                                                                                             |
+| a group named unitary, orthogonal, symplectic, Lorentz                                      | [[The Classical Groups Reference]], [[Bilinear Forms and Preserved Structures]]                                                                            |
 
 **Foundations** — the machinery everything else assumes.
 
@@ -95,7 +112,7 @@ Where it appears: $D_3$ as the point group $C_{3v}$ is the symmetry of a triangu
 | [[SU(2) and SO(3)]] | the double cover; spinors vs. vectors |
 | [[Point Groups and Character Tables]] | finite symmetry groups of molecules and defect sites |
 
-**Putting it to work.**
+**Applications.**
 
 | Page | Answers |
 |---|---|
@@ -104,7 +121,7 @@ Where it appears: $D_3$ as the point group $C_{3v}$ is the symmetry of a triangu
 | [[Dynamical Lie Algebras and Closure]] | what can this Hamiltonian reach, and is it exactly solvable? |
 | [[Solving Dynamics on Closed Lie Algebras]] | Wei–Norman, disentangling identities, moment propagation |
 
-**Suggested route if starting cold:** this page → [[Lie Groups]] → [[Lie Algebras (Atlas)]] → [[Conjugation]] → [[Subalgebras, Ideals, and Quotients]] → then branch by need.
+**Suggested route for a first reading:** this page → [[Lie Groups]] → [[Lie Algebras (Atlas)]] → [[Conjugation]] → [[Subalgebras, Ideals, and Quotients]] → then branch by need.
 
 # Connections
 
@@ -113,6 +130,8 @@ Where it appears: $D_3$ as the point group $C_{3v}$ is the symmetry of a triangu
 - [[Clifford Group]] — the larger finite group generated from it
 - [[Magnus Expansion]] / [[Propagators, Time Ordering, and the Dyson Series]] — the time-evolution pages that lean on this folder
 - [[(Guide) Thinking Mathematically]] — specializing and generalizing, the two moves this subject is built from
+- [[Degeneracy and Level Crossings]] — where degeneracies come from and why they matter in experiments
+- [[Parity and Time Reversal]] — the discrete symmetries: vanishing integrals and Kramers pairs
 
 ---
 Source: Artin, *Algebra*, Ch. 2; Zee, *Group Theory in a Nutshell for Physicists*, Ch. I; Dresselhaus, *Group Theory: Application to the Physics of Condensed Matter*, Ch. 1–3

@@ -12,7 +12,14 @@ Resolution and depth of focus for projection optics:
 
 $$R = k_1\frac{\lambda}{\mathrm{NA}}, \qquad \mathrm{DOF} = k_2\frac{\lambda}{\mathrm{NA}^2}, \qquad k_1 \approx 0.25\text{–}0.8.$$
 
-$R$ = smallest printable half-pitch; NA = numerical aperture of the projection lens (sine of the half-angle of light it collects — its spatial-frequency bandwidth, [[Numerical Aperture and Spot Size]]); DOF = depth of focus, the vertical range over which the image stays sharp. A pattern of period $p$ diffracts light into orders at angles $\sin\theta = \lambda/p$; the lens must capture at least the first order to reconstruct the period at all — that geometric requirement is the resolution limit, and $k_1, k_2$ are order-unity factors absorbing resist contrast and tricks that squeeze below it (phase-shift masks, off-axis illumination). The $\mathrm{NA}^2$ in DOF is the price of resolution: focusing harder shortens the focal region quadratically.
+- $R$ — smallest printable half-pitch
+- NA — numerical aperture of the projection lens: the sine of the half-angle of light it collects, i.e. its spatial-frequency bandwidth ([[Numerical Aperture and Spot Size]])
+- DOF — depth of focus, the vertical range over which the image stays sharp
+- $k_1, k_2$ — order-unity process factors: absorb resist contrast and sub-limit techniques (phase-shift masks, off-axis illumination)
+
+A pattern of period $p$ diffracts light into orders at angles $\sin\theta = \lambda/p$; the lens must capture at least the first order to reconstruct the period at all — that geometric requirement is the resolution limit. The $\mathrm{NA}^2$ in DOF is the price of resolution: focusing harder shortens the focal region quadratically.
+
+**Picture:** a stencil made of light-sensitive polymer: expose a pattern, wash away the exposed (or unexposed) parts, and use what remains to protect the surface during the next step.
 
 Exposure geometries: **contact** (blur $\approx$ resist thickness scale; defects transfer to the mask every touch), **proximity** (gap $g$: blur $\sim\sqrt{\lambda g}$ — 1.9 µm at $\lambda = 365$ nm, $g = 10$ µm), **projection** (mask imaged through reduction optics; the production standard). Lab i-line contact tools: ~1 µm practical. Industry: 193 nm immersion (NA = 1.35 via water) → EUV at 13.5 nm.
 

@@ -8,6 +8,8 @@
 
 Diamond tip (µm radius, µN force) dragged in a line; height measured interferometrically — absolute, calibration-free. The recorded profile is the surface dilated by the tip: lateral resolution ~ tip radius (a µm sphere cannot enter a 100 nm trench; steps become ramps of the tip's own shape). Vertical: nm (vibration-limited). µN on a point contact plows soft films. The routine check of every etch depth and deposition (measure the masked step). Optical profilometers: non-contact, full-field, but measure *optical* path — transparent films silently corrupt the height map unless modeled.
 
+**Picture:** a stylus or tip feels the surface directly; ellipsometry and XRD fit a model to how light or X-rays reflect, so their answer is only as good as the model.
+
 ## AFM
 
 Tip (~10 nm radius) on a cantilever; contact mode holds deflection constant, tapping/non-contact holds the resonance shift constant:
@@ -34,9 +36,12 @@ Bragg peaks ($2d\sin\theta = n\lambda$, [[Crystal Diffraction]]): positions → 
 
 $$t \approx \frac{0.9\,\lambda}{\beta\cos\theta},$$
 
-$t$ = coherently diffracting crystallite size (nm; a lower bound on grain size — strain broadens too); $\lambda$ = X-ray wavelength (nm; 0.15406 for Cu Kα); $\beta$ = peak FWHM in **radians**, instrument broadening subtracted; $\theta$ = Bragg angle. Since $t \propto 1/\beta$, halving the grain size doubles the peak width — fewer coherent planes, broader peak, the same inverse relation as
+- $t$ — coherently diffracting crystallite size (nm): a lower bound on grain size, since strain broadens too
+- $\lambda$ — X-ray wavelength (nm; 0.15406 for Cu Kα)
+- $\beta$ — peak FWHM in **radians**, instrument broadening subtracted
+- $\theta$ — Bragg angle
 
-the Fourier width of a truncated lattice ([[Fourier Transform]]). Averages over mm² — the statistical complement to TEM. Thin films: grazing incidence for path length; amorphous films show nothing in XRD but everything in **XRR** — grazing-incidence interference fringes with spacing $\Delta\theta \approx \lambda/2t$ give thickness, density, and roughness of any film with interfaces, crystalline or not, model-light.
+Since $t \propto 1/\beta$, halving the grain size doubles the peak width — fewer coherent planes, broader peak, the same inverse relation as the Fourier width of a truncated lattice ([[Fourier Transform]]). Averages over mm² — the statistical complement to TEM. Thin films: grazing incidence for path length; amorphous films show nothing in XRD but everything in **XRR** — grazing-incidence interference fringes with spacing $\Delta\theta \approx \lambda/2t$ give thickness, density, and roughness of any film with interfaces, crystalline or not, model-light.
 
 | quantity | tool | direct? |
 |---|---|---|

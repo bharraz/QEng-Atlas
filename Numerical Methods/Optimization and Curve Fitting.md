@@ -1,4 +1,4 @@
-#numerics #math #statistics
+#numerics #statistics #math
 
 **Fitting and optimization are one activity — minimize a scalar objective over parameters. Use derivatives if available (Newton family), exploit sum-of-squares structure if fitting (Levenberg–Marquardt), fall back to derivative-free only when forced.** Most "the fit won't converge" problems are starting-point, scaling, or degeneracy problems, not algorithm problems.
 
@@ -9,6 +9,8 @@
 All Newton-family steps minimize a local quadratic model:
 
 $$\mathbf{x}_{k+1} = \mathbf{x}_k - H^{-1}\nabla f, \qquad H = \text{Hessian (curvature), } \nabla f = \text{gradient}.$$
+
+**Picture:** a ball on a landscape: Newton's method fits a bowl to the local curvature and jumps to its bottom; Levenberg–Marquardt shortens the jump when the bowl is a poor fit.
 
 | method | $H$ | convergence | use when |
 |---|---|---|---|
@@ -43,10 +45,10 @@ Mind `absolute_sigma` in `curve_fit` (without per-point $\sigma_i$ it rescales b
 
 ## Global and constrained
 
-Multistart (many seeds, keep the best) is the honest global method in low dimension; heuristics (differential evolution, basin-hopping, CMA-ES, annealing) when multistart keeps finding new minima. Bounds: cheap, use them. General constraints: SLSQP/interior-point — but a reparametrization eliminating the constraint ($\theta = e^\phi$ for positivity, softmax for simplex weights) is usually more robust.
+Multistart (many seeds, keep the best) is the reliable global method in low dimension; heuristics (differential evolution, basin-hopping, CMA-ES, annealing) when multistart keeps finding new minima. Bounds: cheap, use them. General constraints: SLSQP/interior-point — but a reparametrization eliminating the constraint ($\theta = e^\phi$ for positivity, softmax for simplex weights) is usually more robust.
 
 > [!question]- A five-parameter fit converges but two errors come back ±10⁶. What is it saying?
-> $(J^\top J)^{-1}$ has a huge eigenvalue: the data leave one combination of those parameters unconstrained — locally degenerate (classic pairs: amplitude × rate when the decay barely starts in the data window; frequency × phase with few oscillations). Never "tighten tolerances": fix one parameter from prior knowledge, reparametrize to the combination the data does constrain (fit $A\tau$, not $A$ and $\tau$), or take data where the degeneracy breaks. The covariance matrix has named the next measurement.
+> $(J^\top J)^{-1}$ has a huge eigenvalue: the data leave one combination of those parameters unconstrained — locally degenerate (typical pairs: amplitude × rate when the decay barely starts in the data window; frequency × phase with few oscillations). Never "tighten tolerances": fix one parameter from prior knowledge, reparametrize to the combination the data does constrain (fit $A\tau$, not $A$ and $\tau$), or take data where the degeneracy breaks. The covariance matrix has named the next measurement.
 
 # Connections
 
@@ -59,6 +61,8 @@ Multistart (many seeds, keep the best) is the honest global method in low dimens
 - [[Autocorrelation]] — residual whiteness as the sharp test
 - [[Least Squares and Chi-Squared Fitting]] — the statistics of the objective
 - [[FFT in Practice]] — the standard seed for frequencies
+- [[Gradient Descent and Backpropagation]] — first-order optimization at the scale of millions of parameters
+- [[Variational Quantum Algorithms]] — optimization with shot-noise-limited cost evaluations
 
 ---
 Source: Nocedal & Wright, *Numerical Optimization*, Ch. 3, 6, 10; Press et al., *Numerical Recipes*, Ch. 15

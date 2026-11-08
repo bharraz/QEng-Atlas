@@ -10,6 +10,8 @@ $$
 u \sim \mathrm{Uniform}(0,1), \qquad x = F^{-1}(u) \;\;\Rightarrow\;\; x \sim f
 $$
 
+**Picture:** the CDF as a ramp from 0 to 1: drop uniform random heights onto the ramp and read where they land on the $x$ axis; steep parts of the ramp catch more of them.
+
 > [!question]- Why does it work?
 > $P(x \le a) = P(F^{-1}(u) \le a) = P(u \le F(a)) = F(a)$ — which is the definition of $x$ having CDF $F$. Only needs $F$ monotonic.
 
@@ -25,11 +27,11 @@ $$
 
 # Connections
 
-- [[Box-Muller Transform]] — the Gaussian case, where inverting is dodged with a polar-coordinates trick
+- [[Box-Muller Transform]] — the Gaussian case, where a change to polar coordinates avoids inverting the CDF
 - [[Rejection Sampling]] — when the CDF won't invert and you'd rather throw darts
 - [[Poisson Process]] — its exponential inter-arrival times are sampled exactly as above
 - [[Monte Carlo Methods]] — this is the front door: every MC run starts by turning uniforms into the distribution you need
-- [[PDF and CDF]] — the change-of-variables identity this whole trick rests on
+- [[PDF and CDF]] — the change-of-variables identity this method rests on
 
 ---
 Source: Devroye, *Non-Uniform Random Variate Generation*, Ch. 2 (free online)

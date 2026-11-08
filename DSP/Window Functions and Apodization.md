@@ -1,4 +1,4 @@
-#dsp #math #optics #quantum
+#dsp #optics #quantum #math
 
 **Any finite measurement, pulse, or aperture multiplies the true signal by a window, and multiplication in one domain is convolution in the other — so the window's own transform is smeared over everything you observe.** Choosing a window is choosing where to sit on one unavoidable trade: a narrow main lobe (resolution) against low sidelobes (dynamic range). The same choice appears as spectral leakage, filter ripple, off-resonant excitation, diffraction rings, and decoupling-sequence design.
 
@@ -8,13 +8,18 @@ Observing $x(t)$ through a window $w(t)$ of duration $T$:
 
 $$x_{\text{obs}}(t) = w(t)\,x(t) \qquad \Longleftrightarrow \qquad X_{\text{obs}}(f) = (W * X)(f).$$
 
-$w$ = window (dimensionless envelope, 1 inside and tapering to 0 at the edges); $W$ = its Fourier transform, the **kernel** smeared over the true spectrum. Every artifact follows from the shape of $W$:
+- $w$ — window (dimensionless envelope, 1 inside and tapering to 0 at the edges)
+- $W$ — its Fourier transform, the **kernel** smeared over the true spectrum
+
+Every artifact follows from the shape of $W$:
 
 - **Main-lobe width** $\sim 1/T$ sets resolution — two features closer than this merge. No window beats the $1/T$ scaling ([[Bandwidth]]); windows only change the prefactor.
 - **Sidelobes** set dynamic range — a strong feature leaks energy at the sidelobe level into distant bins, masking weak features there.
 - **Sidelobe asymptotic rolloff is set by smoothness at the edges**: if $w$ is discontinuous in value, sidelobes fall as $1/f$ (−6 dB/octave); discontinuous first derivative gives $1/f^2$ (−12 dB/oct); Hann is continuous in value *and* derivative at the edges and falls at −18 dB/oct. This is the one structural rule — everything else is a table.
 
-Widening the main lobe is what buys lower sidelobes, and the product of the two cannot be improved past the Slepian (DPSS) optimum, which is the precise statement of the trade.
+**Picture:** looking at a signal through a frame: the sharper the frame's edges, the more of the frame's own fringe pattern (sidelobes) is printed onto the view.
+
+Widening the main lobe is the price of lower sidelobes, and the product of the two cannot be improved past the Slepian (DPSS) optimum, which is the precise statement of the trade.
 
 ## The table
 
@@ -35,7 +40,7 @@ Two rows deserve attention. **Hamming vs Hann**: Hamming cancels the first sidel
 
 ## Where the same choice appears
 
-**Spectral analysis.** The classic case: a record of length $T$ *is* a rectangular window, so leakage exists whether or not you apply a taper. Scalloping loss, ENBW corrections, and Welch's per-segment windowing all live here ([[FFT in Practice]], [[PSD Estimation]]).
+**Spectral analysis.** The standard case: a record of length $T$ *is* a rectangular window, so leakage exists whether or not you apply a taper. Scalloping loss, ENBW corrections, and Welch's per-segment windowing all live here ([[FFT in Practice]], [[PSD Estimation]]).
 
 **FIR filter design.** An ideal brick-wall filter has a sinc impulse response of infinite length; truncating it is windowing, and the window's sidelobes become the filter's stopband ripple. Rectangular truncation gives the Gibbs overshoot; Hamming or Kaiser windows are the standard fix, trading transition width for stopband attenuation — the same trade under a different name ([[Digital Filters]]).
 
@@ -48,7 +53,7 @@ Two rows deserve attention. **Hamming vs Hann**: Hamming cancels the first sidel
 **Boxcar and gated detection.** Integrating a detector over a gate is a rectangular window in time; its transform is the frequency response of the gate, and interference at the gate's sidelobe frequencies leaks in accordingly.
 
 > [!question]- A small spectral feature 60 dB below a strong nearby tone is invisible with a Hann window and appears with Blackman–Harris. Is it real, and what did the window change?
-> Likely real, and the window changed the sidelobe floor, not the resolution. Hann's −31 dB peak sidelobe means the strong tone's leakage is smearing at roughly that level across neighbouring bins, burying anything below it; Blackman–Harris drops that floor to −92 dB at the price of a main lobe four times wider. Confirm by a test that does not depend on the window: change the record length (a real feature stays at the same frequency and its width scales as $1/T$; a leakage artifact moves with the window and the tone's bin offset), or change the sample rate to move any aliased candidate ([[Sampling and Aliasing]]).
+> Probably real; the window changed the sidelobe floor, not the resolution. Hann's −31 dB peak sidelobe spreads the strong tone's leakage across neighbouring bins at about that level, burying anything weaker. Blackman–Harris drops the floor to −92 dB, at the price of a main lobe twice as wide (8 bins against 4). To confirm, change the record length: a real feature stays at its frequency with width scaling as $1/T$, while leakage moves with the tone's bin offset. Changing the sample rate moves any aliased candidate ([[Sampling and Aliasing]]).
 
 # Connections
 

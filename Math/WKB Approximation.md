@@ -12,6 +12,8 @@ and in the forbidden region ($E < V$), with $\kappa = \sqrt{2m[V-E]}/\hbar$:
 
 $$\psi(x) \approx \frac{C}{\sqrt{\kappa(x)}}\exp\!\left[\pm\int^x \kappa(x')\,dx'\right]$$
 
+**Picture:** a wave crossing slowly changing terrain: locally a plane wave whose wavelength stretches where the kinetic energy is small, and whose amplitude grows there, because the particle lingers.
+
 Two things to read off:
 
 - **The phase** $\tfrac1\hbar\int p\,dx$ is the classical action — this is the semiclassical limit, and the stationary points of that action are the classical trajectories ([[Stationary Phase and Steepest Descent]]).
@@ -33,7 +35,7 @@ The $\pi/4$ is the stationary-phase phase, arriving here through Airy's asymptot
 **Bohr–Sommerfeld quantization** follows from requiring single-valuedness between two soft turning points:
 $$\oint p\,dx = 2\pi\hbar\left(n + \tfrac12\right)$$
 
-- The $\tfrac12$ is two turning points $\times\ \pi/4$ each — a **Maslov index**, not a fudge factor.
+- The $\tfrac12$ is two turning points $\times\ \pi/4$ each — a **Maslov index**, not an empirical correction.
 - One hard wall and one soft turning point gives $n + \tfrac34$; two hard walls give $n+1$, recovering the infinite square well exactly.
 - For the harmonic oscillator it returns $E_n = \hbar\omega(n+\tfrac12)$ **exactly**, including the ground state — a coincidence of the quadratic potential, not a general guarantee.
 

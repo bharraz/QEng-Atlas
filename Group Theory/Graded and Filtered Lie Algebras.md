@@ -1,8 +1,12 @@
 #group-theory #math
 
-**Grading means the bracket *adds* the index, $[\mathfrak g_m, \mathfrak g_n] \subseteq \mathfrak g_{m+n}$; filtration means only that it does not exceed it — and the difference decides whether cutting off at some index is an exact quotient or an uncontrolled approximation.**
+**You often organize operators by an index — photon number, order in a small parameter, operator degree — and drop everything above a cutoff; whether that is exact or an uncontrolled approximation depends on one property: does the commutator of two pieces land exactly at the sum of their indices (a grading), or only somewhere at or below it (a filtration)?** **In practice:** check what the commutator does to your index. If it adds (with non-negative indices), everything above the cutoff forms an ideal and truncation is an exact quotient; if it can drop, truncation needs a separate physical argument.
 
 # Reference
+
+**Formally:** grading means the bracket *adds* the index, $[\mathfrak g_m, \mathfrak g_n] \subseteq \mathfrak g_{m+n}$; filtration means only that it does not exceed it — and the difference decides whether cutting off at some index is an exact quotient or an uncontrolled approximation.
+
+**Picture:** a ladder of operator classes: a commutator lands exactly on the rung given by the sum (grading) or possibly lower (filtration), and only in the first case can you cut off the top of the ladder without anything falling back down.
 
 | | Definition | Bracket rule |
 |---|---|---|
@@ -30,14 +34,14 @@ Given a filtration, the **associated graded** algebra is
 $$\mathrm{gr}(\mathfrak g) = \bigoplus_n F_n / F_{n-1},$$
 each piece being "degree exactly $n$, modulo everything below." This is the standard device for turning a filtered object into a graded one you can compute in. The induced bracket on $\mathrm{gr}$ keeps only the part of $[X,Y]$ that sits at the top filtration level and discards the rest.
 
-**The consequence people miss:** if the bracket *strictly lowers* the index, then the top-level part is zero, so **the induced bracket on $\mathrm{gr}(\mathfrak g)$ vanishes and $\mathrm{gr}$ is commutative.** A commutative associated graded is a precise signal that your filtration is not a Lie grading — the graded object has thrown the bracket away entirely. Two instances:
+**A commonly missed consequence:** if the bracket *strictly lowers* the index, then the top-level part is zero, so **the induced bracket on $\mathrm{gr}(\mathfrak g)$ vanishes and $\mathrm{gr}$ is commutative.** A commutative associated graded is a precise signal that your filtration is not a Lie grading — the graded object has thrown the bracket away entirely. Two instances:
 
 | Filtered object | Filtration | $\mathrm{gr}$ | Reading |
 |---|---|---|---|
 | Weyl algebra $A_1$ | Bernstein (degree in $a, a^\dagger$) | $\mathbb C[x,\xi]$, commutative | the classical phase-space limit |
 | $U(\mathfrak g)$ | degree in the generators | $\mathrm{Sym}(\mathfrak g)$, commutative | the PBW theorem ([[Universal Enveloping Algebra and PBW Basis]]) |
 
-In both cases $\mathrm{gr}$ is where the *classical* content lives: commutators become Poisson brackets at the next filtration level down, which is the whole content of the classical limit.
+In both cases $\mathrm{gr}$ is where the *classical* content lives: commutators become Poisson brackets at the next filtration level down, and that is the classical limit.
 
 ## Gradings that appear in physics
 
@@ -45,7 +49,7 @@ In both cases $\mathrm{gr}$ is where the *classical* content lives: commutators 
 |---|---|---|---|
 | Root lattice | root spaces $\mathfrak g_\alpha$, with $[\mathfrak g_\alpha, \mathfrak g_\beta] \subseteq \mathfrak g_{\alpha+\beta}$ | yes | the root-space decomposition *is* a grading ([[Cartan Subalgebras, Roots, and Weights]]) |
 | Weight / excitation-number change | operators shifting $n$ by a fixed amount | yes | selection rules; which terms can connect which states |
-| Detuning or frequency offset | terms oscillating as $e^{i n \delta t}$ | yes | [[Rotating Wave Approximation (Atlas)]] as a grading truncation, discarding $|n| \geq 1$ |
+| Detuning or frequency offset | terms oscillating as $e^{i n \delta t}$ | yes | [[Rotating Wave Approximation (Atlas)]] as a grading truncation, discarding $\lvert n\rvert \geq 1$ |
 | Order in a small parameter $\lambda$ | $\lambda^n$ coefficients | yes | perturbation theory; each order is a quotient |
 | Polynomial degree in $(a, a^\dagger)$ | monomials of degree $n$ | **no** — drops by 2 | filtration only; truncation not licensed |
 
@@ -56,7 +60,7 @@ The rotating-wave row is worth stating plainly: RWA is legitimate *as algebra* w
 
 # Connections
 
-- [[Subalgebras, Ideals, and Quotients]] — the ideal condition this page applies; why quotients need it
+- [[Subalgebras, Ideals, and Quotients]] — the ideal condition used here; why quotients need it
 - [[Weyl Algebra and Degree Filtration]] — the worked failure case, in full
 - [[Universal Enveloping Algebra and PBW Basis]] — $\mathrm{gr}(U(\mathfrak g)) = \mathrm{Sym}(\mathfrak g)$ as a graded statement
 - [[Cartan Subalgebras, Roots, and Weights]] — the root-space decomposition as a grading

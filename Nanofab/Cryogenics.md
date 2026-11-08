@@ -6,6 +6,8 @@
 
 **The ladder**: 77 K (LN₂ — shields, precooling), 4 K (LHe / pulse tube — superconductors alive, GHz still thermal), 1 K (pumped ⁴He), 300 mK (³He), ~10 mK (dilution — $k_BT/h$ = 208 MHz < qubit frequencies).
 
+**Picture:** a staircase of heat sinks, each colder than the last and with less cooling power, so every watt leaking down must be intercepted as high on the staircase as possible.
+
 ## Dilution refrigerator
 
 Below 0.87 K a ³He/⁴He mixture phase-separates; ³He crossing into the dilute phase absorbs heat like an evaporation whose "vapor pressure" never vanishes (dilute phase holds 6.6% ³He at $T \to 0$). Circulating ³He at $\dot n_3$ mol/s:
@@ -27,7 +29,14 @@ Bolted joints conduct through microscopic asperities: gold-plate, torque properl
 
 $$\dot Q_{e\text{-}ph} = \Sigma V (T_e^5 - T_{ph}^5),$$
 
-with $T_e, T_{ph}$ the electron and lattice temperatures, $V$ the metal volume, and $\Sigma \sim 10^9\ \mathrm{W\,m^{-3}K^{-5}}$ a material constant — the only thermal link between a chip's electrons and its lattice. The $T^5$ makes the link collapse at mK: dissipate a fixed power in a small metal volume and $T_e$ floats far above $T_{ph}$. Electrons then cool mainly *along the wiring* (electronic conduction), so a device's electrons can sit far above the plate if the wiring is not itself thermalized — anchor the wiring, not just the substrate. The plate thermometer is not the device temperature; the device's own noise or residual excited-state population is the honest thermometer. Thermometry: calibrated RuO₂/Cernox (watch self-heating against the local budget); noise thermometry at the bottom.
+- $T_e, T_{ph}$ — electron and lattice temperatures (K)
+- $V$ — volume of the metal (m³)
+- $\Sigma$ — material constant, $\sim 10^9\ \mathrm{W\,m^{-3}K^{-5}}$: strength of the electron–phonon link
+
+This is the only thermal link between a chip's electrons and its lattice. The $T^5$ makes the link collapse at mK: dissipate a fixed power in a small metal volume and $T_e$ floats far above $T_{ph}$.
+- **Electrons then cool mainly *along the wiring*** (electronic conduction), so a device's electrons can sit far above the plate if the wiring is not itself thermalized: anchor the wiring, not only the substrate.
+- **The plate thermometer is not the device temperature.** The device's own noise or residual excited-state population is the reliable thermometer.
+- **Thermometry:** calibrated RuO₂/Cernox (watch self-heating against the local budget); noise thermometry at the bottom.
 
 **Cryocoolers**: pulse tubes give ~1 W at 4 K with 1–2 Hz vibration — soft thermal links and isolated sample mounts for cryo-optics; wet systems trade vibration for He logistics.
 

@@ -8,7 +8,9 @@ $$
 P(k) = \binom{N}{k} p^k (1-p)^{N-k}, \qquad \langle k\rangle = Np, \quad \mathrm{Var}(k) = Np(1-p)
 $$
 
-Estimating $p$: $\hat p = k/N$ with $\sigma_{\hat p} = \sqrt{p(1-p)/N}$ — worst at $p=1/2$, deceptively small near 0 and 1 (a trap; see the state-detection card).
+Estimating $p$: $\hat p = k/N$ with $\sigma_{\hat p} = \sqrt{p(1-p)/N}$ — worst at $p=1/2$, misleadingly small near 0 and 1 (see [[Binomial Errors in State Detection]]).
+
+**Picture:** flipping a biased coin $N$ times and counting heads; the count's spread is largest for a fair coin and shrinks toward the edges.
 
 **Limits:**
 
@@ -17,7 +19,7 @@ Estimating $p$: $\hat p = k/N$ with $\sigma_{\hat p} = \sqrt{p(1-p)/N}$ — wors
 | $N\to\infty$, $Np$ fixed | Poisson($\lambda = Np$) |
 | $Np(1-p)\gtrsim 10$ | Gaussian $\mathcal N(Np,\ Np(1-p))$ |
 
-The $p(1-p)$ factor is projection noise in disguise: a qubit at the equator ($p=1/2$) is maximally noisy to measure; near the poles it's quiet. Sensitivity per shot is fundamentally bounded by this variance.
+The $p(1-p)$ factor is projection noise: a qubit at the equator ($p=1/2$) is maximally noisy to measure; near the poles it's quiet. Sensitivity per shot is fundamentally bounded by this variance.
 
 > [!question]- Why does the shot-to-shot variance of qubit readout vanish as p→0 or 1, and why can't you then trust σ̂=0 from your data?
 > $\mathrm{Var}=Np(1-p)\to 0$ because outcomes become deterministic. But $\hat p = 0/N$ plugged into the formula gives $\hat\sigma = 0$ — an artifact of estimating p from the same finite sample. Use Wilson or Clopper-Pearson intervals near the boundary.

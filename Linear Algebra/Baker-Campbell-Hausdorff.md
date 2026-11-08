@@ -1,12 +1,14 @@
 #linear-algebra #math
 
-**The bookkeeping for multiplying exponentials of noncommuting operators: $e^Ae^B = e^{A+B+\frac{1}{2}[A,B]+\cdots}$ — everything past $A+B$ is built from nested commutators.** The $\tfrac{1}{2}[A,B]$ term is the leading correction and, physically, where geometric phases come from.
+**Multiplying exponentials of noncommuting operators does not add their exponents: $e^Ae^B = e^{A+B+\frac{1}{2}[A,B]+\cdots}$, and every correction past $A+B$ is built from nested commutators.** The $\tfrac{1}{2}[A,B]$ term is the leading correction and, physically, where geometric phases come from.
 
 # Reference
 
 $$
 e^A e^B = \exp\!\Big( A + B + \tfrac{1}{2}[A,B] + \tfrac{1}{12}[A,[A,B]] - \tfrac{1}{12}[B,[A,B]] + \cdots \Big)
 $$
+
+**Picture:** walking on a curved surface: two steps in different directions do not land where their sum would, and the commutator term is the leading correction, proportional to the area the two steps span.
 
 **Glauber/disentangling special case** — when $[A,B]$ commutes with both $A$ and $B$ (i.e. $[A,[A,B]] = [B,[A,B]] = 0$), the series terminates:
 

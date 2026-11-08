@@ -14,11 +14,13 @@ $$S(\mathbf{G}) = \sum_j f_j\, e^{i\mathbf{G}\cdot\mathbf{r}_j},$$
 
 summed over the basis atoms at $\mathbf{r}_j$ with scattering strengths $f_j$; when $S(\mathbf{G})=0$ a peak is systematically absent even though $\mathbf{G}$ is allowed.
 
+**Picture:** a crystal as a 3D diffraction grating: waves scattered from every plane of atoms add only at the angles where the path differences are whole wavelengths.
+
 **Extinction rules** (indices $hkl$ on the conventional cubic cell):
 
 - **bcc**: peaks survive only for $h+k+l$ even.
 - **fcc**: peaks survive only for $h,k,l$ all even or all odd.
-- **diamond**: fcc rule, *plus* $h+k+l = 4n$ or all-odd (the two-atom basis kills e.g. $(200)$).
+- **diamond**: fcc rule, *plus* $h+k+l = 4n$ or all-odd (the two-atom basis extinguishes e.g. $(200)$).
 
 Reading absences backwards is how you identify the lattice from a powder pattern. For cubic crystals the peak positions follow from $d_{hkl} = a/\sqrt{h^2+k^2+l^2}$ in Bragg's law, so $\sin^2\theta \propto h^2+k^2+l^2$ — the allowed integer sequences (bcc: 2,4,6,8,...; fcc: 3,4,8,11,...) fingerprint the structure.
 

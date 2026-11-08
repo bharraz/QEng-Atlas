@@ -1,6 +1,6 @@
 #quantum-info #metrology #statistics
 
-**Estimation theory in one line: the variance of any unbiased estimate of a parameter θ is bounded by the inverse of the Fisher information, and the quantum Fisher information is the best any measurement could ever do on a given state.** This is the framework the entire sensing literature is written in — every "sensitivity" formula is a Cramér-Rao bound in disguise.
+**You repeat a measurement whose outcome statistics depend on an unknown parameter θ; the Fisher information measures how strongly those statistics shift with θ, and its inverse bounds the variance of any unbiased estimate of θ.** The quantum Fisher information is the same bound optimized over every possible measurement, and the sensitivity formulas in the sensing literature are this bound evaluated for a particular state and measurement.
 
 # Reference
 
@@ -8,11 +8,20 @@
 
 $$F(\theta) = \left\langle \left(\partial_\theta \ln p(x|\theta)\right)^2 \right\rangle, \qquad \mathrm{Var}(\hat\theta) \geq \frac{1}{N F(\theta)} \quad (\text{Cramér–Rao, } N \text{ repetitions}).$$
 
-$\theta$ = the parameter being estimated (a phase, a field, a frequency); $x$ = the measurement outcome; $p(x|\theta)$ = likelihood, the probability of that outcome given $\theta$; $F$ = Fisher information, units of 1/$\theta^2$ — so $1/F$ is already a variance; $\hat\theta$ = the estimator; $N$ = number of independent repetitions. The derivative is the content: $F$ measures how *sharply the outcome distribution moves* when $\theta$ changes. A measurement whose statistics barely shift with $\theta$ carries no information about it, however precise the individual readings.
+- $\theta$ — the parameter being estimated (a phase, a field, a frequency)
+- $x$ — the measurement outcome
+- $p(x|\theta)$ — likelihood: the probability of that outcome given $\theta$
+- $F$ — Fisher information (units of $1/\theta^2$, so $1/F$ is already a variance)
+- $\hat\theta$ — the estimator: the estimate computed from the data
+- $N$ — number of independent repetitions
+
+$F$ measures how sharply the outcome distribution moves when $\theta$ changes. A measurement whose statistics barely shift with $\theta$ carries no information about it, however precise the individual readings.
+
+**Picture:** how fast the outcome histogram changes shape as $\theta$ changes: a histogram that shifts sharply pins $\theta$ down, one that barely moves tells you nothing.
 
 Fisher information is *additive* over independent shots — hence every sensitivity improves as $1/\sqrt{N\,\text{(shots)}} \propto 1/\sqrt{T}$, the universal $\sqrt{\text{Hz}}$ in sensitivity units. [[Maximum Likelihood Estimation|MLE]] saturates the bound asymptotically, which is *why* MLE is the default estimator.
 
-**Quantum.** A parameter is imprinted on a state, $\rho_\theta$; a measurement (POVM) converts it to a likelihood; the classical bound then applies. Maximizing over all possible measurements gives the **quantum Fisher information** $F_Q$ and the quantum Cramér-Rao bound:
+**Quantum.** A parameter is imprinted on a state, $\rho_\theta$; a measurement ([[Projective Measurement and POVMs|POVM]]) converts it to a likelihood; the classical bound then applies. Maximizing over all possible measurements gives the **quantum Fisher information** $F_Q$ and the quantum Cramér-Rao bound:
 
 $$\mathrm{Var}(\hat\theta) \geq \frac{1}{N F_Q}, \qquad F_Q = 4\left(\langle \partial_\theta\psi|\partial_\theta\psi\rangle - |\langle\psi|\partial_\theta\psi\rangle|^2\right) \;\;(\text{pure states}).$$
 
@@ -20,15 +29,16 @@ For the ubiquitous case — phase imprinted by a generator, $|\psi_\phi\rangle =
 
 $$F_Q = 4\,\mathrm{Var}(\hat{G}).$$
 
-$\hat G$ = the generator of the parameter (the operator in $e^{-i\phi\hat G}$: $\sigma_z/2$ for a qubit phase, $\hat n$ for an optical phase, $J_z$ for a collective spin); $\mathrm{Var}(\hat G) = \langle G^2\rangle - \langle G\rangle^2$ evaluated in the probe state. Since a Fock or eigenstate of $\hat G$ has zero variance, an eigenstate of the generator carries *no* information about the phase it generates — sensitivity requires superposition across the generator's spectrum, and the wider the spread, the faster the state rotates per unit $\phi$.
+- $\hat G$ — the generator of the parameter, the operator in $e^{-i\phi\hat G}$: $\sigma_z/2$ (qubit), $\hat n$ (optical phase), $J_z$ (collective spin)
+- $\mathrm{Var}(\hat G) = \langle G^2\rangle - \langle G\rangle^2$ — evaluated in the probe state
 
-**Read that equation twice; it is the design principle of all quantum sensing:** sensitivity to a phase is the *variance of the generator* in your probe state. A state spread widely across the eigenvalues of $\hat G$ rotates "faster" per unit φ. Everything in metrology — squeezing, entanglement, Fock states, Schrödinger cats — is a scheme to enlarge $\mathrm{Var}(\hat G)$ subject to practical constraints.
+**Sensitivity to a phase is the variance of its generator in the probe state.** An eigenstate of $\hat G$ (a Fock state, for an optical phase) has zero variance and carries no information about the phase it generates; sensitivity requires a superposition across the generator's spectrum, and the wider the spread, the faster the state rotates per unit $\phi$. Squeezing, entanglement, Fock states, and Schrödinger-cat states are all ways to enlarge $\mathrm{Var}(\hat G)$ under practical constraints.
 
 **Worked instances:**
 
 - **Ramsey on one qubit** ($\hat G = \sigma_z/2$, superposition state): $\mathrm{Var}(G) = 1/4$, $F_Q = 1$ → $\Delta\phi = 1/\sqrt{N}$. This is the [[Binomial Errors in State Detection|projection-noise]] limit of [[Ramsey Interferometry]], now derived from first principles.
 - **$N$ qubits, unentangled**: variances add, $F_Q = N$ → $\Delta\phi = 1/\sqrt{N}$ — the **standard quantum limit (SQL)**.
-- **GHZ state** $(|00\cdots0\rangle + |11\cdots1\rangle)/\sqrt{2}$: the two branches differ by $N$ quanta of the generator, $\mathrm{Var}(G) = N^2/4$, $F_Q = N^2$ → $\Delta\phi = 1/N$ — the **Heisenberg limit**. Same $N$ atoms, quadratically better, purely from state structure. (The catch lives on the [[Standard Quantum Limit and Spin Squeezing|next page]].)
+- **GHZ state** $(|00\cdots0\rangle + |11\cdots1\rangle)/\sqrt{2}$: the two branches differ by $N$ quanta of the generator, $\mathrm{Var}(G) = N^2/4$, $F_Q = N^2$ → $\Delta\phi = 1/N$ — the **Heisenberg limit**. Same $N$ atoms, quadratically better, purely from state structure. (Its limitations are on [[Standard Quantum Limit and Spin Squeezing]].)
 - **Coherent light, phase measurement**: $F_Q = 4\bar n$ → $\Delta\phi = 1/2\sqrt{\bar n}$ — photon shot noise, the interferometer SQL.
 
 **Two practical corollaries:**
@@ -36,8 +46,8 @@ $\hat G$ = the generator of the parameter (the operator in $e^{-i\phi\hat G}$: $
 - *Which measurement saturates $F_Q$?* Generally the one that projects onto the eigenbasis of the "symmetric logarithmic derivative" — but for Ramsey-type experiments the ordinary population measurement after the second π/2 pulse already saturates it at the fringe's steepest point. Operating at mid-fringe isn't folklore; it's where $\partial_\theta p$ is maximal.
 - *Slope-over-noise is the same bound.* The lab formula $\Delta\theta = \sigma_{\text{signal}}/|\partial S/\partial\theta|$ is the Cramér-Rao bound for a Gaussian readout — signal slope² / variance *is* the Fisher information of that measurement. When you optimize a lock-in or an error signal's slope, you are maximizing F.
 
-> [!question]- Your Ramsey fringe contrast is C < 1 (decoherence, readout error). How does the achievable sensitivity actually degrade?
-> Contrast enters the Fisher information *quadratically* while shot noise is unchanged: $F = C^2 \sin^2\phi / (1 - C^2\cos^2\phi) \leq C^2$ per shot, so $\Delta\phi \geq 1/(C\sqrt{N})$. A contrast of 0.5 costs you 4× in averaging time — which is why fighting for readout fidelity and coherence usually beats adding shots, and why sensitivity formulas carry that C (cf. the NV sensitivity expression in [[NV Centers (atlas)]]).
+> [!question]- Your Ramsey fringe contrast is C < 1 (decoherence, readout error). How does the achievable sensitivity degrade?
+> Contrast enters the Fisher information *quadratically* while shot noise is unchanged: $F = C^2 \sin^2\phi / (1 - C^2\cos^2\phi) \leq C^2$ per shot, so $\Delta\phi \geq 1/(C\sqrt{N})$. A contrast of 0.5 costs you 4× in averaging time — which is why improving readout fidelity and coherence usually beats adding shots, and why sensitivity formulas carry that C (cf. the NV sensitivity expression in [[NV Centers (atlas)]]).
 
 # Connections
 

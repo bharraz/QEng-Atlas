@@ -1,12 +1,14 @@
 #quantum #AMO
 
-**The minimal quantum system: two states, $S = \tfrac{\hbar}{2}\boldsymbol{\sigma}$, and everything about it is rotations.** Every qubit is secretly this.
+**The minimal quantum system: two states, $S = \tfrac{\hbar}{2}\boldsymbol{\sigma}$, and everything about it is rotations.** Every qubit is mathematically this system.
 
 # Reference
 
 Spin operators are the Pauli matrices scaled: $S_i = \tfrac{\hbar}{2}\sigma_i$, satisfying $[S_i, S_j] = i\hbar\,\epsilon_{ijk}S_k$ with $S^2 = \tfrac{3}{4}\hbar^2$ fixed. Rotation by $\theta$ about axis $\hat{n}$:
 
 $$R_{\hat{n}}(\theta) = e^{-i\theta\,\hat{n}\cdot\boldsymbol{\sigma}/2} = \cos\tfrac{\theta}{2}\,\mathbb{1} - i\sin\tfrac{\theta}{2}\,\hat{n}\cdot\boldsymbol{\sigma}$$
+
+**Picture:** an arrow on the Bloch sphere that every Hamiltonian rotates; the one surprise is that a full 360° turn multiplies the state by −1.
 
 **A $2\pi$ rotation gives $-1$, not $+1$** — spinors need $4\pi$ to come home. The global sign is unobservable on an isolated spin but real in interferometry (rotate one arm by $2\pi$: fringes flip).
 
@@ -23,7 +25,7 @@ Any pure state: $|\psi\rangle = \cos\tfrac{\theta}{2}|{\uparrow}\rangle + e^{i\p
 
 # Connections
 
-- [[Pauli Matrices (Atlas)]] — the operator algebra this note runs on
+- [[Pauli Matrices (Atlas)]] — the operator algebra of spin-½
 - [[Bloch Sphere]] — the state space, with rotations as the gates
 - [[Zeeman Effect (Atlas)]] — $\mu \cdot B$ level shifts, the atomic-structure face of the same moment
 - [[Two-Level Systems]] — any two levels inherit this formalism, spin or not

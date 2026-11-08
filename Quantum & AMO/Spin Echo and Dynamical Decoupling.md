@@ -1,10 +1,12 @@
 #quantum #AMO
 
-**A $\pi$ pulse at the midpoint time-reverses phase accumulation: whatever detuning was static over the sequence cancels exactly.** Dephasing from *slow* noise isn't decoherence, it's just bookkeeping you can undo — echoes are the undo.
+**A $\pi$ pulse at the midpoint time-reverses phase accumulation: whatever detuning was static over the sequence cancels exactly.** Dephasing from *slow* noise isn't decoherence, it's bookkeeping you can undo — echoes are the undo.
 
 # Reference
 
 Hahn echo: $\tfrac{\pi}{2}$ — $\tau$ — $\pi$ — $\tau$ — $\tfrac{\pi}{2}$. A static offset $\delta$ winds $+\delta\tau$ before the $\pi$ and $-\delta\tau$ after (the flip negates accumulated phase): net zero, *independent of $\delta$*. Shot-to-shot field drift, thermal Doppler offsets, spatial inhomogeneity across a chain — all refocused.
+
+**Picture:** runners of different speeds told to turn around halfway: the fast ones went further and have further to come back, so all arrive at the start together.
 
 **This is the $T_2^*$ vs $T_2$ distinction:** Ramsey decays at $T_2^*$ (includes quasi-static spread); echo removes the static part and decays at the true $T_2$, set by noise that *fluctuates within* the sequence. $T_2/T_2^*$ ratios of 10–100 are routine in field-noise-limited traps.
 
@@ -12,10 +14,10 @@ Hahn echo: $\tfrac{\pi}{2}$ — $\tau$ — $\pi$ — $\tau$ — $\tfrac{\pi}{2}$
 
 **$y(t)$ is a window and $F(\omega)$ is its transform** ([[Window Functions and Apodization]]), so sequence design is window design and inherits the same trade: pushing the passband higher (more pulses) narrows what you reject, while shaping the *spacing* is exactly what a taper does for a spectral window.
 
-| Sequence | Structure | Passband | Buys | Costs |
+| Sequence | Structure | Passband | Gives | Costs |
 |---|---|---|---|---|
 | Hahn echo | single $\pi$ at $T/2$ | $\sim 1/2\tau$ | removes quasi-static noise | one filter notch only |
-| CPMG | $N$ equally spaced $\pi$'s | $\sim N/2\tau$, odd harmonics | $T_2 \propto N^{2/3}$ for $1/f$ | pulse errors accumulate; only protects one axis |
+| CPMG | $N$ equally spaced $\pi$'s | $\sim N/2\tau$, odd harmonics | $T_2 \propto N^{1/2}$ for $1/f$ noise ($N^{2/3}$ for $1/f^2$) | pulse errors accumulate; only protects one axis |
 | XY-4 / XY-8 | phase-alternated $\pi_x, \pi_y$ | same as CPMG | protects both transverse axes; cancels pulse errors to first order | longer, more pulses |
 | UDD | non-uniform spacing $t_j \propto \sin^2\!\big(\tfrac{\pi j}{2N+2}\big)$ | sharp high-frequency cutoff | optimal against a hard spectral edge | worse than CPMG for soft $1/f$ spectra |
 | KDD | composite $\pi$ pulses | as CPMG | robust to amplitude *and* detuning error | substantially more pulse area |
@@ -36,6 +38,8 @@ Choosing between them is a spectral question, not a preference: CPMG for smoothl
 - [[Magnus Expansion]] — the design theory: sequences engineered so $\bar{H}^{(0)}$ (and, if time-symmetric, all odd orders) vanish
 - [[Window Functions and Apodization]] — $y(t)$ as a window; the same main-lobe/sidelobe trade as spectral analysis
 - [[Noise Spectroscopy and Filter Functions]] — running the filter picture backwards to measure $S(\omega)$
+- [[Quantum Error Mitigation]] — decoupling as hardware-level error suppression
+- [[Spin-Defect Sensing Protocols]] — decoupling sequences as AC sensors
 
 ---
 Source: Hahn, *Phys. Rev.* 80, 580 (1950)

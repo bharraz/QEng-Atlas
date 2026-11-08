@@ -1,10 +1,12 @@
 #numerics #math
 
-**Integrating $\dot y = f(y, t)$ is stepping with a local polynomial approximation. Three decisions matter: step size (accuracy vs cost), explicit vs implicit (dictated by stiffness), and whether the integrator must respect structure — energy, unitarity — over long times.** Default: adaptive RK45. This page is recognizing when the default is wrong.
+**Integrating $\dot y = f(y, t)$ is stepping with a local polynomial approximation. Three decisions matter: step size (accuracy vs cost), explicit vs implicit (dictated by stiffness), and whether the integrator must respect structure — energy, unitarity — over long times.** The default is adaptive RK45; most failures come from using it where one of those three decisions says otherwise.
 
 # Reference
 
 **Orders and adaptivity.** A method of order $p$ has local error $O(h^{p+1})$, global $O(h^p)$: Euler $p = 1$ (conceptual only), RK4 $p = 4$. Production integrators (RK45/Dormand–Prince; `solve_ivp`, `ode45`) embed orders 4 and 5, use their difference as a per-step error estimate, and adapt $h$ to hold it at tolerance. Set `rtol`/`atol` deliberately (defaults ~$10^{-3}$ are loose; tighten 10× and confirm the answer moves less than you care about); get output at your times via dense output, not forced small steps.
+
+**Picture:** a fast-relaxing component as a stiff spring: an explicit step that overshoots it is thrown further at every step, while an implicit step solves for the end point and stays stable.
 
 **Error floor.** Total error = truncation $O(h^p)$ + roundoff $O(\epsilon/h)$ ([[Floating Point and Numerical Error]]): float64 bottoms out near $10^{-12}$–$10^{-13}$; rtol $= 10^{-15}$ requests noise.
 
@@ -12,7 +14,7 @@
 
 $$|1 + h\lambda| \leq 1 \;\Rightarrow\; h < 2/|\lambda_{\max}| \quad (\text{explicit Euler; all explicit methods similar}),$$
 
-so a decayed mode with $\lambda = -10^6\,\mathrm{s^{-1}}$ pins $h \sim$ µs under second-scale dynamics. The tell: an adaptive explicit solver grinding at tiny steps while the solution looks smooth. Fix: **implicit** methods (backward Euler, BDF, Radau) solve for $y_{n+1}$ each step — a Newton solve needing the Jacobian, but stable at any $h$: they step at the pace of the slow physics. In practice: `'BDF'`/`'Radau'`/`'LSODA'`, and supply the Jacobian (finite-differencing it costs $N$ extra $f$-calls per step). Stiff-by-construction cases: rate equations with fast/slow channels, master equations with strong decay, circuit transients ([[Linear ODE Systems]] — eigenvalue spread *is* the stiffness ratio).
+so a decayed mode with $\lambda = -10^6\,\mathrm{s^{-1}}$ pins $h \sim$ µs under second-scale dynamics. The symptom: an adaptive explicit solver taking tiny steps while the solution looks smooth. Fix: **implicit** methods (backward Euler, BDF, Radau) solve for $y_{n+1}$ each step — a Newton solve needing the Jacobian, but stable at any $h$: they step at the pace of the slow physics. In practice: `'BDF'`/`'Radau'`/`'LSODA'`, and supply the Jacobian (finite-differencing it costs $N$ extra $f$-calls per step). Stiff-by-construction cases: rate equations with fast/slow channels, master equations with strong decay, circuit transients ([[Linear ODE Systems]] — eigenvalue spread *is* the stiffness ratio).
 
 **Structure preservation.** A generic integrator's per-step error has no memory; conserved quantities random-walk or drift secularly.
 

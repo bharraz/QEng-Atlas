@@ -1,13 +1,15 @@
 #linear-algebra #math
 
-**A multilinear map is linear in each slot separately — and polarization is the move that recovers the whole map from what it does when every slot holds the same object.**
+**A multilinear map is linear in each slot separately — and polarization is the identity that recovers the entire map from what it does when every slot holds the same object.**
 
-The practical payoff is a change of viewpoint: a Magnus or BCH term stops being a fixed expression and becomes a map with slots you can fill independently.
+The practical use is a change of viewpoint: a Magnus or BCH term stops being a fixed expression and becomes a map with slots you can fill independently.
 
 # Reference
 
 $T: V_1\times\cdots\times V_k \to W$ is **$k$-linear** if it is linear in each argument with the others held fixed:
 $$T(\dots,\; \alpha u + \beta v,\; \dots) = \alpha\,T(\dots, u, \dots) + \beta\,T(\dots, v, \dots)$$
+
+**Picture:** a machine with several input slots, each linear when the others are held fixed; for a symmetric map, feeding the same vector into every slot loses nothing, because polarization recovers the rest.
 
 **It is not linear as a function on the product space.** $T(2v, 2w) = 4\,T(v,w)$, not $2\,T(v,w)$ — a $k$-linear map scales as $\lambda^k$ when you scale every slot. This is the most common misreading of the definition.
 
@@ -47,11 +49,11 @@ The second is usually the more useful reading: **the multilinear map is the mixe
 
 **Conditions worth stating:**
 
-- Needs symmetry. On a non-symmetric $T$, polarization returns only the symmetric part — the antisymmetric part is invisible on the diagonal, since $T(v,v)$ kills it.
+- Needs symmetry. On a non-symmetric $T$, polarization returns only the symmetric part — the antisymmetric part is invisible on the diagonal, since $T(v,v)$ is zero for it.
 - Needs division by $k!$, so it works over $\mathbb R$ and $\mathbb C$ and fails in characteristic 2. Not a practical concern here, but it is why the theorem carries a hypothesis.
 - Over $\mathbb C$ with a sesquilinear form the real-part formula above is not enough; the full identity needs four terms with $\pm i$ shifts.
 
-## The payoff: Magnus and BCH terms as maps with slots
+## Application: Magnus and BCH terms as maps with slots
 
 Each Magnus term is built from nested brackets of the generator at different times. Read as an expression, $\Omega_2$ is a fixed double integral. Read as a map, it is a **bilinear** map fed the same function twice:
 
@@ -60,14 +62,14 @@ Each Magnus term is built from nested brackets of the generator at different tim
 | $\Omega_2$ | $\tfrac12\int\!\!\int [A(t_1), A(t_2)]$ | the bilinear map $B(f,g) = \tfrac12\int\!\!\int[f(t_1), g(t_2)]$, evaluated at $f = g = A$ |
 | $\Omega_k$ | a $k$-fold integral of nested brackets | a $k$-linear map, diagonal-evaluated |
 
-What the second view buys:
+What the second view gives:
 
 - **Slots can be filled differently.** Split $A = A_0 + V$ and expand each slot independently: $B(A_0 + V,\, A_0 + V) = B(A_0,A_0) + B(A_0,V) + B(V,A_0) + B(V,V)$. Every cross term appears automatically and none is forgotten. This is the systematic route to interaction-picture and average-Hamiltonian expansions ([[Magnus Expansion]]).
 - **Symmetry becomes bookkeeping.** Time ordering and the bracket's antisymmetry are statements about slot exchange, so symmetrizing over slots is a legal operation — which is precisely the Fubini step that converts time ordering into commutators ([[Propagators, Time Ordering, and the Dyson Series]]).
 - **Degree counting becomes grading.** A $k$-linear map is degree $k$ in its argument, so the Magnus series is graded by slot count. That is the grading which makes order-by-order truncation legitimate ([[Graded and Filtered Lie Algebras]]).
 - **The universal terms are maps, not formulas.** The BCH coefficients are properties of the $k$-linear bracket-words themselves, independent of what you substitute — see [[Free Algebras, Words, and Gradings]].
 
-**No new mathematics is involved**, which is the point: you already use bilinear forms and tensors. The move is to stop reading $\Omega_k$ as a formula in $A$ and start reading it as a map awaiting $k$ arguments.
+**No new mathematics is involved**: you already use bilinear forms and tensors. The change is to stop reading $\Omega_k$ as a formula in $A$ and start reading it as a map awaiting $k$ arguments.
 
 > [!question]- Why does thinking of $\Omega_2$ as a bilinear map make the split $H = H_0 + V$ easier?
 > A bilinear map expands in each slot independently, so $B(H_0{+}V, H_0{+}V)$ mechanically produces all four terms with correct ordering — including the two mixed terms, which are the ones dropped by hand. As an expression there is no rule telling you what to expand; as a map, linearity in each slot is the rule.

@@ -8,9 +8,14 @@ Signal $V_s(t) = A\cos(\omega_r t + \phi)$ against reference $\cos\omega_r t$:
 
 $$V_s \cdot V_{\text{ref}} = \frac{A}{2}\Big[\cos\phi + \cos(2\omega_r t + \phi)\Big] \;\xrightarrow{\text{LPF}}\; \frac{A}{2}\cos\phi.$$
 
-$A$ = signal amplitude at the modulation frequency (V); $\phi$ = its phase relative to the reference (rad); the $2\omega_r$ term is removed by the output filter. **Dual-phase** instruments multiply by both $\cos\omega_r t$ and $\sin\omega_r t$:
+- $A$ — signal amplitude at the modulation frequency (V)
+- $\phi$ — its phase relative to the reference (rad)
+
+The $2\omega_r$ term is removed by the output filter. **Dual-phase** instruments multiply by both $\cos\omega_r t$ and $\sin\omega_r t$:
 
 $$X = \tfrac{A}{2}\cos\phi, \qquad Y = \tfrac{A}{2}\sin\phi, \qquad R = \sqrt{X^2+Y^2}, \qquad \theta = \arctan(Y/X).$$
+
+**Picture:** only the component that keeps step with the reference survives a long average; everything else drifts in and out of phase with it and cancels.
 
 $R$ is immune to phase drift; $X$ and $Y$ retain the phase information, which is itself the measurement in impedance and dispersive work.
 
@@ -37,7 +42,7 @@ $R$ is immune to phase drift; $X$ and $Y$ retain the phase information, which is
 
 Higher order gives more rejection per unit $\tau$ but longer settling — and *always* wait several $\tau$ per point when scanning, or the scan smears the lineshape and shifts peaks ([[Window Functions and Apodization]] — the output filter is a window in time).
 
-**Sensitivity and dynamic reserve.** Sensitivity sets the full-scale input range; dynamic reserve is the ratio (in dB) of the largest tolerable interferer to full scale. High reserve tolerates a large interferer but costs output stability and adds noise; low reserve is cleaner but overloads. **The trap: an overload occurs at the input, where you cannot see it, while the output still shows a plausible number.** Watch the overload indicator, and if a reading changes when you change sensitivity without changing the signal, you were overloaded.
+**Sensitivity and dynamic reserve.** Sensitivity sets the full-scale input range; dynamic reserve is the ratio (in dB) of the largest tolerable interferer to full scale. High reserve tolerates a large interferer but costs output stability and adds noise; low reserve is cleaner but overloads. **Hidden overload: an overload occurs at the input, where you cannot see it, while the output still shows a plausible number.** Watch the overload indicator, and if a reading changes when you change sensitivity without changing the signal, you were overloaded.
 
 **Choosing $f_{\text{mod}}$** — four constraints at once: above the $1/f$ corner of detector plus preamp (kHz and up, [[Flicker Noise]]); inside the detector's bandwidth; away from line frequency and *all* its harmonics; away from mechanical and acoustic resonances. Use non-round values (1.234 kHz rather than 1 kHz) so that no harmonic of anything in the room lands on it.
 
@@ -54,7 +59,7 @@ Higher order gives more rejection per unit $\tau$ but longer settling — and *a
 
 ## Related instruments and techniques
 
-The mathematics is a [[Mixers|mixer]] plus a low-pass filter, run at audio frequencies with high dynamic range. [[Pound-Drever-Hall Locking]] is the same modulate-and-demodulate move at RF on an optical carrier. [[Noise Spectroscopy and Filter Functions|Dynamical decoupling]] is its quantum analogue — a pulse train is a reference waveform and the filter function is the detection band. Boxcar averaging is the time-domain sibling for pulsed rather than continuous signals. In all four, the principle is the same: correlate against a known reference so that everything uncorrelated averages down as $1/\sqrt{T}$ ([[SNR and Averaging]]).
+The mathematics is a [[Mixers|mixer]] plus a low-pass filter, run at audio frequencies with high dynamic range. [[Pound-Drever-Hall Locking]] is the same modulate-and-demodulate move at RF on an optical carrier. [[Noise Spectroscopy and Filter Functions|Dynamical decoupling]] is its quantum analogue — a pulse train is a reference waveform and the filter function is the detection band. Boxcar averaging is the time-domain counterpart for pulsed rather than continuous signals. In all four, the principle is the same: correlate against a known reference so that everything uncorrelated averages down as $1/\sqrt{T}$ ([[SNR and Averaging]]).
 
 > [!question]- Chopping a beam at 1 kHz makes nW visible on a photodiode that shows nothing at DC — same detector, same light. Where did the sensitivity come from?
 > Two effects, and it is worth separating them. First, the measurement moved out of the $1/f$ region: at DC the signal sits under detector and amplifier flicker noise plus thermal drift, while at 1 kHz the floor is white and orders of magnitude lower. Second, the detection bandwidth collapsed: a 1 s time constant admits ~0.25 Hz rather than the DC-to-whatever of an unfiltered measurement, and noise power scales with bandwidth. Neither effect requires a better detector — only that the signal be *modulated*, which is what makes it distinguishable from everything that is not.
@@ -62,7 +67,7 @@ The mathematics is a [[Mixers|mixer]] plus a low-pass filter, run at audio frequ
 # Connections
 
 - [[Mixers]] — the multiplication core, RF edition
-- [[Flicker Noise]] — the $1/f$ region this technique outflanks rather than fights
+- [[Flicker Noise]] — the $1/f$ region this technique avoids rather than averages down
 - [[Amplifier Noise]] — the front end that sets the floor the lock-in narrows around
 - [[SNR and Averaging]] — the ENBW arithmetic and when longer averaging stops paying
 - [[Bandwidth]] — ENBW versus 3-dB bandwidth, and the $\sqrt{B}$ scaling

@@ -10,6 +10,8 @@ $$I = I_c \sin\varphi \qquad\text{(DC)}, \qquad \frac{d\varphi}{dt} = \frac{2eV}
 
 with the **flux quantum** $\Phi_0 = h/2e = 2.068\times10^{-15}$ Wb. The $2e$ is the Cooper pair charge — every factor of two in superconducting circuits traces to it.
 
+**Picture:** a tilted washboard: the phase difference is a ball on a cosine potential tilted by the bias current; trapped in a dip it carries supercurrent at zero voltage, rolling freely it produces a voltage.
+
 - **DC relation:** current flows with *zero voltage* for $|I| < I_c$, carried by pair tunneling. $I_c$ = critical current, set by the barrier.
 - **AC relation:** any voltage makes the phase wind, at $2e/h = 483.6$ MHz/µV. This is exact and is the basis of the volt standard.
 
@@ -18,7 +20,7 @@ $$V = \frac{\Phi_0}{2\pi\cos\varphi}\frac{dI}{dt} \quad\Rightarrow\quad L_J(\var
 
 - Behaves as an inductor $L_{J0} = \Phi_0/2\pi I_c$ for small $\varphi$, but the inductance **depends on the current through it** — the nonlinearity.
 - $L_J \to \infty$ as $\varphi \to \pi/2$: the junction stiffens and cannot carry more than $I_c$.
-- **Lossless** because pair tunneling is dissipationless: no resistor, no Johnson noise, no added decoherence. Every other nonlinear element (diode, transistor) dissipates. This is the whole reason superconducting qubits exist ([[Superconducting Qubits]]).
+- **Lossless** because pair tunneling is dissipationless: no resistor, no Johnson noise, no added decoherence. Every other nonlinear element (diode, transistor) dissipates. This is why superconducting qubits are possible ([[Superconducting Qubits]]).
 
 **Energy.** Integrating $IV\,dt$ gives the potential
 $$U(\varphi) = -E_J\cos\varphi, \qquad E_J = \frac{\Phi_0 I_c}{2\pi} = \frac{\hbar I_c}{2e}$$
@@ -39,14 +41,14 @@ This is the practical bridge: $R_n$ is measurable at **room temperature** with a
 | Set $E_C$ | shunt capacitor geometry | $E_C = e^2/2C_\Sigma$; large pad ⇒ small $E_C$ ⇒ transmon regime |
 | Make $E_J$ tunable | two junctions in a loop (**DC SQUID**) | $I_c(\Phi) = 2I_c\left\lvert\cos(\pi\Phi/\Phi_0)\right\rvert$ — thread flux, tune $E_J$, tune the qubit frequency in situ |
 
-The SQUID is the standard trick and the standard liability: it buys frequency tunability and pays with sensitivity to flux noise, since $\partial\omega/\partial\Phi \neq 0$ away from the flux sweet spot.
+The SQUID is both the standard tuning element and a standard liability: it gives frequency tunability and pays with sensitivity to flux noise, since $\partial\omega/\partial\Phi \neq 0$ away from the flux sweet spot.
 
 **Fabrication.** Al/AlO$_x$/Al with a 1–2 nm thermal oxide, patterned by double-angle shadow evaporation through a suspended resist bridge (**Dolan bridge**) — the two-angle deposition that [[Thin-Film Deposition]] describes as a use for line-of-sight arrival. Barrier thickness enters $I_c$ exponentially, so the tunnel barrier is the most damage-sensitive structure on the chip: a few-eV sputtered atom is a large fraction of it.
 
 **Where else it appears:** SQUID magnetometers (flux resolution $\ll\Phi_0$); the Josephson voltage standard (Shapiro steps — irradiate at $f$, get quantized $V = nf\Phi_0$); Josephson parametric amplifiers, where the same nonlinearity provides near-quantum-limited gain for [[Superconducting Qubits|dispersive readout]]; and superconducting digital logic.
 
 > [!question]- Why can a Josephson junction make a qubit when a diode — also nonlinear — cannot?
-> The diode dissipates. Nonlinearity alone gives unequal level spacings, but any resistive element couples the circuit to a thermal bath and destroys coherence faster than gates can run. Pair tunneling carries current with no voltage and no dissipation, so the junction supplies anharmonicity *for free*.
+> The diode dissipates. Nonlinearity alone gives unequal level spacings, but any resistive element couples the circuit to a thermal bath and destroys coherence faster than gates can run. Pair tunneling carries current with no voltage and no dissipation, so the junction supplies anharmonicity *without loss*.
 
 # Connections
 
@@ -56,7 +58,8 @@ The SQUID is the standard trick and the standard liability: it buys frequency tu
 - [[TLS and Dielectric Loss]] — the barrier and its interfaces as the dominant loss host
 - [[Thin-Film Deposition]] — shadow evaporation, and why the barrier is damage-sensitive
 - [[Commutators and Anticommutators]] — $[\hat\varphi,\hat n] = i$ as a conjugate pair
-- [[Quantum Dots]] — the normal-state cousin: charging energy without pair tunneling
+- [[Quantum Dots]] — the normal-state counterpart: charging energy without pair tunneling
+- [[Circuit QED]] — the Kerr terms the junction gives every coupled mode
 
 ---
 Source: Tinkham, *Introduction to Superconductivity*, Ch. 6; Krantz et al., "A Quantum Engineer's Guide to Superconducting Qubits," *Appl. Phys. Rev.* 6, 021318 (2019)

@@ -13,13 +13,15 @@ $$
 
 ($s$ = E-field perpendicular to plane of incidence, $p$ = in-plane.) Power: $R = |r|^2$, $T = 1 - R$.
 
+**Picture:** the interface as an impedance step for light: the reflected fraction is set by the mismatch in $n$, and at oblique incidence the two polarizations see the step differently.
+
 **Normal incidence:**
 $$
 R = \left(\frac{n_1 - n_2}{n_1 + n_2}\right)^2
 $$
 **Glass ($n=1.5$): 4% per surface** — the number behind ghost beams, etalon fringes, and why an uncoated window costs 8%. Silicon ($n \approx 3.5$): ~31%.
 
-**Phase flips:** going into denser medium ($n_1 < n_2$), $r_s < 0$ — π phase flip for s-pol at all angles; $r_p$ changes sign at Brewster. External vs internal reflection differ — sign conventions bite, fix them before chasing a sign in an interferometer.
+**Phase flips:** going into denser medium ($n_1 < n_2$), $r_s < 0$ — π phase flip for s-pol at all angles; $r_p$ changes sign at Brewster. External vs internal reflection differ — sign conventions differ; fix them before chasing a sign in an interferometer.
 
 **Angle behavior:** $R_p \to 0$ at Brewster's angle then rises steeply; $R_s$ rises monotonically; both → 1 at grazing (why any surface mirrors at grazing incidence). Beyond critical angle (internal): $|r| = 1$ with polarization-dependent phase — the basis of Fresnel-rhomb waveplates.
 

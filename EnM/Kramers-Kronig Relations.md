@@ -13,12 +13,14 @@ $$
 
 ($\mathcal{P}$ = principal value; the pair is a Hilbert transform.) Derivation in one line: $\chi(t<0)=0$ ⇒ $\chi(\omega)$ analytic for $\mathrm{Im}\,\omega > 0$ ⇒ close the contour and pick up only the principal-value part.
 
+**Picture:** a response that cannot begin before the push: requiring $\chi(t<0)=0$ locks the absorption spectrum and the refractive-index spectrum together, so an absorption line always comes with a dispersive wiggle.
+
 **Physical content:**
-- **Absorption ↔ dispersion, no divorce.** An absorption line at $\omega_0$ *necessarily* produces the dispersive n(ω) wiggle around it — normal dispersion on the wings, anomalous dispersion across the line. Measure one, compute the other (routinely done: absorption spectra → refractive index).
+- **Absorption and dispersion come together.** An absorption line at $\omega_0$ *necessarily* produces the dispersive feature in n(ω) around it — normal dispersion on the wings, anomalous dispersion across the line. Measure one, compute the other (routinely done: absorption spectra → refractive index).
 - Applies to *any* causal linear response: ε(ω), σ(ω), circuit impedances Z(ω), atomic susceptibility near resonance, S-parameters. A "flat amplitude, arbitrary phase" filter is unphysical.
 - Sum rule spin-off: $\int_0^\infty \omega\,\chi''\,d\omega = \pi\omega_p^2/2$ — total absorption strength is fixed by electron density, you can only move it around.
 
-Gotcha: the relations need the full spectrum; truncated data gives wrong Hilbert transforms at the edges — extend with physical asymptotics before transforming.
+**Limitation:** the relations need the full spectrum; truncated data gives wrong Hilbert transforms at the edges — extend with physical asymptotics before transforming.
 
 > [!question]- Could you build a medium with strong absorption at ω₀ but exactly constant refractive index everywhere?
 > No. χ'' localized at ω₀ forces $\chi'(\omega) \propto \mathcal{P}\int \chi''/(\omega'-\omega)$ — a nonzero dispersive structure around ω₀. Causality itself forbids absorption without dispersion.

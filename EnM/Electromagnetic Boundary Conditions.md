@@ -1,6 +1,6 @@
 #EnM
 
-**At any interface: tangential E and normal B are always continuous; normal D jumps by the surface charge and tangential H jumps by the surface current.** All reflection, refraction, and guided-mode physics is just fields contorting to satisfy these four rules.
+**At any interface: tangential E and normal B are always continuous; normal D jumps by the surface charge and tangential H jumps by the surface current.** All reflection, refraction, and guided-mode physics is fields contorting to satisfy these four rules.
 
 # Reference
 
@@ -14,6 +14,8 @@ D^\perp_2 - D^\perp_1 = \sigma_f, \qquad \mathbf{H}^\parallel_2 - \mathbf{H}^\pa
 $$
 
 where $\sigma_f$, $\mathbf{K}_f$ are free surface charge and current densities. **No free charge/current (dielectrics): all four are continuity statements** — $\varepsilon_1 E^\perp_1 = \varepsilon_2 E^\perp_2$ means normal E *kinks* at a dielectric interface.
+
+**Picture:** a flat pillbox and a thin loop straddling the interface: shrinking them onto the surface turns Gauss's and Stokes's laws into the four jump conditions.
 
 **Perfect conductor limit:** interior fields vanish, so at the surface $E^\parallel = 0$ and $B^\perp = 0$; the fields terminate on induced $\sigma$ and $\mathbf{K}$. This is why:
 - reflection off metal flips the tangential E phase (mirrors),
@@ -30,7 +32,7 @@ where $\sigma_f$, $\mathbf{K}_f$ are free surface charge and current densities. 
 - [[Fresnel Equations]] — boundary conditions solved for a plane wave at a dielectric interface
 - [[Waveguides]] — conductor boundary conditions quantizing transverse modes
 - [[Maxwell's Equations]] — the integral forms these are derived from
-- [[Skin Depth]] — how deep "the boundary" actually is in a real metal
+- [[Skin Depth]] — how deep "the boundary" is in a real metal
 - [[Cavity Modes]] — same wall conditions, closed on all sides
 
 ---

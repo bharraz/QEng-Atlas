@@ -4,7 +4,9 @@
 
 # Reference
 
-**The core fact:** 1 m of hookup wire ≈ 1 µH ≈ 6 Ω at 1 MHz (mΩ at DC — fine at DC, terrible at RF). Ground wires are impedances and $V = IZ$ applies to them (**common-impedance coupling**).
+**The core fact:** 1 m of hookup wire ≈ 1 µH ≈ 6 Ω at 1 MHz (mΩ at DC — harmless at DC, a large impedance at RF). Ground wires are impedances and $V = IZ$ applies to them (**common-impedance coupling**).
+
+**Picture:** ground as a network of small resistors and inductors rather than one node: every return current drops a voltage across the part of the network it uses, and every circuit sharing that part sees it.
 
 **Topology by frequency:**
 
@@ -17,7 +19,7 @@
 **Shield connection rules:**
 - **Low frequency (hum band):** shield grounded at **one end only** — both ends invites ground-loop current *through the shield*, which couples into the center conductor.
 - **RF (≳ 1 MHz):** ground **both ends, 360° termination** — skin effect keeps shield current on the outside; a floated end re-radiates. Hybrid: hard ground one end, small capacitor at the other covers both regimes.
-- **Pigtails ruin shields:** a few cm of pigtail ≈ tens of nH; at RF the shield current detours through it and injects straight into the signal. Use connectors that clamp the shield circumferentially.
+- **Pigtails degrade shields:** a few cm of pigtail ≈ tens of nH; at RF the shield current detours through it and injects straight into the signal. Use connectors that clamp the shield circumferentially.
 
 **Chassis vs signal ground:** tie them together **once**, at the cable-entry panel, so cable noise currents flow around the chassis skin instead of through the board.
 
@@ -29,8 +31,9 @@
 - [[Ground Loops]] — the failure mode this doctrine exists to prevent
 - [[Electromagnetic Shielding]] — the field-physics side: skin depth, apertures, µ-metal for low-f B
 - [[Common-Mode and Differential-Mode Signals]] — ground differences arrive common-mode; balanced inputs forgive imperfect grounding
-- [[Noise Coupling Mechanisms]] — the diagnosis table for which coupling you actually have
+- [[Noise Coupling Mechanisms]] — the diagnosis table for which coupling you have
 - [[Skin Depth]] — why RF shield current stays outside and both-end grounding works
+- [[Filtering Power and Signal Lines]] — filters at enclosure walls and their return paths
 
 ---
 Source: Ott, *Electromagnetic Compatibility Engineering*, Chs. 3 & 6

@@ -8,6 +8,8 @@ $$\lambda = \frac{h}{\sqrt{2m_e eV}} \approx \frac{1.23\ \mathrm{nm}}{\sqrt{V\,[
 
 Electron lenses are aberration-dominated; real resolution sits $10^3$–$10^5 \times \lambda$.
 
+**Picture:** SEM as a flashlight scanned over a surface, reading what comes back; TEM as a slide projector, imaging what passes through a thin film.
+
 ## SEM
 
 The beam scatters into a pear-shaped **interaction volume**; its size follows the Kanaya–Okayama range,

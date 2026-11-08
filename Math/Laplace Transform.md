@@ -1,6 +1,6 @@
 #math
 
-**The Fourier transform for systems with a beginning and with damping** — $s = \sigma + i\omega$ lets the kernel $e^{-st}$ tame growing or stepped signals that have no Fourier transform, and it turns initial-value ODE problems into polynomial algebra.
+**The Fourier transform for systems with a beginning and with damping** — $s = \sigma + i\omega$ lets the kernel $e^{-st}$ handle growing or stepped signals that have no Fourier transform, and it turns initial-value ODE problems into polynomial algebra.
 
 # Reference
 
@@ -8,6 +8,8 @@ $$
 F(s) = \int_0^\infty f(t)\, e^{-st}\, dt
 $$
 Converges for $\mathrm{Re}(s)$ large enough (right of all poles) — the region of convergence; you rarely think about it until a signal grows exponentially.
+
+**Picture:** probing a signal with growing and decaying exponentials as well as oscillations; a pole at $s = p$ marks a mode $e^{pt}$ the system contains.
 
 **Key pairs:**
 
@@ -20,7 +22,7 @@ Converges for $\mathrm{Re}(s)$ large enough (right of all poles) — the region 
 | $e^{-at}\sin\omega t$ | $\omega/((s+a)^2+\omega^2)$ |
 | $\delta(t)$ | $1$ |
 
-**The killer property** — derivatives become multiplication *and initial conditions ride along free*:
+**The central property** — derivatives become multiplication *and initial conditions ride along free*:
 $$
 \mathcal{L}[\dot{f}] = sF(s) - f(0), \qquad \mathcal{L}[\ddot{f}] = s^2 F(s) - s f(0) - \dot{f}(0)
 $$

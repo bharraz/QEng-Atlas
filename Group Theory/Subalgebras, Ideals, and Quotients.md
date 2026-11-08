@@ -1,8 +1,12 @@
 #group-theory #math
 
-**A subalgebra is closed under bracketing with itself; an ideal is closed under bracketing with everything — and only ideals give quotients, which is what makes a truncation legitimate or illegitimate.**
+**When you restrict a calculation to a subset of operators — keep $a, a^\dagger, \mathbb 1$ and drop $a^2$, or keep the first few orders of an expansion — two separate things must hold: the operators you keep must close among themselves (a subalgebra, so the dynamics stays inside), and the ones you drop must never generate the ones you keep (an ideal, so they can be discarded).** **In practice:** test both with commutators; only the second makes a truncation legitimate.
 
 # Reference
+
+**Formally:** a subalgebra is closed under bracketing with itself; an ideal is closed under bracketing with everything — and only ideals give quotients, which is what makes a truncation legitimate or illegitimate.
+
+**Picture:** a subalgebra is a room the dynamics cannot leave; an ideal is a drain, where anything that falls in stays in, so it can be discarded without affecting the rest.
 
 | Object | Condition | What it gives you |
 |---|---|---|
@@ -16,7 +20,7 @@ Every ideal is a subalgebra; the converse fails badly. In a Lie algebra left and
 $$[X + h_1,\, Y + h_2] = [X,Y] + \underbrace{[X, h_2] + [h_1, Y] + [h_1, h_2]}_{\text{must lie in } \mathfrak h}$$
 The three correction terms land in $\mathfrak h$ for arbitrary $X, Y \in \mathfrak g$ **iff** $[\mathfrak g, \mathfrak h] \subseteq \mathfrak h$. If $\mathfrak h$ is only a subalgebra, the answer depends on which representatives you picked — the quotient is not well defined, and "working modulo $\mathfrak h$" is meaningless.
 
-**This is the whole truncation criterion.** Discarding a set of operators is consistent only if what you discard is an ideal, so brackets can never feed it back into what you kept. If the discarded set is merely a subalgebra — or not even that — commutators of the terms you *kept* regenerate the terms you *threw away*, and the error is uncontrolled at every subsequent order. See [[Graded and Filtered Lie Algebras]] for when a degree cutoff does and does not produce an ideal, and [[Weyl Algebra and Degree Filtration]] for the case where it demonstrably does not.
+**This is the truncation criterion.** Discarding a set of operators is consistent only if what you discard is an ideal, so brackets can never feed it back into what you kept. If the discarded set is merely a subalgebra — or not even that — commutators of the terms you *kept* regenerate the terms you *threw away*, and the error is uncontrolled at every subsequent order. See [[Graded and Filtered Lie Algebras]] for when a degree cutoff does and does not produce an ideal, and [[Weyl Algebra and Degree Filtration]] for the case where it demonstrably does not.
 
 **"Exact at a given order" is a statement about a quotient.** It means: the computation was performed in $\mathfrak g/\mathfrak h$, the neglected $\mathfrak h$ is an ideal, and its contribution is bounded by the order parameter. Absent the ideal property there is no such statement to make.
 
@@ -45,12 +49,12 @@ Worked examples, all from oscillator practice:
 
 Each term of both series is an ideal of $\mathfrak g$, which is what makes the chains meaningful:
 
-| | Series | Terminates ⇒ | Buys |
+| | Series | Terminates ⇒ | Gives |
 |---|---|---|---|
 | **Derived** | $\mathfrak g^{(k+1)} = [\mathfrak g^{(k)}, \mathfrak g^{(k)}]$ | **solvable** | Wei–Norman triangular: quadratures only |
 | **Lower central** | $\mathfrak g^{k+1} = [\mathfrak g, \mathfrak g^{k}]$ | **nilpotent** | BCH and Magnus **terminate** |
 
-Nilpotent $\Rightarrow$ solvable, never the reverse. The lower central series brackets against *all* of $\mathfrak g$ each time, so it is the harder condition and the stronger payoff.
+Nilpotent $\Rightarrow$ solvable, never the reverse. The lower central series brackets against *all* of $\mathfrak g$ each time, so it is the harder condition and the stronger result.
 
 **The resulting classification:**
 
@@ -77,7 +81,7 @@ semisimple part acting on the **radical** (the maximal solvable ideal). Practica
 - [[Cartan Subalgebras, Roots, and Weights]] — the semisimple half of the Levi decomposition
 - [[Lie Algebras (Atlas)]] — structure constants, $\mathrm{ad}$, Casimirs
 - [[Conjugation]] — ideals as the conjugation-stable subspaces; normal subgroups upstairs
-- [[Solving Dynamics on Closed Lie Algebras]] — what solvable and nilpotent buy computationally
+- [[Solving Dynamics on Closed Lie Algebras]] — what solvable and nilpotent give computationally
 - [[The Classical Groups Reference]] — semidirect products in the group catalogue
 - [[(Map) Group Theory]] — normal subgroups and quotient groups, the group-level analog
 

@@ -14,7 +14,9 @@ $$
 
 Number to carry: $I = 1\ \mu\mathrm{A}$ → $\sqrt{2eI} \approx 0.57\ \mathrm{pA/\sqrt{Hz}}$; scales as $\sqrt{I}$, so relative noise $\propto 1/\sqrt{I}$.
 
-**Photon shot noise:** same statement for photocurrent — a shot-noise-limited photodiode measurement has $\mathrm{SNR} \propto \sqrt{P_{\text{opt}}}$. **Quantum projection noise is the same idea's cousin**: reading out $N$ qubits gives binomial $\sqrt{p(1-p)/N}$ fluctuations — discreteness of measurement outcomes instead of charges.
+**Picture:** current as a stream of separate charges, like sand pouring from a funnel: the flow is steady on average, but the count in each short interval fluctuates by its square root.
+
+**Photon shot noise:** same statement for photocurrent — a shot-noise-limited photodiode measurement has $\mathrm{SNR} \propto \sqrt{P_{\text{opt}}}$. **Quantum projection noise is the same idea applied to qubit readout**: reading out $N$ qubits gives binomial $\sqrt{p(1-p)/N}$ fluctuations — discreteness of measurement outcomes instead of charges.
 
 **When it dominates:** shot noise of a current through resistance $R$ beats the Johnson noise of that $R$ when $2eI R^2 > 4k_BTR$, i.e. $V = IR > 2k_BT/e \approx 50$ mV at 300 K. In photodetection: LO/signal power high enough that $2eI$ swamps amplifier and Johnson terms — the design target of every shot-noise-limited detector.
 

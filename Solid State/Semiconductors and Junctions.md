@@ -8,7 +8,9 @@
 
 $$n_i \propto T^{3/2}\, e^{-E_g/2k_BT}, \qquad np = n_i^2 \;(\text{mass action, in equilibrium}).$$
 
-Si at 300 K: $n_i \approx 10^{10}\ \mathrm{cm^{-3}}$ — negligible against any doping. **Donors** (P in Si) donate electrons, $n \approx N_D$; **acceptors** (B) create holes, $p \approx N_A$; typical $10^{15}$–$10^{19}\ \mathrm{cm^{-3}}$. The dopant levels sit meV from the band edges (hydrogenic binding scaled by $m^*/\epsilon_r^2$), fully ionized at 300 K, frozen out at cryogenic temperatures — why bulk CMOS dies below ~40 K ([[Integrated Circuits]]).
+Si at 300 K: $n_i \approx 10^{10}\ \mathrm{cm^{-3}}$ — negligible against any doping. **Donors** (P in Si) donate electrons, $n \approx N_D$; **acceptors** (B) create holes, $p \approx N_A$; typical $10^{15}$–$10^{19}\ \mathrm{cm^{-3}}$. The dopant levels sit meV from the band edges (hydrogenic binding scaled by $m^*/\epsilon_r^2$), fully ionized at 300 K, frozen out at cryogenic temperatures — the origin of freeze-out effects (shifted thresholds, kinks) in bulk CMOS below ~40 K, which cryogenic CMOS designs work around ([[Integrated Circuits]]).
+
+**Picture:** a p–n junction as a hill for carriers: forward bias lowers the hill and the current grows exponentially, reverse bias raises it and only a small leakage remains.
 
 **The p–n junction.** Carriers diffuse across, leaving ionized dopants; the resulting **depletion region** and built-in potential self-limit the diffusion:
 
@@ -25,15 +27,16 @@ $$I = I_0\left(e^{eV/k_BT} - 1\right)$$
 **MOS structure** — metal / oxide / semiconductor, the field-effect element: gate voltage sweeps the surface through **accumulation → depletion → inversion**, where a thin (~nm) layer of minority carriers forms at the interface — a **2DEG**. This is the transistor channel, and at cryogenic temperatures in clean material (Si/SiGe, GaAs/AlGaAs heterostructures — junction-free band-offset versions of the same confinement) it is the electron sea that gate-defined [[Quantum Dots]] are carved from.
 
 > [!question]- Why does cooling a photodiode reduce dark current so dramatically but leave the photocurrent almost unchanged?
-> Dark current comes from thermally generated pairs, $I_0 \propto n_i^2 \propto e^{-E_g/k_BT}$ — a Si detector's dark current drops roughly 2× per 8–10 °C. Photocurrent counts absorbed photons, which requires only $h\nu > E_g$; the gap shifts by mere meV over tens of K. Cooling therefore buys SNR exponentially until the readout amplifier, not the diode, sets the floor.
+> Dark current comes from thermally generated pairs, $I_0 \propto n_i^2 \propto e^{-E_g/k_BT}$ — a Si detector's dark current drops roughly 2× per 8–10 °C. Photocurrent counts absorbed photons, which requires only $h\nu > E_g$; the gap shifts by mere meV over tens of K. Cooling therefore improves SNR exponentially until the readout amplifier, not the diode, sets the floor.
 
 # Connections
 
-- [[Bloch's Theorem and Band Structure]] — the gap, effective mass, and filling this page builds on
+- [[Bloch's Theorem and Band Structure]] — origin of the gap, effective mass, and band filling
 - [[Photodiode Circuits]] — the junction as a detector, from the circuit side
 - [[Quantum Dots]] — gate-defined dots as depleted 2DEGs
 - [[Integrated Circuits]] — the MOSFET; carrier freeze-out at cryo
 - [[Electronic Transport]] — mobility and Hall characterization of the doped material
+- [[Quantum Statistics and Fermi Gases]] — Fermi–Dirac statistics and the density of states
 
 ---
 Source: Sze & Ng, *Physics of Semiconductor Devices*, Ch. 1–2, 13; Ashcroft & Mermin, *Solid State Physics*, Ch. 28–29

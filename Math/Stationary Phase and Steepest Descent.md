@@ -1,6 +1,6 @@
 #math
 
-**An integral with a large parameter in the exponent is dominated by a single point — where the exponent is stationary — and the whole method is expanding around that point and doing the resulting Gaussian.**
+**An integral with a large parameter in the exponent is dominated by a single point — where the exponent is stationary — and the method is to expand around that point and do the resulting Gaussian integral.**
 
 # Reference
 
@@ -17,6 +17,8 @@ $$\int g(x)e^{\lambda\phi(x)}dx \;\sim\; g(x_0)\,e^{\lambda\phi(x_0)}\sqrt{\frac
 
 The width of the contributing region is $\sim 1/\sqrt{\lambda|\phi''|}$ — the integral localizes, and that shrinking width is where the $\lambda^{-1/2}$ prefactor comes from. Stirling's formula is this method applied to $\Gamma(n+1) = \int_0^\infty t^n e^{-t}dt$.
 
+**Picture:** a crowd of arrows rotating at different rates: wherever the phase changes quickly they point every way and cancel, so only the neighbourhood where the phase stands still contributes.
+
 **Stationary phase.** Nothing decays, so the argument is cancellation rather than smallness: away from a stationary point the phase runs fast, adjacent contributions arrive with opposite signs and cancel. Only where $\phi'(x_0)=0$ do neighbouring contributions add in step. The result carries a characteristic $\pm\pi/4$:
 $$\int g(x)\,e^{i\lambda\phi(x)}dx \;\sim\; g(x_0)\,e^{i\lambda\phi(x_0)}\sqrt{\frac{2\pi}{\lambda|\phi''(x_0)|}}\;e^{\,i\,\mathrm{sgn}(\phi'')\pi/4}$$
 
@@ -24,7 +26,7 @@ Those $\pi/4$'s are not decoration — they are the Gouy phase, the Maslov index
 
 **Steepest descent** unifies the two. Deform the contour (Cauchy permits it) to pass through a saddle $\phi'(z_0)=0$ along the direction where $\mathrm{Im}\,\phi$ is constant — so the integrand has *no* oscillation on the path and $\mathrm{Re}\,\phi$ falls off as fast as possible. On that contour the problem is Laplace's. The practical content:
 
-- Which saddles the deformed contour actually crosses can change discontinuously with a parameter — **Stokes phenomenon**, and it is why asymptotic expansions swap form across Stokes lines ([[Asymptotic Series and Dominant Balance]]).
+- Which saddles the deformed contour crosses can change discontinuously with a parameter — **Stokes phenomenon**, and it is why asymptotic expansions swap form across Stokes lines ([[Asymptotic Series and Dominant Balance]]).
 - Contour deformation is the same tool as [[Contour Integration and Residues]]; here you steer toward a saddle rather than enclose a pole.
 
 **Degenerate stationary points.** If $\phi''(x_0)=0$ too, the Gaussian fails and the next term governs: $\phi'''\neq0$ gives an Airy function and a $\lambda^{-1/3}$ scaling instead of $\lambda^{-1/2}$. This is exactly the caustic case — a fold in the phase surface — which is why Airy functions describe both the WKB turning point and the intensity near a rainbow or a focus.

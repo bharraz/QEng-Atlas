@@ -12,13 +12,15 @@ $$
 
 where the $|v_i\rangle\langle v_i|$ are orthogonal [[Projectors]] resolving the identity, $\sum_i |v_i\rangle\langle v_i| = \mathbb{1}$. With degeneracy, group terms into $A = \sum_k \lambda_k P_k$ with $P_k$ projecting onto each eigenspace.
 
-**Functions of operators** — the theorem's killer app. Define $f(A)$ by acting on eigenvalues only:
+**Picture:** the operator as a set of independent dials, one per eigenspace: each eigenvector is multiplied by its eigenvalue, and nothing mixes between them.
+
+**Functions of operators** — the theorem's main use. Define $f(A)$ by acting on eigenvalues only:
 
 $$
 f(A) = \sum_i f(\lambda_i)\, |v_i\rangle\langle v_i|
 $$
 
-This is how $e^{-iHt/\hbar}$, $\sqrt{\rho}$, $\log\rho$, and $H^{-1}$ actually get computed: diagonalize once, apply $f$ to the diagonal, transform back. Consistency check: $f(A)$ commutes with $A$ and shares its eigenbasis.
+This is how $e^{-iHt/\hbar}$, $\sqrt{\rho}$, $\log\rho$, and $H^{-1}$ get computed: diagonalize once, apply $f$ to the diagonal, transform back. Consistency check: $f(A)$ commutes with $A$ and shares its eigenbasis.
 
 **Scope:** Hermitian, unitary, anti-Hermitian — all normal, all covered. Non-normal matrices get the weaker [[Diagonalization]] story (skewed eigenbasis, or Jordan blocks). Infinite dimensions add continuous spectrum: sums become integrals, $x$ and $p$ live there.
 

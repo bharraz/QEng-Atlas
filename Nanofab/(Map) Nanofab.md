@@ -36,12 +36,12 @@ Read left to right: **choosing evaporation is choosing lift-off**, and choosing 
 - **Thermal budget is cumulative.** Each anneal affects every layer already present, so process order is a constraint, not a preference.
 - **Metrology only sees what its probe couples to.** Ellipsometry infers thickness from a model; AFM measures topography, not composition; SEM's interaction volume is larger than the beam spot ([[Surface and Film Metrology]]).
 
-## Where the devices land
+## The fab-critical step for each device
 
 | Device | Fab-critical step |
 |---|---|
 | Josephson junctions | double-angle shadow evaporation; barrier thickness enters $I_c$ exponentially ([[Josephson Junction]]) |
-| Superconducting resonators and qubits | surface and interface quality — the participation-ratio fight ([[TLS and Dielectric Loss]]) |
+| Superconducting resonators and qubits | surface and interface quality — the participation-ratio problem ([[TLS and Dielectric Loss]]) |
 | Surface-electrode ion traps | electrode surface treatment against anomalous heating; RF breakdown; dielectric loss |
 | Colour centres | ion implantation plus anneal, then photon extraction structures ([[Color Centers]]) |
 | Gate-defined dots | e-beam lithography at the resolution limit; gate oxide integrity ([[Quantum Dots]]) |
@@ -52,7 +52,7 @@ Read left to right: **choosing evaporation is choosing lift-off**, and choosing 
 # Connections
 
 - [[(Guide) Debugging Method]] — the procedural stance for when a process stops working
-- [[Josephson Junction]] / [[TLS and Dielectric Loss]] — what the fab quality actually buys or costs
+- [[Josephson Junction]] / [[TLS and Dielectric Loss]] — what the fab quality gains or costs
 - [[Color Centers]] — implantation and anneal as a creation process
 - [[Bandwidth]] / [[Time Constants and Reactance Rules of Thumb]] — the packaging side, once the chip is wired
 - [[Conventions and Factor-of-Two Traps]] — units and conventions in process specs

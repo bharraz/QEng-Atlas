@@ -1,6 +1,6 @@
 #linear-algebra #math
 
-**The composite-system construction: dimensions multiply, and operators act on their own factor — $(A\otimes B)(u\otimes v) = Au \otimes Bv$.** Two qubits don't live in $2+2=4$... they live in $2\times 2 = 4$, and for $n$ qubits that's $2^n$ — the exponential blowup that makes quantum hard to simulate and worth building.
+**Two systems combined have one joint basis state for every pair of their basis states, so dimensions multiply, and an operator on one subsystem acts on its own factor: $(A\otimes B)(u\otimes v) = Au \otimes Bv$.** Three qubits don't live in $2+2+2 = 6$ dimensions but in $2\times2\times2 = 8$, and $n$ qubits need $2^n$ — the exponential blowup that makes quantum hard to simulate and worth building.
 
 # Reference
 
@@ -12,6 +12,8 @@ $$
 
 "$A$ on qubit 1 alone" means $A \otimes \mathbb{1}$ — the identity padding is implicit in physics notation but not in your code.
 
+**Picture:** a grid with rows labelled by the first system's basis states and columns by the second's: a product state is an outer product of two vectors, and an entangled state is any grid of amplitudes that cannot be written that way.
+
 **Kronecker product** (the concrete matrix form — each entry of the left factor scales a full copy of the right):
 
 $$
@@ -20,7 +22,7 @@ A \otimes B = \begin{pmatrix} a_{11}B & a_{12}B \\ a_{21}B & a_{22}B \end{pmatri
 \sigma_z \otimes \sigma_x = \begin{pmatrix} 0&1&0&0 \\ 1&0&0&0 \\ 0&0&0&-1 \\ 0&0&-1&0 \end{pmatrix}
 $$
 
-Ordering convention (left factor = most significant index) must match your basis ordering $|00\rangle, |01\rangle, |10\rangle, |11\rangle$ — the classic source of silently wrong two-qubit simulations.
+Ordering convention (left factor = most significant index) must match your basis ordering $|00\rangle, |01\rangle, |10\rangle, |11\rangle$ — the usual source of silently wrong two-qubit simulations.
 
 **Useful algebra:** $\mathrm{Tr}(A\otimes B) = \mathrm{Tr}A\cdot\mathrm{Tr}B$; $(A\otimes B)^\dagger = A^\dagger\otimes B^\dagger$; eigenvalues of $A\otimes B$ = all products $\lambda_i\mu_j$.
 - It is distributive, associative, scalars come out of it once, non-commutative
@@ -37,7 +39,7 @@ Ordering convention (left factor = most significant index) must match your basis
 - [[Qubits]] — $n$ of them = $(\mathbb{C}^2)^{\otimes n}$: where the $2^n$ comes from
 - [[Entanglement Measures]] — quantifying non-product-ness via Schmidt/SVD of the coefficient matrix
 - [[Trace Identities]] — partial trace: the inverse operation, from composite back to subsystem
-- [[Vectorization and Superoperators]] — the vec trick turns superoperators into tensor products
+- [[Vectorization and Superoperators]] — vectorization turns superoperators into tensor products
 
 ---
 Source: Nielsen & Chuang §2.1.7.

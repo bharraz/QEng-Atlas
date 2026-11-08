@@ -1,6 +1,6 @@
 #quantum
 
-**The vacuum displaced to amplitude $\alpha$: eigenstate of the annihilation operator, minimum-uncertainty, and its centroid follows the classical equation of motion exactly.** The closest quantum mechanics gets to "the oscillator is at phase-space point $\alpha$" — and what a laser or a resonantly kicked ion mode actually produces.
+**The vacuum displaced to amplitude $\alpha$: eigenstate of the annihilation operator, minimum-uncertainty, and its centroid follows the classical equation of motion exactly.** The closest quantum mechanics gets to "the oscillator is at phase-space point $\alpha$" — and what a laser or a resonantly kicked ion mode produces.
 
 # Reference
 
@@ -8,13 +8,15 @@ $$
 a|\alpha\rangle = \alpha|\alpha\rangle, \qquad |\alpha\rangle = D(\alpha)|0\rangle = e^{-|\alpha|^2/2}\sum_n \frac{\alpha^n}{\sqrt{n!}}\,|n\rangle
 $$
 
+**Picture:** the vacuum's round uncertainty disk moved off the origin of phase space and set circling; its shape never changes, only its position.
+
 **Number statistics — Poissonian:**
 $$
 P(n) = e^{-|\alpha|^2}\frac{|\alpha|^{2n}}{n!}, \qquad \bar n = |\alpha|^2, \quad \Delta n = \sqrt{\bar n}
 $$
 This is the shot-noise reference point: $g^{(2)}(0) = 1$; sub-Poissonian means nonclassical.
 
-**Most classical, by three measures:** (1) minimum uncertainty, $\Delta x\,\Delta p = \hbar/2$ with vacuum-sized noise ($\Delta x = x_0$) — a circular blob in phase space that never spreads; (2) under $H = \hbar\omega a^\dagger a$, $|\alpha\rangle \to |\alpha e^{-i\omega t}\rangle$ — a rigid Gaussian blob orbiting the classical trajectory; (3) a classical drive on the vacuum produces exactly this state. Eigenstate of $a$ (not $a^\dagger$; $a$ isn't Hermitian, so $\alpha \in \mathbb{C}$ and these aren't orthogonal).
+**Most classical, by three measures:** (1) minimum uncertainty, $\Delta x\,\Delta p = \hbar/2$ with vacuum-sized noise ($\Delta x = x_0$) — a circular Gaussian in phase space that never spreads; (2) under $H = \hbar\omega a^\dagger a$, $|\alpha\rangle \to |\alpha e^{-i\omega t}\rangle$ — a rigid Gaussian orbiting the classical trajectory; (3) a classical drive on the vacuum produces exactly this state. Eigenstate of $a$ (not $a^\dagger$; $a$ isn't Hermitian, so $\alpha \in \mathbb{C}$ and these aren't orthogonal).
 
 **Overcomplete basis:** $\langle\beta|\alpha\rangle = e^{-|\alpha-\beta|^2/2}\,e^{i\,\mathrm{Im}(\beta^*\alpha)} \neq 0$, yet $\frac{1}{\pi}\int d^2\alpha\, |\alpha\rangle\langle\alpha| = \mathbb{1}$ — resolution of identity with a redundant, non-orthogonal family (the basis of P/Q phase-space representations).
 

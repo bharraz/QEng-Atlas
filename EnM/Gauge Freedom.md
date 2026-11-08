@@ -8,7 +8,9 @@ $$
 \mathbf{A}' = \mathbf{A}+\nabla\chi, \qquad V' = V - \frac{\partial\chi}{\partial t} \quad\Rightarrow\quad \mathbf{E}, \mathbf{B} \text{ unchanged}
 $$
 
-since $\mathbf{B}=\nabla\times\mathbf{A}$ kills the gradient and $\mathbf{E}=-\nabla V-\partial_t\mathbf{A}$ cancels the rest.
+since $\mathbf{B}=\nabla\times\mathbf{A}$ annihilates the gradient and $\mathbf{E}=-\nabla V-\partial_t\mathbf{A}$ cancels the rest.
+
+**Picture:** potentials as heights measured from an arbitrary zero: moving the zero changes every number but none of the slopes, and only the slopes (the fields) push charges.
 
 | Gauge | Condition | What you get | Good for |
 |---|---|---|---|
@@ -17,7 +19,7 @@ since $\mathbf{B}=\nabla\times\mathbf{A}$ kills the gradient and $\mathbf{E}=-\n
 
 The "instantaneous" Coulomb potential doesn't violate causality — $V$ alone isn't measurable, and the fields assembled from $V$ and $\mathbf{A}$ are properly retarded.
 
-**Physics is gauge invariant, so a gauge-dependent intermediate quantity appearing in a final answer is a bug.** Classic AMO instance: $\mathbf{d}\cdot\mathbf{E}$ vs $\mathbf{p}\cdot\mathbf{A}$ atom–light couplings look different, give the same on-shell rates, and differ off-resonance in ways that confuse people about light shifts — they're related by a gauge(-like) transformation.
+**Physics is gauge invariant, so a gauge-dependent intermediate quantity appearing in a final answer is a bug.** Standard AMO instance: $\mathbf{d}\cdot\mathbf{E}$ vs $\mathbf{p}\cdot\mathbf{A}$ atom–light couplings look different, give the same on-shell rates, and differ off-resonance in ways that confuse people about light shifts — they're related by a gauge(-like) transformation.
 
 > [!question]- Coulomb gauge gives an instantaneous potential $V$. Why doesn't measuring the field near a suddenly-moved charge reveal faster-than-light signaling?
 > Because $\mathbf{E}=-\nabla V-\partial_t\mathbf{A}$, and in Coulomb gauge $\partial_t\mathbf{A}$ contains an exactly compensating instantaneous piece. The gauge split is unphysical; only the sum — retarded — is real.

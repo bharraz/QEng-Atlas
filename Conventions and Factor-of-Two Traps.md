@@ -1,6 +1,6 @@
 #reference #units
 
-**Most wrong answers in this field are not conceptual — they are a factor of 2, 2π, or √2 imported from a source using a different convention.** This page collects every such trap in the vault, each with the disambiguating question to ask before trusting a number.
+**Most wrong answers in this field are not conceptual — they are a factor of 2, 2π, or √2 imported from a source using a different convention.** Every such trap in the vault is collected below, each with the question to ask before trusting a number.
 
 # Reference
 
@@ -8,10 +8,10 @@
 
 $\omega = 2\pi f$. Rabi frequencies, detunings, linewidths, and trap frequencies are all quoted both ways.
 
-- **The tell:** a quantity written $\Omega$ is usually angular (rad/s); the same quantity written $\Omega/2\pi$ is in Hz. Papers write "$\Omega/2\pi = 1$ MHz" precisely to disambiguate — read the $/2\pi$ as part of the name.
+- **How to tell:** a quantity written $\Omega$ is usually angular (rad/s); the same quantity written $\Omega/2\pi$ is in Hz. Papers write "$\Omega/2\pi = 1$ MHz" precisely to disambiguate — read the $/2\pi$ as part of the name.
 - π-pulse time is $\pi/\Omega$, *not* $1/2f$: with $\Omega/2\pi = 1$ MHz, $t_\pi = 0.5$ µs.
 - An error of ~6× means one missing $2\pi$; ~40× means two.
-- **Ask:** does this formula's exponential read $e^{i\omega t}$ or $e^{i2\pi f t}$?
+- **Check:** does this formula's exponential read $e^{i\omega t}$ or $e^{i2\pi f t}$?
 
 ## Amplitude or power
 
@@ -25,7 +25,7 @@ The single most common source of factor-2 errors, appearing in five disguises:
 | Qubit coherence | $T_2$ (coherence amplitude) | $T_1$ (population) | $1/T_2 = 1/2T_1 + \gamma_\varphi$ |
 | Input-output | $\sqrt{\kappa}\,a$ | $\kappa\, a^\dagger a$ | $\sqrt\kappa$ converts number to flux |
 
-**Ask:** is the decaying thing a field/coherence/amplitude, or an energy/population/intensity? Quoting "a ringdown of $\tau$" without saying which is the classic way to be wrong by 2×.
+**Check:** is the decaying thing a field/coherence/amplitude, or an energy/population/intensity? Quoting "a ringdown of $\tau$" without saying which is the most common way to be wrong by 2×.
 
 ## Linewidths and widths
 
@@ -38,7 +38,7 @@ The single most common source of factor-2 errors, appearing in five disguises:
 - **One-sided vs two-sided PSD:** $S^{\text{1-sided}}(f) = 2S^{\text{2-sided}}(f)$ for $f > 0$. Instruments and datasheets are one-sided; theory papers are often two-sided. $S_V = 4k_BTR$ and $S_I = 2eI$ as normally written are already one-sided.
 - **Per Hz or per rad/s:** $S(\omega) = S(f)/2\pi$. A spectral density quoted against angular frequency is smaller by $2\pi$.
 - **Density vs integrated:** V/√Hz is a *density* and means nothing until multiplied by $\sqrt{B}$. The $B$ must be the **equivalent noise bandwidth**, not the 3-dB point: ENBW $= (\pi/2)f_{3\text{dB}}$ for one pole (i.e. $1/4\tau$), approaching $f_{3\text{dB}}$ for steep filters.
-- **Ask:** one- or two-sided; per Hz or per rad/s; amplitude ($\sqrt{S}$) or power ($S$).
+- **Check:** one- or two-sided; per Hz or per rad/s; amplitude ($\sqrt{S}$) or power ($S$).
 
 ## Quantum-optics and AMO specifics
 
@@ -62,13 +62,14 @@ The single most common source of factor-2 errors, appearing in five disguises:
 - **Scherrer $\beta$ must be in radians**, with instrumental broadening subtracted; $K = 0.9$ is itself shape-dependent.
 - **Etch selectivity** may be quoted film-vs-mask or film-vs-underlayer — different numbers, same word.
 - **Sound velocity in AO devices:** longitudinal vs slow-shear mode differ by ~7× in the same crystal ([[Acousto-Optic Modulator]]).
+- **Exchange sign:** $+J\,\mathbf S_1\cdot\mathbf S_2$ is ferromagnetic for $J<0$, $-J\,\mathbf S_1\cdot\mathbf S_2$ for $J>0$, and $-2J\,\mathbf S_1\cdot\mathbf S_2$ doubles the singlet–triplet splitting to $2J$; vault pages use both of the first two ([[Exchange Interactions]]).
 
 ## Statistics
 
 - **Reduced χ² divides by $\nu = N - p$**, not $N$.
 - **Standard error vs standard deviation:** $\sigma/\sqrt N$ vs $\sigma$.
 - **Allan deviation is a curve**, and its $\tfrac12$ prefactor exists so it matches the variance of the mean for white noise ([[Allan Variance]]).
-- **Confidence level:** $z = 1$ is 68%, not 95% — and near $p = 0$ or $1$ the Gaussian interval is simply wrong ([[Binomial Errors in State Detection]]).
+- **Confidence level:** $z = 1$ is 68%, not 95% — and near $p = 0$ or $1$ the Gaussian interval is wrong ([[Binomial Errors in State Detection]]).
 
 > [!question]- A paper reports a cavity with "linewidth 1 MHz" and you need the field decay rate for a simulation. What do you need to resolve first?
 > Three things, each a factor: (1) is 1 MHz the FWHM in Hz or an angular rate — if FWHM, then $\kappa = 2\pi\times10^6$ s⁻¹; (2) is their $\kappa$ the energy decay rate or the field decay rate — the field amplitude decays at $\kappa/2$; (3) for a two-sided cavity, is this the total loss or one mirror's contribution. Getting all three wrong is a factor of 8. The safe move is to find a *time* in the paper (ringdown, photon lifetime) and check consistency against the stated linewidth.

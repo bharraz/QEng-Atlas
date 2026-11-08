@@ -10,9 +10,11 @@ $$
 
 A real beam propagates like a Gaussian with an *embedded* effective wavelength $M^2\lambda$. Consequences: focused spot from a given lens is $M^2\times$ bigger, and single-mode fiber or cavity coupling caps out — roughly, coupling efficiency $\lesssim 1/M^2$ since only the fundamental-mode content couples.
 
+**Picture:** a real beam as a mixture of Gaussian modes: higher modes diverge faster, and $M^2$ counts how much faster the mixture spreads than the pure fundamental.
+
 **Measurement (ISO 11146):** focus the beam with a lens, measure width at ~10 points through the focus (several $z_R$ each side), fit the hyperbola above for $w_0$, $z_0$, $M^2$ simultaneously. Widths must be **second-moment** ($4\sigma$) widths — camera with background carefully subtracted; a knife edge works but underestimates wings.
 
-**Gotchas:**
+**Pitfalls:**
 - Never quote $M^2$ from a single far-field measurement — you need waist *and* divergence.
 - Second moments are hypersensitive to baseline offset in the wings (a few counts of background across a big sensor can double your $M^2$).
 - $M^2 \ge 1$, equality only for pure TEM$_{00}$; single-mode diode lasers ~1.1–1.3, multimode pump diodes 10–100s. Astigmatic beams get separate $M_x^2$, $M_y^2$.

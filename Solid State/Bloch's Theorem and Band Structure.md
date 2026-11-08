@@ -8,9 +8,13 @@
 
 $$\psi_{n\mathbf{k}}(\mathbf{r}) = e^{i\mathbf{k}\cdot\mathbf{r}}\,u_{n\mathbf{k}}(\mathbf{r}),$$
 
-$\mathbf{k}$ = crystal momentum (m⁻¹), a label from discrete translational symmetry — *not* true momentum, since only $\mathbf{k}$ modulo a reciprocal lattice vector is meaningful; $n$ = band index (which solution at that $\mathbf{k}$); $u_{n\mathbf{k}}$ = a function with the *lattice's* periodicity, carrying the atomic-scale structure; the plane-wave factor carries the long-range phase. The split is the content of the theorem: a periodic potential cannot destroy the plane wave, only modulate it.
+- $\mathbf{k}$ — crystal momentum (m⁻¹): translation-symmetry label, not true momentum; defined modulo reciprocal lattice vectors
+- $n$ — band index: which of the solutions at that $\mathbf{k}$
+- $u_{n\mathbf{k}}$ — a function with the *lattice's* period: carries the atomic-scale structure
 
-where $u_{n\mathbf{k}}$ is periodic with the lattice, $\mathbf{k}$ is the crystal momentum in the Brillouin zone, and $n$ is the band index. The energy $E_n(\mathbf{k})$ is a function over the zone — the **band structure**. A **band gap** is an energy range containing no states.
+The plane-wave factor carries the long-range phase; a periodic potential can modulate the plane wave but not destroy it. The energy $E_n(\mathbf{k})$ as a function over the Brillouin zone (the set of distinct $\mathbf{k}$ values, see [[Crystal Lattices and Reciprocal Space]]) is the **band structure**. A **band gap** is an energy range containing no states.
+
+**Picture:** an electron wave travelling through a regular array of bumps: most wavelengths pass as modulated plane waves, but where the reflections from successive bumps add up, the wave cannot propagate and a gap opens.
 
 **The two limiting models** (every band structure interpolates between them):
 
@@ -27,9 +31,13 @@ Near a band edge the dispersion is parabolic, $E(\mathbf{k}) \approx E_0 + \hbar
 
 $$\mathbf{v}_n(\mathbf{k}) = \frac{1}{\hbar}\nabla_{\mathbf{k}} E_n(\mathbf{k}), \qquad \hbar\dot{\mathbf{k}} = -e(\mathbf{E} + \mathbf{v}\times\mathbf{B}).$$
 
-$\mathbf{v}_n$ = group velocity of the wavepacket (m/s) — the *slope* of the band, so a flat band means immobile electrons regardless of energy; $E_n(\mathbf{k})$ = band energy (J); $\mathbf{E}, \mathbf{B}$ = applied fields. The second equation says applied force changes $\mathbf{k}$, not velocity: the lattice's forces are already inside $E_n(\mathbf{k})$, so external fields only move the electron *through the band*, and what it then does is read off the dispersion.
+- $\mathbf{v}_n$ — group velocity of the wavepacket (m/s): the band's *slope*; a flat band means immobile electrons
+- $E_n(\mathbf{k})$ — band energy (J)
+- $\mathbf{E}, \mathbf{B}$ — applied fields
 
-The field steers $\mathbf{k}$ through the band; the *band structure* (not $\hbar\mathbf{k}/m$) sets the velocity. All transport — conductivity, Hall effect, cyclotron resonance — is these two lines plus scattering.
+The second equation says applied force changes $\mathbf{k}$, not velocity: the lattice's forces are already inside $E_n(\mathbf{k})$, so external fields only move the electron *through the band*, and what it then does is read off the dispersion — the *band structure* (not $\hbar\mathbf{k}/m$) sets the velocity.
+
+All transport — conductivity, Hall effect, cyclotron resonance — is these two lines plus scattering.
 
 **Density of states** — how many states per energy interval, the quantity that enters every rate and thermodynamic formula:
 
@@ -39,7 +47,7 @@ In 2D, $g$ is constant per band; in 1D it diverges as $1/\sqrt{E}$ at band edges
 
 **Filling decides everything:** a completely filled band carries no net current, so a full band plus a gap to the next empty band is an **insulator** (or **semiconductor** if the gap is small enough to bridge thermally or by doping); a partly filled band is a **metal**. The **Fermi level** is where the filling stops.
 
-> [!question]- Why does a weak periodic potential open gaps instead of just shifting the free-electron parabola slightly?
+> [!question]- Why does a weak periodic potential open gaps instead of shifting the free-electron parabola slightly?
 > At the Brillouin-zone boundary a forward wave $\mathbf{k}$ and its Bragg-reflected partner $\mathbf{k}-\mathbf{G}$ are degenerate. Any periodic potential, however weak, mixes them into two standing waves — one piling charge on the ion cores, one between them — with different potential energies. That energy splitting is the gap; it is degenerate perturbation theory at the zone boundary.
 
 # Connections
@@ -49,6 +57,8 @@ In 2D, $g$ is constant per band; in 1D it diverges as $1/\sqrt{E}$ at band edges
 - [[Superconductivity]] — what happens when electrons near the Fermi level pair up
 - [[Fermi's Golden Rule]] — transition rate for scattering between Bloch states
 - [[Symmetry in Quantum Mechanics]] — band degeneracies trace to the crystal's symmetry group
+- [[Topological Phases of Matter]] — bands classified by Chern and winding numbers
+- [[Hubbard Models and Mott Insulators]] — tight-binding bands with interactions added
 
 ---
 Source: Ashcroft & Mermin, *Solid State Physics*, Ch. 8–9; Kittel, *Introduction to Solid State Physics*, Ch. 7

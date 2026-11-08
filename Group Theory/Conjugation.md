@@ -13,6 +13,8 @@
 $$g(xy)g^{-1} = (gxg^{-1})(gyg^{-1}), \qquad g[x,y]g^{-1} = [gxg^{-1},\, gyg^{-1}].$$
 Every algebraically defined property is therefore conjugation-invariant.
 
+**Picture:** the same operation seen from a rotated viewpoint: rotate, act, rotate back; the operation's intrinsic features, such as its spectrum, are what every viewpoint agrees on.
+
 **Invariant (the intrinsic data of $x$):** eigenvalue spectrum, trace, determinant, rank, characteristic polynomial, Jordan structure, order of a group element. **Not invariant (viewpoint):** matrix entries, eigenvector components.
 
 **Conjugacy class** $= \{gxg^{-1} : g \in G\}$, the orbit under change of viewpoint. Classes partition the group and characters are constant on them ([[Group Representations]], [[Point Groups and Character Tables]]). For a rotation group: angle is intrinsic, axis is viewpoint, so a class is "all rotations by the same angle."
@@ -28,9 +30,13 @@ Every algebraically defined property is therefore conjugation-invariant.
 ## Ad, ad, and the Hadamard series
 
 Conjugating an algebra element by a group element stays in the algebra — the algebra is the tangent space at the identity and conjugation fixes the identity, so it can only rotate that tangent space into itself:
+
 $$\mathrm{Ad}_g(X) = g\,X\,g^{-1} \in \mathfrak g \qquad (g \in G,\; X \in \mathfrak g).$$
+
 This is the **adjoint representation**: the group acting on its own generators. Differentiate along $g = e^{tA}$ and conjugation becomes the commutator:
+
 $$\mathrm{ad}_A(X) = [A, X], \qquad e^{A} X e^{-A} = e^{\mathrm{ad}_A} X = X + [A,X] + \tfrac{1}{2!}[A,[A,X]] + \cdots$$
+
 **Conjugation is the group-level operation, $\mathrm{ad}$ its infinitesimal version, and the Hadamard series $e^{\mathrm{ad}_A}$ the bridge.** The structure constants of $\mathfrak g$ are the matrix elements of $\mathrm{ad}$; $\mathrm{ad}$ on $\mathfrak{su}(2)$ is spin 1, which is why conjugating a Pauli by a rotation rotates it as a vector ([[SU(2) and SO(3)]]).
 
 **Reading $\mathrm{ad}_A^{\,n} X$ fluently** is the prerequisite for the Magnus and BCH literature — every term there is a string of nested brackets $\mathrm{ad}_{A_1}\mathrm{ad}_{A_2}\cdots X$. Four cases cover most of what appears:

@@ -12,6 +12,8 @@ $$S_{\max} = \frac{1}{1 - p} \quad\text{(eliminated)}, \qquad S(N) = \frac{1}{(1
 
 Classify the bottleneck first — compute-bound, **memory-bound** (CPU waits for data; the common case in numerics), or I/O-bound — since the remedies are disjoint.
 
+**Picture:** a pipeline of bottlenecks: speeding up a stage that is not the slowest changes nothing, so measure first, then fix the algorithm, then memory access, then arithmetic.
+
 ## 2. Algorithm
 
 The only stage that compounds with all others. Checklist: $O(n^2) \to O(n\log n)$ substitutions (FFT convolution/correlation — [[Convolution]], [[FFT in Practice]]); exploitable structure ([[Sparse Matrices|sparsity]], symmetry sectors, low rank via truncated [[Singular Value Decomposition|SVD]], bandedness); recomputation → cache it, factor once and reuse (one factorization, many right-hand sides), or update incrementally (running statistics).
@@ -40,7 +42,7 @@ Classify before choosing machinery:
 | class | example | tool | caveat |
 |---|---|---|---|
 | embarrassingly parallel | parameter sweeps, MC shots | process pools, job arrays | independent RNG streams per worker (`SeedSequence`-style spawning, never `seed(id)`); log seeds — [[Monte Carlo Methods]] |
-| shared-memory threads | one large coupled computation | threads on shared arrays | races; false sharing (adjacent writes fight over one cache line); interpreter locks (Python GIL → use processes); check BLAS isn't already using all cores — nested parallelism oversubscribes |
+| shared-memory threads | one large coupled computation | threads on shared arrays | races; false sharing (adjacent writes contend for one cache line); interpreter locks (Python GIL → use processes); check BLAS isn't already using all cores — nested parallelism oversubscribes |
 | distributed | beyond one node | MPI | communication is now part of the algorithm |
 | GPU | large dense arrays, batched small problems | CuPy/JAX/Julia | PCIe transfer dominates unless data stays resident; branchy scalar code does not port |
 

@@ -9,13 +9,15 @@ $$
 \Gamma = \frac{2\pi}{\lambda}\,(n_e - n_o)\,L
 $$
 
+**Picture:** two lanes with different speed limits: light polarized along each axis travels at its own speed, so a phase difference builds up with distance.
+
 | Crystal | $n_o$ | $n_e$ | note |
 |---|---|---|---|
 | Quartz | 1.544 | 1.553 | weakly positive — thin waveplates |
 | Calcite | 1.658 | 1.486 | strongly negative — polarizers, displacers |
 | LiNbO₃ | 2.29 | 2.20 | plus Pockels effect — EOMs |
 
-**Walk-off:** for the extraordinary ray, $\mathbf{S} \nparallel \mathbf{k}$ — energy walks sideways (∼degrees in calcite) even at normal incidence. This is how beam-displacing polarizers work, and why tightly focused beams through thick birefringent optics come out ugly.
+**Walk-off:** for the extraordinary ray, $\mathbf{S} \nparallel \mathbf{k}$ — energy walks sideways (∼degrees in calcite) even at normal incidence. This is how beam-displacing polarizers work, and why tightly focused beams through thick birefringent optics come out distorted.
 
 **Stress birefringence — the accidental waveplate.** Isotropic glass under stress becomes birefringent. Over-torqued mirror mounts, squeezed vacuum-window seals, and pinched fiber all quietly rotate your polarization; if your "clean" polarization drifts with temperature or mounting torque, suspect this before anything exotic. (PM fiber turns the bug into a feature: built-in stress rods pin the axes.)
 

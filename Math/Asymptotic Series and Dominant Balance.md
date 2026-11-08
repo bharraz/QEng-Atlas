@@ -1,10 +1,12 @@
 #math
 
-**An asymptotic series gets more accurate as the parameter gets more extreme and worse as you keep more terms — and dominant balance is the trick of guessing which two terms in an equation are the large ones and checking afterwards.**
+**An asymptotic series gets more accurate as the parameter gets more extreme and worse as you keep more terms — and dominant balance is the method of guessing which two terms in an equation are the large ones and checking afterwards.**
 
 # Reference
 
 $$f(x) \sim \sum_{n=0}^{N} a_n x^{n} \quad (x\to 0) \qquad\text{means}\qquad \left| f(x) - \sum_{n=0}^{N} a_n x^n \right| = O(x^{N+1})$$
+
+**Picture:** a sequence of approximations that first homes in on the answer and then wanders off; the best place to stop is near the smallest term, and the more extreme the parameter, the closer it gets before turning away.
 
 **The limit taken is in $x$, not in $N$.** A convergent series improves as you add terms at fixed $x$; an asymptotic series improves as $x\to 0$ at fixed $N$. Most asymptotic series *diverge* for every $x$, and are still the more useful object.
 
@@ -20,7 +22,7 @@ Perturbation theory in QED, QCD, and quantum mechanics is asymptotic, not conver
 
 ## Dominant balance
 
-The workhorse for equations with no closed-form solution. The procedure:
+The standard method for equations with no closed-form solution. The procedure:
 
 1. **Guess** which two (occasionally more) terms are the largest.
 2. **Solve** the reduced equation keeping only those.
@@ -38,7 +40,7 @@ There are only a few pairings to try, so this is a short search rather than an a
 - **Regular** — expand $y = y_0 + \epsilon y_1 + \cdots$ and it works. The $\epsilon\to 0$ solution is close to the $\epsilon$ solution everywhere.
 - **Singular** — setting $\epsilon = 0$ lowers the order of the ODE (or removes the highest derivative), so a solution is lost and the expansion fails in a thin region. The lost solution reappears on a **rescaled** variable.
 
-**The rescaling is the whole method.** Set $X = x/\delta(\epsilon)$ and choose $\delta$ so that a new balance becomes possible — here $\delta = \epsilon$, giving the boundary layer of thickness $\epsilon$. Then **match**: the outer limit of the inner solution must equal the inner limit of the outer solution, which fixes the constants and glues them into a uniform approximation. This is *matched asymptotic expansions*.
+**The rescaling is the method.** Set $X = x/\delta(\epsilon)$ and choose $\delta$ so that a new balance becomes possible — here $\delta = \epsilon$, giving the boundary layer of thickness $\epsilon$. Then **match**: the outer limit of the inner solution must equal the inner limit of the outer solution, which fixes the constants and glues them into a uniform approximation. This is *matched asymptotic expansions*.
 
 Physical instances of the same structure: viscous boundary layers, the [[WKB Approximation]] near turning points, and any problem with a small parameter multiplying the highest derivative — including $\hbar$ in the Schrödinger equation.
 
@@ -53,7 +55,7 @@ Non-dimensionalize first; the small parameter should be a **ratio of scales**, n
 
 - [[Taylor Expansion]] — the convergent case, and the contrast that defines this one
 - [[WKB Approximation]] — an asymptotic expansion in $\hbar$, with turning points as its boundary layers
-- [[Stationary Phase and Steepest Descent]] — how the coefficients of these series are actually generated
+- [[Stationary Phase and Steepest Descent]] — how the coefficients of these series are generated
 - [[Magnus Expansion]] — a series with a genuine convergence radius, unlike Dyson
 - [[Units and Dimensional Analysis]] — non-dimensionalizing to find what is small
 - [[(Guide) Thinking Mathematically]] — dominant balance as a specialize-then-check move

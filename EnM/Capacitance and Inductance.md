@@ -1,12 +1,14 @@
 #EnM
 
-**C stores energy in E fields between conductors, L stores it in B fields around currents — and every physical structure has both, whether you put them there or not.** The parasitic values are what bite: about 1 pF per cm of proximity and 1 nH per mm of wire.
+**C stores energy in E fields between conductors, L stores it in B fields around currents — and every physical structure has both, whether you put them there or not.** The parasitic values are what matter in practice: about 1 pF per cm of proximity and 1 nH per mm of wire.
 
 # Reference
 
 $$
 U_C = \tfrac{1}{2}CV^2, \qquad U_L = \tfrac{1}{2}LI^2
 $$
+
+**Picture:** C as a spring storing energy in the field between separated charges; L as a flywheel storing energy in the field of moving charge.
 
 **Geometry lookup:**
 
@@ -21,7 +23,7 @@ Coax sanity check: $\sqrt{L'/C'}=Z_0$ and $1/\sqrt{L'C'}=c/\sqrt{\varepsilon_r}$
 **Parasitic rules of thumb (the debugging numbers):**
 - **~1 pF/cm** between any wire and nearby ground; ~0.5 pF/cm² facing PCB planes; scope probe 10–15 pF; adjacent DIP pins ~0.5 pF
 - **~1 nH/mm** of any wire or trace (weak log dependence on thickness); a via ~1 nH; a TO-92 lead ~7 nH
-- Consequences: 10 cm of "just a wire" = 100 nH → 63 Ω at 100 MHz — not a short. 1 pF at 1 GHz = 160 Ω — not open. **Every component self-resonates**: a 100 nF cap with 5 nH of lead/via is series-resonant at ~7 MHz and *inductive* above.
+- Consequences: 10 cm of "a wire" = 100 nH → 63 Ω at 100 MHz — not a short. 1 pF at 1 GHz = 160 Ω — not open. **Every component self-resonates**: a 100 nF cap with 5 nH of lead/via is series-resonant at ~7 MHz and *inductive* above.
 
 Reciprocal geometry: structures with high C per length have low L per length and vice versa — you trade one for the other, which is exactly the $Z_0=\sqrt{L/C}$ knob in [[Transmission Lines]].
 
@@ -30,11 +32,11 @@ Reciprocal geometry: structures with high C per length have low L per length and
 
 # Connections
 
-- [[Transmission Lines]] — distributed L′ and C′ per length are the whole model
-- [[Decoupling and Bypassing]] — where the parasitic-inductance fight is fought
+- [[Transmission Lines]] — distributed L′ and C′ per length are the entire model
+- [[Decoupling and Bypassing]] — where parasitic inductance is minimized in practice
 - [[LC Resonators]] — intentional L and C; parasitics make unintentional ones everywhere
 - [[Complex Impedance]] — the ω-dependence that turns pF and nH into real ohms
-- [[Method of Images]] — how wire-over-plane capacitance actually gets computed
+- [[Method of Images]] — how wire-over-plane capacitance gets computed
 
 ---
 Source: Griffiths, *Introduction to Electrodynamics*, Ch. 2.5 & 7.2; parasitics: Ott, *EMC Engineering*

@@ -16,17 +16,19 @@ with width = the photon **coherence time** (not the detector resolution — sub-
 
 $$V = |\langle \psi_1 | \psi_2 \rangle|^2.$$
 
-**That last equation is why HOM matters beyond being a pretty effect: the dip visibility is a direct meter of photon indistinguishability.** No spectrometer measures this — two sources can have identical spectra yet distinguishable (mixed) wavepackets. Raw visibility > 50% also certifies nonclassical light (classical fields cap at 1/2).
+**Picture:** two identical photons arriving together at a beamsplitter: the two ways of leaving by different ports cancel, so they leave by the same port.
+
+**That last equation is why HOM matters as a measurement: the dip visibility is a direct meter of photon indistinguishability.** No spectrometer measures this — two sources can have identical spectra yet distinguishable (mixed) wavepackets. Raw visibility > 50% also certifies nonclassical light (classical fields cap at 1/2).
 
 **Where it matters:**
 
 - **Source qualification.** "HOM visibility" is *the* headline spec for single-photon sources ([[Quantum Dots|quantum-dot]] sources: >98% for consecutive photons; the hard version is photons from *separate* emitters, where spectral wander between sources caps V). Also diagnoses purity of heralded SPDC photons.
-- **Bell-state measurement = HOM.** Photonic teleportation, entanglement swapping, and quantum repeaters all hinge on projecting two photons onto Bell states, implemented as HOM interference + coincidence pattern (the singlet is the *only* Bell state producing coincidences at the two outputs — antisymmetric under exchange, so it "fermionizes"). No indistinguishability → no repeater network: HOM visibility between independent, remote sources is the metric that gates the whole quantum-network program. The same two-photon interference between "early/late" modes underlies memory-photon entanglement heralding (DLCZ).
+- **Bell-state measurement = HOM.** Photonic teleportation, entanglement swapping, and quantum repeaters all hinge on projecting two photons onto Bell states, implemented as HOM interference + coincidence pattern (the singlet is the *only* Bell state producing coincidences at the two outputs — antisymmetric under exchange, so it "fermionizes"). No indistinguishability → no repeater network: HOM visibility between independent, remote sources is the metric that gates the entire quantum-network program. The same two-photon interference between "early/late" modes underlies memory-photon entanglement heralding (DLCZ).
 - **Linear-optical QC.** KLM and boson sampling are HOM at scale: multiphoton interference in an interferometer, with the computational hardness living entirely in the bosonic exchange amplitudes (permanents). Every photonic-QC fidelity budget starts from pairwise HOM visibilities.
 - **Beyond photons:** HOM observed with atoms, phonons, plasmons; electron (fermionic) HOM *anti*-bunches — the exchange-statistics litmus test.
 
-> [!question]- Two photons pass the HOM test with V ≈ 1 against each other. A third source's photons each show identical spectra to the first two but only V ≈ 0.5 against them. What's the diagnosis?
-> Spectral *purity*, not spectral shape. V is the overlap of quantum states, and a photon can occupy a mixed state over frequency — e.g. its emission time/frequency fluctuates shot-to-shot (spectral diffusion in a solid-state emitter, or SPDC heralded without tight filtering, where entanglement with the partner photon mixes the heralded state). The averaged spectrum looks identical; each individual wavepacket differs. V ≈ 0.5 against a pure reference is the fingerprint of a maximally impure single mode. Fixes attack the purity: lifetime-limited emission (Purcell enhancement — see [[Purcell Effect]]), spectral filtering at the cost of rate, or active stabilization of the emitter's environment.
+> [!question]- Two photons pass the HOM test with V ≈ 1 against each other. A third source's photons have identical spectra but reach only V ≈ 0.5 against them. What's the diagnosis?
+> Spectral *purity*, not spectral shape. V is the overlap of quantum states, and a photon can be mixed over frequency: its emission frequency may wander shot to shot (spectral diffusion in a solid-state emitter), or entanglement with the partner photon may leave a heralded SPDC photon mixed. The averaged spectrum looks identical while each wavepacket differs. Against a pure reference, $V = \langle\psi|\rho|\psi\rangle$: V ≈ 0.5 puts half the photon's weight outside the reference mode. Fixes: lifetime-limited emission ([[Purcell Effect]]), spectral filtering, or a stabilized emitter environment.
 
 # Connections
 
@@ -35,7 +37,9 @@ $$V = |\langle \psi_1 | \psi_2 \rangle|^2.$$
 - [[Quantum Dots]] — the sources whose headline number this is
 - [[Purcell Effect]] — how emitters are made lifetime-limited, hence indistinguishable
 - [[Quantum Teleportation]] — Bell-state measurement is HOM + coincidence logic
+- [[Ion-Cavity Coupling]] — ion–photon interfaces whose photons are interfered to entangle ions in separate traps
 - [[Interference]] — one-photon interference for contrast: amplitudes of *one* quantum vs *two*
+- [[Remote Entanglement and Quantum Networks]] — the network links built on two-photon interference
 
 ---
 Source: Hong, Ou & Mandel, *Phys. Rev. Lett.* 59, 2044 (1987); Bouchard et al., "Two-photon interference: the Hong-Ou-Mandel effect," *Rep. Prog. Phys.* 84, 012402 (2021)

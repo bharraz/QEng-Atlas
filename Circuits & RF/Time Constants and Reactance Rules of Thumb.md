@@ -6,13 +6,19 @@
 
 $$\tau_{RC} = RC, \qquad \tau_{RL} = L/R, \qquad f_{-3\mathrm{dB}} = \frac{1}{2\pi\tau}, \qquad t_{\text{rise}}\,(10\text{–}90\%) = 2.2\,\tau$$
 
-$\tau$ = time constant (s), the $1/e$ settling time of the step response; $R$ = the resistance the reactive element actually sees looking outward — *not* a component value on the schematic, but source resistance plus load in parallel, which is why the same capacitor behaves differently in two places; $C$ (F), $L$ (H) = the total including parasitics.
+- $\tau$ — time constant (s), the $1/e$ settling time of the step response
+- $R$ (Ω) — resistance seen between the element's two terminals
+- $C$ (F), $L$ (H) — the total including parasitics
 
-Reactance magnitudes at frequency $f$:
+$R$ is the source resistance and the load in parallel, *not* a component value on the schematic. Because it depends on what surrounds the element, the same capacitor behaves differently in two places. The full charging, discharging, and switched-on-sine solutions are on [[RC and RL Time Response]].
+
+Reactance $X$ is the imaginary part of impedance, $Z = R + jX$: opposition from energy stored and returned each cycle, not dissipated ([[Complex Impedance]]). Its sign is negative for a capacitor and positive for an inductor; the magnitudes at frequency $f$ are:
 
 $$|X_C| = \frac{1}{2\pi f C}, \qquad |X_L| = 2\pi f L$$
 
-$X_C$ falls with frequency (a cap is an open at DC, a short at high $f$), $X_L$ rises (an inductor is a short at DC, an open at high $f$). A reactive element only matters where its reactance is *comparable to the surrounding resistance* — that crossing is the corner frequency, and it is the whole reason $f = 1/2\pi RC$ appears everywhere.
+$X_C$ falls with frequency (a cap is an open at DC, a short at high $f$), $X_L$ rises (an inductor is a short at DC, an open at high $f$). A reactive element only matters where its reactance is *comparable to the surrounding resistance* — that crossing is the corner frequency, and it is why $f = 1/2\pi RC$ appears everywhere.
+
+**Picture:** a time constant is how long a node takes to forget its past; a reactance is how hard an element pushes back at one frequency.
 
 ## Numbers worth memorizing
 
@@ -34,7 +40,7 @@ Also: $1/2\pi \approx 0.159$, so "$RC$ in µs" → "corner in kHz" is division b
 
 - **Filter placement**: the corner must sit between the signal you keep and the noise you reject, and the resistance in $\tau$ must be the *actual* driven-plus-load impedance, or the filter lands at the wrong frequency.
 - **Bypassing**: a bypass cap works where $|X_C| \ll$ supply impedance; its own series inductance (ESL, ~1 nH) makes it *self-resonant* at $f = 1/2\pi\sqrt{LC}$ and inductive above — a 100 nF 0805 resonates near 20 MHz, which is why parallel small caps exist ([[Decoupling and Bypassing]]).
-- **Speed budget**: cascading $n$ single-pole stages gives $t_r \approx \sqrt{\sum t_{r,i}^2}$ — the slowest stage dominates in quadrature, so fixing anything but the worst pole buys little.
+- **Speed budget**: cascading $n$ single-pole stages gives $t_r \approx \sqrt{\sum t_{r,i}^2}$ — the slowest stage dominates in quadrature, so fixing anything but the worst pole gains little.
 - **Loading**: a 10 pF probe on a 100 kΩ node makes a 1 µs pole — the instrument creates the corner it then measures.
 
 ## Why it matters for debugging
@@ -45,7 +51,7 @@ Read the symptom back to a $\tau$:
 - **Overshoot/ringing at a definite frequency** → an $LC$: $f_0 = 1/2\pi\sqrt{LC}$ with $Q = \frac{1}{R}\sqrt{L/C}$ — lead inductance with bypass capacitance, or feedback capacitance with source capacitance ([[Transimpedance Amplifier]]).
 - **Rolloff at the wrong frequency** → the resistance in $\tau$ isn't what you assumed (source impedance, or a load in parallel).
 - **A "slow" signal that speeds up when you shorten a cable** → cable capacitance was in the $\tau$ all along.
-- **Steps ringing with period fixed by cable length, not by any $RC$** → not a time constant at all but a transmission-line reflection ([[Characteristic Impedance and Reflection]]) — the tell is that the period tracks length, and the fix is termination, not a filter.
+- **Steps ringing with period fixed by cable length, not by any $RC$** → not a time constant at all but a transmission-line reflection ([[Characteristic Impedance and Reflection]]) — the distinguishing sign is that the period tracks length, and the fix is termination, not a filter.
 
 > [!question]- A photodiode signal looks clean on a 1 MΩ scope input but disappears when you switch to 50 Ω. What is the circuit telling you?
 > The source is current-like with high output impedance, and the two inputs form different $\tau$'s with the cable capacitance ($\sim$100 pF/m). At 1 MΩ, $\tau = 100\ \mu$s — the node integrates the current into a large, slow voltage. At 50 Ω, $\tau = 5$ ns, so the same current produces $IR$ = a tiny fast voltage. Nothing broke; you traded amplitude for bandwidth by changing $R$ in both $V = IR$ and $\tau = RC$. If you want both, use a [[Transimpedance Amplifier|transimpedance amplifier]], which holds the node at virtual ground so $C$ never charges.
@@ -53,12 +59,14 @@ Read the symptom back to a $\tau$:
 # Connections
 
 - [[RC and RL Filters]] — the full transfer functions these rules approximate
-- [[Complex Impedance]] — where $X_C$, $X_L$ come from; the phasor formalism
+- [[RC and RL Time Response]] — the exponential solutions behind $\tau$ and the rise time
+- [[Complex Impedance]] — where $X_C$, $X_L$ come from; resistance against reactance; the phasor formalism
 - [[LC Resonators]] — $f_0$ and $Q$ when both reactances are present
 - [[Decoupling and Bypassing]] — self-resonance and why cap choice is a reactance argument
-- [[Bandwidth]] — rise time × bandwidth ≈ 0.35, the same pole in time-domain clothing
+- [[Bandwidth]] — rise time × bandwidth ≈ 0.35, the same pole seen in the time domain
 - [[Characteristic Impedance and Reflection]] — the regime where lumped $\tau$ reasoning fails
 - [[Transimpedance Amplifier]] — the standard escape from source-capacitance loading
+- [[Capacitors in Practice]] — which capacitor has the reactance you calculated
 
 ---
 Source: Horowitz & Hill, *The Art of Electronics* 3rd ed., Ch. 1 & App. H; Ott, *Electromagnetic Compatibility Engineering*, Ch. 11

@@ -11,6 +11,8 @@
 | Faraday | $\nabla\times\mathbf{E}=-\partial_t\mathbf{B}$ | $\oint\mathbf{E}\cdot d\boldsymbol{\ell}=-\dot{\Phi}_B$ | changing B drives E loops |
 | Ampère–Maxwell | $\nabla\times\mathbf{B}=\mu_0\mathbf{J}+\mu_0\varepsilon_0\partial_t\mathbf{E}$ | $\oint\mathbf{B}\cdot d\boldsymbol{\ell}=\mu_0 I_{enc}+\mu_0\varepsilon_0\dot{\Phi}_E$ | current & changing E drive B loops |
 
+**Picture:** charges are sources and sinks of E; currents and changing E fields are whirlpools of B; changing B fields are whirlpools of E; and B has no sources at all.
+
 **In matter:** define $\mathbf{D}=\varepsilon_0\mathbf{E}+\mathbf{P}$ and $\mathbf{H}=\mathbf{B}/\mu_0-\mathbf{M}$; then only *free* charge and current appear:
 $$\nabla\cdot\mathbf{D}=\rho_f, \qquad \nabla\times\mathbf{H}=\mathbf{J}_f+\partial_t\mathbf{D}$$
 Linear media: $\mathbf{D}=\varepsilon\mathbf{E}$, $\mathbf{B}=\mu\mathbf{H}$ — bound charge bookkeeping hidden in $\varepsilon,\mu$.
@@ -18,7 +20,7 @@ Linear media: $\mathbf{D}=\varepsilon\mathbf{E}$, $\mathbf{B}=\mu\mathbf{H}$ —
 **Waves follow immediately:** curl of Faraday + Ampère in vacuum gives $\nabla^2\mathbf{E}=\mu_0\varepsilon_0\,\partial_t^2\mathbf{E}$, i.e. light at $c=1/\sqrt{\mu_0\varepsilon_0}$ — see [[Electromagnetic Wave Equation]].
 
 > [!question]- What breaks if you delete the displacement current term?
-> Ampère's law becomes inconsistent with charge conservation ($\nabla\cdot\mathbf{J}=-\partial_t\rho$ fails for a charging capacitor), and the curl-curl derivation yields no wave equation — no light. Maxwell's term is the whole ballgame.
+> Ampère's law becomes inconsistent with charge conservation ($\nabla\cdot\mathbf{J}=-\partial_t\rho$ fails for a charging capacitor), and the curl-curl derivation yields no wave equation — no light. Maxwell's term is therefore essential.
 
 # Connections
 

@@ -1,6 +1,6 @@
 #statistics #math
 
-**Sums of many independent random contributions come out Gaussian, whatever the ingredients** — which is why Gaussians are everywhere: every noise voltage, averaged signal, and fit residual is secretly a sum.
+**Sums of many independent random contributions come out Gaussian, whatever the ingredients** — which is why Gaussians are everywhere: every noise voltage, averaged signal, and fit residual is a sum of many small contributions.
 
 # Reference
 
@@ -9,6 +9,8 @@ For iid $x_i$ with mean $\mu$ and *finite* variance $\sigma^2$:
 $$
 \bar{x} = \frac{1}{N}\sum_{i=1}^{N} x_i \;\xrightarrow{N\to\infty}\; \mathcal{N}\!\left(\mu,\; \frac{\sigma^2}{N}\right)
 $$
+
+**Picture:** adding many small independent kicks: whatever each kick's shape, the histogram of the sum smooths into a bell curve.
 
 **The working consequence: the mean's standard deviation is $\sigma/\sqrt{N}$** — average 100 shots, error bars shrink 10×. This single line underwrites [[SNR and Averaging]] and every "$/\sqrt{N}$" in a lab notebook.
 
@@ -23,7 +25,7 @@ $$
 # Connections
 
 - [[Gaussian Distribution]] — the CLT is the reason this distribution owns experimental physics
-- [[SNR and Averaging]] — the $\sqrt{N}$ improvement and, crucially, when it fails
+- [[SNR and Averaging]] — the $\sqrt{N}$ improvement and when it fails
 - [[Monte Carlo Methods]] — MC error bars are CLT applied to the sample mean
 - [[Error Propagation]] — many small independent error sources ⇒ Gaussian total, justifying quadrature sums
 

@@ -10,6 +10,8 @@ $$
 
 $L$ (H), $C$ (F), $R$ (Ω) = series loss resistance; $\omega_0$ (rad/s) = where the two reactances cancel. Read $Q = \omega_0 L/R$ as reactance-at-resonance over resistance — the ratio of energy-storing to energy-losing impedance, which is why the *same* $R$ gives high $Q$ in a high-$Z_0$ resonator and low $Q$ in a low-$Z_0$ one. Note $\omega_0$ depends on the product $LC$ while $Q$ and $Z_0 = \sqrt{L/C}$ depend on the ratio: you can hold the frequency fixed and trade $L$ against $C$ to move $Q$ and the impedance level independently.
 
+**Picture:** a pendulum: energy moves between the capacitor's electric field (like height) and the inductor's magnetic field (like speed), and resistance is friction.
+
 **Series LC:** impedance dips to $R$ at resonance (looks like a short) — notch/trap, or a low-Z way to drive a resonant load.
 **Parallel (tank):** impedance peaks to $\approx Q\omega_0 L = L/RC$ (looks open) — frequency-selective load, oscillator tank.
 
@@ -23,9 +25,13 @@ Numbers: 1 µH + 100 pF → 15.9 MHz, $Z_0 = 100\ \Omega$. Air-core/ceramic Q ~ 
 # Connections
 
 - [[Resonance and Q Factor]] — the universal Q language this instantiates
-- [[Driven Damped Harmonic Oscillator]] — same equation, mechanical costume
+- [[Driven Damped Harmonic Oscillator]] — the same equation for a mass on a spring
+- [[Complex Impedance]] — reactance, and why the two reactances cancel at resonance
+- [[RC and RL Time Response]] — the first-order case, which settles instead of ringing
 - [[Impedance Matching]] — L-networks are LC resonators run for impedance transformation
 - [[Paul Traps]] — the helical-resonator RF drive is a high-Q tank in the lab
+- [[Filtering Power and Signal Lines]] — the unwanted resonance of an LC filter, and how it is damped
+- [[Capacitors in Practice]] — capacitor loss and stability in resonators
 
 ---
 Source: Horowitz & Hill, *The Art of Electronics* 3rd ed., §1.7

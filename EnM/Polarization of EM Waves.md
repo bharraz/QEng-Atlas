@@ -9,13 +9,15 @@ $$
 \mathbf{E} = \left(E_x\,\hat{x} + E_y e^{i\phi}\,\hat{y}\right)e^{i(kz-\omega t)}
 $$
 
+**Picture:** the tip of the E vector traced over one cycle, looking into the beam: a line, a circle, or an ellipse.
+
 | $\phi$ | $E_x{:}E_y$ | State |
 |---|---|---|
 | 0 or $\pi$ | any | linear, at angle $\arctan(E_y/E_x)$ |
 | $\pm\pi/2$ | 1:1 | circular ($\sigma^\pm$) |
 | else | else | elliptical |
 
-**Helicity basis:** $\hat{\sigma}^\pm = \mp(\hat{x}\pm i\hat{y})/\sqrt{2}$ — eigenstates of rotation about $\mathbf{k}$, carrying $\pm\hbar$ angular momentum per photon. This is the basis atoms care about: $\sigma^\pm$ drives $\Delta m=\pm1$, $\pi$ ($\parallel \mathbf{B}$) drives $\Delta m=0$ — see [[Selection Rules]]. **Gotcha: helicity is defined relative to $\mathbf{k}$, but $\Delta m$ is relative to the quantization axis $\mathbf{B}$** — flip the beam direction and your $\sigma^+$ becomes $\sigma^-$.
+**Helicity basis:** $\hat{\sigma}^\pm = \mp(\hat{x}\pm i\hat{y})/\sqrt{2}$ — eigenstates of rotation about $\mathbf{k}$, carrying $\pm\hbar$ angular momentum per photon. This is the basis atoms care about: $\sigma^\pm$ drives $\Delta m=\pm1$, $\pi$ ($\parallel \mathbf{B}$) drives $\Delta m=0$ — see [[Selection Rules]]. **Helicity is defined relative to $\mathbf{k}$, but $\Delta m$ is relative to the quantization axis $\mathbf{B}$** — flip the beam direction and your $\sigma^+$ becomes $\sigma^-$.
 
 Any linear state = equal superposition of $\sigma^+$ and $\sigma^-$; their relative phase sets the linear angle.
 

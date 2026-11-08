@@ -10,7 +10,9 @@ $$
 
 where $\theta$ is the LO phase — dial it to pick amplitude quadrature, phase quadrature, or anything between.
 
-**Why balanced (subtracted):** LO classical intensity noise arrives common-mode on both diodes and cancels in $i_-$; what survives is the signal quadrature scaled by $|\alpha_{\text{LO}}|$ plus vacuum. Crank the LO until shot noise clears the electronic floor (10–20 dB clearance is a good detector) and the measurement is vacuum-limited even with mediocre electronics.
+**Picture:** a strong reference wave as a ruler laid along one direction in phase space; the subtracted photocurrent reads the signal's projection onto that direction.
+
+**Why balanced (subtracted):** LO classical intensity noise arrives common-mode on both diodes and cancels in $i_-$; what survives is the signal quadrature scaled by $|\alpha_{\text{LO}}|$ plus vacuum. Raise the LO power until shot noise clears the electronic floor (10–20 dB clearance is a good detector) and the measurement is vacuum-limited even with mediocre electronics.
 
 **With vacuum at the signal port** the variance is $1/4$ — the shot-noise level *is* a vacuum quadrature measurement. [[Squeezed States]] show up as noise below that line at the right $\theta$.
 
@@ -24,7 +26,7 @@ where $\theta$ is the LO phase — dial it to pick amplitude quadrature, phase q
 # Connections
 
 - [[Beamsplitter Transformation]] — the mixing element; the unused-port vacuum sets the noise floor
-- [[Heterodyne Detection]] — the offset-LO cousin: both quadratures, 3 dB penalty
+- [[Heterodyne Detection]] — the offset-LO variant: both quadratures, 3 dB penalty
 - [[Wigner Function]] — homodyne histograms vs $\theta$ are its tomographic projections
 - [[Squeezed States]] — the states only this measurement can certify (sub-vacuum quadrature noise)
 

@@ -12,9 +12,24 @@
 
 $$Q = C(P_1 - P_2), \qquad \frac{1}{C_{\text{series}}} = \sum_i \frac{1}{C_i}, \qquad P = \frac{Q}{S_{\text{eff}}}, \qquad \frac{1}{S_{\text{eff}}} = \frac{1}{S_{\text{pump}}} + \frac{1}{C}.$$
 
-The dictionary: $Q$ = gas throughput (how much gas flows, mbar·L/s) ↔ current; $P$ = pressure ↔ voltage; $C$ = **conductance** of a tube or aperture — the flow it passes per unit pressure difference, i.e. how easily gas gets through it — ↔ $1/R$; $S$ = pumping speed (volume of gas removed per second at the pump inlet) — a pump is a conductance to a place of zero return. Series conductances add reciprocally like series resistors, and the pump + its plumbing combine the same way: $S_{\text{eff}}$ is always *less* than both.
+The circuit analogy, symbol by symbol:
 
-In molecular flow, $C$ depends only on geometry, not on pressure: molecules travel independently, so doubling $P$ doubles the flow and the flow-per-pressure-difference ratio stays fixed. For air at 300 K: aperture of area $A$, $C \approx 11.6\,A$ ($A$ in cm², $C$ in L/s); **long** tube of diameter $d$ and length $L$, $C \approx 12.1\, d^3/L$ (cm, L/s). The tube formula assumes $L \gg d$; for short tubes it overestimates, and the fix is to put the tube's conductance in series with the entrance aperture's (equivalently, apply the Clausing transmission factor) — sources quoting $11.6\,d^3/L$ differ by exactly this choice — $d^3$ because the aperture area gives $d^2$ and the probability of traversing the tube without being bounced back gives another $d/L$. The $d^3$ is the design rule: a 500 L/s turbo behind a 25 cm × 2 cm tube ($C \approx 39$ L/s) is a 36 L/s system. Short and fat beats a bigger pump; UHV pumps hang directly on large flanges.
+- $Q$ — gas throughput, how much gas flows (mbar·L/s): analog of current
+- $P$ — pressure (mbar): analog of voltage
+- $C$ — **conductance** of a tube or aperture (L/s): flow per unit pressure difference; analog of $1/R$
+- $S$ — pumping speed (L/s): gas volume removed per second at the pump inlet
+- $S_{\text{eff}}$ — pumping speed delivered through the plumbing (L/s)
+
+Conductance measures how easily gas gets through; a pump is a conductance to a place of zero return. Series conductances add reciprocally like series resistors, and the pump + its plumbing combine the same way: $S_{\text{eff}}$ is always *less* than both.
+
+**Picture:** a leaky bucket being pumped through a hose: the pressure is set by how fast gas leaks in against how fast the hose and pump together can carry it out.
+
+In molecular flow, $C$ depends only on geometry, not on pressure: molecules travel independently, so doubling $P$ doubles the flow and the flow-per-pressure-difference ratio stays fixed. For air at 300 K:
+- **Aperture** of area $A$: $C \approx 11.6\,A$ ($A$ in cm², $C$ in L/s).
+- **Long tube** of diameter $d$ and length $L$: $C \approx 12.1\, d^3/L$ (cm, L/s) — $d^3$ because the aperture area gives $d^2$ and the probability of traversing the tube without being bounced back gives another $d/L$.
+- **Short tube:** the long-tube formula assumes $L \gg d$ and overestimates otherwise; put the tube's conductance in series with the entrance aperture's (equivalently, apply the Clausing transmission factor).
+
+The $d^3$ is the design rule: a 500 L/s turbo behind a tube 25 cm long and 4 cm in diameter ($C \approx 31$ L/s) is a 29 L/s system. Short and wide beats a bigger pump; UHV pumps hang directly on large flanges.
 
 ## Sources (the pump-down sequence)
 
@@ -42,6 +57,8 @@ Budget: $P_{\text{final}} = (\text{area} \times q_{\text{outgas}})/S_{\text{eff}
 - [[Plumbing]] — the same series-conductance triage at positive pressure
 - [[Cryogenics]] — cryostats are vacuum systems; cold surfaces cryopump
 - [[Surface Preparation and Cleaning]] — adsorbed water from the surface side
+- [[Handling Lab Hardware]] — gloves, flanges, and gaskets: why handling sets the base pressure
+- [[Chemical Cleaning]] — degreasing and solvent cleaning of vacuum parts
 
 ---
 Source: O'Hanlon, *A User's Guide to Vacuum Technology*, Ch. 3–8, 19; Jousten (ed.), *Handbook of Vacuum Technology*

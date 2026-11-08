@@ -1,6 +1,6 @@
 #math
 
-**Solve the equation once for a point source, then build every solution by superposition** — G is the system's response to a delta kick, and since the operator is linear, any source is just a weighted sum of kicks.
+**Solve the equation once for a point source, then build every solution by superposition** — G is the system's response to a delta kick, and since the operator is linear, any source is a weighted sum of kicks.
 
 # Reference
 
@@ -8,7 +8,9 @@ For a linear operator $L$:
 $$
 L\, G(x, x') = \delta(x - x') \quad\Longrightarrow\quad y(x) = \int G(x, x')\, f(x')\, dx' \text{ solves } L y = f
 $$
-For time-invariant systems $G(t,t') = G(t-t')$ and the solution is a convolution; in frequency space it's just division: $\tilde{y}(\omega) = \tilde{f}(\omega)/L(\omega)$ — the Green's function *is* the transfer function.
+For time-invariant systems $G(t,t') = G(t-t')$ and the solution is a convolution; in frequency space it's division: $\tilde{y}(\omega) = \tilde{f}(\omega)/L(\omega)$ — the Green's function *is* the transfer function.
+
+**Picture:** the ripple from one pebble dropped into a pond; any pattern of rain is the sum of the ripples from each drop.
 
 **Driven damped oscillator** ($\ddot{x} + \gamma\dot{x} + \omega_0^2 x = f(t)$):
 $$
@@ -16,7 +18,7 @@ G(t-t') = \frac{e^{-\gamma(t-t')/2}}{\omega_1}\sin\!\big(\omega_1 (t-t')\big)\,\
 $$
 — kick it, it rings and decays. The $\Theta$ enforces causality (retarded Green's function). In frequency space $\tilde{G}(\omega) = 1/(\omega_0^2 - \omega^2 + i\gamma\omega)$: the Lorentzian resonance is the FT of the ringdown.
 
-**Poisson's equation:** $\nabla^2 G = -\delta^3(\mathbf{r}-\mathbf{r}')/\varepsilon_0$ gives $G = 1/4\pi\varepsilon_0|\mathbf{r}-\mathbf{r}'|$ — the Coulomb potential is the Green's function of electrostatics, and $V = \int \rho\, G\, dV'$ is just superposition of point charges.
+**Poisson's equation:** $\nabla^2 G = -\delta^3(\mathbf{r}-\mathbf{r}')/\varepsilon_0$ gives $G = 1/4\pi\varepsilon_0|\mathbf{r}-\mathbf{r}'|$ — the Coulomb potential is the Green's function of electrostatics, and $V = \int \rho\, G\, dV'$ is superposition of point charges.
 
 **Boundary conditions matter:** G isn't unique until you impose them — retarded vs advanced in time, grounded-conductor vs free-space in electrostatics (method of images = constructing G for the boundary). Choose the G that matches your physical setup, not the formula you remember.
 

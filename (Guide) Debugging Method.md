@@ -14,7 +14,7 @@ Corollary: know the tools too. A scope's bandwidth, a spectrum analyzer's resolu
 
 Get a reliable reproduction before attempting a fix. Intermittent problems are hard *because you cannot run the loop* — each test carries no information unless the failure is on demand.
 
-- Find the trigger and make it a knob: does the lock drop when the AC compressor cycles, when someone opens the door, at a particular point in the sequence?
+- Find the trigger and make it a knob: does a laser lock drop when the AC compressor cycles, when someone opens the door, at a particular point in the sequence?
 - Stimulate rather than wait: shake the table, breathe on the fiber, tap the mount, step the temperature, deliberately inject the suspected interference.
 - Automate repetition — run the sequence 10⁴ times and histogram the failures; a 1% failure needs statistics, not anecdote.
 - Don't "fix" an intermittent by changing something and observing its absence for an hour. That is rule 9's trap.
@@ -26,7 +26,7 @@ Instrument the failure instead of reasoning about it. Theories tell you *where t
 - **Scope**: look at the actual waveform, not the expected one. Trigger on the failure (pulse-width, runt, or logic-pattern triggers exist for this). Use the fastest timebase that still shows the event — the interesting structure is usually at a timescale you weren't displaying. Check DC offsets and coupling before believing amplitudes.
 - **Spectrum analyzer**: the frequency domain names sources that the time domain hides. A spur at 50/60 Hz and harmonics is mains; a comb at the trap RF is micromotion or pickup; a broad hump near a servo's crossover is the servo bump ([[Control Beyond PID]]); switching-supply noise sits at tens to hundreds of kHz with harmonics. Set RBW deliberately — narrow to resolve, wide to see transients — and remember the analyzer's own noise floor moves with RBW ([[Bandwidth]]).
 - Add instrumentation where none exists: a pickup loop near the RF line, a photodiode on a leakage beam, a spare DAC channel logging the servo output, a temperature sensor on the suspect mount.
-- Look at the *whole* signal chain, not just its ends. The bug is usually somewhere you had no visibility.
+- Look at the *whole* signal chain, not only its ends. The bug is usually somewhere you had no visibility.
 
 ## 4. Divide and conquer
 
@@ -75,7 +75,7 @@ A problem that stopped appearing has not been shown to be solved.
 - Check it stays fixed over the timescale that matters (a lock that survives 10 minutes is not a lock that survives a data run).
 
 > [!question]- An ion chain loses one ion every few hours, always overnight. What do the rules say to do first, and what is the tempting mistake?
-> The tempting mistake is rule 5 violated as a shotgun — retune the trap voltages, raise the cooling power, bake the chamber, all at once, then declare victory when a night passes cleanly. Rule 2 comes first: make it fail on demand. Correlate against logged variables (pressure gauge, lab temperature, HVAC schedule, other equipment on the timer) to find the trigger, then reproduce it deliberately during the day — spike the pressure, cycle the temperature, switch the suspect equipment. Only with a reproduction can rule 4 bisect the cause, and only then can rule 9 confirm the fix by re-triggering it.
+> The tempting mistake breaks rule 5: retune the trap voltages, raise the cooling power and bake the vacuum chamber all at once, then declare success after one clean night. Rule 2 comes first: make it fail on demand. Correlate the losses against logged variables (pressure gauge, lab temperature, HVAC schedule, equipment on timers) to find the trigger, then reproduce it during the day by spiking the pressure, cycling the temperature or switching the suspect equipment. Only a reproduction lets rule 4 bisect the cause, and rule 9 confirm the fix by re-triggering it.
 
 # Connections
 
@@ -85,6 +85,7 @@ A problem that stopped appearing has not been shown to be solved.
 - [[Control Beyond PID]] — recognizing servo-induced symptoms rather than chasing them upstream
 - [[Vacuum Engineering]] — the rate-of-rise test as a textbook rule-4 bisection
 - [[Surface and Film Metrology]] — cross-checking one instrument against another (rule 8 for measurements)
+- [[Lab Instruments]] — rules 3 and 7 applied to the instruments themselves: the settings that silently change what a reading means
 
 ---
 Source: D. J. Agans, *Debugging: The 9 Indispensable Rules for Finding Even the Most Elusive Software and Hardware Problems* (AMACOM, 2002)

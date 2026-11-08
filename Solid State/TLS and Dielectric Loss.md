@@ -10,6 +10,8 @@ $$P(E, \lambda) \approx \text{const}$$
 
 Roughly uniform in energy means: whatever your operating frequency, some TLS is resonant with it.
 
+**Picture:** the amorphous surface as a scattering of tiny two-position switches, each with its own resonant frequency; those near the qubit frequency absorb energy, and the slow ones jitter it.
+
 Each TLS carries an electric dipole, so it couples to the local electric field:
 $$H = \frac{1}{2}\left(\epsilon\,\sigma_z + \Delta_0\,\sigma_x\right) + \mathbf{d}\cdot\mathbf{E}\,\sigma_z$$
 
@@ -24,12 +26,14 @@ with $\epsilon$ the asymmetry between the two wells, $\Delta_0$ the tunnel split
 
 **The power dependence is the fingerprint.** A resonant TLS is a two-level absorber and therefore **saturable**: drive it hard and it spends half its time excited and stops absorbing. So TLS-limited loss *decreases* with drive power,
 $$\tan\delta(n) = \frac{\tan\delta_0}{\sqrt{1 + n/n_c}} + \tan\delta_{\text{other}}$$
-which is diagnostic — measure $Q$ versus circulating photon number $n$, and a rise that saturates identifies TLS while a flat curve indicates conductor or radiative loss. **This is why single-photon $Q$ is the only figure that matters for qubits:** a resonator that looks excellent at high power can be TLS-dominated at the one-photon level a qubit actually lives at.
+which is diagnostic — measure $Q$ versus circulating photon number $n$, and a rise that saturates identifies TLS while a flat curve indicates conductor or radiative loss. **This is why single-photon $Q$ is the only figure that matters for qubits:** a resonator that looks excellent at high power can be TLS-dominated at the one-photon level a qubit lives at.
 
 **Participation ratio — where the design leverage is.** Total loss is a weighted sum over the lossy regions:
 $$\frac{1}{Q} = \sum_i p_i \tan\delta_i, \qquad p_i = \frac{\int_{V_i}\varepsilon_i|\mathbf E|^2\,dV}{\int_{\text{all}}\varepsilon|\mathbf E|^2\,dV}$$
 
-$p_i$ = the fraction of total electric field energy stored in region $i$. The lossy regions are nanometers thick with $\tan\delta \sim 10^{-3}$, but $p_i \sim 10^{-3}$–$10^{-4}$, so they contribute comparably to a bulk with $\tan\delta \sim 10^{-7}$. **You cannot make the oxide good, so you make $p$ small:** widen gaps and electrodes so the field spreads into vacuum or crystalline substrate, and keep field maxima away from interfaces. The three interfaces that matter are metal–air, substrate–air, and metal–substrate.
+- $p_i$ — the fraction of total electric field energy stored in region $i$ (its participation ratio)
+
+The lossy regions are nanometers thick with $\tan\delta \sim 10^{-3}$, but $p_i \sim 10^{-3}$–$10^{-4}$, so they contribute comparably to a bulk with $\tan\delta \sim 10^{-7}$. **The oxide's loss cannot be removed, so make $p$ small:** widen gaps and electrodes so the field spreads into vacuum or crystalline substrate, and keep field maxima away from interfaces. The three interfaces that matter are metal–air, substrate–air, and metal–substrate.
 
 **Where the TLS live:** native oxides on the metal, the substrate's damaged surface layer, resist and etch residue, the junction's own tunnel barrier and its edges. Mitigation is materials and geometry, not circuit design — surface treatment ([[Surface Preparation and Cleaning]]), encapsulation, substrate annealing, and larger feature sizes.
 
@@ -50,7 +54,7 @@ The unifying statement: **an amorphous surface is a bath of slow, saturable, dip
 - [[Josephson Junction]] — the tunnel barrier and its edges as a TLS host
 - [[Flicker Noise]] — why many two-state switchers sum to a $1/f$ spectrum
 - [[Noise Spectra and Coupling to Systems]] — converting $S_E(\omega)$ into a heating or decoherence rate
-- [[Surface Preparation and Cleaning]] — the mitigation that actually moves the number
+- [[Surface Preparation and Cleaning]] — the mitigation that moves the number
 - [[Resolved Sideband Cooling]] — how anomalous heating rates are measured on ions
 - [[T1 and T2]] — resonant loss feeds $T_1$, slow switching feeds $T_2$
 - [[Dielectrics and Polarizability]] — loss tangent as the imaginary part of $\varepsilon$

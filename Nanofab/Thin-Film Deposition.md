@@ -10,12 +10,21 @@ Source heated in HV; flux from the Hertz–Knudsen relation and mean free path:
 
 $$\Phi = \frac{P_{\text{vap}}(T)}{\sqrt{2\pi m k_B T}}, \qquad \lambda_{\text{mfp}} = \frac{k_B T}{\sqrt{2}\pi d^2 P} \sim 1\ \mathrm{m\ at\ }10^{-6}\ \mathrm{mbar}.$$
 
-$\Phi$ = atoms leaving the melt per area per second, set entirely by the source's vapor pressure $P_{\text{vap}}(T)$ and atomic mass $m$ — exponential in $T$, which is why rate control means temperature control. $\lambda_{\text{mfp}}$ = mean free path of those atoms in the chamber's residual gas ($d$ = molecular diameter, $P$ = chamber pressure): at $10^{-6}$ mbar it exceeds the source–substrate distance, so atoms fly straight — **line-of-sight arrival** (narrow angle spread), with only the source temperature's ~0.1 eV of kinetic energy. Consequences:
+- $\Phi$ — evaporation flux: atoms leaving the melt per area per second
+- $P_{\text{vap}}(T)$ — the source's vapor pressure at temperature $T$
+- $m$ — atomic mass
+- $\lambda_{\text{mfp}}$ — mean free path of those atoms in the chamber's residual gas
+- $d$ — molecular diameter
+- $P$ — chamber pressure
+
+$\Phi$ is set entirely by $P_{\text{vap}}(T)$ and $m$, and vapor pressure is exponential in $T$, which is why rate control means temperature control. At $10^{-6}$ mbar, $\lambda_{\text{mfp}}$ exceeds the source–substrate distance, so atoms fly straight — **line-of-sight arrival** (narrow angle spread), with only the source temperature's ~0.1 eV of kinetic energy. Consequences:
 
 - **Shadowing**: sidewalls uncoated → lift-off works (undercut resist breaks the film); tilting the sample makes shadowing a tool (two-angle Dolan junctions).
 - **Adhesion**: 0.1 eV cannot intermix or break surface bonds; unreactive metals (Au, Pt) adhere by van der Waals only → 5 nm Ti/Cr adhesion layer bonds to the oxide below and alloys above.
 - **Alloys fractionate**: components leave per their individual $P_{\text{vap}}(T)$, so film stoichiometry drifts; co-evaporate with independent rate control, or sputter.
 - Films porous, low-stress; substrate undisturbed. Rate monitored by quartz-crystal microbalance (Sauerbrey: $\Delta f \propto -\Delta m$).
+
+**Picture:** spray painting with atoms: the spray's angular spread decides coverage and shadowing, and the atoms' landing energy decides how densely they pack.
 
 ## Sputtering
 

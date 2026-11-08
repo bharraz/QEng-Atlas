@@ -14,12 +14,14 @@ $$
 \mathcal{E}_2 = -M\frac{dI_1}{dt}, \qquad M_{12} = M_{21}
 $$
 
+**Picture:** the loop resists changes in the flux through it the way a mass resists changes in velocity; the emf is the push-back.
+
 **This is the mechanism behind magnetic pickup.** Any circuit loop is a one-turn secondary of a transformer whose primary is every nearby dI/dt — mains wiring, switching supplies, RF drives. The induced voltage scales with **loop area** and frequency ($\mathcal{E} = -\dot{B}\,A$ for uniform field), which is why the fix is always: shrink the loop (twist the pair, route signal over its return), not "add more ground."
 
 Self-inductance is the same physics applied to a circuit's own flux: $\mathcal{E} = -L\,dI/dt$ — the origin of inductive kick when you interrupt current through a coil.
 
 > [!question]- Your 60 Hz hum doubles when you move a cable. Capacitive or inductive pickup?
-> Inductive — it depends on loop geometry (area, orientation relative to the source), not on impedance to a noisy conductor. Confirm: inductive pickup persists into low-impedance circuits and shrinks when you twist or reroute; capacitive pickup dies when you lower the victim's impedance or add a shield.
+> Inductive — it depends on loop geometry (area, orientation relative to the source), not on impedance to a noisy conductor. Confirm: inductive pickup persists into low-impedance circuits and shrinks when you twist or reroute; capacitive pickup falls when you lower the victim's impedance or add a shield.
 
 # Connections
 

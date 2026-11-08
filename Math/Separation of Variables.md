@@ -4,19 +4,21 @@
 
 # Reference
 
-**The move**, on $\nabla^2\psi = \frac{1}{c^2}\partial_t^2\psi$ or Schrödinger or Laplace:
+**The method**, on $\nabla^2\psi = \frac{1}{c^2}\partial_t^2\psi$ or Schrödinger or Laplace:
 $$
 \psi = X(x)Y(y)Z(z) \;\Rightarrow\; \frac{X''}{X} + \frac{Y''}{Y} + \frac{Z''}{Z} = \text{const}
 $$
 A function of $x$ alone equaling a function of $y, z$ alone forces each ratio to be constant: $X'' = -k_x^2 X$, etc. **Boundary conditions turn the constants discrete** — $X(0)=X(L)=0$ gives $k_x = n\pi/L$. That's mode quantization: cavity modes, particle in a box, drumheads, all the same step.
 
+**Picture:** a drumhead whose vibration patterns are products of a shape in $x$ and a shape in $y$; the edges fix which shapes fit, and so which frequencies exist.
+
 **Separating time from space** in any linear evolution equation gives $T \propto e^{-iEt/\hbar}$ (or $e^{i\omega t}$) and turns the PDE into an eigenvalue problem $H\psi = E\psi$ — stationary states *are* separation of variables.
 
-**When it works:** the coordinate system must match the symmetry of the boundaries — the Helmholtz equation separates in only 11 coordinate systems (Cartesian, cylindrical, spherical, ...). Separating in spherical coordinates manufactures the special functions: $\phi \to e^{im\phi}$, $\theta \to$ Legendre, $r \to$ Bessel/spherical Bessel. Cylindrical gives Bessel $J_m$. The "special functions zoo" is just Laplacian + geometry.
+**When it works:** the coordinate system must match the symmetry of the boundaries — the Helmholtz equation separates in only 11 coordinate systems (Cartesian, cylindrical, spherical, ...). Separating in spherical coordinates manufactures the special functions: $\phi \to e^{im\phi}$, $\theta \to$ Legendre, $r \to$ Bessel/spherical Bessel. Cylindrical gives Bessel $J_m$. The special functions are the Laplacian's solutions in each geometry.
 
 **When it fails:** boundaries that don't fit a separable coordinate surface, non-separable potentials, coupling terms. Then: perturbation theory, numerics, or a smarter basis. General solution = superposition of the separated modes; match the remaining boundary/initial condition by Fourier-expanding in them.
 
-> [!question]- Why must the separation "constant" actually be constant, and what does it become physically?
+> [!question]- Why must the separation "constant" be constant, and what does it become physically?
 > After dividing by $XT$, one side depends only on $x$, the other only on $t$; vary $t$ holding $x$ fixed — the $x$ side can't change, so both equal a constant. That constant is the eigenvalue: energy for Schrödinger, $-k^2$ for Helmholtz — the mode label.
 
 # Connections

@@ -12,9 +12,11 @@ where $\lambda_\alpha$ = Schmidt coefficients across the cut and $S$ = entanglem
 
 $$\psi_{s_1 \cdots s_N} = A^{s_1}_{[1]} A^{s_2}_{[2]} \cdots A^{s_N}_{[N]}, \qquad A^{s_k}\ \text{a}\ D \times D\ \text{matrix per local state } s_k.$$
 
+**Picture:** a chain of small matrices whose product gives each amplitude; the bond dimension is the width of the pipe carrying entanglement across each cut.
+
 Truncation error $= \sum_{\alpha > D} \lambda_\alpha^2$ (discarded weight) — measured, controlled, and the single convergence knob: rerun at larger $D$; if observables move, physics was being truncated.
 
-**Where it works and where it dies** — all entanglement accounting:
+**Where it works and where it fails** — all entanglement accounting:
 
 | regime | $S$ scaling | required $D$ |
 |---|---|---|
@@ -23,7 +25,7 @@ Truncation error $= \sum_{\alpha > D} \lambda_\alpha^2$ (discarded weight) — m
 | 2D (cylinder of width $L$) | $\propto L$ | $e^{L}$ — the practical ceiling |
 | global quench, time $t$ | $\propto t$ | $e^{t}$ — long-time dynamics inaccessible |
 
-The last row is where classical simulability of quantum experiments actually dies — entanglement growth, not qubit count.
+The last row is where classical simulability of quantum experiments breaks down — entanglement growth, not qubit count.
 
 **Algorithms** (ITensor, TeNPy, quimb):
 
@@ -47,6 +49,9 @@ The last row is where classical simulability of quantum experiments actually die
 - [[Exact Diagonalization and Sparse Methods]] — the exact validator below 20 qubits
 - [[Tensor Product]] — the Hilbert-space structure being compressed
 - [[Normal Modes of Ion Chains]] — the 1D systems simulated at scale
+- [[Quantum Entropies and Information]] — area and volume laws for entanglement
+- [[Quench Dynamics and Thermalization]] — the entanglement growth that limits simulations of dynamics
+- [[Variational Quantum Algorithms]] — the quantum-hardware variational methods MPS results are compared with
 
 ---
 Source: Schollwöck, *Ann. Phys.* 326, 96 (2011); Orús, *Ann. Phys.* 349, 117 (2014)

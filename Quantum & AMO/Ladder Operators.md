@@ -1,6 +1,6 @@
 #quantum
 
-**THE structure: if $[H, O] = \lambda O$, then $O$ maps eigenstates to eigenstates with energy shifted by exactly $\lambda$ — an eigenoperator of the commutator generates a ladder.** Everything else (oscillators, angular momentum, field modes) is this one identity wearing different clothes.
+**The ladder structure: if $[H, O] = \lambda O$, then $O$ maps eigenstates to eigenstates with energy shifted by exactly $\lambda$ — an eigenoperator of the commutator generates a ladder.** Oscillators, angular momentum, and field modes are all this one identity applied to different operators.
 
 # Reference
 
@@ -9,6 +9,8 @@ $$
 H\,(O|E\rangle) = (OH + [H,O])|E\rangle = (E + \lambda)\,(O|E\rangle)
 $$
 so $O|E\rangle$ is an eigenstate at $E + \lambda$ (or zero). **A commutation relation, not a differential equation, generates the spectrum.**
+
+**Picture:** an operator that steps every energy eigenstate up or down by the same amount: once you have one, the spectrum is a ladder of equal rungs.
 
 **Oscillator instance:** $[a, a^\dagger] = 1$, $\hat n = a^\dagger a$, $H = \hbar\omega(\hat n + \tfrac12)$ gives
 $$
@@ -29,10 +31,10 @@ Ladder bounded below because $\langle n|\hat n|n\rangle = \|a|n\rangle\|^2 \geq 
 
 (Watch conventions: some texts use $x_0 = \sqrt{\hbar/m\omega}$ — a stray $\sqrt2$ in Lamb-Dicke parameters comes from exactly this.)
 
-**Same trick elsewhere:** $[J_z, J_\pm] = \pm\hbar J_\pm$ ladders $m$; $[\hat n, a] = -a$ ladders photon number; any equally-spaced spectrum admits such an eigenoperator. Spot a candidate $O$ with $[H,O] \propto O$ and the problem is algebraically solved.
+**Same structure elsewhere:** $[J_z, J_\pm] = \pm\hbar J_\pm$ ladders $m$; $[\hat n, a] = -a$ ladders photon number; any equally-spaced spectrum admits such an eigenoperator. Spot a candidate $O$ with $[H,O] \propto O$ and the problem is algebraically solved.
 
 > [!question]- Why does $[H, O] = \lambda O$ produce a ladder, and what terminates the oscillator's?
-> $H(O|E\rangle) = (E+\lambda)(O|E\rangle)$: applying $O$ shifts the eigenvalue by $\lambda$ every time, generating the whole ladder from one state. For the oscillator, $\|a|n\rangle\|^2 = n \geq 0$ can't go negative — the chain must hit a state with $a|0\rangle = 0$, fixing the ground state and the $\hbar\omega/2$ offset.
+> $H(O|E\rangle) = (E+\lambda)(O|E\rangle)$: applying $O$ shifts the eigenvalue by $\lambda$ every time, generating the entire ladder from one state. For the oscillator, $\|a|n\rangle\|^2 = n \geq 0$ can't go negative — the chain must hit a state with $a|0\rangle = 0$, fixing the ground state and the $\hbar\omega/2$ offset.
 
 # Connections
 

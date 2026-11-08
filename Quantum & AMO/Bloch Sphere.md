@@ -14,6 +14,8 @@ $$
 $$
 Note the **half-angles**: orthogonal states are *antipodal* (180° apart on the sphere, not 90°). $|0\rangle$ north pole, $|1\rangle$ south, $|{\pm}\rangle = (|0\rangle \pm |1\rangle)/\sqrt2$ on the $\pm x$ axis.
 
+**Picture:** a globe: the poles are $|0\rangle$ and $|1\rangle$, the equator holds equal superpositions differing in relative phase (longitude), and the vector's length inside measures purity.
+
 **Dynamics = rotation:** $e^{-i\theta\,\hat n\cdot\vec\sigma/2}$ rotates $\vec r$ by $\theta$ about $\hat n$. A resonant Rabi drive rotates about an equatorial axis set by the drive phase; detuning tilts the rotation axis toward $z$; free precession spins about $z$ at the detuning rate. Every pulse sequence is a choreography of these rotations — this is *the* picture for designing composite pulses and reading off echo sequences.
 
 **Decoherence = shrinking:** T2 contracts the equatorial (xy) components, T1 pulls $r_z$ toward the thermal pole. Pure dephasing collapses the ball to the $z$-axis; the maximally mixed state $\mathbb{1}/2$ is the center.

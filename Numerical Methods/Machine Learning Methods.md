@@ -1,10 +1,12 @@
 #numerics #reference
 
-**Overview of what each technique actually does — supervised learning is curve fitting with enough capacity to overfit, so the whole discipline is loss, regularization, and honest validation.**
+**Supervised machine learning is curve fitting with a model flexible enough to fit noise, so everything rests on three choices: the loss you minimize, the regularization that limits flexibility, and validation on data the fit never saw.** How a neural network is built and trained is on [[Neural Networks]] and [[Gradient Descent and Backpropagation]]; the tables below say what each technique does and when to reach for it.
 
 # Reference
 
 Every supervised method is the same three choices: a **function family**, a **loss** to minimize on training data, and a **check on data not used for fitting** ([[Objective Functions and Constraints]]). The novelty relative to ordinary fitting is capacity — enough flexibility to memorize noise — which is why validation is not optional.
+
+**Picture:** a curve that can bend almost any way can pass through every data point, noise included, so the test is how well it predicts points it never saw.
 
 | Setting | You have | You want |
 |---|---|---|
@@ -22,7 +24,7 @@ Every supervised method is the same three choices: a **function family**, a **lo
 | **SVM (with kernels)** | maximum-margin separator, implicitly in a high-dimensional feature space | medium data, clear margin; the kernel encodes your notion of similarity |
 | **Decision tree** | recursive axis-aligned splits | interpretable rules; alone, weak and unstable |
 | **Random forest** | many trees on resampled data, averaged | strong default, few knobs, resists overfitting |
-| **Gradient boosting** (XGBoost, LightGBM) | trees fit sequentially to residuals | **the workhorse for tabular data** — usually beats neural nets there |
+| **Gradient boosting** (XGBoost, LightGBM) | trees fit sequentially to residuals | **the standard choice for tabular data** — usually beats neural nets there |
 | **Gaussian process** | distribution over functions; kernel sets smoothness | small data, and you want **calibrated uncertainty** — the engine behind Bayesian optimization ([[Optimization and Curve Fitting]]) |
 | **Neural network (MLP)** | stacked linear maps with nonlinearities | large data, unknown functional form |
 
@@ -46,12 +48,12 @@ Every supervised method is the same three choices: a **function family**, a **lo
 | **Gaussian mixture** | soft clustering with covariances | k-means with shapes and probabilities |
 | **DBSCAN** | density-based clusters | finds arbitrary shapes, labels outliers, needs no $k$ |
 
-## The discipline, which is where results are actually won or lost
+## Validation
 
-- **Split before you look.** Train / validation / test. The test set is touched once. Tuning against the test set turns it into a training set and your reported number becomes fiction.
+- **Split before you look.** Train / validation / test. The test set is touched once. Tuning against the test set turns it into a training set, and the reported number no longer measures performance on unseen data.
 - **Cross-validation** for small data: $k$-fold, average the score. For time series, split *forward in time* only — shuffling leaks the future.
 - **Bias–variance.** Underfit = both errors high; overfit = train error low, validation high. The cure for overfitting is more data, fewer parameters, or stronger regularization, in that order of preference.
-- **Data leakage** is the most common silent failure: any information in the training set that would not be available at prediction time. Normalizing using statistics from the whole dataset is the classic instance.
+- **Data leakage** is the most common silent failure: any information in the training set that would not be available at prediction time. Normalizing using statistics from the entire dataset is the standard instance.
 - **Class imbalance.** With 99% negatives, accuracy 99% is achieved by predicting nothing. Use precision/recall, ROC-AUC, or reweight the loss.
 - **Baselines.** Compare against linear regression and against predicting the mean. A model that does not beat those has told you something.
 
@@ -69,18 +71,20 @@ Every supervised method is the same three choices: a **function family**, a **lo
 | **Learning representations** | tensor-network and neural quantum states as variational wavefunctions ([[Tensor Networks and MPS]]) |
 
 > [!question]- A model scores 0.98 on validation and fails in the lab. What is the first thing to check?
-> Leakage — some quantity in the training data would not exist at prediction time, or preprocessing used statistics computed over the whole dataset including validation. The second check is distribution shift: lab data drawn under different conditions than the training set. Both produce excellent validation scores and useless models, and neither is a modelling failure.
+> Leakage — some quantity in the training data would not exist at prediction time, or preprocessing used statistics computed over the entire dataset including validation. The second check is distribution shift: lab data drawn under different conditions than the training set. Both produce excellent validation scores and useless models, and neither is a modelling failure.
 
 # Connections
 
 - [[Objective Functions and Constraints]] — loss and regularizer, the two choices that define a model
 - [[Optimization and Curve Fitting]] — the optimizers doing the training; Bayesian optimization
-- [[Singular Value Decomposition]] — PCA is this, and nothing more
+- [[Singular Value Decomposition]] — PCA is exactly this
 - [[Least Squares and Chi-Squared Fitting]] — linear regression's statistical version
 - [[Bootstrap Resampling]] — resampling, the idea behind random forests
 - [[Central Limit Theorem]] — why validation scores have error bars too
 - [[Tensor Networks and MPS]] — variational function families from physics rather than ML
 - [[Monte Carlo Methods]] — sampling as the other route to high-dimensional problems
+- [[Neural Networks]] — what a network computes, layer by layer
+- [[Gradient Descent and Backpropagation]] — how it is trained
 
 ---
 Source: Hastie, Tibshirani & Friedman, *The Elements of Statistical Learning*, Ch. 2–3, 7; Mehta et al., "A high-bias, low-variance introduction to machine learning for physicists," *Phys. Rep.* 810, 1 (2019)

@@ -12,7 +12,9 @@ $$
 
 Waiting times between events: exponential, $f(t) = \lambda e^{-\lambda t}$, **memoryless** — the expected wait to the next photon is $1/\lambda$ *regardless of how long you've already waited*. (Sample as $t = -\ln u/\lambda$; this is how you simulate one.)
 
-**Two closure properties worth knowing cold:**
+**Picture:** a Geiger counter: clicks at a steady average rate with no memory, so the wait to the next click never depends on how long it has been since the last.
+
+**Two closure properties:**
 - **Thinning:** keep each event independently with probability $p$ (detector quantum efficiency, beamsplitter) → still Poisson, rate $p\lambda$. **A lossy detector changes the rate, not the statistics** — you can't fix Poisson noise downstream, and sub-Poissonian light survives loss only partially.
 - **Merging:** sum of independent Poisson processes → Poisson, rate $\sum_i \lambda_i$ (signal + dark counts + stray light: still Poisson, rates add).
 

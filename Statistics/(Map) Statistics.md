@@ -20,7 +20,7 @@ Averaging $N$ shots shrinks the error bar as $\sqrt N$, never faster, and only i
 
 - **Correlated samples** — the effective count is $N_{\text{eff}} \ll N$; use the autocorrelation time to find it ([[Autocorrelation]]).
 - **Heavy tails** — a Lorentzian has no variance, and the mean of $N$ samples is exactly as wide as one sample. Averaging does nothing.
-- **Drift** — the thing you are averaging is not stationary, so more data buys bias, not precision ([[Allan Variance]]).
+- **Drift** — the thing you are averaging is not stationary, so more data gives bias, not precision ([[Allan Variance]]).
 
 **Adding errors.** Independent contributions add **in quadrature**, $\sigma^2 = \sum\sigma_i^2$ — so the largest term dominates and improving anything else is wasted effort. Correlated ones do not; they add linearly and can cancel ([[Error Propagation]]).
 
@@ -43,7 +43,7 @@ Averaging $N$ shots shrinks the error bar as $\sqrt N$, never faster, and only i
 | [[Central Limit Theorem]] | why Gaussians are everywhere, and the conditions that break it |
 | [[Error Propagation]] | quadrature sums, the Jacobian rule, when it fails |
 
-**Distributions you will actually meet**
+**Distributions you will meet**
 
 | Page | Shows up as |
 |---|---|
@@ -58,7 +58,7 @@ Averaging $N$ shots shrinks the error bar as $\sqrt N$, never faster, and only i
 |---|---|
 | [[Maximum Likelihood Estimation]] | the general estimator, and its error from the curvature |
 | [[Least Squares and Chi-Squared Fitting]] | the Gaussian special case; goodness of fit |
-| [[Confidence Intervals]] | what an interval actually claims |
+| [[Confidence Intervals]] | what an interval claims |
 | [[Bootstrap Resampling]] | error bars when the analytic route is hopeless |
 | [[Fisher Information and the Cramér-Rao Bound]] | the floor no estimator beats |
 

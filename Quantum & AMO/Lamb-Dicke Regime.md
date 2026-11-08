@@ -6,7 +6,15 @@
 
 $$\eta = k x_0, \qquad x_0 = \sqrt{\frac{\hbar}{2 m \omega}}$$
 
-$\eta$ = Lamb–Dicke parameter (dimensionless — the laser phase, in radians, accumulated across one ground-state wavepacket); $k = 2\pi/\lambda$ = laser wavevector (m⁻¹) projected on the motional axis ($k \to k\cos\theta$ for a beam at angle $\theta$; for a two-photon Raman drive use the *difference* wavevector $\Delta k$, which is ~0 for co-propagating beams and $2k$ for counter-propagating — see [[Raman Transitions]]); $x_0$ = rms ground-state position spread (m); $m$ = ion mass (kg); $\omega$ = secular trap frequency (rad/s).
+- $\eta$ — Lamb–Dicke parameter (dimensionless): the laser phase, in radians, accumulated across one ground-state wavepacket
+- $k = 2\pi/\lambda$ — laser wavevector (m⁻¹) projected on the motional axis
+- $x_0$ — rms ground-state position spread (m)
+- $m$ — ion mass (kg)
+- $\omega$ — secular trap frequency (rad/s)
+
+For a beam at angle $\theta$ to the axis, $k \to k\cos\theta$; for a two-photon Raman drive use the *difference* wavevector $\Delta k$, which is ~0 for co-propagating beams and $2k$ for counter-propagating — see [[Raman Transitions]].
+
+**Picture:** the ion's wavepacket as a ball much smaller than the light's wavelength: a photon kick barely changes its motional state, so most transitions leave the motion alone and a few add or remove one phonon.
 
 Proportionalities worth reading off: $\eta \propto k/\sqrt{m\omega}$ — heavier ions and stiffer traps give smaller $\eta$ (weaker sidebands, deeper in the regime), and shorter wavelengths give larger $\eta$. Equivalently $\eta^2 = \omega_{\mathrm{rec}}/\omega$ with $\omega_{\mathrm{rec}} = \hbar k^2/2m$ the recoil frequency: $\eta^2$ is the ratio of one photon's recoil energy to one motional quantum, i.e. the probability that a scattering event changes $n$. Typical values 0.05–0.2.
 
@@ -18,7 +26,7 @@ Each order, made resonant by laser detuning $0, \mp\omega$, gives a distinct pro
 
 | order | transition | Rabi rate |
 |---|---|---|
-| carrier | $\vert g,n\rangle \leftrightarrow \vert e,n\rangle$ | $\Omega\,(1 - \eta^2 n + \dots)$ |
+| carrier | $\vert g,n\rangle \leftrightarrow \vert e,n\rangle$ | $\Omega\,\big(1 - \eta^2(n + \tfrac12) + \dots\big)$ |
 | red sideband | $\vert g,n\rangle \leftrightarrow \vert e,n{-}1\rangle$ | $\eta\sqrt{n}\,\Omega$ |
 | blue sideband | $\vert g,n\rangle \leftrightarrow \vert e,n{+}1\rangle$ | $\eta\sqrt{n{+}1}\,\Omega$ |
 
@@ -35,8 +43,8 @@ Here $\Omega$ = bare (carrier) Rabi frequency [rad/s] and $n$ = motional Fock in
 
 - [[Dipole Approximation]] — this is exactly the term the dipole approximation drops, kept for the COM coordinate
 - [[Sideband Transitions]] — the three resonances above, used as tools
-- [[Taylor Expansion]] — the whole regime is a controlled small-parameter truncation
-- [[Quantum Harmonic Oscillator]] — supplies $x_0$ and the $a, a^\dagger$ this note manipulates
+- [[Taylor Expansion]] — the entire regime is a controlled small-parameter truncation
+- [[Quantum Harmonic Oscillator]] — supplies $x_0$ and the $a, a^\dagger$ used here
 
 ---
 Source: Leibfried, Blatt, Monroe & Wineland, *Rev. Mod. Phys.* 75, 281 (2003)

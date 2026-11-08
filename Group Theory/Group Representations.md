@@ -10,6 +10,8 @@ $$\rho(g \cdot h) = \rho(g)\,\rho(h).$$
 
 Because states in quantum mechanics live in a vector space, a symmetry group acts on them through a representation — this is the channel by which an abstract group touches physics.
 
+**Picture:** the same set of rotations acting on different objects, on vectors as 3×3 matrices and on spin-½ states as 2×2 matrices; each is a representation of one abstract group.
+
 **Irreducible representation (irrep)**: a representation whose space $V$ has no proper subspace left invariant by every $\rho(g)$. You cannot block-diagonalize it into smaller pieces by any choice of basis. Irreps are the indivisible building blocks; any representation decomposes into a direct sum of them.
 
 **Why irreps are the object of interest:**
@@ -17,9 +19,9 @@ Because states in quantum mechanics live in a vector space, a symmetry group act
 - The **dimension** of an irrep is the size of the multiplet it labels — a spin-$j$ irrep of $SU(2)$ has dimension $2j+1$.
 - **Character** $\chi(g) = \mathrm{Tr}\,\rho(g)$ is a basis-independent fingerprint of a representation; characters are how you identify which irreps a reducible representation contains.
 
-**Schur's lemma** (the workhorse): any operator commuting with every element of an irrep is a multiple of the identity. This is why a Casimir operator like $J^2$ takes a single fixed value across an entire multiplet — it commutes with all rotations, so on each irrep it must be a scalar.
+**Schur's lemma** (the most-used result): any operator commuting with every element of an irrep is a multiple of the identity. This is why a Casimir operator like $J^2$ takes a single fixed value across an entire multiplet — it commutes with all rotations, so on each irrep it must be a scalar.
 
-## Character machinery — how you actually decompose
+## Characters: decomposing a representation into irreps
 
 For finite (and compact) groups the characters of inequivalent irreps are orthonormal under averaging over the group:
 
@@ -59,6 +61,7 @@ for $SU(2)$ — angular momentum addition *is* tensor-product decomposition, and
 - [[Wigner-Eckart Theorem]] — Schur's lemma turned into a computational tool for matrix elements
 - [[Tensor Product]] — the linear-algebra substrate of product representations
 - [[Angular Momentum in QM]] — the $2j+1$ multiplet is the canonical example
+- [[Degeneracy and Level Crossings]] — degenerate multiplets as irreps, and what lifts them
 
 ---
 Source: Zee, *Group Theory in a Nutshell for Physicists*, Ch. II; Georgi, *Lie Algebras in Particle Physics*, Ch. 1

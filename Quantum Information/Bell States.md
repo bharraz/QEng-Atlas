@@ -9,7 +9,9 @@ $$
 |\Psi^\pm\rangle = \frac{|01\rangle \pm |10\rangle}{\sqrt2}
 $$
 
-**Make**: $H$ on the first qubit, then CNOT — maps computational basis $|ij\rangle$ one-to-one onto the Bell basis. **Measure**: run it backwards (CNOT, then $H$, then measure both) — this is the Bell measurement inside teleportation and dense coding.
+**Picture:** two qubits whose individual outcomes are perfectly random but whose joint outcomes are perfectly correlated in two complementary bases at once; the four Bell states differ in which correlation, same or opposite, each basis shows.
+
+**Prepare**: $H$ on the first qubit, then CNOT — maps computational basis $|ij\rangle$ one-to-one onto the Bell basis. **Measure**: run it backwards (CNOT, then $H$, then measure both) — this is the Bell measurement inside teleportation and dense coding.
 
 **Local Paulis interconvert them**: $(\mathbb{1}\otimes\sigma_k)|\Phi^+\rangle$ reaches all four — one shared pair plus local ops spans the basis, which is exactly why 2 classical bits suffice in teleportation.
 
@@ -26,6 +28,7 @@ One Bell pair = **1 ebit**, the resource unit: teleportation spends 1 ebit + 2 c
 - [[Entanglement Measures]] — Bell states saturate them: exactly 1 ebit of entropy
 - [[Quantum Teleportation]] — the protocol that spends them
 - [[Density Matrix]] — the $\mathbb{1}/2$ marginal is partial trace in action
+- [[Bell Inequalities and Nonlocality]] — CHSH, loopholes, and what a violation certifies
 
 ---
 Source: Nielsen & Chuang, Ch. 1.3.6, 2.6 (CHSH)

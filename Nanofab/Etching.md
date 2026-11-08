@@ -6,7 +6,12 @@
 
 $$S = \frac{r_{\text{film}}}{r_{\text{mask}}}\ (\text{selectivity}), \qquad A = 1 - \frac{r_{\text{lateral}}}{r_{\text{vertical}}}\ (\text{anisotropy}),$$
 
-$r_{\text{film}}, r_{\text{mask}}$ = etch rates of the target film and of the masking material (nm/min); $r_{\text{vertical}}, r_{\text{lateral}}$ = rates downward and sideways into the sidewall (nm/min). $S$ (dimensionless) counts nm of film removed per nm of mask consumed — also quoted film-vs-underlayer when the point is to stop on the layer below. $A$ (dimensionless) runs 0 (isotropic: sideways as fast as down, undercutting the mask by the etch depth) to 1 (no lateral component, vertical walls).
+- $r_{\text{film}}, r_{\text{mask}}$ — etch rates of the target film and of the masking material (nm/min)
+- $r_{\text{vertical}}, r_{\text{lateral}}$ — rates downward and sideways into the sidewall (nm/min)
+- $S$ — selectivity, also quoted film-vs-underlayer for stopping on a layer (dimensionless): nm of film removed per nm of mask consumed
+- $A$ — anisotropy (dimensionless): 0 isotropic (undercut equals etch depth) to 1 vertical
+
+**Picture:** chemistry dissolves exposed material of the right kind in every direction; ion bombardment is a sandblaster that removes anything, but only from above.
 
 ## Wet etching
 
@@ -18,7 +23,11 @@ Bath chemistry: HF for SiO₂ (attacks Si–O, ignores Si–Si: $S > 100{:}1$), 
 
 ## Reactive-ion etching (RIE)
 
-The plasma supplies two agents. **Radicals** — neutral reactive fragments (F from SF₆/CF₄ for Si; Cl from Cl₂ for Al) — carry the chemistry. **Ions** carry the direction: the plasma floats positive relative to the wafer, and the voltage drop across the boundary sheath accelerates ions perpendicular to the surface with $E_{\text{ion}} \approx e(V_{\text{plasma}} - V_{\text{bias}}) \sim$ 10s–100s eV. Neither agent alone etches well; the synergy does — ion impact breaks bonds and clears reaction products, letting the radical chemistry run fast, but only on surfaces the ions strike (floors, not walls). Polymer-forming gases (CHF₃, C₄F₈) sharpen this: a fluorocarbon liner deposits everywhere, ions clear it from floors, and it survives on sidewalls — vertical walls by active sidewall protection, not mere neglect.
+The plasma supplies two agents:
+- **Radicals** — neutral reactive fragments (F from SF₆/CF₄ for Si; Cl from Cl₂ for Al) — carry the chemistry.
+- **Ions** carry the direction: the plasma floats positive relative to the wafer, and the voltage drop across the boundary sheath accelerates ions perpendicular to the surface with $E_{\text{ion}} \approx e(V_{\text{plasma}} - V_{\text{bias}}) \sim$ 10s–100s eV.
+
+Neither agent alone etches well; together they do. Ion impact breaks bonds and clears reaction products, letting the radical chemistry run fast, but only on surfaces the ions strike (floors, not walls). Polymer-forming gases (CHF₃, C₄F₈) sharpen this: a fluorocarbon liner deposits everywhere, ions clear it from floors, and it survives on sidewalls, so vertical walls come from active sidewall protection, not mere neglect.
 
 - **Bias power = the S–A knob**: more ion energy → straighter walls, faster etch, but sputtering does not discriminate → mask erodes ($S$ falls) and substrate damage grows. ICP tools decouple plasma density (radical/ion flux) from bias (ion energy).
 - Byproducts must be volatile — the reason each material has its gas (SiF₄ volatile; AlF₃ not → Cl₂ for Al). Rate depends on open area (**loading**); endpoint by optical emission of the disappearing species; deep features etch slower than open ones (ARDE — transport into the trench).
@@ -31,7 +40,12 @@ Films are nonuniform → over-etch 10–50%; the mask must survive
 
 $$t_{\text{mask}} > \frac{d_{\text{film}}\,(1 + \mathrm{OE})}{S}.$$
 
-$t_{\text{mask}}$ = required mask thickness (nm); $d_{\text{film}}$ = film thickness to clear (nm); OE = fractional over-etch (0.1–0.5); $S$ = selectivity from above. Example: 500 nm of Si at 30% over-etch through a mask with $S = 2$ needs > 325 nm of resist.
+- $t_{\text{mask}}$ — required mask thickness (nm)
+- $d_{\text{film}}$ — film thickness to clear (nm)
+- OE — fractional over-etch (0.1–0.5)
+- $S$ — selectivity from above
+
+Example: 500 nm of Si at 30% over-etch through a mask with $S = 2$ needs > 325 nm of resist.
 
 This — not lithography — usually sets resist thickness. When no polymer survives (long, hot, or low-$S$ etches): pattern a thin **hard mask** (SiO₂, SiN, metal; $S$ = 10–100× against the target etch) with the resist, then spend the hard mask on the film.
 
@@ -42,7 +56,7 @@ This — not lithography — usually sets resist thickness. When no polymer surv
 | DRIE (Bosch) | >100 (vs resist) | ~1 | µm, deep | scallops |
 | ion mill | ~1 | 1 | ~10 nm | high, redeposition |
 
-> [!question]- RIE gives vertical walls but the resist dies before the film clears. Which direction do the knobs move?
+> [!question]- RIE gives vertical walls but the resist is consumed before the film clears. Which direction do the knobs move?
 > Vertical walls with a dying mask = the physical (ion) component dominates, and sputtering removes resist as readily as film. Either shift work to chemistry — lower bias, raise radical flux/pressure, accept softer sidewalls — or keep the physics and switch to a hard mask. Tuning cannot fix it otherwise: anisotropy and mask erosion here have the same cause.
 
 # Connections
@@ -52,6 +66,7 @@ This — not lithography — usually sets resist thickness. When no polymer surv
 - [[Vacuum Engineering]] — plasma tools are vacuum systems with RF
 - [[Surface and Film Metrology]] — depth and profile verification
 - [[Surface Preparation and Cleaning]] — post-etch residue and damage removal
+- [[Chemical Cleaning]] — the same chemistry used to remove contaminants instead of material
 
 ---
 Source: Campbell, *Fabrication Engineering at the Micro- and Nanoscale*, Ch. 11; Franssila, *Introduction to Microfabrication*, Ch. 11–12

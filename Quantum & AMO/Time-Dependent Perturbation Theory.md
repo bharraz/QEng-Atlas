@@ -1,6 +1,6 @@
 #quantum
 
-**In the interaction picture, iterate the equation of motion: the transition amplitude to first order is just the Fourier transform of the perturbation evaluated at the transition frequency.** A drive transfers population only through the spectral content it has at $\omega_{fi}$.
+**In the interaction picture, iterate the equation of motion: the transition amplitude to first order is the Fourier transform of the perturbation evaluated at the transition frequency.** A drive transfers population only through the spectral content it has at $\omega_{fi}$.
 
 # Reference
 
@@ -9,6 +9,8 @@ $$
 U_I(t) = \mathbb{1} + \frac{1}{i\hbar}\int_0^t dt_1\, V_I(t_1) + \frac{1}{(i\hbar)^2}\int_0^t dt_1\!\int_0^{t_1} dt_2\, V_I(t_1)V_I(t_2) + \cdots
 $$
 (time-ordered: later times to the left; each order = one more "interaction vertex").
+
+**Picture:** the perturbation as a sound and the transition as a tuning fork at $\omega_{fi}$: only the part of the sound at the fork's frequency makes it ring.
 
 **First-order transition amplitude** $i \to f$:
 $$
@@ -30,7 +32,7 @@ Validity: $|c_f^{(1)}| \ll 1$. Second order handles two-step (Raman) processes t
 - [[Interaction Picture]] — the frame that makes the series converge
 - [[Fermi's Golden Rule]] — first order + continuum of final states = constant rate
 - [[Fourier Transform]] — the amplitude formula literally is one
-- [[Time-Independent Perturbation Theory]] — the static sibling; same $V/\Delta E$ bookkeeping
+- [[Time-Independent Perturbation Theory]] — the static counterpart; same $V/\Delta E$ bookkeeping
 
 ---
 Source: Sakurai & Napolitano, *Modern Quantum Mechanics*, §5.6–5.7

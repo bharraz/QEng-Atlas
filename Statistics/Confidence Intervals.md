@@ -13,9 +13,11 @@ Gaussian coverage dictionary:
 | $\pm 2\sigma$ | 95.4% |
 | $\pm 3\sigma$ | 99.7% |
 
+**Picture:** a net thrown by a fixed procedure: across many repetitions it catches the true value 68% (or 95%) of the time, and any single throw either caught it or did not.
+
 Physics quotes 1σ by default; much of the rest of science quotes 95% — check before comparing numbers across fields.
 
-**From a fit: the $\Delta\chi^2$ rule.** The 1σ interval for *one* parameter is where $\chi^2$ rises by 1 from its minimum ($\Delta \ln L = -1/2$), *re-minimizing over all other parameters at each step* (the **profile**). Joint 68% region for two parameters: $\Delta\chi^2 = 2.30$, not 1 — the classic error-ellipse mistake. Bayesian alternative: **marginalize** (integrate the posterior over nuisance parameters); agrees with profiling for Gaussian likelihoods, diverges when they're skewed.
+**From a fit: the $\Delta\chi^2$ rule.** The 1σ interval for *one* parameter is where $\chi^2$ rises by 1 from its minimum ($\Delta \ln L = -1/2$), *re-minimizing over all other parameters at each step* (the **profile**). Joint 68% region for two parameters: $\Delta\chi^2 = 2.30$, not 1 — the most common error-ellipse mistake. Bayesian alternative: **marginalize** (integrate the posterior over nuisance parameters); agrees with profiling for Gaussian likelihoods, diverges when they're skewed.
 
 **Error-bar language:** $x = 1.234(5)$ means 1σ on the last digit(s); asymmetric intervals $x = 1.23^{+0.05}_{-0.02}$ signal a non-parabolic likelihood — don't symmetrize them. Near a physical boundary ($p \approx 0$, $n \geq 0$) naive $\pm\sigma$ leaks into forbidden territory; use exact constructions.
 

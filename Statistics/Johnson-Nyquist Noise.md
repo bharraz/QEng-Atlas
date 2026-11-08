@@ -10,9 +10,14 @@ $$
 S_V = 4k_B T R \qquad \Rightarrow \qquad v_{\text{rms}} = \sqrt{4k_B T R B}
 $$
 
-$S_V$ = one-sided voltage noise power spectral density (V²/Hz — a *density*, so it must be multiplied by a bandwidth before it means anything); $k_B T$ = thermal energy (J; 25.9 meV at 300 K); $R$ = the **real** part of the impedance (Ω) — only dissipation generates noise, so a pure L or C contributes none; $B$ = the equivalent noise bandwidth of the measurement (Hz).
+- $S_V$ — one-sided voltage noise power spectral density (V²/Hz): a *density*; multiply by bandwidth to get variance
+- $k_B T$ — thermal energy (J; 25.9 meV at 300 K)
+- $R$ — the **real** part of the impedance (Ω): only dissipation generates noise; pure L or C contributes none
+- $B$ — the equivalent noise bandwidth of the measurement (Hz)
 
-Three proportionalities: noise voltage $\propto \sqrt{R}$ (10× the resistance costs only 3.2× the noise), $\propto \sqrt{T}$ (cooling 300 K → 3 K buys 10×, which is why cryogenic preamps exist), and $\propto \sqrt{B}$ (halving bandwidth = 1.4× less noise, the universal averaging lever). The factor 4 is a convention of the one-sided density; two-sided versions carry $2k_BTR$.
+Three proportionalities: noise voltage $\propto \sqrt{R}$ (10× the resistance costs only 3.2× the noise), $\propto \sqrt{T}$ (cooling 300 K → 3 K gains 10×, which is why cryogenic preamps exist), and $\propto \sqrt{B}$ (halving bandwidth = 1.4× less noise, the universal averaging lever). The factor 4 is a convention of the one-sided density; two-sided versions carry $2k_BTR$.
+
+**Picture:** electrons in a warm resistor jostling like gas molecules: their random motion puts a fluctuating voltage across the ends, and the same coupling that dissipates energy feeds these fluctuations.
 
 **The anchor number: $1\ \mathrm{k\Omega}$ at 300 K → $\sqrt{4k_BTR} \approx 4.07\ \mathrm{nV/\sqrt{Hz}}$.** Scale by $\sqrt{R}$:
 
@@ -27,7 +32,7 @@ Current form (Norton): $i_n = \sqrt{4k_BT/R}$ (A/√Hz) — the same source seen
 
 Maximum *available* noise power into a matched load is $P = k_BT B$ — $R$ cancels, because a bigger resistor makes more voltage but delivers it through a bigger source impedance. Hence a universal floor of $-174$ dBm/Hz at 290 K, the reference every RF noise figure is quoted against.
 
-**Practical reads:** it's white and Gaussian (flat to ~THz at 300 K); cooling helps only as $\sqrt{T}$; the feedback resistor of a transimpedance amp injects $\sqrt{4k_BT/R_f}$ current noise — one reason bigger $R_f$ wins until bandwidth says no. Reactances don't produce noise; only the dissipative (real) part does.
+**Practical reads:** it's white and Gaussian (flat to ~THz at 300 K); cooling helps only as $\sqrt{T}$; the feedback resistor of a transimpedance amp injects $\sqrt{4k_BT/R_f}$ current noise — one reason bigger $R_f$ is better until bandwidth limits it. Reactances don't produce noise; only the dissipative (real) part does.
 
 > [!question]- Your amplifier has $e_n = 1\,\mathrm{nV/\sqrt{Hz}}$. What source impedance makes the source, not the amp, set the noise floor?
 > Johnson noise exceeds $1\,\mathrm{nV/\sqrt{Hz}}$ for $R \gtrsim 60\ \Omega$ at 300 K (since 1 kΩ gives 4 nV/√Hz and $e_n \propto \sqrt{R}$). Above that the amp is "free"; far below it, the amp dominates and you need a better front end or a matching transformer.

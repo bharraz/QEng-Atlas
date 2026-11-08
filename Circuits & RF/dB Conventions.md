@@ -10,6 +10,8 @@ $$
 
 dBc = dB relative to the carrier (spurs, sidebands, phase noise).
 
+**Picture:** a logarithmic ruler: multiplying gains becomes adding lengths, and every 10 dB step is one more factor of ten in power.
+
 **Mental arithmetic:** +3 dB = ×2 power; +10 dB = ×10 power; +6 dB = ×2 voltage; +20 dB = ×10 voltage. Gains in dB add; dBm + dB = dBm; never add two dBm values (that multiplies watts).
 
 **dBm ↔ voltage at 50 Ω** ($V_\text{rms} = \sqrt{50\,P}$, $V_{pp} = 2\sqrt2\,V_\text{rms}$, sine):
@@ -26,7 +28,7 @@ dBc = dB relative to the carrier (spurs, sidebands, phase noise).
 
 Anchors: **0 dBm = 632 mVpp**, +10 dBm = 2 Vpp, +7 dBm = a typical mixer LO drive.
 
-**Gotcha:** a high-Z scope shows *twice* the voltage the same signal has when terminated in 50 Ω (−6 dB difference). Know which one you're quoting before comparing to the spectrum analyzer.
+**Scope termination:** a high-Z scope shows *twice* the voltage the same signal has when terminated in 50 Ω (−6 dB difference). Know which one you're quoting before comparing to the spectrum analyzer.
 
 > [!question]- The spectrum analyzer reads −40 dBm. What's that in volts on the 50 Ω line?
 > −40 dBm = 100 nW → $V_\text{rms} = \sqrt{10^{-7}\cdot 50} \approx 2.2$ mV ≈ 6.3 mVpp. (Shortcut: 0 dBm = 224 mVrms; −40 dB = ÷100 in voltage.)
@@ -34,7 +36,7 @@ Anchors: **0 dBm = 632 mVpp**, +10 dBm = 2 Vpp, +7 dBm = a typical mixer LO driv
 # Connections
 
 - [[S-Parameters]] — quoted in dB; the 10-vs-20 rule matters there
-- [[Power Spectral Density]] — dBm/Hz and the V²/Hz vs V/√Hz cousin confusion
+- [[Power Spectral Density]] — dBm/Hz and the related V²/Hz vs V/√Hz confusion
 - [[Mixers]] — LO levels and conversion loss all speak dBm
 - [[Characteristic Impedance and Reflection]] — the 50 Ω convention underneath dBm
 

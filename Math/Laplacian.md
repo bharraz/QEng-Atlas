@@ -10,6 +10,8 @@ $$
 
 Quantitatively: the average of $f$ over a small sphere of radius $\epsilon$ exceeds $f$ at the center by $\frac{\epsilon^2}{6}\nabla^2 f + O(\epsilon^4)$.
 
+**Picture:** a heated rod: where the temperature is below the average of its neighbours (positive Laplacian), heat flows in and that point warms.
+
 **Cylindrical and spherical** (full table in [[Curvilinear Coordinates]]):
 $$
 \nabla^2 f = \frac{1}{s}\frac{\partial}{\partial s}\!\left(s\frac{\partial f}{\partial s}\right) + \frac{1}{s^2}\frac{\partial^2 f}{\partial \phi^2} + \frac{\partial^2 f}{\partial z^2}
@@ -19,7 +21,7 @@ $$
 $$
 Radial shortcut in spherical: $\frac{1}{r^2}\partial_r(r^2 \partial_r f) = \frac{1}{r}\partial_r^2(rf)$ — the substitution $u = rf$ that makes hydrogen's radial equation 1D.
 
-**Where it runs the show:** Laplace/Poisson $\nabla^2 V = -\rho/\varepsilon_0$; the wave equation $\nabla^2 f = \frac{1}{c^2}\partial_t^2 f$; diffusion $\partial_t f = D\nabla^2 f$; kinetic energy $-\frac{\hbar^2}{2m}\nabla^2$ in Schrödinger. Harmonic functions ($\nabla^2 f = 0$) equal their neighborhood average exactly — hence no interior extrema, hence Earnshaw's theorem killing static 3D traps.
+**Where it appears:** Laplace/Poisson $\nabla^2 V = -\rho/\varepsilon_0$; the wave equation $\nabla^2 f = \frac{1}{c^2}\partial_t^2 f$; diffusion $\partial_t f = D\nabla^2 f$; kinetic energy $-\frac{\hbar^2}{2m}\nabla^2$ in Schrödinger. Harmonic functions ($\nabla^2 f = 0$) equal their neighborhood average exactly — hence no interior extrema, hence Earnshaw's theorem killing static 3D traps.
 
 > [!question]- Why can't you trap a charged particle with static fields alone?
 > A trap needs a potential minimum in empty space, i.e. $V$ below its neighborhood average — but in vacuum $\nabla^2 V = 0$, so $V$ exactly equals its neighborhood average everywhere. No minima (Earnshaw). Paul traps dodge this with time-dependent fields.
@@ -29,7 +31,7 @@ Radial shortcut in spherical: $\frac{1}{r^2}\partial_r(r^2 \partial_r f) = \frac
 - [[Electrostatic Potential and Poisson Equation]] — ∇²V = −ρ/ε₀ and its uniqueness machinery
 - [[Electromagnetic Wave Equation]] — the Laplacian is the spatial half of the wave operator
 - [[Curvilinear Coordinates]] — the full coordinate table
-- [[Separation of Variables]] — how ∇² actually gets solved in practice
+- [[Separation of Variables]] — how ∇² gets solved in practice
 - [[Divergence]] — ∇² = div grad, the composition that defines it
 
 ---

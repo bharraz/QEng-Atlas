@@ -9,6 +9,8 @@ $$
 \int f(x)\,\delta(x-a)\, dx = f(a)
 $$
 
+**Picture:** the limit of ever narrower, taller unit-area pulses (Gaussian, rectangle, sinc); any of them gives the same answer under an integral once it is narrower than everything else in the problem.
+
 **Composition rule** — zeros of the argument each contribute, weighted by the slope there:
 $$
 \delta(f(x)) = \sum_i \frac{\delta(x-x_i)}{|f'(x_i)|}, \qquad \text{so } \delta(ax) = \frac{\delta(x)}{|a|}
@@ -25,8 +27,8 @@ $$
 $$
 — this is the completeness/orthogonality statement of plane waves, and the step that collapses one integral in every convolution-theorem and Fermi-golden-rule derivation.
 
-> [!question]- A resonance condition sits inside an integral as $\delta(E_f - E_i - \hbar\omega)$ with $E_f$ depending on $k$. What does the delta actually do?
-> It picks out the $k$ satisfying the resonance and pays a Jacobian $1/|dE_f/dk|$ — that factor *is* the density of states. The composition rule $\delta(f(x)) = \sum \delta(x-x_i)/|f'(x_i)|$ is the whole mechanism.
+> [!question]- A resonance condition sits inside an integral as $\delta(E_f - E_i - \hbar\omega)$ with $E_f$ depending on $k$. What does the delta do?
+> It picks out the $k$ satisfying the resonance and pays a Jacobian $1/|dE_f/dk|$ — that factor *is* the density of states. The composition rule $\delta(f(x)) = \sum \delta(x-x_i)/|f'(x_i)|$ is the mechanism.
 
 # Connections
 

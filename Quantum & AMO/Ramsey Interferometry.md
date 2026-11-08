@@ -1,4 +1,4 @@
- #AMO
+#AMO
 
 **Split the spin onto the equator, let it accumulate phase freely for time $T$, then close the interferometer: the fringe reads out frequency to $\sim 1/T$.** Precision comes from the *dark* time — the drive is only there to open and close.
 
@@ -8,14 +8,22 @@ Sequence: $\tfrac{\pi}{2}$ — free evolution $T$ — $\tfrac{\pi}{2}$. A detuni
 
 $$P_e = \frac{1}{2}\left[1 + C\cos(\delta T + \varphi)\right]$$
 
-$P_e$ = excited-state probability; $\delta$ = qubit-drive detuning (rad/s); $T$ = free-evolution (dark) time (s); $\varphi$ = relative phase of the second π/2 pulse (rad); $C$ = fringe contrast (0–1), decaying with $T$ on the coherence time ($T_2^*$ for bare Ramsey). Only the *product* $\delta T$ appears, which is the whole point: fringe period is $2\pi/T$ in detuning, so frequency resolution improves linearly with dark time — and the phase-slope $dP_e/d\delta = CT/2$ at mid-fringe says sensitivity is linear in both $C$ and $T$. Scanning the second pulse's phase $\varphi$ instead of $\delta$ gives the same fringe without retuning — the standard calibration move.
+- $P_e$ — excited-state probability
+- $\delta$ — qubit-drive detuning (rad/s)
+- $T$ — free-evolution (dark) time (s)
+- $\varphi$ — relative phase of the second π/2 pulse (rad)
+- $C$ — fringe contrast (0–1), decaying with $T$ on the coherence time ($T_2^*$ for bare Ramsey)
+
+Only the *product* $\delta T$ appears, and this is what matters: the fringe period is $2\pi/T$ in detuning, so frequency resolution improves linearly with dark time — and the phase-slope $dP_e/d\delta = CT/2$ at mid-fringe says sensitivity is linear in both $C$ and $T$. Scanning the second pulse's phase $\varphi$ instead of $\delta$ gives the same fringe without retuning — the standard calibration method.
+
+**Picture:** two clocks compared over a long dark interval: a short pulse starts the comparison, another stops it, and the phase accumulated in between is read as a fringe.
 
 **Why it beats Rabi spectroscopy:** during $T$ the drive is off — no power broadening, no drive-induced light shifts, no sensitivity to pulse-amplitude error at the fringe's steepest point. Linewidth $\sim 1/T$ is set by *your patience*, not the drive. Frequency sensitivity per shot: $\delta f \sim 1/(2\pi T \cdot C)$, degraded by projection noise as $1/\sqrt{N}$ over $N$ shots — clocks are exactly this, maximized $T$ plus statistics.
 
 **Practical readings:** fringe contrast vs $T$ *is* your $T_2^*$ measurement; fringe center drift is your qubit-frequency (field, light-shift) drift; contrast loss without frequency shift points at dephasing, not miscalibration.
 
-> [!question]- Why is Ramsey more precise than just driving a long weak Rabi pulse of the same total duration?
-> Both give $\sim 1/T$ linewidth, but the Rabi line's center is pulled by drive light shifts and its shape entangled with amplitude noise. Ramsey accumulates phase with the drive off — the fringe center depends only on the free-evolution frequency, and pulse-area errors reduce contrast, not the center. Systematics, not statistics, are the win.
+> [!question]- Why is Ramsey more precise than driving a long weak Rabi pulse of the same total duration?
+> Both give $\sim 1/T$ linewidth, but the Rabi line's center is pulled by drive light shifts and its shape entangled with amplitude noise. Ramsey accumulates phase with the drive off — the fringe center depends only on the free-evolution frequency, and pulse-area errors reduce contrast, not the center. The gain is in systematics, not statistics.
 
 # Connections
 

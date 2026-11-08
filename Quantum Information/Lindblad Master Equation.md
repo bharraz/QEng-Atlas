@@ -8,11 +8,17 @@ $$
 \frac{d\rho}{dt} = -\frac{i}{\hbar}[H, \rho] + \sum_k \left( L_k \rho L_k^\dagger - \tfrac12 \{ L_k^\dagger L_k, \rho \} \right)
 $$
 
-$\rho$ = density matrix (dimensionless, $\mathrm{Tr}\,\rho = 1$); $H$ = Hamiltonian (J) generating the reversible part; $L_k$ = jump (Lindblad) operators, one per independent decay channel, each carrying $\sqrt{\text{rate}}$ so that $L^\dagger L$ has units of s⁻¹ — this is why $L = \sqrt{\Gamma}\,\sigma_-$ and not $\Gamma\sigma_-$. The rate appears *squared in the operator, linear in the equation*, which is the usual source of factor-of-2 errors.
+- $\rho$ — density matrix (dimensionless, $\mathrm{Tr}\,\rho = 1$)
+- $H$ — Hamiltonian (J), generating the reversible part
+- $L_k$ — jump (Lindblad) operators, one per independent decay channel: each carries $\sqrt{\text{rate}}$, so $L^\dagger L$ is in s⁻¹
+
+This is why $L = \sqrt{\Gamma}\,\sigma_-$ and not $\Gamma\sigma_-$. The rate appears *squared in the operator, linear in the equation*, which is the usual source of factor-of-2 errors.
+
+**Picture:** smooth unitary motion interrupted by random jumps, one kind of jump per decay channel; averaging over every jump history gives the density-matrix equation.
 
 Anatomy of the dissipator $\mathcal{D}[L]$: **$L\rho L^\dagger$ is the jump** (population arriving after the environment "clicked"); **the anticommutator is the no-jump drain** that keeps $\mathrm{Tr}\,\rho = 1$ — drop either piece and you lose positivity or trace.
 
-**Assumptions (Born–Markov + secular)**: weak system–bath coupling so the bath stays unentangled and unperturbed ($\rho_{SB} \approx \rho \otimes \rho_B$); bath correlation time $\ll$ system relaxation time, so the bath has no memory; RWA on system frequencies for the diagonal GKSL form. **Breaks for**: strong coupling, structured/narrow-band baths, $1/f$ noise (memory! — that's why echo works but Lindblad-with-constant-$\gamma$ can't describe it).
+**Assumptions (Born–Markov + secular)**: weak system–bath coupling so the bath stays unentangled and unperturbed ($\rho_{SB} \approx \rho \otimes \rho_B$); bath correlation time $\ll$ system relaxation time, so the bath has no memory; RWA on system frequencies for the diagonal GKSL form. **Breaks for**: strong coupling, structured/narrow-band baths, $1/f$ noise (memory — that is why echo works but Lindblad-with-constant-$\gamma$ can't describe it).
 
 **Standard jump operators:**
 
@@ -24,9 +30,9 @@ Anatomy of the dissipator $\mathcal{D}[L]$: **$L\rho L^\dagger$ is the jump** (p
 
 **Trajectories unravelling**: Lindblad = ensemble average of stochastic pure-state evolution under $H_{\text{eff}} = H - \tfrac{i\hbar}{2}\sum_k L_k^\dagger L_k$ interrupted by random jumps $|\psi\rangle \to L_k|\psi\rangle/\|\cdot\|$ — simulate with state vectors ($2^n$) instead of density matrices ($4^n$), and each trajectory is what a single continuously-monitored run looks like.
 
-Vectorized, this is just a linear ODE: $d|\rho\rangle\rangle/dt = \mathcal{L}|\rho\rangle\rangle$, so steady states and decay rates are an eigenproblem of the superoperator.
+Vectorized, this is a linear ODE: $d|\rho\rangle\rangle/dt = \mathcal{L}|\rho\rangle\rangle$, so steady states and decay rates are an eigenproblem of the superoperator.
 
-> [!question]- Why can't dissipation be modeled by just adding an anti-Hermitian part to $H$?
+> [!question]- Why can't dissipation be modeled by adding an anti-Hermitian part to $H$?
 > Non-Hermitian $H_{\text{eff}}$ alone leaks trace — it describes conditional no-jump evolution. The $L\rho L^\dagger$ term puts the lost population back where the jump lands; the GKSL structure is exactly what's forced by demanding the map stay CPTP at all times.
 
 # Connections

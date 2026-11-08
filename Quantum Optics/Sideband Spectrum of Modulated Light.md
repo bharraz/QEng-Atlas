@@ -12,6 +12,8 @@ $$
 
 with $J_{-n}(\beta) = (-1)^n J_n(\beta)$ — **the lower sidebands carry a sign flip.** Small $\beta$: carrier $\approx 1-\beta^2/4$, first sidebands $\pm\beta/2$.
 
+**Picture:** two phasor pictures: in AM the two sideband phasors rotate oppositely and add along the carrier, changing its length; in PM they add perpendicular to it, changing its angle.
+
 **AM vs PM — the phase relationships:**
 
 | | sideband pair | beat notes vs carrier | direct photodiode at $\Omega$ |
@@ -26,7 +28,7 @@ with $J_{-n}(\beta) = (-1)^n J_n(\beta)$ — **the lower sidebands carry a sign 
 **Bichromatic fields are two tones,** not modulation — but two equal tones symmetric about a (suppressed) carrier are exactly $E \propto \cos(\Omega t)\,e^{i\omega_c t}$: carrier-suppressed AM. That's the [[Molmer-Sorensen Gate]] drive, and why it's engineered as symmetric detuning from the sidebands.
 
 > [!question]- Your EOM-modulated beam shows clean symmetric sidebands on the heterodyne spectrum but the lock is weak. What do you check, and why does the spectrum not help?
-> Check for residual AM (direct photodiode signal at $\Omega$) and modulation depth. The power spectrum $|J_n|^2$ is identical for AM and PM — it's blind to the sideband phase relationship that the PDH scheme actually exploits.
+> Check for residual AM (direct photodiode signal at $\Omega$) and modulation depth. The power spectrum $|J_n|^2$ is identical for AM and PM — it's blind to the sideband phase relationship that the PDH scheme exploits.
 
 # Connections
 

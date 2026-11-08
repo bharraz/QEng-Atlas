@@ -14,12 +14,14 @@ $$
 \int_S (\nabla\times\mathbf{F})\cdot d\mathbf{a} = \oint_C \mathbf{F}\cdot d\mathbf{l}
 $$
 
+**Picture:** a patchwork of tiny loops (or boxes) filling the region: neighbouring edges (or faces) cancel in pairs, so only the outer boundary is left.
+
 **Orientation conventions** (sign errors live here):
 - Divergence theorem: $d\mathbf{a}$ points **outward** from the enclosed volume.
 - Stokes: curl fingers of right hand along the loop direction $d\mathbf{l}$; thumb gives $d\mathbf{a}$. Equivalently, walk the loop with the surface on your left, normal up.
 - Any open surface with the same boundary gives the same Stokes integral — curl fields have zero flux through closed surfaces.
 
-**Converting Maxwell:** apply the divergence theorem to Gauss's law and the flux through $S$ becomes $\int \rho\, dV/\varepsilon_0$, so $\nabla\cdot\mathbf{E} = \rho/\varepsilon_0$; apply Stokes to Faraday's loop law and $\oint\mathbf{E}\cdot d\mathbf{l} = -d\Phi_B/dt$ becomes $\nabla\times\mathbf{E} = -\partial_t\mathbf{B}$. Because the region is arbitrary, integrands must match pointwise — that step is the whole conversion.
+**Converting Maxwell:** apply the divergence theorem to Gauss's law and the flux through $S$ becomes $\int \rho\, dV/\varepsilon_0$, so $\nabla\cdot\mathbf{E} = \rho/\varepsilon_0$; apply Stokes to Faraday's loop law and $\oint\mathbf{E}\cdot d\mathbf{l} = -d\Phi_B/dt$ becomes $\nabla\times\mathbf{E} = -\partial_t\mathbf{B}$. Because the region is arbitrary, integrands must match pointwise — that step completes the conversion.
 
 **Practical direction:** differential forms for deriving (wave equation, boundary conditions), integral forms for symmetric geometry (Gauss pillboxes, Amperian loops) and for interfaces where derivatives blow up.
 

@@ -13,11 +13,11 @@ $$K = PH^\top(HPH^\top + R)^{-1}$$
 
 — literally *(prediction uncertainty)/(total uncertainty)*: noisy sensor or confident model → small $K$, trust the model; volatile dynamics ($Q$ large) → large $K$, chase the data. A running average, exponential smoothing, and PLL-style tracking are all special cases with hand-picked constant $K$; the filter computes the time-varying optimal one.
 
+**Picture:** dead reckoning plus landmarks: predict where you are from speed and heading, then correct whenever a landmark comes into view, trusting each in proportion to its reliability.
+
 Uses in the lab: laser/cavity drift tracking, fusing a fast noisy sensor with a slow accurate one, extracting a frequency that random-walks (the drift model lives in $A$, $Q$), feedback on an estimated state ([[Control Beyond PID|LQG]] = Kalman + LQR). Nonlinear dynamics → extended (linearize) or unscented (sample) variants; genuinely multimodal or non-Gaussian posteriors → [[Particle Filter]], which drops the Gaussian assumption entirely at Monte Carlo cost; offline data → run the smoother (forward + backward pass) instead, it's strictly better when causality doesn't matter.
 
-The honest cost: performance is only "optimal" relative to the declared $Q$ and $R$ — and $Q$ is usually a guess. Tune it by whitening: the innovation sequence $\mathbf{z} - H\hat{\mathbf{x}}$ of a well-tuned filter is white ([[Autocorrelation]] flat); structure in it means the model is missing dynamics.
-
-# Connections
+The limitation: performance is only "optimal" relative to the declared $Q$ and $R$ — and $Q$ is usually a guess. Tune it by whitening: the innovation sequence $\mathbf{z} - H\hat{\mathbf{x}}$ of a well-tuned filter is white ([[Autocorrelation]] flat); structure in it means the model is missing dynamics.
 
 > [!question]- Your filter's estimate is smooth and confident but drifts away from reality. Which matrix is wrong, and how do you tell?
 > $Q$ is too small — you told the filter the model is better than it is, so the gain collapses and measurements stop being believed. The diagnostic is the innovation sequence: it should be white with the predicted covariance. Innovations that are correlated, or larger than the filter's own error bars, mean $Q$ is understated.

@@ -20,7 +20,9 @@ $$
 - $\omega > \omega_p$: $\epsilon > 0$, the metal transmits. For typical metals $\omega_p/2\pi \sim 2000$ THz (UV) — hence **X-ray transparency**, and why alkali metals go transparent already in the UV.
 - Same relation governs the ionosphere ($f_p \sim$ 3–10 MHz): shortwave bounces, GHz satellite signals punch through.
 
-**Regime map for a metal:** at low frequency ($\omega\tau \ll 1$) conduction is resistive and fields die by [[Skin Depth]] diffusion; near optical frequencies the response is the reactive plasma one above; the crossover is set by $1/\tau \sim 10{-}40$ THz at room temperature.
+**Picture:** a sea of free electrons with inertia: slow fields are followed and cancelled, so the metal reflects; fields faster than $\omega_p$ outrun the electrons and pass through.
+
+**Regime map for a metal:** at low frequency ($\omega\tau \ll 1$) conduction is resistive and fields decay by [[Skin Depth]] diffusion; near optical frequencies the response is the reactive plasma one above; the crossover is set by $1/\tau \sim 10{-}40$ THz at room temperature.
 
 > [!question]- Why can the ionosphere reflect a 5 MHz signal but not 5 GHz?
 > Its electron density gives $f_p \sim$ few–10 MHz. Below $f_p$, $\epsilon<0$ and the wave is evanescent — reflected back down. At 5 GHz $\gg f_p$, $\epsilon \approx 1$ and the layer is transparent.

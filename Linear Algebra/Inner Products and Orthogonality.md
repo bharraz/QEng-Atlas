@@ -11,12 +11,14 @@ $$
 |\langle u|v\rangle|^2 \le \langle u|u\rangle \langle v|v\rangle
 $$
 
-**Orthonormal basis** $\{|e_i\rangle\}$: $\langle e_i|e_j\rangle = \delta_{ij}$, and any vector expands as $|v\rangle = \sum_i \langle e_i|v\rangle\, |e_i\rangle$ — components are just projections, no linear system to solve. That's the whole point of orthogonality: **coefficients decouple**.
+**Picture:** the shadow of one arrow on another: the inner product is that shadow's length times the other arrow's length, and in quantum mechanics its squared magnitude is a probability.
+
+**Orthonormal basis** $\{|e_i\rangle\}$: $\langle e_i|e_j\rangle = \delta_{ij}$, and any vector expands as $|v\rangle = \sum_i \langle e_i|v\rangle\, |e_i\rangle$ — components are projections, no linear system to solve. This is what orthogonality gives: **coefficients decouple**.
 
 **Functions are vectors too** ($L^2$): $\langle f|g\rangle = \int f^*(x)\,g(x)\,dx$, possibly with a weight $w(x)$. Fourier coefficients, Hermite expansions, and $\langle x|\psi\rangle$ are all the same projection move in this space.
 
 > [!question]- Why does an orthonormal basis make expansion coefficients trivial to find?
-> Hit $|v\rangle = \sum_j c_j|e_j\rangle$ with $\langle e_i|$: orthonormality kills every term but one, so $c_i = \langle e_i|v\rangle$ directly. Non-orthogonal bases require inverting the Gram matrix instead.
+> Hit $|v\rangle = \sum_j c_j|e_j\rangle$ with $\langle e_i|$: orthonormality removes every term but one, so $c_i = \langle e_i|v\rangle$ directly. Non-orthogonal bases require inverting the Gram matrix instead.
 
 # Connections
 

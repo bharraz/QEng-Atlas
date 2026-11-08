@@ -1,12 +1,14 @@
 #EnM
 
-**Static E is curl-free, so it's a gradient: $\mathbf{E}=-\nabla V$, and Gauss's law becomes Poisson's equation — all of electrostatics is one scalar PDE plus boundary conditions.** Uniqueness means any solution you find, by whatever trick, is *the* solution.
+**Static E is curl-free, so it's a gradient: $\mathbf{E}=-\nabla V$, and Gauss's law becomes Poisson's equation — all of electrostatics is one scalar PDE plus boundary conditions.** Uniqueness means any solution you find, by whatever method, is *the* solution.
 
 # Reference
 
 $$
 \nabla^2 V = -\frac{\rho}{\varepsilon_0}, \qquad \nabla^2 V = 0 \ \text{(charge-free: Laplace)}
 $$
+
+**Picture:** $V$ as a rubber sheet stretched over the boundaries: where there is no charge it takes the smoothest shape the edges allow, with no local bumps or dips.
 
 **Uniqueness theorem:** specify $V$ on the boundaries (or total charge on each conductor) and the interior solution is unique. This is the license behind [[Method of Images]], separation of variables, relaxation solvers, and guessing.
 

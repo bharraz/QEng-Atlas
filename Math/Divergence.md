@@ -10,6 +10,8 @@ $$
 $$
 Cylindrical/spherical forms have $\frac{1}{r^2}\partial_r(r^2 F_r)$-type structure — table in [[Curvilinear Coordinates]].
 
+**Picture:** a small permeable bag in the flow: if more leaves than enters, something inside is producing fluid, and divergence is that production rate per volume.
+
 **Divergence theorem** (the integral–differential bridge):
 $$
 \oint_S \mathbf{F}\cdot d\mathbf{a} = \int_V (\nabla\cdot\mathbf{F})\, dV
@@ -30,7 +32,7 @@ This one identity is Gauss's law: $\nabla\cdot\mathbf{E} = \rho/\varepsilon_0$ f
 
 - [[Stokes and Divergence Theorems]] — the integral form and orientation conventions
 - [[Maxwell's Equations]] — the two divergence equations (Gauss, no monopoles)
-- [[Dirac Delta]] — where the point-charge divergence actually lives
+- [[Dirac Delta]] — where the point-charge divergence lives
 - [[Curvilinear Coordinates]] — ∇· in cylindrical and spherical
 - [[Helmholtz Decomposition]] — divergence specifies the curl-free part of a field
 

@@ -6,7 +6,9 @@
 
 A **Bravais lattice** is the set of points $\mathbf{R} = n_1\mathbf{a}_1 + n_2\mathbf{a}_2 + n_3\mathbf{a}_3$ for integers $n_i$; there are 14 in 3D. The **basis** is the group of atoms attached to each lattice point — crystal = lattice + basis. The **primitive cell** is the smallest region that tiles space; the **Wigner–Seitz cell** is the primitive cell centered on a lattice point (all points closer to that point than any other).
 
-**The lattices you actually meet** (cubic family, conventional cube edge $a$):
+**Picture:** wallpaper: a repeating pattern (the lattice) with a motif drawn at each repeat (the basis); reciprocal space lists the wave patterns that fit the repeat exactly.
+
+**The lattices you meet** (cubic family, conventional cube edge $a$):
 
 | Lattice                      | Points/cube | Nearest-neighbor distance | Examples          |
 | ---------------------------- | ----------- | ------------------------- | ----------------- |

@@ -2,7 +2,7 @@
 
 **Choosing what to minimize is a modelling decision, not a given — and the choice of loss is exactly the choice of a noise model, while the choice of regularizer is exactly the choice of a prior.**
 
-The algorithms that do the minimizing are [[Optimization and Curve Fitting]]. This page is the step before.
+The algorithms that do the minimizing are on [[Optimization and Curve Fitting]]; choosing what to minimize comes first.
 
 # Reference
 
@@ -17,6 +17,8 @@ Minimizing a loss is maximizing a likelihood. For residuals $r_i$, $\;\min\sum \
 | Huber: $r^2$ small, $\lvert r\rvert$ large | Gaussian core, heavy tails | smooth **and** robust | the practical default when outliers exist |
 | $-\log p$ (cross-entropy) | categorical | the likelihood for classification | discrete outcomes |
 | Poisson deviance | counting | correct weighting when variance $=$ mean | photon counts, low count rates ([[Poisson Distribution]]) |
+
+**Picture:** the loss as the shape of the valley the fit settles into: squared error assumes Gaussian noise, absolute error tolerates outliers, and a regularizer tilts the valley toward simpler answers.
 
 **The most common error is using L2 on non-Gaussian data.** Counting data at low rates is Poissonian, and weighting by $1/\sigma_i^2 = 1/N_i$ with $N_i$ the *observed* count biases the fit — use the model's predicted variance, or a Poisson likelihood.
 
@@ -33,7 +35,7 @@ Add a penalty on the parameters themselves, $\;\min\; \text{loss} + \lambda R(\b
 | $\lVert\nabla\theta\rVert^2$ | smoothness | penalizes roughness | smooth-function prior |
 | $\lVert\theta - \theta_0\rVert^2$ | anchoring | pulls toward prior knowledge | prior centred at $\theta_0$ |
 
-$\lambda$ trades fit against regularity, so it needs setting from data (cross-validation) or from the noise level, never by taste. Truncating small singular values is Tikhonov in disguise — the same regularization, expressed spectrally ([[Pseudo-Inverse]], [[Singular Value Decomposition]]).
+$\lambda$ trades fit against regularity, so it needs setting from data (cross-validation) or from the noise level, never by taste. Truncating small singular values is the hard-cutoff version of Tikhonov's smooth filter — the same regularization idea, expressed spectrally ([[Pseudo-Inverse]], [[Singular Value Decomposition]]).
 
 **Why regularize at all:** if the data do not constrain some parameter combination, the objective has a flat direction and the optimizer wanders it. A penalty makes the minimum unique. The diagnosis is the same degeneracy that produces $\pm10^6$ error bars — regularizing hides it, so understand it first.
 
@@ -68,7 +70,7 @@ Competing goals are scalarized, $f = f_1 + w f_2$, and **the weight $w$ is a uni
 - **Identifiable** — a unique minimum. If two parameters only appear as a product, fit the product.
 - **Convex** if you can arrange it: any local minimum is global, and duality applies ([[Legendre Transform]]).
 
-> [!question]- Your fit is dominated by three bad points and you are told to "use robust fitting." What are you actually changing, and what are you asserting?
+> [!question]- Your fit is dominated by three bad points and you are told to "use robust fitting." What are you changing, and what are you asserting?
 > You are changing the loss from $r^2$ to something growing more slowly — Huber or L1 — which is asserting the noise has heavier tails than Gaussian. That is a claim about the measurement, not a numerical trick: it says large residuals are more probable than a Gaussian allows, so they should not dominate. If the outliers are real physics rather than noise, this hides them.
 
 # Connections

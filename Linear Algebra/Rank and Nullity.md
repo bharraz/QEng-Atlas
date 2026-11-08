@@ -1,6 +1,6 @@
 #linear-algebra #math
 
-**Rank counts the dimensions a matrix actually uses; nullity counts the ones it throws away — and they always add up to the input dimension.** A matrix is exactly as informative as its rank.
+**Rank counts the dimensions a matrix uses; nullity counts the ones it throws away — and they always add up to the input dimension.** A matrix is exactly as informative as its rank.
 
 # Reference
 
@@ -8,9 +8,11 @@ For $A: \mathbb{C}^n \to \mathbb{C}^m$:
 $$
 \mathrm{rank}(A) + \dim \ker(A) = n
 $$
-Every input dimension either survives into the range or dies in the kernel — no leaks, no double counting. Column rank = row rank always (not obvious, but true).
+Every input dimension either survives into the range or is sent to zero in the kernel — no leaks, no double counting. Column rank = row rank always (not obvious, but true).
 
-**Rank from the SVD:** rank = number of nonzero singular values. This is also the *only numerically honest definition* — in floating point nothing is exactly zero, so "rank" in practice means "number of $\sigma_i$ above a noise-set threshold." A cliff in the singular value spectrum is your rank; a gradual slope means the question is ill-posed.
+**Picture:** a 3D object casting a 2D shadow: two input directions survive (rank 2), the direction along the light is lost (nullity 1), and 2 + 1 = 3.
+
+**Rank from the SVD:** rank = number of nonzero singular values. This is also the *only numerically reliable definition* — in floating point nothing is exactly zero, so "rank" in practice means "number of $\sigma_i$ above a noise-set threshold." A cliff in the singular value spectrum is your rank; a gradual slope means the question is ill-posed.
 
 **Low rank = compressibility.** Keeping the top $k$ singular triplets gives the best rank-$k$ approximation (Eckart-Young), storing $k(m+n)$ numbers instead of $mn$. A data matrix with low numerical rank has few independent things going on — this is why PCA works, and why a bipartite pure state with low Schmidt rank (= rank of the coefficient matrix) is weakly entangled: rank 1 means product state.
 

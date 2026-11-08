@@ -1,6 +1,6 @@
 #statistics #math
 
-**The pdf is probability per unit x; the CDF is accumulated probability — differentiate one to get the other.** Every expectation value, variable transformation, and sampling trick is built from these two objects.
+**The pdf is probability per unit x; the CDF is accumulated probability — differentiate one to get the other.** Every expectation value, variable transformation, and sampling method is built from these two objects.
 
 # Reference
 
@@ -10,12 +10,14 @@ $$
 
 $F$ runs monotonically 0→1 and is dimensionless; $f$ carries units of $1/[x]$ (a pdf over frequency is per Hz — forget this and normalizations break).
 
+**Picture:** the pdf as sand spread along the $x$ axis, and the CDF as the amount of sand to the left of each point.
+
 **Expectation values:**
 $$
 \langle g(X)\rangle = \int g(x)\,f(x)\,dx, \qquad \mathrm{Var}(X) = \langle X^2\rangle - \langle X\rangle^2
 $$
 
-**Change of variables — the one that bites.** For monotonic $y(x)$:
+**Change of variables — the usual source of errors.** For monotonic $y(x)$:
 $$
 f_Y(y) = f_X(x)\left|\frac{dx}{dy}\right|
 $$

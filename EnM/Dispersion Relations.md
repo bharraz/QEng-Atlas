@@ -10,6 +10,8 @@ $$
 
 Phase velocity moves the carrier ripples; **group velocity moves the envelope, the energy, and the information** (in transparent regions). They coincide only when ω(k) is a straight line through the origin — vacuum, ideally.
 
+**Picture:** runners at different speeds: if speed depends on wavelength, a packet built from many wavelengths spreads out as the faster components pull ahead.
+
 **Recognition table:**
 
 | System | ω(k) | Behavior |

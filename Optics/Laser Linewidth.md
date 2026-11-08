@@ -8,9 +8,17 @@
 $$
 \Delta\nu_{ST} \approx \frac{\pi h \nu\, (\Delta\nu_c)^2}{P_{out}}
 $$
-$\Delta\nu_{ST}$ = fundamental FWHM linewidth (Hz); $h\nu$ = photon energy (J); $\Delta\nu_c$ = cold-cavity linewidth (Hz), the resonator's own bandwidth; $P_{out}$ = output power (W). Two proportionalities carry the design logic: linewidth falls as $1/P$ (each stimulated photon dilutes the random spontaneous one) and as $\Delta\nu_c^{\,2}$ — a *quadratic* payoff for a better cavity, since a narrower resonator both filters the noise and stores photons longer. Numerically this is sub-Hz for most lasers.
 
-**Two convention traps on this formula.** The original Schawlow–Townes result is 4× larger than the form above; the modern version includes Lax's factor $\tfrac12$ (lasing, not below threshold) and is quoted as FWHM. And for semiconductor lasers the **Henry linewidth-enhancement factor** multiplies it by $(1 + \alpha^2)$ with $\alpha \approx 3$–6 — a factor of 10–37 — which is most of why diode linewidths are orders above the naive floor. Reality: free-running diodes sit at ~MHz (enhanced by the Henry $\alpha$ factor), ECDLs at ~100 kHz, and the gap to the floor is all *technical* noise. Narrowing = servo to a better reference (cavity via PDH), not a better gain medium.
+- $\Delta\nu_{ST}$ — fundamental FWHM linewidth (Hz)
+- $h\nu$ — photon energy (J)
+- $\Delta\nu_c$ — cold-cavity linewidth (Hz): the resonator's own bandwidth
+- $P_{out}$ — output power (W)
+
+Two proportionalities carry the design logic: linewidth falls as $1/P$ (each stimulated photon dilutes the random spontaneous one) and as $\Delta\nu_c^{\,2}$ — a *quadratic* gain from a better cavity, since a narrower resonator both filters the noise and stores photons longer. Numerically this is sub-Hz for most lasers.
+
+**Picture:** the laser phase as a random walk: each spontaneous emission (and each technical disturbance) kicks it slightly, and the linewidth is how fast the phase forgets its starting value.
+
+**Two convention traps on this formula.** The original Schawlow–Townes result is 4× larger than the form above; the modern version includes Lax's factor $\tfrac12$ (lasing, not below threshold) and is quoted as FWHM. And for semiconductor lasers the **Henry linewidth-enhancement factor** multiplies it by $(1 + \alpha^2)$ with $\alpha \approx 3$–6 — a factor of 10–37 — which is most of why diode linewidths are orders above the naive floor. In practice: free-running diodes sit at ~MHz (enhanced by the Henry $\alpha$ factor), ECDLs at ~100 kHz, and the gap to the floor is all *technical* noise. Narrowing = servo to a better reference (cavity via PDH), not a better gain medium.
 
 **Linewidth ↔ coherence:**
 $$
@@ -18,7 +26,7 @@ $$
 $$
 1 MHz → ~100 m coherence length; 1 Hz → light that stays phase-coherent for a third of a second.
 
-**Why you care:** the laser is the LO for your qubit — laser phase noise enters gate errors exactly like qubit dephasing; spectroscopic resolution and cavity-coupling stability are linewidth-limited too. A "1 Hz linewidth" claim means nothing without the timescale: slow drift vs fast phase noise are different beasts (the Allan-variance question).
+**Why it matters:** the laser is the LO for your qubit — laser phase noise enters gate errors exactly like qubit dephasing; spectroscopic resolution and cavity-coupling stability are linewidth-limited too. A "1 Hz linewidth" claim means nothing without the timescale: slow drift vs fast phase noise are different problems (the Allan-variance question).
 
 **Measurement — beat note:** overlap two lasers on a fast photodiode; the RF beat at $\nu_1 - \nu_2$ carries the combined lineshape (identical lasers: measured width = 2× each, Lorentzian assumption). Only one laser? Delayed self-heterodyne: beat it against itself through a fiber longer than $\ell_c$, with an AOM offset so the beat isn't at DC.
 
@@ -28,10 +36,12 @@ $$
 # Connections
 
 - [[Heterodyne Detection]] — the beat-note measurement is exactly this
-- [[Laser Fundamentals]] — gain clamping sets the stage; the surviving mode's purity is this note
-- [[Pound-Drever-Hall Locking]] — how you actually narrow a laser: servo the phase to a cavity
+- [[Laser Fundamentals]] — gain clamping and mode competition leave one surviving mode; its spectral purity is the linewidth
+- [[Pound-Drever-Hall Locking]] — how you narrow a laser: servo the phase to a cavity
 - [[Allan Variance]] — the right language for "linewidth" across timescales
 - [[Power Spectral Density]] — frequency-noise PSD is the complete description; linewidth is one number squeezed out of it
+- [[Laser Sources]] — linewidths of diode, ECDL, fiber, and solid-state sources
+- [[Fiber Noise Cancellation]] — linewidth broadening added by fiber delivery
 
 ---
-Source: Siegman, *Lasers*, Ch. 12 (fundamental line broadening); Henry α-factor lore
+Source: Siegman, *Lasers*, Ch. 12 (fundamental line broadening); C. H. Henry, "Theory of the linewidth of semiconductor lasers," *IEEE J. Quantum Electron.* 18, 259 (1982)

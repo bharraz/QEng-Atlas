@@ -1,10 +1,12 @@
 #quantum-optics #quantum-info
 
-**Photons barely decohere and barely interact — the first fact makes them the natural flying qubit, the second means every entangling operation must be bought with measurement and probability.**
+**Photons barely decohere and barely interact — the first fact makes them the natural flying qubit, the second means every entangling operation must be built from measurement and succeeds only with some probability.**
 
 # Reference
 
 **The structural trade.** A photon in a low-loss medium has essentially no thermal bath to couple to: no cryogenics required for the qubits themselves, and coherence is limited by loss rather than dephasing. The same weak coupling to everything means two photons pass through each other, so there is no deterministic two-qubit gate available.
+
+**Picture:** photons as fast couriers that never interact on the way, so every entangling step is done by interfering them and measuring, and succeeds only some of the time.
 
 | | Consequence |
 |---|---|
@@ -12,7 +14,7 @@
 | No photon–photon interaction | entangling gates must be **measurement-induced and probabilistic** |
 | **Loss is the error model** | not $T_1/T_2$ — a lost photon is an erasure, and erasures are located, which makes them cheaper to correct than unlocated errors |
 
-That last row is the platform's real asymmetry: **photonic errors are mostly erasures**, and knowing *where* an error occurred is worth a great deal to error correction.
+That last row is the platform's real asymmetry: **photonic errors are mostly erasures**, and knowing *where* an error occurred is valuable to error correction.
 
 **Encodings** — the choice of what carries the qubit:
 
@@ -52,7 +54,7 @@ Two photons on a beamsplitter interfere ([[Hong-Ou-Mandel Interference]]) but do
 **Boson sampling** sits outside both: send $n$ indistinguishable photons into a large random interferometer and sample the output distribution, whose amplitudes are matrix **permanents** — believed classically hard, but not universal and not error-corrected. It is a complexity demonstration, not a computer.
 
 > [!question]- Photons are called the best qubits and the hardest to compute with. Reconcile these.
-> The same weak coupling does both. Nothing in the environment couples strongly enough to dephase a photon, which is why they are ideal carriers; and nothing couples two photons either, so no deterministic entangling gate exists. The platform's whole architecture is the workaround: buy entanglement probabilistically, offline, where failure is retryable.
+> The same weak coupling does both. Nothing in the environment couples strongly enough to dephase a photon, which is why they are ideal carriers; and nothing couples two photons either, so no deterministic entangling gate exists. The platform's whole architecture is the workaround: create entanglement probabilistically, offline, where failure is retryable.
 
 # Connections
 
@@ -62,9 +64,10 @@ Two photons on a beamsplitter interfere ([[Hong-Ou-Mandel Interference]]) but do
 - [[Quantum Dots]] — the leading deterministic single-photon source
 - [[Purcell Effect]] — cavity enhancement for source brightness and indistinguishability
 - [[Squeezed States]] / [[Symplectic Group]] — the continuous-variable branch and its Gaussian limits
-- [[Photon Statistics and g2]] — how single-photon purity is actually measured
+- [[Photon Statistics and g2]] — how single-photon purity is measured
 - [[Quantum Teleportation]] — the primitive that makes measurement-induced gates work
 - [[Photodetection and Shot Noise]] — detector efficiency and dark counts as the error budget
+- [[Remote Entanglement and Quantum Networks]] — photons as links between matter qubits
 
 ---
 Source: Knill, Laflamme & Milburn, *Nature* 409, 46 (2001); Slussarenko & Pryde, "Photonic quantum information processing," *Appl. Phys. Rev.* 6, 041303 (2019)

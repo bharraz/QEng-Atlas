@@ -1,6 +1,6 @@
- #AMO
+#AMO
 
-**The optical wavelength dwarfs the atom, so the field is uniform across it: set $e^{i\mathbf{k}\cdot\mathbf{r}} \approx 1$ and the interaction collapses to $H = -\mathbf{d}\cdot\mathbf{E}$.** The neglected phase is not garbage, though — for a trapped ion it comes back as the entire sideband toolbox.
+**The optical wavelength dwarfs the atom, so the field is uniform across it: set $e^{i\mathbf{k}\cdot\mathbf{r}} \approx 1$ and the interaction collapses to $H = -\mathbf{d}\cdot\mathbf{E}$.** The neglected phase still matters: for a trapped ion, $e^{i\mathbf{k}\cdot\mathbf{r}}$ with $\mathbf r$ the ion's motion is what produces the motional sidebands.
 
 # Reference
 
@@ -11,6 +11,8 @@ $$k\,a_0 \sim \frac{2\pi a_0}{\lambda} \sim 10^{-3} \quad (\lambda \sim 500\ \ma
 so to zeroth order
 
 $$H_{\mathrm{int}} = -\,\mathbf{d}\cdot\mathbf{E}(t), \qquad \Omega = \frac{\langle e|\mathbf{d}\cdot\hat{\epsilon}|g\rangle E_0}{\hbar}$$
+
+**Picture:** an atom about 0.1 nm across sitting in a wave about 500 nm long: across the atom the field is effectively uniform, like a small boat on a long ocean swell.
 
 **First-order corrections** in $\mathbf{k}\cdot\mathbf{r}$ split into magnetic dipole (M1) + electric quadrupole (E2) pieces — rates down by $(k a_0)^2 \sim 10^{-6}$, which is exactly why "forbidden" clock transitions live for seconds.
 

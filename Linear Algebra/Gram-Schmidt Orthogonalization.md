@@ -9,11 +9,13 @@ $$
 u_k = v_k - \sum_{j<k} \langle e_j | v_k \rangle\, e_j, \qquad e_k = \frac{u_k}{\|u_k\|}
 $$
 
-Each $e_k$ spans the same space as $\{v_1,\dots,v_k\}$ — the procedure preserves the nested subspaces, just re-coordinatizes them orthogonally.
+Each $e_k$ spans the same space as $\{v_1,\dots,v_k\}$ — the procedure preserves the nested subspaces, only re-coordinatizes them orthogonally.
+
+**Picture:** building a frame one arrow at a time: each new arrow has its shadows on the existing arrows removed, leaving only the part that points somewhere new.
 
 **QR in one line:** running Gram-Schmidt on the columns of $A$ gives $A = QR$ with $Q$ orthonormal columns and $R$ upper triangular (the $R$ entries are the projection coefficients you subtracted).
 
-**Numerical gotcha:** classical GS is unstable — when $v_k$ is nearly in the span of the others, you subtract two almost-equal vectors and roundoff destroys orthogonality. **Modified GS** (subtract projections one at a time, updating $v_k$ after each) fixes most of it; Householder QR is the fully robust route. If your "orthonormal" basis fails $\langle e_i|e_j\rangle \approx 0$ checks, this is why.
+**Numerical instability:** classical GS is unstable — when $v_k$ is nearly in the span of the others, you subtract two almost-equal vectors and roundoff destroys orthogonality. **Modified GS** (subtract projections one at a time, updating $v_k$ after each) fixes most of it; Householder QR is the fully robust route. If your "orthonormal" basis fails $\langle e_i|e_j\rangle \approx 0$ checks, this is why.
 
 **In practice** this is how you orthogonalize degenerate eigenvectors, build orthogonal polynomials (Hermite, Legendre are GS on $1, x, x^2, \dots$ with different weights), and orthonormalize mode functions.
 

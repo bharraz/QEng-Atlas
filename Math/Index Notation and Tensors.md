@@ -1,10 +1,12 @@
 #linear-algebra #math
 
-**A tensor is an object whose components transform in a fixed way under change of basis, and index notation is the bookkeeping that makes every multilinear operation on them mechanical.**
+**A tensor is a machine that takes vectors (and covectors) and returns a number, linearly in each slot — a metric takes two vectors and returns their dot product, a covector takes one vector, a linear map takes a vector and a covector — and its components are its outputs on basis vectors, so when you change basis the components change in a fixed way while the machine itself does not.** Equivalently, a tensor is an object whose components transform in that fixed way under change of basis, and index notation is the bookkeeping that makes every multilinear operation on them mechanical.
 
 # Reference
 
 **Einstein summation:** a repeated index is summed over. $v^i w_i \equiv \sum_i v^i w_i$.
+
+**Picture:** repeated indices as wires connecting slots: every contraction plugs an output of one object into an input of another, and a free index is an unplugged slot.
 
 Two kinds of index, and the discipline that catches most errors:
 
@@ -18,7 +20,7 @@ An index appearing three times, or a free index that differs across terms, is al
 **Up vs. down.** Components with an upper index (**contravariant**, vectors $v^i$) and a lower index (**covariant**, covectors $\omega_i$) transform *inversely*:
 $$v^{i'} = \frac{\partial x^{i'}}{\partial x^{i}}\, v^{i}, \qquad \omega_{i'} = \frac{\partial x^{i}}{\partial x^{i'}}\, \omega_{i}$$
 
-That is the whole point: the two Jacobians cancel, so the contraction $\omega_i v^i$ is the **same number in every basis**. A rank-$(p,q)$ tensor has $p$ upper and $q$ lower indices and transforms with $p$ copies of the Jacobian and $q$ of its inverse.
+This inverse transformation is the reason for the two index positions: the two Jacobians cancel, so the contraction $\omega_i v^i$ is the **same number in every basis**. A rank-$(p,q)$ tensor has $p$ upper and $q$ lower indices and transforms with $p$ copies of the Jacobian and $q$ of its inverse.
 
 **The metric raises and lowers**: $v_i = g_{ij}v^j$, $\;v^i = g^{ij}v_j$, with $g^{ij}g_{jk} = \delta^i_k$. In an orthonormal Cartesian basis $g_{ij} = \delta_{ij}$, which is exactly why physicists working in Cartesian coordinates can put every index downstairs and never notice. The distinction becomes unavoidable in curvilinear coordinates ([[Curvilinear Coordinates]]) and in Minkowski space, where $\eta_{\mu\nu} = \mathrm{diag}(-1,1,1,1)$ and raising flips a sign.
 
@@ -56,7 +58,7 @@ Everything in the vector-identity table falls out of it in two lines:
 
 The third row is the general principle worth extracting: **a fully antisymmetric object contracted with a symmetric one vanishes.** Most "why is this zero" questions in index notation are that observation.
 
-**Why the formalism earns its keep:** a tensor equation with matching free indices is basis-independent, so *if it holds in one frame it holds in all*. Choosing a convenient frame to prove an identity is then legitimate rather than a cheat.
+**Why the formalism is useful:** a tensor equation with matching free indices is basis-independent, so *if it holds in one frame it holds in all*. Choosing a convenient frame to prove an identity is then legitimate rather than a shortcut.
 
 ## Where they appear
 

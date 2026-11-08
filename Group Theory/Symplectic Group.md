@@ -1,6 +1,6 @@
 #group-theory #math
 
-**$Sp(2n,\mathbb R)$ is the group of linear phase-space transformations preserving the symplectic form — simultaneously the canonical transformations of classical mechanics and the Gaussian unitaries of quantum mechanics, because the canonical commutation relations *are* that form with operator entries.**
+**Linear transformations of positions and momenta that preserve phase-space area — rotations in phase space, squeezing, beam-splitter mixing of modes — form the symplectic group $Sp(2n,\mathbb R)$: the group preserving the symplectic form, simultaneously the canonical transformations of classical mechanics and the Gaussian unitaries of quantum mechanics, because the canonical commutation relations *are* that form with operator entries.** **In practice:** the dynamics of any Hamiltonian quadratic in $x, p$ (or $a, a^\dagger$) is a $2n\times 2n$ real matrix, and a Gaussian state is fixed by a covariance matrix whose *symplectic* eigenvalues, not its ordinary ones, decide whether it is physical.
 
 # Reference
 
@@ -12,12 +12,14 @@ $$Sp(2n,\mathbb{R}) = \{ M \in \mathbb{R}^{2n\times 2n} : M^{\mathsf T} J M = J 
 
 The preserved object is $\omega(u,v) = u^{\mathsf T}Jv$ — the sum of signed areas of the $(q_i,p_i)$-plane projections of the parallelogram $(u,v)$ ([[Bilinear Forms and Preserved Structures]]).
 
+**Picture:** phase space as an incompressible fluid: symplectic maps can stretch and shear a patch of states but never change its area.
+
 **Block form.** For $M = \begin{pmatrix} A & B \\ C & D \end{pmatrix}$, the condition $M^{\mathsf T}JM = J$ reads: $A^{\mathsf T}C$ and $B^{\mathsf T}D$ symmetric, $A^{\mathsf T}D - C^{\mathsf T}B = \mathbb 1$. For $n=1$ it collapses to $\det M = 1$, so $Sp(2,\mathbb R) = SL(2,\mathbb R)$; for $n \geq 2$ symplectic is strictly stronger than $\det M = 1$.
 
 ## Algebraic properties
 
 - **Inverse:** $M^{-1} = -J M^{\mathsf T} J$ — the analog of $O^{-1} = O^{\mathsf T}$; inversion needs only a transpose and multiplication by $J$.
-- **Determinant:** $\det M = +1$ for every symplectic $M$, not merely $\pm 1$. Liouville's theorem follows, but is weaker: *every* projected area sum is preserved, not just total volume.
+- **Determinant:** $\det M = +1$ for every symplectic $M$, not merely $\pm 1$. Liouville's theorem follows, but is weaker: *every* projected area sum is preserved, not only total volume.
 - **Lie algebra:** differentiating $e^{tX^{\mathsf T}} J e^{tX} = J$ gives $X^{\mathsf T}J + JX = 0$, i.e. $X = JS$ with $S = S^{\mathsf T}$. Generators are in bijection with symmetric matrices, i.e. with **quadratic Hamiltonians** $H = \tfrac12 z^{\mathsf T}Sz$: Hamilton's equations $\dot z = J\nabla_z H = JSz$. $\dim Sp(2n,\mathbb R) = n(2n+1)$.
 - **Spectrum:** eigenvalues come in quadruples $\lambda,\, 1/\lambda,\, \bar\lambda,\, 1/\bar\lambda$. So they either lie on the unit circle (stable oscillation) or occur in growth–decay pairs off it; a Floquet multiplier crossing $\pm 1$ is the onset of parametric instability.
 - **Non-compact:** squeezing parameters are unbounded, so there is no invariant averaging and no faithful finite-dimensional unitary representation — on Hilbert space the group acts through the infinite-dimensional metaplectic representation. Squeezing has no periodicity, unlike rotation.
@@ -57,7 +59,7 @@ $[z_i, z_j] = i\hbar J_{ij}$: a linear map $z \to Mz$ of mode operators preserve
 # Connections
 
 - [[Bilinear Forms and Preserved Structures]] — the form-preservation construction this instantiates
-- [[The Classical Groups Reference]] — the catalogue this page extends
+- [[The Classical Groups Reference]] — the catalogue the symplectic group belongs to
 - [[Solving Dynamics on Closed Lie Algebras]] — $\mathfrak{su}(1,1)$ methods; moment propagation
 - [[Squeezed States]] / [[Displacement Operator]] — Gaussian unitaries and the affine extension
 - [[Ray Transfer Matrices]] — $Sp(2,\mathbb{R})$ in paraxial optics

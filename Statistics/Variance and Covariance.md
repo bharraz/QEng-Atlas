@@ -9,11 +9,13 @@ $$
 \mathrm{Cov}(X,Y) = \langle XY\rangle - \langle X\rangle\langle Y\rangle
 $$
 
-The workhorse identity — where correlated errors enter or cancel:
+The identity used most — where correlated errors enter or cancel:
 
 $$
 \mathrm{Var}(aX + bY) = a^2\,\mathrm{Var}(X) + b^2\,\mathrm{Var}(Y) + 2ab\,\mathrm{Cov}(X,Y)
 $$
+
+**Picture:** a scatter plot of two noisy quantities: variance is the width along each axis, covariance the tilt of the cloud, and the covariance matrix is the ellipse that describes both.
 
 Sum of *anticorrelated* variables: the cross term subtracts (common-mode rejection in one line). Independent ⇒ $\mathrm{Cov}=0$; the converse fails (uncorrelated ≠ independent, except jointly Gaussian).
 
@@ -26,7 +28,7 @@ Sum of *anticorrelated* variables: the cross term subtracts (common-mode rejecti
 
 # Connections
 
-- [[Error Propagation]] — its general formula is this note's $A\Sigma A^{\mathsf T}$ with $A = \nabla f$
+- [[Error Propagation]] — its general formula is the $A\Sigma A^{\mathsf T}$ above, with $A = \nabla f$
 - [[Autocorrelation]] — covariance of a signal with its own time-shifted self
 - [[Positive Semidefinite Matrices]] — every covariance matrix is one; eigendecomposition gives principal axes
 - [[Least Squares and Chi-Squared Fitting]] — parameter covariance matrix from the fit curvature

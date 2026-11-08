@@ -16,7 +16,9 @@ $$
 
 Positive *definite* = strict versions ($>0$, $\lambda_i > 0$, $B$ full rank; then $A$ is invertible).
 
-- **$A = B^\dagger B$ view:** every PSD matrix is a "square" — covariance matrices ($C = \langle \delta x\, \delta x^T\rangle$), Gram matrices, and $A^\dagger A$ in the SVD are PSD for free.
+**Picture:** a bowl: the quadratic form $\langle x|A|x\rangle$ never dips below zero in any direction, so the matrix acts as a variance or a probability weight in every direction.
+
+- **$A = B^\dagger B$ view:** every PSD matrix is a "square" — covariance matrices ($C = \langle \delta x\, \delta x^T\rangle$), Gram matrices, and $A^\dagger A$ in the SVD are PSD automatically.
 - **Square roots:** unique PSD $\sqrt{A} = \sum_i \sqrt{\lambda_i}\,|v_i\rangle\langle v_i|$. **Cholesky** is the numerically cheap alternative factorization $A = LL^\dagger$ with $L$ lower-triangular — the standard way to sample correlated Gaussians and to test PSD-ness in code (Cholesky fails ⇔ not positive definite).
 - **Density matrices:** $\rho \ge 0$, $\mathrm{Tr}\rho = 1$. Eigenvalues are the probabilities of the eigenstate mixture. A reconstructed $\rho$ from tomography with a small negative eigenvalue is unphysical — noise artifact, fix with MLE.
 - **Ordering:** $A \ge B$ means $A - B$ PSD; this is the partial order behind "POVM elements $E_m \ge 0$".

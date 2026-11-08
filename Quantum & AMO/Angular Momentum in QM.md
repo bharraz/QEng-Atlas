@@ -14,6 +14,8 @@ $$J_\pm|j,m\rangle = \hbar\sqrt{j(j+1) - m(m\pm1)}\;|j,m\pm1\rangle$$
 
 — vanishing at the ends is what quantizes $j$ to $0, \tfrac{1}{2}, 1, \tfrac{3}{2}, \dots$ Orbital $l$ is restricted to integers (spherical harmonics must be single-valued in $\varphi$); spin has no spatial wavefunction, so half-integers survive.
 
+**Picture:** a ladder of $2j+1$ rungs with $J_\pm$ stepping up and down; the ladder must end at both ends, which forces $j$ to be a whole or half-whole number.
+
 **Addition of two angular momenta:** $j_1 \otimes j_2$ decomposes into total $J = |j_1 - j_2|, \dots, j_1 + j_2$ in integer steps, one copy each; dimension check $\sum_J (2J+1) = (2j_1+1)(2j_2+1)$. The unitary connecting product basis to coupled basis is the table of [[Clebsch-Gordan Coefficients]].
 
 $J_z$ generates rotations about $z$: $R_z(\theta) = e^{-i\theta J_z/\hbar}$ — this is why $[J_i,J_j]$ has that form (rotations don't commute).

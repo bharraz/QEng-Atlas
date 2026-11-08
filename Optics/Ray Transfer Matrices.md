@@ -8,6 +8,8 @@ $$
 \begin{pmatrix} y_2 \\ \theta_2 \end{pmatrix} = \begin{pmatrix} A & B \\ C & D \end{pmatrix} \begin{pmatrix} y_1 \\ \theta_1 \end{pmatrix}
 $$
 
+**Picture:** a ray as a point in (height, angle) space; each element moves the point by a linear map, free space by shearing it and a lens by kicking the angle.
+
 | Element | Matrix |
 |---|---|
 | Free space $d$ | $\begin{pmatrix} 1 & d \\ 0 & 1 \end{pmatrix}$ |
@@ -19,7 +21,7 @@ $$
 
 **Imaging condition: $B = 0$** — output height independent of input angle, so a point maps to a point; magnification is then $A$. A curved mirror is a lens with $f = R/2$.
 
-**Gaussian beams ride the same matrices:**
+**Gaussian beams use the same matrices:**
 $$
 q_2 = \frac{A q_1 + B}{C q_1 + D}
 $$
@@ -33,7 +35,7 @@ so one 2×2 product designs both the ray layout and the beam waists. Cavity stab
 - [[Gaussian Beams]] — the $q' = (Aq+B)/(Cq+D)$ rule is why this table matters daily
 - [[Telescopes and Beam Expanders]] — two-lens matrices give magnification and divergence scaling in one line
 - [[Mode Matching]] — design lens solutions by demanding the output $q$ equals the target
-- [[Optical Cavity Stability]] — the $|A+D| \le 2$ criterion is the $g_1g_2$ condition in disguise
+- [[Optical Cavity Stability]] — the $|A+D| \le 2$ criterion is the $g_1g_2$ condition in matrix form
 
 ---
 Source: Siegman, *Lasers*, Ch. 15

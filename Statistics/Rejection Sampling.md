@@ -12,11 +12,13 @@ $$
 
 Repeat until accepted. Simplest envelope: a bounding box (uniform $g$) over a finite support.
 
+**Picture:** the efficiency as the fraction of the box the curve fills: an envelope that hugs the curve wastes few darts, a loose one wastes most.
+
 **Efficiency = acceptance rate = $1/M$** — the ratio of the area under $f$ to the area under $Mg$. A tight envelope is everything; a loose one wastes almost every draw, and in high dimensions the area ratio collapses exponentially.
 
 **When to use over [[Inverse Transform Sampling]]:**
 - $F^{-1}$ has no closed form and you don't want to tabulate
-- $f$ is known only **up to a normalization constant** (Bayesian posteriors — the killer feature)
+- $f$ is known only **up to a normalization constant** (Bayesian posteriors — the main reason to use it)
 
 > [!question]- Why are the accepted samples distributed as $f$?
 > $P(x \in dx \text{ and accept}) = g(x)\,dx \cdot \frac{f(x)}{Mg(x)} = \frac{f(x)}{M}dx$ — the envelope cancels, leaving $f$ times a constant. Conditioning on acceptance restores normalization.

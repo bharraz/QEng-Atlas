@@ -19,7 +19,9 @@ $$
 \nabla^2 f = \frac{1}{s}\frac{\partial}{\partial s}\!\left(s\frac{\partial f}{\partial s}\right) + \frac{1}{s^2}\frac{\partial^2 f}{\partial \phi^2} + \frac{\partial^2 f}{\partial z^2}
 $$
 
-**Spherical $(r, \theta, \phi)$** — $\theta$ = polar angle from $z$ (physics convention!). $dV = r^2\sin\theta\, dr\, d\theta\, d\phi$; $d\mathbf{l} = dr\,\hat{r} + r\,d\theta\,\hat{\theta} + r\sin\theta\,d\phi\,\hat{\phi}$.
+**Picture:** the unit vectors turn as you move, the way 'north' and 'east' change direction across a globe, and the extra terms in each formula are the rate of that turning.
+
+**Spherical $(r, \theta, \phi)$** — $\theta$ = polar angle from $z$ (physics convention). $dV = r^2\sin\theta\, dr\, d\theta\, d\phi$; $d\mathbf{l} = dr\,\hat{r} + r\,d\theta\,\hat{\theta} + r\sin\theta\,d\phi\,\hat{\phi}$.
 
 $$
 \nabla f = \frac{\partial f}{\partial r}\hat{r} + \frac{1}{r}\frac{\partial f}{\partial \theta}\hat{\theta} + \frac{1}{r\sin\theta}\frac{\partial f}{\partial \phi}\hat{\phi}
@@ -34,7 +36,7 @@ $$
 \nabla^2 f = \frac{1}{r^2}\frac{\partial}{\partial r}\!\left(r^2\frac{\partial f}{\partial r}\right) + \frac{1}{r^2\sin\theta}\frac{\partial}{\partial\theta}\!\left(\sin\theta\frac{\partial f}{\partial\theta}\right) + \frac{1}{r^2\sin^2\theta}\frac{\partial^2 f}{\partial\phi^2}
 $$
 
-**Gotchas:** unit vectors are position-dependent — never pull $\hat{r}, \hat{\phi}$ through a derivative or integrate them componentwise without converting to Cartesian. $\nabla^2$ of a *vector* field is not the Laplacian of each curvilinear component; use $\nabla^2\mathbf{A} = \nabla(\nabla\cdot\mathbf{A}) - \nabla\times(\nabla\times\mathbf{A})$. Math texts swap $\theta \leftrightarrow \phi$.
+**Pitfalls:** unit vectors are position-dependent — never pull $\hat{r}, \hat{\phi}$ through a derivative or integrate them componentwise without converting to Cartesian. $\nabla^2$ of a *vector* field is not the Laplacian of each curvilinear component; use $\nabla^2\mathbf{A} = \nabla(\nabla\cdot\mathbf{A}) - \nabla\times(\nabla\times\mathbf{A})$. Math texts swap $\theta \leftrightarrow \phi$.
 
 > [!question]- Where do the $1/s$ and $1/r\sin\theta$ factors in the gradient come from?
 > The gradient's component along a direction is $df$ per unit *length*, and a step $d\phi$ moves you an arc length $s\,d\phi$ (or $r\sin\theta\,d\phi$) — the metric factor converts coordinate change to physical distance.
@@ -43,7 +45,7 @@ $$
 
 - [[Index Notation and Tensors]] — where upper vs. lower indices stops being cosmetic; the metric as raiser/lowerer
 - [[Gradient]] — what the metric factors mean physically
-- [[Laplacian]] — the radial-part tricks and where each form gets used
+- [[Laplacian]] — the radial-part forms and where each gets used
 - [[Bessel Functions]] — what separation in cylindrical coordinates spits out
 - [[Legendre Polynomials and Spherical Harmonics]] — what separation in spherical spits out
 - [[Separation of Variables]] — why the coordinate system must match the boundary

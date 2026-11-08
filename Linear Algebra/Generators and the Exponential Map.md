@@ -1,6 +1,6 @@
 #linear-algebra #math
 
-**Continuous symmetry groups are built by exponentiating their tangent space at the identity: know the generators (a Lie algebra), and $e^{-i\theta G}$ manufactures every group element near $\mathbb{1}$.** In QM this is why every Hermitian operator generates a unitary flow — the Hamiltonian generates time translation, momentum generates spatial translation, $J_z$ generates rotation.
+**Rotating by a tiny angle $d\theta$ changes a state by $-i\,d\theta\,G$ for a fixed Hermitian operator $G$ — the generator — and composing many tiny steps rebuilds the finite transformation as $e^{-i\theta G}$.** Continuous symmetry groups are built this way, by exponentiating their tangent space at the identity: know the generators (a Lie algebra), and $e^{-i\theta G}$ manufactures every group element near $\mathbb{1}$. In QM this is why every Hermitian operator generates a unitary flow — the Hamiltonian generates time translation, momentum generates spatial translation, $J_z$ generates rotation.
 
 # Reference
 
@@ -8,6 +8,8 @@ $$
 U(\theta) = e^{-i\theta G}, \qquad G = G^\dagger \;\Longleftrightarrow\; U^\dagger U = \mathbb{1}
 $$
 Hermitian generators ↔ unitary groups; the generator is recovered from the flow by $G = i\,\frac{dU}{d\theta}\big|_{\theta=0}$. Infinitesimally, $U \approx \mathbb{1} - i\,d\theta\, G$: the generator is the group element's first-order behavior, and the exponential map rebuilds finite transformations by compounding infinitesimal ones.
+
+**Picture:** compound interest: many small multiplicative steps $(1 - i\theta G/N)^N$ build up to $e^{-i\theta G}$, the same way $(1+r/N)^N \to e^r$.
 
 **The algebra determines (almost) everything.** Commutators of generators close: $[G_a, G_b] = i f_{abc} G_c$, and the structure constants $f_{abc}$ fix the group's local structure. Noncommuting generators ⇒ the order of transformations matters, with BCH quantifying by how much.
 

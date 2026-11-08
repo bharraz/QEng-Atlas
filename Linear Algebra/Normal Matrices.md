@@ -8,7 +8,9 @@ $$
 A A^\dagger = A^\dagger A \quad\Longleftrightarrow\quad A = U D U^\dagger \text{ for some unitary } U, \text{ diagonal } D
 $$
 
-The "iff" is the whole content: **normal ⇔ unitarily diagonalizable** ([[Spectral Theorem]]). Non-normal matrices may still diagonalize, but only with a skewed (non-orthogonal) eigenbasis — or not at all.
+The central fact is the equivalence: **normal ⇔ unitarily diagonalizable** ([[Spectral Theorem]]). Non-normal matrices may still diagonalize, but only with a skewed (non-orthogonal) eigenbasis — or not at all.
+
+**Picture:** a matrix that only scales, by complex factors, along a set of perpendicular axes; non-normal matrices need skewed axes, and then small perturbations can have large effects.
 
 **The family tree** (all normal, distinguished by where eigenvalues live):
 
@@ -28,7 +30,7 @@ The "iff" is the whole content: **normal ⇔ unitarily diagonalizable** ([[Spect
 
 - [[Spectral Theorem]] — normality is its exact hypothesis
 - [[Hermitian Matrices]] — the most-used special case (observables)
-- [[Unitary Matrices]] — the other workhorse special case (evolution)
+- [[Unitary Matrices]] — the other common special case (time evolution)
 - [[Diagonalization]] — the general theory when you drop orthonormality
 
 ---

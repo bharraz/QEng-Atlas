@@ -9,6 +9,8 @@ $$
 $$
 Structure: $Y_{lm}(\theta,\phi) \propto P_l^m(\cos\theta)\, e^{im\phi}$, with $l = 0, 1, 2, \ldots$ and $|m| \leq l$ ($2l+1$ values).
 
+**Picture:** standing waves on a sphere: $l$ counts the nodal lines, and $\lvert m\rvert$ of them run through the poles.
+
 **Legendre polynomials** ($m=0$, axially symmetric case): $P_0 = 1$, $P_1 = \cos\theta$, $P_2 = \frac{1}{2}(3\cos^2\theta - 1)$. Generating function = the multipole expansion:
 $$
 \frac{1}{|\mathbf{r}-\mathbf{r}'|} = \sum_l \frac{r'^l}{r^{l+1}}\, P_l(\cos\gamma)

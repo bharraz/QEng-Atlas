@@ -1,10 +1,10 @@
 #reference #units
 
-**Everything in this vault converts through energy: $E = \hbar\omega = hf = k_BT = hc/\lambda = \mu B = mc^2$. Memorize a handful of anchor conversions and every estimate becomes arithmetic.** This is a reference sheet, not a lesson.
+**Everything in this vault converts through energy: $E = \hbar\omega = hf = k_BT = hc/\lambda = \mu B = mc^2$. Memorize a handful of anchor conversions and every estimate becomes arithmetic.**
 
-# The energy currency
+# Energy in six units
 
-One quantity, six habitats:
+One quantity, six ways of writing it:
 
 | 1 unit of ↓ equals → | Hz        | K       | eV       | cm⁻¹       |
 | -------------------- | --------- | ------- | -------- | ---------- |
@@ -20,9 +20,9 @@ One quantity, six habitats:
 - $\hbar$ = 1.055×10⁻³⁴ J·s = **6.58×10⁻¹⁶ eV·s**; $h$ = 4.14×10⁻¹⁵ eV·s
 - 1 µK ↔ 20.8 kHz (Doppler limits, trap depths in frequency units)
 
-**ω vs f — the factor-2π tax:** $\omega = 2\pi f$. "Rabi frequency $\Omega/2\pi$ = 1 MHz" means a π-pulse takes $\pi/\Omega$ = 0.5 µs. Linewidths: $\Gamma$ is usually angular; FWHM in Hz is $\Gamma/2\pi$. When a formula is off by ~6, it's a 2π; when off by ~40, it's $(2\pi)^2$... check the convention *of the source* before the algebra.
+**ω vs f — the factor of 2π:** $\omega = 2\pi f$. "Rabi frequency $\Omega/2\pi$ = 1 MHz" means a π-pulse takes $\pi/\Omega$ = 0.5 µs. Linewidths: $\Gamma$ is usually angular; FWHM in Hz is $\Gamma/2\pi$. When a formula is off by ~6, it's a 2π; when off by ~40, it's $(2\pi)^2$... check the convention *of the source* before the algebra.
 
-# Dimensional identities of the workhorses
+# Dimensional identities of common quantities
 
 | Object                                                     | Dimensions                                                  | The check it enables                                                        |
 | ---------------------------------------------------------- | ----------------------------------------------------------- | --------------------------------------------------------------------------- |
@@ -42,7 +42,7 @@ One quantity, six habitats:
 # Magnetic and spin
 
 - $\mu_B/h$ = **14.0 GHz/T** ⇒ electron ($g \approx 2$): **28 GHz/T = 2.80 MHz/G** (the number under every Zeeman splitting, ESR line, NV magnetometry formula)
-- Nuclear magneton: 7.6 MHz/T; proton NMR: 42.6 MHz/T — nuclei are ~2000× stiffer, which is the whole story of nuclear-spin memories and of why NMR needs big fields
+- Nuclear magneton: 7.6 MHz/T; proton NMR: 42.6 MHz/T — nuclei are ~2000× stiffer, which is why nuclear spins make long-lived memories and why NMR needs big fields
 - 1 G = 10⁻⁴ T = 0.1 mT. Earth's field ≈ 0.5 G ≈ 1.4 MHz of electron Zeeman — never negligible in a lab
 - Flux quantum $\Phi_0 = h/2e$ = 2.07×10⁻¹⁵ Wb = 2.07 mT·µm²; Josephson: 483.6 MHz per µV
 
@@ -73,22 +73,22 @@ One quantity, six habitats:
 - Mean free path (air, 300 K): $\lambda \approx 6.6\,\text{cm} \times \frac{10^{-3}\,\text{mbar}}{P}$
 - Monolayer time ≈ 1 s at 10⁻⁶ mbar, scaling as $1/P$ (the surface-science clock — see [[Vacuum Engineering]])
 
-# The dimensional-analysis moves themselves
+# Dimensional-analysis methods
 
-1. **Rate-energy-time triangle:** any energy scale ÷ $\hbar$ is a rate; any rate is a linewidth; $\Delta E\,\Delta t \sim \hbar$ is dimensional analysis, not mysticism. Coupling 1 MHz ⇒ dynamics on µs ⇒ needs linewidths ≪ 1 MHz to resolve.
+1. **Rate-energy-time triangle:** any energy scale ÷ $\hbar$ is a rate; any rate is a linewidth; $\Delta E\,\Delta t \sim \hbar$ is dimensional analysis. Coupling 1 MHz ⇒ dynamics on µs ⇒ needs linewidths ≪ 1 MHz to resolve.
 2. **Compare to the relevant $k_BT$, not to zero.** Is 5 GHz big? At 300 K, tiny ($k_BT$ = 6 THz); at 10 mK, huge (208 MHz). Every "can I neglect thermal?" question is this division.
 3. **Build the answer from the only scales present.** A trap with frequency $\omega$ and mass $m$ has exactly one length: $\sqrt{\hbar/m\omega}$ (the ground-state size — no solving needed). One energy and a dipole ⇒ one field. If your formula has a quantity the physics doesn't contain, it's wrong.
 4. **π's are physics, powers are dimensions.** Dimensional analysis fixes exponents exactly and prefactors to within ~10. If an estimate misses by 10³, the *scaling* is wrong — find the missing physics, don't tune prefactors.
 5. **Track dB *of what*.** Power dB and voltage/amplitude dB differ by a factor 2 in the exponent; optical density, RF attenuation, and noise figures all quietly choose one. (See [[dB Conventions]].)
-6. **Angular or not** — see the 2π tax above; worst in spectral densities, where one-sided vs two-sided *and* Hz vs rad/s give four conventions differing by 2π and 2 (see [[PSD Estimation]]).
+6. **Angular or not** — see the factor of 2π above; worst in spectral densities, where one-sided vs two-sided *and* Hz vs rad/s give four conventions differing by 2π and 2 (see [[PSD Estimation]]).
 
-> [!question]- A result passes dimensional analysis. What has that actually established?
-> Only that you have not mixed incompatible quantities — dimensional consistency is **necessary, never sufficient**. It cannot see dimensionless factors, so $2\pi$, $\tfrac12$, and a sign all pass unnoticed, and those are the errors that actually occur. Use it as a fast filter, then check limits and a special case ([[(Guide) Thinking Mathematically]]).
+> [!question]- A result passes dimensional analysis. What has that established?
+> Only that you have not mixed incompatible quantities — dimensional consistency is **necessary, never sufficient**. It cannot see dimensionless factors, so $2\pi$, $\tfrac12$, and a sign all pass unnoticed, and those are the errors that occur. Use it as a fast filter, then check limits and a special case ([[(Guide) Thinking Mathematically]]).
 
 # Connections
 
 - [[dB Conventions]] — the logarithmic half of this sheet
-- [[PSD Estimation]] — units of noise, where conventions bite hardest
+- [[PSD Estimation]] — units of noise, where conventions cause the most errors
 - [[Vacuum Engineering]] — pressure/density/mean-free-path in working context
 - [[Numerical Aperture and Spot Size]] — the optics scalings in full
 - [[Floating Point and Numerical Error]] — rescaling to O(1) units as numerical hygiene

@@ -2,7 +2,7 @@
 
 **Once the Hamiltonians of a problem generate a finite-dimensional Lie algebra, evolution reduces from an operator equation on Hilbert space to a handful of scalar ODEs — or to exact algebraic identities.**
 
-Determining whether and how the algebra closes is [[Dynamical Lie Algebras and Closure]]. This page assumes closure into $\mathfrak g$ with basis $\{X_1,\dots,X_d\}$, $d = \dim\mathfrak g$, and structure constants $[X_i,X_j] = \sum_k c_{ij}^{\,k}X_k$.
+Determining whether and how the algebra closes is [[Dynamical Lie Algebras and Closure]]. Here the algebra is assumed to close into $\mathfrak g$ with basis $\{X_1,\dots,X_d\}$, $d = \dim\mathfrak g$, and structure constants $[X_i,X_j] = \sum_k c_{ij}^{\,k}X_k$.
 
 # Reference
 
@@ -20,6 +20,8 @@ Determining whether and how the algebra closes is [[Dynamical Lie Algebras and C
 | $\mathfrak g$ closes only after a frame change | interaction picture first |
 | $\mathfrak g$ large or unbounded | truncated [[Magnus Expansion]], or numerics ([[Exact Diagonalization and Sparse Methods]]) |
 
+**Picture:** a closed algebra is a small room the evolution can never leave, so the motion is described by a few coordinates in that room instead of the full Hilbert space.
+
 ## Wei–Norman product form
 
 For $\dot U = A(t)U$ with $A(t) \in \mathfrak g$ at all times, write the propagator as an ordered product of one-parameter subgroups — **coordinates of the second kind**:
@@ -32,7 +34,7 @@ Requirements and caveats:
 - **Finite dimension is required.** $d$ must be finite for the product to be a finite ordered list; there is no Wei–Norman form on an algebra that fails to close.
 - **The scalar system is generally nonlinear.** For $\mathfrak{su}(2)$ and $\mathfrak{su}(1,1)$ it is one Riccati equation plus quadratures.
 - **Solvable algebras integrate by quadrature alone** — order the basis so the system is triangular, no nonlinear step. Nilpotent algebras are the special case where the $g_j$ are explicit integrals of the drive.
-- **The parametrization is only local.** For non-solvable algebras the product form can fail to cover the whole group — coordinate singularities, e.g. at $g_2 = \pi/2$ in Euler-angle-type parametrizations (Euler angles being the $\mathfrak{su}(2)$ instance of this construction). The solution stays valid on each chart; continuing past a singularity requires reordering the factors.
+- **The parametrization is only local.** For non-solvable algebras the product form can fail to cover the entire group — coordinate singularities, e.g. at $g_2 = \pi/2$ in Euler-angle-type parametrizations (Euler angles being the $\mathfrak{su}(2)$ instance of this construction). The solution stays valid on each chart; continuing past a singularity requires reordering the factors.
 
 ## Reduction to a faithful low-dimensional representation
 
@@ -72,7 +74,7 @@ When $\mathfrak g$ is the quadratic algebra, states need not be evolved at all:
 For $H(t) = H_0 + V(t)$ whose full generator set does not close usefully, transform to the interaction picture: $\tilde V(t) = e^{iH_0t/\hbar}V(t)e^{-iH_0t/\hbar}$ may lie in a smaller algebra, either exactly or after discarding fast-oscillating terms ([[Rotating Wave Approximation (Atlas)]]). **Choosing a frame is choosing which subalgebra the residual dynamics occupies**, and getting $\tilde V$ to close is frequently the decisive step.
 
 > [!question]- $H(t) = \omega(t)\,a^\dagger a + \chi(t)(a^2 + a^{\dagger 2})$. Identify the algebra and the resulting scalar problem.
-> $\{a^\dagger a, a^2, a^{\dagger 2}\}$ closes as $\mathfrak{su}(1,1)$. Wei–Norman gives $U = e^{g_+K_+}e^{g_0K_0}e^{g_-K_-}$: one Riccati equation for $g_+$ driven by $\omega, \chi$, then two quadratures. Fock-space dimension is irrelevant — the whole time-dependent squeezing problem is one nonlinear scalar ODE.
+> $\{a^\dagger a, a^2, a^{\dagger 2}\}$ closes as $\mathfrak{su}(1,1)$. Wei–Norman gives $U = e^{g_+K_+}e^{g_0K_0}e^{g_-K_-}$: one Riccati equation for $g_+$ driven by $\omega, \chi$, then two quadratures. Fock-space dimension is irrelevant — the entire time-dependent squeezing problem is one nonlinear scalar ODE.
 
 # Connections
 

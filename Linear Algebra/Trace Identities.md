@@ -1,6 +1,6 @@
 #linear-algebra #math
 
-**The trace is the basis-independent scalar you can always extract from an operator — and cyclic invariance is the identity you'll use daily.** Expectation values, purity, and fidelities are all traces because trace is the unique linear map that doesn't care what basis you compute in.
+**The trace is the basis-independent scalar you can always extract from an operator — and cyclic invariance is the identity used most often.** Expectation values, purity, and fidelities are all traces because trace is the unique linear map that doesn't care what basis you compute in.
 
 # Reference
 
@@ -12,15 +12,17 @@ $$
 \mathrm{Tr}(ABC) = \mathrm{Tr}(BCA) = \mathrm{Tr}(CAB) \qquad (\text{cyclic, NOT arbitrary: } \mathrm{Tr}(ABC) \ne \mathrm{Tr}(ACB) \text{ in general})
 $$
 
-Consequences: $\mathrm{Tr}(P^{-1}AP) = \mathrm{Tr}\,A$ (basis independence), $\mathrm{Tr}[A,B] = 0$ always (why $[x,p] = i\hbar$ has no finite-dimensional representation!), and you can rotate operators around inside quantum expectation values $\langle O \rangle = \mathrm{Tr}(\rho O)$.
+Consequences: $\mathrm{Tr}(P^{-1}AP) = \mathrm{Tr}\,A$ (basis independence), $\mathrm{Tr}[A,B] = 0$ always (why $[x,p] = i\hbar$ has no finite-dimensional representation), and you can rotate operators around inside quantum expectation values $\langle O \rangle = \mathrm{Tr}(\rho O)$.
 
-**Kit of identities:**
+**Picture:** the sum of the diagonal, equal to the sum of eigenvalues in every basis; with a density matrix, $\mathrm{Tr}(\rho O)$ adds up outcome values weighted by their probabilities.
+
+**Identities:**
 
 | Identity | Use |
 |---|---|
 | $\mathrm{Tr}(A\otimes B) = \mathrm{Tr}A\cdot\mathrm{Tr}B$ | composite-system normalization |
 | $\mathrm{Tr}(A^\dagger B) = \langle A, B\rangle_{HS}$ | Hilbert-Schmidt inner product — operators as vectors |
-| $\mathrm{Tr}(|u\rangle\langle v| \, A) = \langle v|A|u\rangle$ | converting outer products to matrix elements |
+| $\mathrm{Tr}(\lvert u\rangle\langle v\rvert \, A) = \langle v\vert A\vert u\rangle$ | converting outer products to matrix elements |
 | $\det e^A = e^{\mathrm{Tr}A}$ | bridge to determinants |
 | $\mathrm{Tr}\,\sigma_i\sigma_j = 2\delta_{ij}$ | extracting Bloch components: $r_i = \mathrm{Tr}(\rho\,\sigma_i)$ |
 
@@ -33,7 +35,7 @@ Consequences: $\mathrm{Tr}(P^{-1}AP) = \mathrm{Tr}\,A$ (basis independence), $\m
 
 - [[Density Matrix]] — everything measurable is $\mathrm{Tr}(\rho O)$; purity is $\mathrm{Tr}\rho^2$; reduced states via partial trace
 - [[Tensor Product]] — the factorization $\mathrm{Tr}(A\otimes B) = \mathrm{Tr}A\,\mathrm{Tr}B$ and where partial trace lives
-- [[Determinant Identities]] — trace's multiplicative sibling, joined by $\det e^A = e^{\mathrm{Tr}A}$
+- [[Determinant Identities]] — the multiplicative counterpart of the trace, joined by $\det e^A = e^{\mathrm{Tr}A}$
 - [[Eigenvalues and Eigenvectors]] — $\mathrm{Tr} = \sum\lambda_i$: the free eigenvalue sanity check
 
 ---

@@ -10,9 +10,11 @@ $$
 
 $P$ is the unique PSD "modulus" of $A$; $U$ is unitary, unique when $A$ is invertible ($U = AP^{-1}$). Left-handed variant: $A = P'U$ with $P' = \sqrt{AA^\dagger}$ — same $U$, and $P' = UPU^\dagger$ (stretch first vs stretch after, in rotated axes).
 
+**Picture:** deforming a rubber sheet: first stretch it along perpendicular axes ($P$), then rotate it rigidly ($U$).
+
 **From the SVD in one line:** $A = U_s\Sigma V^\dagger = (U_s V^\dagger)(V\Sigma V^\dagger) = U\,P$. So polar and singular value decompositions carry the same information, regrouped.
 
-**Where it earns its keep:**
+**Where it is used:**
 - **Closest unitary:** $U$ is the unitary nearest to $A$ (in Frobenius norm) — the right way to "re-unitarize" a numerically drifted evolution operator or snap a fitted gate matrix back onto the unitary group.
 - **Fidelity:** the trace norm $\|A\|_1 = \mathrm{Tr}\sqrt{A^\dagger A} = \mathrm{Tr}\,P$ underlying $F(\rho,\sigma)$ is the polar $P$'s trace.
 - **Continuum mechanics analogue:** deformation gradient = rotation × strain; same theorem.

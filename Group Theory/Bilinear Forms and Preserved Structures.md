@@ -1,11 +1,15 @@
 #linear-algebra #group-theory #math
 
-**A bilinear form is a matrix $B$ read as a pairing $\langle u,v\rangle_B = u^{\mathsf T}Bv$ — and demanding that transformations preserve it, $A^{\mathsf T}BA = B$, is the construction that manufactures every classical group.**
+**The dot product, the Minkowski interval, the phase-space area $q_1p_2 - p_1q_2$, and a covariance matrix are all rules that take two vectors and return a number — bilinear forms — and the transformations that leave such a rule unchanged are the classical groups: keep lengths and you get rotations $O(n)$, keep the interval and you get the Lorentz group, keep phase-space area and you get the symplectic group.** **In practice:** to know which group your dynamics lives in, and which quantities it can never change, ask which pairing it preserves.
 
 # Reference
 
+**Formally:** a bilinear form is a matrix $B$ read as a pairing $\langle u,v\rangle_B = u^{\mathsf T}Bv$ — and demanding that transformations preserve it, $A^{\mathsf T}BA = B$, is the construction that manufactures every classical group.
+
 **Change of basis acts by congruence,** not conjugation:
 $$B \to S^{\mathsf T} B S \qquad \text{(transpose, not inverse)}$$
+
+**Picture:** a bilinear form takes two arrows and returns a number; its group is every linear rearrangement of space that leaves all those numbers unchanged.
 
 | Transform | Form | Invariant |
 |---|---|---|
@@ -49,7 +53,7 @@ The $Sp$ row is why **symmetric matrices — i.e. quadratic Hamiltonians — gen
 
 **Why the antisymmetric case dominates physics.** Phase space $(q_1,\dots,q_n,p_1,\dots,p_n)$ carries $\omega(u,v) = u^{\mathsf T}Jv$ = sum of signed areas of the $(q_i,p_i)$-plane projections. Two facts make it unavoidable:
 
-- **Hamiltonian flow preserves it automatically** — canonical transformations *are* the symplectic group. Liouville's theorem is a corollary, and a weak one: symplecticity conserves every projected area sum, not just total volume.
+- **Hamiltonian flow preserves it automatically** — canonical transformations *are* the symplectic group. Liouville's theorem is a corollary, and a weak one: symplecticity conserves every projected area sum, not only total volume.
 - **The canonical commutation relations are this form, operator-valued:** $[z_i, z_j] = i\hbar J_{ij}$. A linear transformation of mode operators is physical iff it preserves the commutators, iff it is symplectic — hence Gaussian evolution = symplectic matrices.
 
 Block conditions, the symplectic spectrum, Bloch–Messiah, Williamson, covariance propagation and the uncertainty condition are all in [[Symplectic Group]].

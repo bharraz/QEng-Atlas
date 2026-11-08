@@ -1,6 +1,6 @@
 #quantum-optics
 
-**A field is a collection of modes, each mode is a harmonic oscillator, and "particle number" is just the mode's excitation level.** Identical particles force this: labeled-particle wavefunctions carry $N!$ redundant terms, and processes that change $N$ (emission, absorption) can't even be written in first quantization.
+**A field is a collection of modes, each mode is a harmonic oscillator, and "particle number" is the mode's excitation level.** Identical particles force this: labeled-particle wavefunctions carry $N!$ redundant terms, and processes that change $N$ (emission, absorption) can't even be written in first quantization.
 
 # Reference
 
@@ -9,6 +9,8 @@ Occupation-number basis $|n_1, n_2, \ldots\rangle$ — the state is fully specif
 $$
 a_k^\dagger|n_k\rangle = \sqrt{n_k+1}\,|n_k+1\rangle, \qquad a_k|n_k\rangle = \sqrt{n_k}\,|n_k-1\rangle, \qquad [a_k, a_{k'}^\dagger] = \delta_{kk'}
 $$
+
+**Picture:** occupation numbers instead of labelled particles: count how many quanta sit in each mode, and let creation and annihilation operators move them between modes.
 
 **Fermions swap commutators for anticommutators:** $\{c_k, c_{k'}^\dagger\} = \delta_{kk'}$, so $(c^\dagger)^2 = 0$ and $n_k \in \{0,1\}$ — Pauli exclusion is the algebra, not an extra postulate.
 

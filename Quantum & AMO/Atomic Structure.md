@@ -1,6 +1,6 @@
 #AMO
 
-**Hydrogen sets the scales, quantum numbers label the ladder, and each finer level of structure is a power of $\alpha$ down.** Gross structure (eV) → fine structure ($\alpha^2 \sim 10^{-4}$ smaller) → hyperfine (another $\sim m_e/m_p$ down).
+**An electron bound to a nucleus has a ladder of levels whose scales are set by hydrogen, and each finer layer of structure is smaller by a further power of a small parameter.** Gross structure (eV) → fine structure ($\alpha^2 \sim 10^{-4}$ smaller) → hyperfine (another $\sim m_e/m_p$ down).
 
 # Reference
 
@@ -9,6 +9,8 @@
 $$E_n = -\frac{\mathrm{Ry}}{n^2}, \qquad \mathrm{Ry} = 13.6\ \mathrm{eV}, \qquad a_0 = 0.529\ \text{Å}$$
 
 Electron velocity $\sim \alpha c$ with $\alpha \approx 1/137$ — the expansion parameter for everything relativistic.
+
+**Picture:** levels separated by the Coulomb energy (eV), each split again by spin–orbit coupling about $10^{-4}$ times smaller, and again by the nuclear spin about $m_e/m_p$ times smaller still.
 
 **Quantum numbers:** $n$ (energy shell), $l < n$ (orbital), $s = \tfrac{1}{2}$, and once spin–orbit coupling acts, $j = |l - s|, \dots, l + s$ with $m_j$. $l$ and $s$ separately stop being good; $j$ survives.
 

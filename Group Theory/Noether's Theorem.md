@@ -10,6 +10,8 @@ The cleanest demonstration of why Lie theory is worth learning: the same object 
 $$Q = \frac{\partial L}{\partial \dot q}\cdot X(q) \qquad \text{satisfies} \qquad \frac{dQ}{dt} = 0.$$
 $X$ is the infinitesimal generator of the symmetry — an element of the symmetry algebra — and $Q$ is the conserved charge built from it. **One charge per generator**, so $\dim\mathfrak g$ = number of independent conservation laws.
 
+**Picture:** each way the system can be shifted without changing its dynamics carries a quantity that cannot change: translations give momentum, rotations angular momentum, time shifts energy.
+
 **Quantum statement**, and it is shorter:
 $$[H, G] = 0 \iff G \text{ is conserved}$$
 which is $\mathrm{ad}_H\, G = 0$: the conserved observables are exactly the kernel of $\mathrm{ad}_H$ ([[Conjugation]], [[Operators and Superoperators]]). Since $G$ generates the symmetry via $e^{i\theta G}$ and commutes with $H$, "generates a symmetry" and "is conserved" are the same equation read in two directions ([[Generators and the Exponential Map]]).
@@ -23,7 +25,7 @@ which is $\mathrm{ad}_H\, G = 0$: the conserved observables are exactly the kern
 | Boost | $SO^+(3,1)$ | $K_i$ | (no static charge — mixes $t$) |
 | Scaling | $\mathbb R^+$ | dilatation $D$ | conformal weight |
 
-**The continuity requirement is not decoration.** The proof differentiates with respect to the group parameter, so a discrete symmetry has nothing to differentiate. Parity and time reversal give conserved *quantum numbers* and selection rules, but no Noether current ([[Lie Groups]]). This is the sharpest illustration of why the smoothness in "Lie group" is doing work.
+**The continuity requirement is essential.** The proof differentiates with respect to the group parameter, so a discrete symmetry has nothing to differentiate. Parity and time reversal give conserved *quantum numbers* and selection rules, but no Noether current ([[Lie Groups]]). This is the sharpest illustration of why the smoothness in "Lie group" is doing work.
 
 ## Degeneracy is a representation statement
 
@@ -33,7 +35,7 @@ The part usually left implicit, and the reason this belongs with group theory ra
 - Decompose it into irreducibles: **degeneracy = dimension of the irrep** ([[Group Representations]]).
 - The **Casimirs** of the symmetry algebra label which irrep, hence which multiplet — and being in the center of $U(\mathfrak g)$, they commute with every Hamiltonian built from $\mathfrak g$ ([[Universal Enveloping Algebra and PBW Basis]]).
 
-So rotational symmetry does not merely conserve $\hat J$; it *forces* levels to come in $(2j+1)$-fold multiplets labeled by $J^2 = j(j+1)$. Symmetry predicts the spectrum's shape before any dynamics is solved.
+So rotational symmetry conserves $\hat J$ and also *forces* levels to come in $(2j+1)$-fold multiplets labeled by $J^2 = j(j+1)$. Symmetry predicts the spectrum's shape before any dynamics is solved.
 
 **Run the argument backwards and it becomes a discovery tool.** Degeneracy you cannot explain from the obvious symmetry means the *actual* symmetry algebra is larger than you assumed:
 
@@ -50,7 +52,7 @@ So rotational symmetry does not merely conserve $\hat J$; it *forces* levels to 
 | Requirement | If it fails |
 |---|---|
 | Symmetry is **continuous** | conserved quantum number and selection rules, no current |
-| Symmetry of the **action**, not just $H$ | quasi-symmetries give charges up to boundary terms |
+| Symmetry of the **action**, not only $H$ | quasi-symmetries give charges up to boundary terms |
 | Symmetry is **global** (constant parameter) | a *local* (gauge) symmetry gives Noether's **second** theorem: constraints and identities, not independent charges |
 | Symmetry is **exact** | approximate symmetry ⇒ approximate conservation; the breaking size sets the leak rate |
 

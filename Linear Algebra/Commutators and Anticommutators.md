@@ -1,12 +1,14 @@
 #linear-algebra #math
 
-**$[A,B] = AB - BA$ measures the failure of two operators to share order — and in QM, that failure is physics: uncertainty, dynamics, and quantum numbers all read off commutators.** $\{A,B\} = AB + BA$ is the symmetric partner, home of fermions and Pauli algebra.
+**Applying operator $A$ then $B$ need not give the same result as $B$ then $A$; the difference $[A,B] = AB - BA$ measures that failure, and in QM the failure is physics: uncertainty, dynamics, and quantum numbers all read off commutators.** $\{A,B\} = AB + BA$ is the symmetric partner, home of fermions and Pauli algebra.
 
 # Reference
 
 $$
 [A,B] = AB - BA, \qquad \{A,B\} = AB + BA, \qquad AB = \tfrac{1}{2}[A,B] + \tfrac{1}{2}\{A,B\}
 $$
+
+**Picture:** rotate a book 90° about $x$ then about $y$, and compare with $y$ then $x$: the end orientations differ, and for small angles the difference is a rotation about $z$, the commutator.
 
 **The canonical commutator:**
 

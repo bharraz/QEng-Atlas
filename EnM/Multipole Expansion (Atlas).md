@@ -1,6 +1,6 @@
 #EnM
 
-**Seen from far away, any charge blob looks like a point charge, plus a dipole correction, plus a quadrupole correction — an expansion in (source size/distance).** Each order falls off one power of $r$ faster, so only the lowest nonvanishing moment matters at long range.
+**Seen from far away, any localized charge distribution looks like a point charge, plus a dipole correction, plus a quadrupole correction — an expansion in (source size/distance).** Each order falls off one power of $r$ faster, so only the lowest nonvanishing moment matters at long range.
 
 # Reference
 
@@ -9,6 +9,8 @@ V(\mathbf{r}) = \frac{1}{4\pi\varepsilon_0}\left[\frac{Q}{r} + \frac{\mathbf{p}\
 $$
 
 where $Q=\int\rho\,d^3r$ (monopole), $\mathbf{p}=\int\mathbf{r}'\rho\,d^3r'$ (dipole), $Q_{ij}=\int(3r'_ir'_j - r'^2\delta_{ij})\rho\,d^3r'$ (quadrupole).
+
+**Picture:** from far away a charge distribution's details blur: the net charge dominates, then its lopsidedness (dipole), then its elongation (quadrupole), each fading one power of $r$ faster.
 
 **Scalings:** $V\sim 1/r,\ 1/r^2,\ 1/r^3$; fields one power steeper. Expansion parameter is $(d/r)$ with $d$ the source size — each higher order is suppressed by another factor of it.
 
@@ -27,8 +29,8 @@ $$
 - [[Legendre Polynomials and Spherical Harmonics]] — the angular basis the expansion is organized in
 - [[Dipole Radiation]] — the radiating counterpart: dipole term dominates emission too
 - [[Dipole Approximation]] — same expansion applied to atom–light coupling; E2 transitions are the next term
-- [[Taylor Expansion]] — this is just Taylor in $d/r$, organized by angular momentum
-- [[Method of Images]] — complementary trick when you're *near* conductors instead of far from sources
+- [[Taylor Expansion]] — this is Taylor in $d/r$, organized by angular momentum
+- [[Method of Images]] — the complementary method *near* conductors instead of far from sources
 
 ---
 Source: Griffiths, *Introduction to Electrodynamics*, Ch. 3.4; Jackson Ch. 4 for the $Y_{lm}$ form

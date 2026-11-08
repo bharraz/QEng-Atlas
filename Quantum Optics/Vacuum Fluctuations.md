@@ -10,6 +10,8 @@ $$
 
 — the symmetric minimum-uncertainty circle at the phase-space origin.
 
+**Picture:** every mode as a pendulum that can never be perfectly still: its ground state keeps a spread of position and momentum, and that spread couples to atoms, mirrors, and detectors.
+
 **Measurable consequences:**
 
 | Effect | Mechanism |

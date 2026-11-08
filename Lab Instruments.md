@@ -1,6 +1,6 @@
 #labwork #reference
 
-**Every instrument answers one question well and lies about the others. The failure mode is not reading the display wrong — it is a setting that silently changes what the display means.** Organized as: what it measures, the settings that lie to you, and when to reach for something else.
+**Every instrument answers one question well and gives misleading answers to others. The failure mode is not reading the display wrong — it is a setting that silently changes what the display means.** Organized as: what it measures, the settings that lie to you, and when to reach for something else.
 
 # Reference
 
@@ -8,7 +8,9 @@
 
 **Two separate specs, both matter.** Analog bandwidth $f_{3\text{dB}}$ sets what the front end passes; sample rate $f_s$ sets what the digitizer records. You need *both*: $f_s \geq 5f_{3\text{dB}}$ or the display aliases within the scope's own passband. Rise time you can resolve $\approx 0.35/f_{3\text{dB}}$ ([[Bandwidth]]), and measured rise time is $\sqrt{t_{r,\text{signal}}^2 + t_{r,\text{scope}}^2}$ — a scope of comparable speed to the signal reports an edge ~40% too slow.
 
-**Settings that lie:**
+**Picture:** each instrument as a filter in front of a meter: its bandwidth, input impedance, and averaging settings decide which part of the signal reaches the display.
+
+**Settings that give misleading readings:**
 
 - **50 Ω vs 1 MΩ input** — changes both the amplitude ($V = IR$) and the bandwidth ($\tau = RC$ with cable capacitance) of anything with source impedance ([[Time Constants and Reactance Rules of Thumb]]). A signal that "disappears" on 50 Ω was being integrated by the 1 MΩ input.
 - **Probe compensation** — an uncompensated 10× probe distorts every edge; square-wave the cal output and adjust before trusting any risetime. Probe loading (~10 pF) is part of your circuit.
@@ -17,28 +19,28 @@
 - **Memory depth vs timebase**: at a long timebase the scope drops $f_s$ to fill the record — you can be aliasing at slow sweeps while the front end is fast.
 - **Trigger**: edge triggering shows you only the events you already expected. Pulse-width, runt, dropout, and logic-pattern triggers exist to catch the failure you cannot see ([[(Guide) Debugging Method]] rule 3).
 
-**Reach for something else when:** you need the frequency content (spectrum analyzer), sub-µV sensitivity (lock-in), phase noise (analyzer or PLL), or absolute frequency (counter/wavemeter).
+**Reach for something else when:** you need the frequency content (spectrum analyzer), sub-µV sensitivity (lock-in), phase noise (phase-noise analyzer or [[Phase-Locked Loops|PLL]]), or absolute frequency (counter/wavemeter).
 
 ## Spectrum analyzer — power vs frequency
 
-A swept superheterodyne: it mixes a band down and measures power through a filter of width RBW. Modern FFT-based analyzers compute the same picture from samples.
+A swept superheterodyne receiver: it [[Mixers|mixes]] a band down and measures power through a filter of width RBW (resolution bandwidth). Modern FFT-based analyzers compute the same picture from samples.
 
-**Settings that lie:**
+**Settings that give misleading readings:**
 
 - **RBW** sets both resolution *and* the displayed noise floor: floor $\propto$ RBW, so narrowing RBW by 10× drops the noise floor 10 dB and makes weak spurs "appear." Always state RBW alongside a noise-floor number.
-- **VBW** is post-detector smoothing — it makes the trace look cleaner without improving anything real; VBW < RBW/3 smooths noise but also suppresses genuine fast-varying features.
+- **VBW** (video bandwidth) is post-detector smoothing — it makes the trace look cleaner without improving anything real; VBW < RBW/3 smooths noise but also suppresses genuine fast-varying features.
 - **Sweep time** is coupled: $T_{\text{sweep}} \gtrsim \mathrm{span}/\mathrm{RBW}^2$. If the analyzer is sweeping too fast for the RBW, peaks are *attenuated and shifted* — the "uncal" warning exists for this.
 - **Reference level** sets front-end attenuation. Too low and the input compresses, generating intermodulation spurs *inside the analyzer* that look like real signals. Test: raise the attenuation by 10 dB — real signals stay put, internally generated ones drop.
 - **Detector mode** (peak / sample / RMS): peak overestimates noise, RMS is the correct choice for noise density measurements.
 - A **tracking generator** turns it into a scalar network analyzer — magnitude only, no phase.
 
-**Reach for something else when:** you need phase (VNA), absolute frequency to Hz (counter), or the signal is below the analyzer's noise floor (lock-in, or amplify first — [[Amplifier Noise]]).
+**Reach for something else when:** you need phase (vector network analyzer, VNA), absolute frequency to Hz (counter), or the signal is below the analyzer's noise floor (lock-in, or amplify first — [[Amplifier Noise]]).
 
-## Vector network analyzer — S-parameters vs frequency
+## Vector network analyzer (VNA) — S-parameters vs frequency
 
 Magnitude *and* phase of reflection and transmission ([[S-Parameters]]).
 
-- **Calibration defines the reference plane.** SOLT/electronic cal at the front panel measures your cables as part of the DUT; calibrate at the connector that actually touches the device. Recalibrate after changing IF bandwidth, power, or frequency range.
+- **Calibration defines the reference plane.** SOLT calibration (short–open–load–through standards) or electronic calibration at the front panel measures your cables as part of the DUT (device under test); calibrate at the connector that touches the device. Recalibrate after changing IF (intermediate-frequency) bandwidth (the width of the receiver's measurement filter), power, or frequency range.
 - **Port power** matters for nonlinear or superconducting devices — measure a resonator's $Q$ versus power, since it will change.
 - Reflection-only ($S_{11}$) measurements need a good load standard; a mediocre load sets a floor on measurable return loss.
 - Use it for: filter and cable characterization, resonator $Q$ ([[Resonance and Q Factor]] — remember it measures *loaded* $Q$), impedance matching ([[Impedance Matching]]), and finding cable faults via time-domain transform.
@@ -47,8 +49,8 @@ Magnitude *and* phase of reflection and transmission ([[S-Parameters]]).
 
 Counts cycles against a reference over a gate time $T$: resolution $\approx 1/T$ for a simple counter, far better for reciprocal/interpolating counters.
 
-- **Accuracy is the timebase's, not the counter's** — a 10 MHz OCXO at $10^{-9}$ caps you there; discipline to GPS or a maser for better.
-- **It lies on noisy or multi-tone signals**: a counter reports *a* number even when the input is a mess. Look at the signal on a scope or analyzer first, and use the trigger-level and low-pass filter controls deliberately.
+- **Accuracy is the timebase's, not the counter's** — a 10 MHz OCXO (oven-controlled crystal oscillator) at $10^{-9}$ caps you there; discipline to GPS or a maser for better.
+- **It misreads noisy or multi-tone signals**: a counter reports *a* number even when the input is not a clean periodic signal. Look at the signal on a scope or analyzer first, and use the trigger-level and low-pass filter controls deliberately.
 - Frequency instability is a curve, not a number — pipe the readings into [[Allan Variance]] rather than quoting one measurement.
 
 ## Multimeter
@@ -56,14 +58,15 @@ Counts cycles against a reference over a gate time $T$: resolution $\approx 1/T$
 - **True-RMS vs average-responding**: average-responding meters are calibrated for sines and read low on anything else (pulsed, chopped, or crest-factor-heavy signals). Check which you have.
 - **Burden voltage**: measuring current inserts a shunt whose IR drop can be tens of mV — enough to change a bias point.
 - **Input impedance** is 10 MΩ typically; on a high-impedance node that is a load, and on a floating node the reading is meaningless.
-- Bandwidth is DC to a few kHz — a DMM cannot tell you about anything fast, and a "clean DC" reading says nothing about the RF riding on it.
+- Bandwidth is DC to a few kHz — a DMM (digital multimeter) cannot tell you about anything fast, and a "clean DC" reading says nothing about the RF riding on it.
 
 ## Optical instruments
 
-- **Power meter**: thermal heads are slow (~s) but flat from UV to IR; photodiode heads are fast and sensitive but *wavelength-calibrated* — set the wavelength or the reading is simply wrong, and they saturate well below thermal heads.
+- **Power meter**: thermal heads are slow (~s) but flat from UV to IR; photodiode heads are fast and sensitive but *wavelength-calibrated* — set the wavelength or the reading is wrong, and they saturate well below thermal heads.
 - **Wavemeter**: absolute frequency to ~10 MHz–1 GHz depending on class. Multi-mode light gives a weighted average with no warning; check mode structure on a scanning cavity ([[Fabry-Perot Cavity]]) before trusting a wavemeter number.
-- **Scanning Fabry–Perot**: shows mode structure and relative linewidth; features separated by an integer FSR alias on top of each other, so identify the FSR first.
+- **Scanning Fabry–Perot**: shows mode structure and relative linewidth; features separated by an integer multiple of the FSR (free spectral range, the cavity's mode spacing) alias on top of each other, so identify the FSR first.
 - **Beam profiler**: reports $D4\sigma$ or $1/e^2$ or FWHM widths — three different numbers for the same beam ([[Conventions and Factor-of-Two Traps]]).
+- **Photon counters and cameras**: compared, with their failure modes, on [[Photon Detectors]]; laser diagnostics (power-against-current curve, scanning cavity, beat note) on [[Laser Sources]].
 
 ## Cross-checking
 
@@ -81,6 +84,7 @@ No single instrument is trustworthy alone. The cheap habits: measure a known sig
 - [[S-Parameters]] / [[Impedance Matching]] — what the VNA measures and why
 - [[Lock-In Detection]] — the instrument for signals below a spectrum analyzer's floor
 - [[Conventions and Factor-of-Two Traps]] — which width, which dB, which impedance
+- [[Handling Lab Hardware]] — input-power limits and how instruments are damaged
 
 ---
 Source: Horowitz & Hill, *The Art of Electronics* 3rd ed., App. O (oscilloscopes) & Ch. 8; Keysight/Tektronix application notes on spectrum-analyzer settings

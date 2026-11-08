@@ -6,14 +6,16 @@
 
 $\det A = \prod_i \lambda_i$ (eigenvalues with multiplicity). Geometrically: signed volume of the image of the unit cube — sign flips mean orientation reversal.
 
-**The kit:**
+**Identities:**
 
 $$
 \det(AB) = \det A \cdot \det B, \qquad \det A^\dagger = (\det A)^*, \qquad \det A^{-1} = \frac{1}{\det A}
 $$
 
+**Picture:** the factor by which the map scales the volume of a unit cube; a negative sign means the cube is turned inside out (orientation flipped).
+
 $$
-\det(cA) = c^n \det A \quad (\text{the classic trap — } n\text{th power, not linear!})
+\det(cA) = c^n \det A \quad (\text{the most common slip: } n\text{th power, not linear})
 $$
 
 $$

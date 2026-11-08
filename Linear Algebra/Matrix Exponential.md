@@ -8,6 +8,8 @@ $$
 e^A = \sum_{k=0}^\infty \frac{A^k}{k!} \qquad (\text{converges for any } A)
 $$
 
+**Picture:** following a velocity field: $\dot x = Ax$ assigns a velocity to every point, and $e^{At}$ carries each point along its flow for a time $t$.
+
 **Diagonal/diagonalizable case** — the practical route: $A = PDP^{-1} \Rightarrow e^A = P\,\mathrm{diag}(e^{\lambda_i})\,P^{-1}$. Exponentiate eigenvalues, keep eigenvectors.
 
 **The noncommutativity trap:**
@@ -24,7 +26,7 @@ $$
 \frac{d}{dt} e^{At} = A\,e^{At} = e^{At} A
 $$
 
-— only this clean because $A$ commutes with itself. For time-*dependent* $A(t)$ with $[A(t), A(t')] \ne 0$ you need the time-ordered exponential $\mathcal{T}e^{\int A\,dt}$ (Dyson series) — writing $e^{\int A\,dt}$ is the classic mistake.
+— only this clean because $A$ commutes with itself. For time-*dependent* $A(t)$ with $[A(t), A(t')] \ne 0$ you need the time-ordered exponential $\mathcal{T}e^{\int A\,dt}$ (Dyson series) — writing $e^{\int A\,dt}$ is the most common mistake.
 
 **Special structure:** $A$ anti-Hermitian ⇒ $e^A$ unitary ($U = e^{-iHt/\hbar}$); $A$ Hermitian ⇒ $e^A$ positive definite. $\det e^A = e^{\mathrm{Tr}A}$.
 
@@ -39,7 +41,7 @@ $$
 - [[Unitary Matrices]] — $e^{-iHt/\hbar}$: Hermitian generator in, unitary evolution out
 - [[Trotter Product Formula]] — approximating $e^{A+B}$ by interleaved small steps
 - [[Linear ODE Systems]] — $x(t) = e^{At}x_0$: the entire theory of linear dynamics in one symbol
-- [[Diagonalization]] — how $e^A$ is actually computed when $A$ is diagonalizable
+- [[Diagonalization]] — how $e^A$ is computed when $A$ is diagonalizable
 
 ---
 Source: Horn & Johnson, *Topics in Matrix Analysis*, Ch. 6; Hall, *Lie Groups, Lie Algebras*, Ch. 2.

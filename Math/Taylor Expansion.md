@@ -1,10 +1,10 @@
 #math
 
-**Find the small dimensionless parameter, expand in it, keep the leading term that does physics** — half of theoretical physics is choosing what's small and truncating honestly.
+**Find the small dimensionless parameter, expand in it, keep the leading term that does physics** — half of theoretical physics is choosing what is small and truncating consistently.
 
 # Reference
 
-**The standard kit** (about $x=0$, to the orders you actually use):
+**The standard expansions** (about $x=0$, to the orders you use):
 
 | Expansion | Series | Converges |
 |---|---|---|
@@ -16,14 +16,16 @@
 | $\frac{1}{1-x}$ | $1 + x + x^2$ | $\|x\|<1$ |
 | $\sqrt{1+x}$, $\frac{1}{\sqrt{1+x}}$ | $1 + \frac{x}{2} - \frac{x^2}{8}$, $\;1 - \frac{x}{2} + \frac{3x^2}{8}$ | binomial with $n=\pm\frac12$ |
 
+**Picture:** zooming in on a smooth curve until it looks like its tangent line, then adding curvature only if the line is not good enough.
+
 $(1+x)^n \approx 1+nx$ is the single most-used line: it covers relativistic corrections, impedance mismatches, index changes, error propagation.
 
-**When truncation is safe:** the *next* term must be small compared to the ones you kept, over the whole range you use — not just at one point. Odd functions expanded around symmetric points lose every other term (this is why sideband spectra in $\eta = kx_0$ come in clean orders: carrier at $\eta^0$, first sidebands at $\eta^1$). If your answer at leading order is exactly zero, the second-order term *is* the physics — don't call it negligible (light shifts, second-order Doppler).
+**When truncation is safe:** the *next* term must be small compared to the ones you kept, over the entire range you use — not only at one point. Odd functions expanded around symmetric points lose every other term (this is why sideband spectra in $\eta = kx_0$ come in clean orders: carrier at $\eta^0$, first sidebands at $\eta^1$). If your answer at leading order is exactly zero, the second-order term *is* the physics — don't call it negligible (light shifts, second-order Doppler).
 
 **Small-parameter checklist:** $v/c$, $\Omega/\omega$, $kx_0$ (Lamb-Dicke $\eta$), $d/r$ (multipole), $\Delta/\omega_0$. Nondimensionalize first; "small" only means something for a dimensionless number.
 
 > [!question]- Your leading-order answer came out zero. What now?
-> Go one order deeper — the first nonvanishing term is the physics, not a correction. Classic cases: quadratic Zeeman on clock states, second-order Doppler, light shift as second-order perturbation. Zero at first order usually means a symmetry is protecting you, and the next order tells you how well.
+> Go one order deeper — the first nonvanishing term is the physics, not a correction. Standard cases: quadratic Zeeman on clock states, second-order Doppler, light shift as second-order perturbation. Zero at first order usually means a symmetry is protecting you, and the next order tells you how well.
 
 # Connections
 

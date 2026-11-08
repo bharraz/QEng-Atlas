@@ -1,6 +1,6 @@
 #circuits #electronics
 
-**H(ω) = output/input as a complex function of frequency; the Bode plot is its log-frequency magnitude (dB) and phase, where poles and zeros become straight-line slopes you can read by eye.**
+**Drive a linear circuit with a sine wave and the output is a sine at the same frequency, scaled and shifted in phase. The transfer function $H(\omega)$ records that scale and shift at every frequency, and the Bode plot draws its magnitude (dB) and phase against log frequency, where poles and zeros become straight-line slopes you can read by eye.**
 
 # Reference
 
@@ -8,7 +8,9 @@ $$
 H(s) = K\,\frac{\prod_i (s-z_i)}{\prod_j (s-p_j)}, \qquad s = j\omega
 $$
 
-**Slope rules:** each pole past its corner adds **−20 dB/decade and −90° of phase**; each zero, +20 dB/dec and +90°. Magnitude changes are local (−3 dB at the corner); phase is smeared over ~2 decades centered there (−45° at the corner itself) — phase arrives *before* the magnitude drop, which is exactly what bites feedback loops.
+**Picture:** each pole is a corner where the magnitude line bends down by 20 dB/decade and the phase slides by 90°; the full plot is the sum of these corners.
+
+**Slope rules:** each pole past its corner adds **−20 dB/decade and −90° of phase**; each zero, +20 dB/dec and +90°. Magnitude changes are local (−3 dB at the corner); phase is smeared over ~2 decades centered there (−45° at the corner itself) — phase arrives *before* the magnitude drop, which is exactly what destabilizes feedback loops.
 
 **Reading a plot:** find the flat in-band gain, then count slope changes: −20 dB/dec → one pole, −40 → two; each corner sits at the −3 dB point of its pole.
 

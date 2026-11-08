@@ -8,9 +8,15 @@ Spectral decomposition and what each piece means ([[Spectral Theorem]], [[Projec
 
 $$A = \sum_a a\, P_a, \qquad \langle A \rangle = \langle\psi|A|\psi\rangle = \sum_a a\, \|P_a|\psi\rangle\|^2, \qquad \Delta A^2 = \langle A^2\rangle - \langle A\rangle^2.$$
 
-$a$ = outcomes, $P_a$ = projector onto the eigenspace, $\|P_a|\psi\rangle\|^2$ = probability. Non-commuting observables share no full eigenbasis ([[Simultaneous Diagonalization]]); the Robertson bound quantifies the trade:
+- $a$ — outcomes
+- $P_a$ — projector onto the eigenspace
+- $\|P_a|\psi\rangle\|^2$ — probability of outcome $a$
+
+Non-commuting observables share no full eigenbasis ([[Simultaneous Diagonalization]]); the Robertson bound quantifies the trade:
 
 $$\Delta A\, \Delta B \geq \tfrac{1}{2}\left|\langle [A, B] \rangle\right|.$$
+
+**Picture:** a measurement as a sorting machine: it sends each state into one of the eigenstates, with probability set by the overlap, and reads out that eigenstate's eigenvalue.
 
 Operators come in three overlapping families: **Hermitian** ($A^\dagger = A$: real spectrum, observables), **unitary** ($U^\dagger U = 1$: norm-preserving, symmetries and evolution, $U = e^{-iA}$ for Hermitian $A$ — [[Generators and the Exponential Map]]), **normal** ($[A, A^\dagger] = 0$: diagonalizable by a unitary — everything above, plus e.g. non-Hermitian effective Hamiltonians when they happen to commute with their adjoint; ladder operators are none of these and have no orthogonal eigenbasis).
 
@@ -22,7 +28,7 @@ $$f(VXV^{-1}) = V f(X)\, V^{-1} \;\;\text{(any power series — in particular } 
 
 spectrum invariant; eigenvectors map $|v\rangle \mapsto V|v\rangle$; trace and determinant invariant ($\mathrm{Tr}\,ABC = \mathrm{Tr}\,BCA$, cyclic — [[Trace Identities]]). Reading: to evolve, rotate, or re-frame an *exponential*, conjugate its *generator* — never expand the exponential.
 
-**Conjugation by an exponential** (Hadamard lemma, the workhorse of frame changes):
+**Conjugation by an exponential** (Hadamard lemma, used in every frame change):
 
 $$e^{A} B\, e^{-A} = B + [A, B] + \tfrac{1}{2!}[A,[A,B]] + \tfrac{1}{3!}[A,[A,[A,B]]] + \cdots$$
 

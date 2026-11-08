@@ -11,7 +11,9 @@ $$
 \mathbb{1} = \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix}
 $$
 
-**The algebra** — one identity to rule them all:
+**Picture:** the three flips of a qubit: $X$ flips the bit, $Z$ flips the phase, $Y$ does both, and each is a 180° rotation of the Bloch sphere about its own axis.
+
+**The algebra** — one identity that generates the rest:
 
 $$
 \sigma_i \sigma_j = \delta_{ij}\mathbb{1} + i\,\varepsilon_{ijk}\,\sigma_k
@@ -39,6 +41,7 @@ Rotates the Bloch vector by $\theta$ about $\hat n$. Note the half-angle: $\thet
 - [[Single-Qubit Gates]] — every gate is $e^{-i\theta\hat n\cdot\vec\sigma/2}$ up to phase
 - [[Pauli Group]] — the $n$-qubit extension: tensor products of Paulis as the error basis
 - [[Generators and the Exponential Map]] — $\sigma/2$ as the generators of SU(2)
+- [[Reading Matrices and Hamiltonians]] — $\sigma_z$ as diagonal, $\sigma_x$ and $\sigma_y$ as couplings
 
 ---
 Source: Nielsen & Chuang §2.1.3 & §4.2.

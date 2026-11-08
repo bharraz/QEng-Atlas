@@ -1,6 +1,6 @@
 #quantum #AMO
 
-**Coherent Rabi driving plus spontaneous decay in one set of equations: the Bloch vector precesses under the drive while $\Gamma$ drags it toward the ground state.** This is the two-level atom you actually have, and its steady state is where scattering rates, saturation, and power broadening all come from.
+**Coherent Rabi driving plus spontaneous decay in one set of equations: the Bloch vector precesses under the drive while $\Gamma$ drags it toward the ground state.** This is the two-level atom you have, and its steady state is where scattering rates, saturation, and power broadening all come from.
 
 # Reference
 
@@ -8,7 +8,15 @@ Bloch vector $(u, v, w)$ (coherences and inversion) in the rotating frame, detun
 
 $$\dot{u} = \delta v - \tfrac{\Gamma}{2}u, \qquad \dot{v} = -\delta u + \Omega w - \tfrac{\Gamma}{2}v, \qquad \dot{w} = -\Omega v - \Gamma(w + 1)$$
 
-$u, v$ = in-phase and out-of-phase coherences (dimensionless, $u + iv = 2\rho_{ge}e^{i\omega_L t}$ — the dispersive and absorptive quadratures of the atomic dipole); $w = \rho_{ee} - \rho_{gg}$ = inversion, running $-1$ (ground) to $+1$; $\delta = \omega_L - \omega_0$ = detuning (rad/s); $\Omega$ = Rabi frequency (rad/s), from $\hbar\Omega = -\mathbf{d}\cdot\mathbf{E}_0$ so $\Omega \propto d\sqrt{I}$ — linear in dipole matrix element, square-root in intensity; $\Gamma$ = excited-state decay rate (s⁻¹), the natural linewidth in angular units. Structurally a damped driven oscillator: coherences ring at $\delta$ and decay at $\Gamma/2$, populations relax at $\Gamma$ — the factor 2 is why $T_2 \leq 2T_1$.
+- $u, v$ — in-phase and out-of-phase coherences (dimensionless, $u + iv = 2\rho_{ge}e^{i\omega_L t}$): the dispersive and absorptive quadratures of the atomic dipole
+- $w = \rho_{ee} - \rho_{gg}$ — inversion, running $-1$ (ground) to $+1$
+- $\delta = \omega_L - \omega_0$ — detuning (rad/s)
+- $\Omega$ — Rabi frequency (rad/s), from $\hbar\Omega = -\mathbf{d}\cdot\mathbf{E}_0$
+- $\Gamma$ — excited-state decay rate (s⁻¹), the natural linewidth in angular units
+
+So $\Omega \propto d\sqrt{I}$ — linear in dipole matrix element, square-root in intensity. Structurally a damped driven oscillator: coherences ring at $\delta$ and decay at $\Gamma/2$, populations relax at $\Gamma$ — the factor 2 is why $T_2 \leq 2T_1$.
+
+**Picture:** a spinning top with friction: the drive makes the Bloch vector precess, and decay drags it down toward the ground state, so it spirals into a steady state.
 
 **Steady state** (the lookup result), with on-resonance saturation parameter $s_0 = 2\Omega^2/\Gamma^2 = I/I_{\mathrm{sat}}$ (dimensionless — drive strength measured against decay):
 

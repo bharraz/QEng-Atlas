@@ -10,19 +10,33 @@ The platform's whole character — stochastic loading, µK depths, state-depende
 
 $$U_{\text{dip}}(\mathbf r) = -\frac{3\pi c^2}{2\omega_0^3}\frac{\Gamma}{\Delta}\,I(\mathbf r), \qquad \Gamma_{\text{sc}}(\mathbf r) = \frac{3\pi c^2}{2\hbar\omega_0^3}\left(\frac{\Gamma}{\Delta}\right)^2 I(\mathbf r),$$
 
-$U_{\text{dip}}$ = trap potential energy (J; usually quoted as depth $U_0/k_B$ in µK or mK); $\Gamma_{\text{sc}}$ = photon scattering rate (s⁻¹); $I(\mathbf r)$ = local intensity (W/m²); $\omega_0$ = atomic resonance frequency and $\Gamma$ = its natural linewidth (both rad/s), fixed by the atom; $\Delta = \omega_L - \omega_0$ = detuning (rad/s), the one free design parameter. Red detuning ($\Delta < 0$) makes $U_{\text{dip}} < 0$ at high intensity: the intensity maximum becomes a potential minimum.
+- $U_{\text{dip}}$ — trap potential energy (J; usually quoted as depth $U_0/k_B$ in µK or mK)
+- $\Gamma_{\text{sc}}$ — photon scattering rate (s⁻¹)
+- $I(\mathbf r)$ — local intensity (W/m²)
+- $\omega_0$, $\Gamma$ — atomic resonance frequency and its natural linewidth (both rad/s), fixed by the atom
+- $\Delta = \omega_L - \omega_0$ — detuning (rad/s), the one free design parameter
 
-The prefactor $3\pi c^2/2\omega_0^3$ is just the atom's resonant cross-section bookkeeping; everything actionable is in $I/\Delta$ versus $I/\Delta^2$. The ratio is the design rule:
+Red detuning ($\Delta < 0$) makes $U_{\text{dip}} < 0$ at high intensity: the intensity maximum becomes a potential minimum.
+
+**Picture:** a glass bead drawn into the brightest part of a light beam; an atom in red-detuned light behaves the same way, with the light shift as the potential.
+
+The prefactor $3\pi c^2/2\omega_0^3$ is the atom's resonant cross-section bookkeeping; everything actionable is in $I/\Delta$ versus $I/\Delta^2$. The ratio is the design rule:
 
 $$\frac{\hbar\Gamma_{\text{sc}}}{|U_{\text{dip}}|} = \frac{\Gamma}{|\Delta|}$$
 
-**At fixed trap depth, more detuning buys proportionally less scattering** — paid for with more power, since $U \propto I/\Delta$ must be held constant. Hence far-off-resonant traps sit hundreds of nm from every strong transition (1064 nm against Rb's 780 nm D line, for instance), where an atom scatters a photon every few seconds rather than every µs.
+**At fixed trap depth, more detuning gives proportionally less scattering** — paid for with more power, since $U \propto I/\Delta$ must be held constant. Hence far-off-resonant traps sit hundreds of nm from every strong transition (1064 nm against Rb's 780 nm D line, for instance), where an atom scatters a photon every few seconds rather than every µs.
 
 **Geometry** ([[Gaussian Beams]], [[Numerical Aperture and Spot Size]]): $w_0 \approx \lambda/\pi\mathrm{NA}$, $I_0 = 2P/\pi w_0^2$, $z_R = \pi w_0^2/\lambda$. NA 0.5–0.9 pushes $w_0$ to 0.5–1 µm; a few mW then gives $U_0/k_B \sim$ 0.1–1 mK. **Trap frequencies** from the harmonic expansion:
 
 $$\omega_r = \sqrt{\frac{4U_0}{m w_0^2}}, \qquad \omega_z = \sqrt{\frac{2U_0}{m z_R^2}}, \qquad \frac{\omega_z}{\omega_r} = \frac{\lambda}{\sqrt{2}\,\pi w_0}$$
 
-$\omega_r, \omega_z$ = radial and axial trap frequencies (rad/s); $U_0$ = trap depth (J); $m$ = atomic mass (kg); $w_0$ = beam waist (m); $z_R = \pi w_0^2/\lambda$ = Rayleigh range (m). These are just $\omega = \sqrt{\text{curvature}/m}$ with the curvature of the intensity profile: the trap is stiff over $w_0$ radially but only over $z_R \gg w_0$ axially. Note $\omega \propto \sqrt{U_0}/w_0 \propto \sqrt{P}/w_0^2$ — tightening the focus buys trap frequency far faster than raising power does.
+- $\omega_r, \omega_z$ — radial and axial trap frequencies (rad/s)
+- $U_0$ — trap depth (J)
+- $m$ — atomic mass (kg)
+- $w_0$ — beam waist (m)
+- $z_R = \pi w_0^2/\lambda$ — Rayleigh range (m)
+
+These are $\omega = \sqrt{\text{curvature}/m}$ with the curvature of the intensity profile. Note $\omega \propto \sqrt{U_0}/w_0 \propto \sqrt{P}/w_0^2$ — tightening the focus raises trap frequency far faster than raising power does.
 
 **The trap is a cigar along the beam** — $\omega_r/2\pi$ lands in the tens-to-hundred kHz range and $\omega_z$ is several times softer, because intensity falls off over $w_0$ radially but over the much longer $z_R$ axially. **Softness relative to ion traps (MHz) is the platform's defining constraint:** Lamb–Dicke parameters are marginal, thermal motion matters, and everything wants ground-state cooling ([[Debye-Waller Factor]]).
 
@@ -34,8 +48,8 @@ The second inequality is why a freshly loaded atom sits at $\bar n \sim 10$ rath
 
 - **Arrays** are made by splitting one beam: **AODs** (RF tones → one trap per tone, µs-fast steering, but 1D-ish and frequency-crowded — see [[Acousto-Optic Modulator]]) and **SLMs** (holographic, arbitrary 2D/3D geometry, ~ms update). The standard machine uses SLM for the static array + AOD for the moving tweezer that rearranges.
 - **Loading is stochastic by construction:** in a µm-scale trap, light-assisted collisions during loading eject atoms *in pairs*, so occupancy parity collapses to 0 or 1 (~50–60%; enhanced loading schemes reach ~90%). Determinism is restored afterwards: fluorescence-image the array (which sites won?), then move winners into the target pattern — **rearrangement, not loading, is what makes defect-free arrays of hundreds to ~1000 atoms possible**, and it must beat the vacuum-limited loss rate (another [[Vacuum Engineering|UHV]] argument).
-- **Imaging an atom you'd rather not heat:** collect fluorescence while simultaneously cooling (PGC/Λ-enhanced gray molasses in the trap), and mind that trap light shifts the imaging transition — image either in a magic trap or strobed (trap and imaging light alternated faster than $\omega_r$).
-- **State-dependence is both bug and feature.** $U \propto \alpha(\lambda)$ differs between internal states: qubit levels see differential light shifts (dephasing from intensity noise — the tweezer version of the [[Raman Transitions|Raman]] $\delta_{\text{AC}}$ problem), solved at **magic wavelengths** where two states' polarizabilities cross. The catastrophic case: **Rydberg states have negative polarizability** at standard trap wavelengths (a free-electron response) — the trap *expels* them. Standard practice is blinking the traps off during the µs Rydberg pulse ([[Rydberg Atoms and Blockade]]); the refined fix is trapping at a wavelength magic between ground and Rydberg, or bottle-beam (dark) traps that hold both.
+- **Imaging without heating the atom:** collect fluorescence while simultaneously cooling (PGC/Λ-enhanced gray molasses in the trap), and mind that trap light shifts the imaging transition — image either in a magic trap or strobed (trap and imaging light alternated faster than $\omega_r$).
+- **State dependence is both a problem and a resource.** $U \propto \alpha(\lambda)$ differs between internal states: qubit levels see differential light shifts (dephasing from intensity noise — the tweezer version of the [[Raman Transitions|Raman]] $\delta_{\text{AC}}$ problem), solved at **magic wavelengths** where two states' polarizabilities cross. The most severe case: **Rydberg states have negative polarizability** at standard trap wavelengths (a free-electron response) — the trap *expels* them. Standard practice is blinking the traps off during the µs Rydberg pulse ([[Rydberg Atoms and Blockade]]); the refined fix is trapping at a wavelength magic between ground and Rydberg, or bottle-beam (dark) traps that hold both.
 - **Heating budget:** photon scattering sets the floor; the usual dominant excess is **parametric heating** from intensity noise at $2\omega_{\text{trap}}$ (modulating the spring constant — energy doubles per fluctuation cycle at that frequency, see [[Noise Spectroscopy and Filter Functions|the filter-function logic]] applied classically) and pointing noise at $\omega_{\text{trap}}$. Hence low-RIN lasers, intensity servos ([[Control Beyond PID|feedback]] on a photodiode), and quiet mounts.
 - **Thermometry without absorption imaging:** release-and-recapture (drop the trap for µs, recapture probability vs time fits $T$) or sideband spectroscopy once resolved ($\omega_r > \Gamma_{\text{eff}}$ — the same [[Resolved Sideband Cooling|red/blue asymmetry]] as ions).
 
@@ -53,6 +67,9 @@ The second inequality is why a freshly loaded atom sits at $\bar n \sim 10$ rath
 - [[Acousto-Optic Modulator]] — array generation and the moving rearrangement tweezer
 - [[Paul Traps]] — the contrast case: eV-deep, MHz-stiff, charged
 - [[Binomial Errors in State Detection]] — 0-vs-1 imaging discrimination
+- [[Intensity Stabilization]] — trap-depth noise and how it is suppressed
+- [[Analog Quantum Simulation]] — tweezer arrays as programmable simulators
+- [[Qubit Transport and Shuttling]] — moving atoms between tweezers mid-circuit
 
 ---
 Source: Grimm, Weidemüller & Ovchinnikov, "Optical dipole traps for neutral atoms," *Adv. At. Mol. Opt. Phys.* 42, 95 (2000); Kaufman & Ni, "Quantum science with optical tweezer arrays," *Nat. Phys.* 17, 1324 (2021)

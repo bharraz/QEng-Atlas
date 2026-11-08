@@ -8,10 +8,12 @@
 - **Induction:** $V = d\Phi/dt = \omega BA$. A 1 m² loop in the ~µT stray field of a transformer at 60 Hz picks up ~0.5 mV — enormous against a µV signal. Buzz (harmonic-rich) rather than pure hum means the source is rectifier/SMPS current spikes, not a sinusoidal field.
 - **Shared return impedance:** the two "grounds" are joined through building wiring carrying everyone else's return current; the drop $I\,Z_\text{gnd}$ appears in series with your signal. This one tracks other equipment switching on and off.
 
+**Picture:** a one-turn transformer secondary made of your cable shield and the safety ground: changing flux through the loop, or current shared along it, puts a voltage in series with your signal.
+
 **Symptom checklist:**
 - Comb of 50/60 Hz + harmonics on the spectrum analyzer
-- Appears/vanishes as specific cables connect — including the scope probe (its ground clip is mains earth!)
-- Level changes when cables are re-routed (loop area) or when the HVAC/pump kicks in (shared current)
+- Appears/vanishes as specific cables connect — including the scope probe (its ground clip is mains earth)
+- Level changes when cables are re-routed (loop area) or when the HVAC/pump switches on (shared current)
 
 **Fixes, in order of preference:**
 1. **Break the loop where the signal crosses:** differential/instrumentation input, isolation transformer, optocoupler/fiber — signal passes, ground current can't.

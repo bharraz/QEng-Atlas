@@ -10,17 +10,28 @@ Bichromatic field at $\omega_0 \pm (\omega + \delta)$ — a small symmetric detu
 
 $$\tau = \frac{2\pi K}{\delta}, \quad K \in \mathbb{Z}$$
 
-$\tau$ = gate duration (s); $\delta$ = symmetric detuning of the two tones from their sidebands (rad/s) — it is also the *angular rate at which the phase-space loop is traversed*, so $2\pi/\delta$ is one lap and $K$ = number of laps. At these times the displacement returns to zero and spin and motion disentangle exactly, whatever the motional state. The residue is the geometric phase = enclosed phase-space area, $\propto (\eta\Omega/\delta)^2$ per loop and proportional to $S_\phi^2$, giving an effective $\sigma_\phi^{(1)}\sigma_\phi^{(2)}$ interaction:
+- $\tau$ — gate duration (s)
+- $\delta$ — symmetric detuning of the two tones from their sidebands (rad/s): also the phase-space loop rate; one lap takes $2\pi/\delta$
+- $K$ — number of laps
+
+At these times the displacement returns to zero and spin and motion disentangle exactly, whatever the motional state. What remains is the geometric phase, equal to the enclosed phase-space area: $\propto (\eta\Omega/\delta)^2$ per loop and proportional to $S_\phi^2$, which gives an effective $\sigma_\phi^{(1)}\sigma_\phi^{(2)}$ interaction:
 
 $$U = \exp\!\left(-i\chi\,\sigma_\phi^{(1)}\sigma_\phi^{(2)}\right), \qquad \chi = \frac{\pi}{4} \;\text{(maximally entangling) when}\; \delta = 2\eta\Omega\sqrt{K}$$
 
-$\chi$ = accumulated two-spin phase (rad; the enclosed area in units of $\hbar$); $\eta$ = Lamb–Dicke parameter of the driven mode; $\Omega$ = single-tone carrier Rabi frequency (rad/s), so $\eta\Omega$ = sideband coupling rate and $\eta\Omega/\delta$ = loop radius in phase space (dimensionless, in units of the ground-state spread $x_0$). The condition fixes the loop radius at $1/2\sqrt{K}$: more laps, smaller circles, same total area.
+**Picture:** a spin-dependent push that sends the motional state around a circle in phase space and back to its start; the spins keep a phase proportional to the circle's area, and the motion keeps nothing.
 
-Scalings to carry: gate time $\tau = 2\pi K/\delta = \pi\sqrt{K}/\eta\Omega$ — speed comes from $\eta\Omega$, so faster gates want tighter Lamb–Dicke coupling or more power, and going to $K > 1$ costs time as $\sqrt{K}$ while buying robustness to detuning error.
+- $\chi$ — accumulated two-spin phase (rad): the enclosed area in units of $\hbar$
+- $\eta$ — [[Lamb-Dicke Regime|Lamb–Dicke parameter]] of the driven mode
+- $\Omega$ — carrier Rabi frequency of one tone (rad/s); $\eta\Omega$ is then the sideband coupling rate
+- $\eta\Omega/\delta$ — loop radius in phase space, in units of the ground-state spread $x_0$
 
-From $|gg\rangle$: the Bell state $(|gg\rangle - i|ee\rangle)/\sqrt{2}$. Gate time $\tau = 2\pi K/\delta$ — more loops ($K > 1$) buys robustness at the cost of speed.
+The condition fixes the loop radius at $1/2\sqrt{K}$: more laps, smaller circles, same total area.
 
-**Why it's the trapped-ion workhorse:**
+**Gate time:** $\tau = 2\pi K/\delta = \pi\sqrt{K}/\eta\Omega$. Speed comes from $\eta\Omega$, so faster gates need stronger Lamb–Dicke coupling or more laser power; going to $K > 1$ costs time as $\sqrt{K}$ and gains robustness to detuning error.
+
+From $|gg\rangle$ the gate produces the Bell state $(|gg\rangle - i|ee\rangle)/\sqrt{2}$.
+
+**Why it is the standard trapped-ion gate:**
 - **$\bar{n}$-insensitive:** displacements are rigid translations in phase space — the same for every Fock state — and the geometric phase is area, not overlap. Doppler-cooled thermal states work (Lamb–Dicke still required; $\eta\sqrt{n}$ corrections erode fidelity for hot ions).
 - Loop closure also makes it first-order insensitive to the motional phase at gate start.
 - Error anatomy: detuning miscalibration or timing error → unclosed loop → residual spin–motion entanglement (leaks fidelity into the "environment" you own); mode frequency drift and motional heating during the loop are the usual fidelity ceiling.
@@ -36,6 +47,10 @@ From $|gg\rangle$: the Bell state $(|gg\rangle - i|ee\rangle)/\sqrt{2}$. Gate ti
 - [[Sideband Spectrum of Modulated Light]] — generating and sanity-checking the bichromatic drive
 - [[Normal Modes of Ion Chains]] — which shared mode carries the force, and the crowding problem at large N
 - [[Magnus Expansion]] — why the gate is exactly solvable: $H$ linear in phase-space operators terminates the series at $\Omega_2$, the geometric phase
+- [[Two-Qubit Gate Mechanisms]] — how other platforms make their native gates
+- [[Qudits and Multi-Qubit Gates]] — the global version acting on a whole chain
+- [[Effective Hamiltonians and Adiabatic Elimination]] — spin–spin couplings from far-detuned motional modes
+- [[Variational Quantum Algorithms]] — native Ising couplings as QAOA cost layers
 
 ---
 Source: Leibfried, Blatt, Monroe & Wineland, *Rev. Mod. Phys.* 75, 281 (2003)

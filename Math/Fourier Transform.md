@@ -12,6 +12,8 @@ For an aperiodic signal, take $T_p \to \infty$: the harmonic spacing $F_0 \to 0$
 
 $$X(f) = \int_{-\infty}^{\infty} x(t)\, e^{-i2\pi f t}\, dt, \qquad x(t) = \int_{-\infty}^{\infty} X(f)\, e^{i2\pi f t}\, df.$$
 
+**Picture:** a prism for signals: the transform spreads a signal into its frequencies, and the inverse transform recombines them.
+
 Series for periodic signals (discrete spectrum at the harmonics); transform for aperiodic signals (continuous spectrum).
 
 **Conventions.** The $f$-form above is symmetric. In angular frequency: $\tilde f(\omega) = \int f e^{-i\omega t} dt$ with $\frac{1}{2\pi}$ on the inverse, or $1/\sqrt{2\pi}$ on each. Spatial convention uses the opposite sign, $e^{+i\mathbf k \cdot \mathbf r - i\omega t}$, so that this phase describes a forward-propagating wave. State the convention in any calculation; mismatched $2\pi$'s are the most common error.
@@ -76,7 +78,12 @@ $$\int_{-\infty}^{\infty} |x(t)|^2\, dt = \int_{-\infty}^{\infty} |X(f)|^2\, df;
 
 $$X(s) = \int_0^\infty x(t)\, e^{-st}\, dt.$$
 
-The Fourier transform is the restriction to $s = i\omega$. The additional real part gives convergence for signals that are not absolutely integrable (steps, ramps, growing transients), incorporates initial conditions in the one-sided form ($\dot x \to sX - x(0)$), and introduces the pole structure: a pole at $s = p$ corresponds to a mode $e^{pt}$ in the system. Poles in the left half-plane are decaying (stable), right half-plane growing (unstable); the real part is the decay rate and the imaginary part the oscillation frequency. Stability analysis of circuits and control loops is pole placement in the $s$-plane ([[Laplace Transform]], [[Transfer Functions and Bode Plots]], [[Stability and Phase Margin]]). The Fourier transform, confined to the imaginary axis, cannot represent transient growth or decay of modes.
+The Fourier transform is the restriction to $s = i\omega$. The additional real part of $s$:
+- gives convergence for signals that are not absolutely integrable (steps, ramps, growing transients);
+- incorporates initial conditions in the one-sided form ($\dot x \to sX - x(0)$);
+- introduces the pole structure: a pole at $s = p$ corresponds to a mode $e^{pt}$ in the system. Poles in the left half-plane are decaying (stable), right half-plane growing (unstable); the real part is the decay rate and the imaginary part the oscillation frequency.
+
+Stability analysis of circuits and control loops is pole placement in the $s$-plane ([[Laplace Transform]], [[Transfer Functions and Bode Plots]], [[Stability and Phase Margin]]). The Fourier transform, confined to the imaginary axis, cannot represent transient growth or decay of modes.
 
 **Z-transform** — the discrete-time counterpart. For a sampled sequence $x[n]$ with sample period $T_s$:
 

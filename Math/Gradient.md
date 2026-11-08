@@ -11,14 +11,16 @@ $$
 
 In cylindrical and spherical the components pick up metric factors ($1/s$, $1/r$, $1/r\sin\theta$) — see the full table in [[Curvilinear Coordinates]]. Don't guess these mid-derivation.
 
-**The workhorse radial results** (memorize):
+**Picture:** contour lines on a map: the gradient points straight uphill, perpendicular to the contours, and is longest where the contours are closest together.
+
+**Radial results** (memorize):
 $$
 \nabla r = \hat{r}, \qquad \nabla\frac{1}{r} = -\frac{\hat{r}}{r^2}, \qquad \nabla f(r) = f'(r)\,\hat{r}
 $$
 
 **Physics:** $\mathbf{E} = -\nabla V$ — fields point downhill in potential, perpendicular to equipotentials. Same structure for any conservative force $\mathbf{F} = -\nabla U$: dipole traps, pseudopotentials, gravity. Gradient vanishing = equilibrium; its second derivatives (Hessian) decide stability.
 
-**Gotcha:** $\nabla f$ is perpendicular to level surfaces of $f$. If your computed field isn't normal to the equipotentials you drew, one of them is wrong.
+**Consistency check:** $\nabla f$ is perpendicular to level surfaces of $f$. If your computed field isn't normal to the equipotentials you drew, one of them is wrong.
 
 > [!question]- Why is $\nabla f$ perpendicular to surfaces of constant $f$?
 > Along any direction $d\mathbf{l}$ lying in the level surface, $df = \nabla f \cdot d\mathbf{l} = 0$ by definition of the surface — so $\nabla f$ has no component along it. All the change is normal to the surface.
